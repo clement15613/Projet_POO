@@ -84,6 +84,7 @@ namespace CodeProjet {
 			this->btnGestionClients->TabIndex = 1;
 			this->btnGestionClients->Text = L"Gestion Clients";
 			this->btnGestionClients->UseVisualStyleBackColor = true;
+			this->btnGestionClients->Click += gcnew System::EventHandler(this, &statistique::btnGestionClients_Click);
 			// 
 			// btnGEstionCommande
 			// 
@@ -96,6 +97,7 @@ namespace CodeProjet {
 			this->btnGEstionCommande->TabIndex = 2;
 			this->btnGEstionCommande->Text = L"Gestion Commande";
 			this->btnGEstionCommande->UseVisualStyleBackColor = true;
+			this->btnGEstionCommande->Click += gcnew System::EventHandler(this, &statistique::btnGEstionCommande_Click);
 			// 
 			// btnGestionPersonnel
 			// 
@@ -121,6 +123,7 @@ namespace CodeProjet {
 			this->btnGestionstock->TabIndex = 7;
 			this->btnGestionstock->Text = L"Gestion stock";
 			this->btnGestionstock->UseVisualStyleBackColor = true;
+			this->btnGestionstock->Click += gcnew System::EventHandler(this, &statistique::btnGestionstock_Click);
 			// 
 			// btnMonProfil
 			// 
@@ -133,6 +136,7 @@ namespace CodeProjet {
 			this->btnMonProfil->TabIndex = 6;
 			this->btnMonProfil->Text = L"Profil";
 			this->btnMonProfil->UseVisualStyleBackColor = true;
+			this->btnMonProfil->Click += gcnew System::EventHandler(this, &statistique::btnMonProfil_Click);
 			// 
 			// btnGestionStatistique
 			// 
@@ -169,6 +173,16 @@ namespace CodeProjet {
 private: System::Void btnGestionStatistique_Click(System::Object^ sender, System::EventArgs^ e) 
 {
 
+}
+private: System::Void btnGestionPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void btnGestionClients_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void btnGEstionCommande_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void btnGestionstock_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void btnMonProfil_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
