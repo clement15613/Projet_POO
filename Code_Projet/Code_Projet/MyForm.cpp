@@ -10,8 +10,7 @@ void Main(array<String^>^ args)
     Application::SetCompatibleTextRenderingDefault(false);
     //WinformCDemo is your project name
     CodeProjet::MyForm form;
-    CodeProjet::statistique formStat;
-    Application::Run(% formStat);
+    Application::Run(% form);
 }
 
 

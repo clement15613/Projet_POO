@@ -330,5 +330,15 @@ private: System::Void chart_topPlusVendu_Click(System::Object^ sender, System::E
 
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
+private: System::Void btnGestionPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void btnGestionClients_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void btnGEstionCommande_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void btnGestionstock_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void btnMonProfil_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
