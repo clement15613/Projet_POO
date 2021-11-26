@@ -1,4 +1,4 @@
-#include "MyForm.h"
+#include "statistique.h"
 
 using namespace System;
 using namespace System::Windows::Forms;
@@ -8,8 +8,6 @@ void Main(array<String^>^ args) {
     Application::EnableVisualStyles();
     Application::SetCompatibleTextRenderingDefault(false);
     //WinformCDemo is your project name
-    CodeProjet::MyForm form;
+    CodeProjet::statistique form;
     Application::Run(% form);
 }
-
-
