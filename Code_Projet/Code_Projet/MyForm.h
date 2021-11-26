@@ -38,7 +38,7 @@ namespace CodeProjet {
 	private: System::Windows::Forms::Label^ label1;
 
 
-		   controleur^ oui;
+		   
 	private: System::Windows::Forms::TextBox^ textBox_user;
 	private: System::Windows::Forms::TextBox^ textBox_MDP;
 
@@ -169,7 +169,7 @@ namespace CodeProjet {
 		}
 #pragma endregion
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-		Control = gcnew controleur;
+	
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 

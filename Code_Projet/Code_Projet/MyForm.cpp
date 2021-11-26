@@ -1,4 +1,4 @@
-#include "MyForm.h"
+/* #include "MyForm.h"
 #include "statistique.h"
 using namespace System;
 using namespace System::Windows::Forms;
@@ -14,3 +14,4 @@ void Main(array<String^>^ args)
 }
 
 
+*/
