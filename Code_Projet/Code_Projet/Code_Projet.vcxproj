@@ -123,12 +123,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Accueil.cpp" />
     <ClCompile Include="Controleur.cpp" />
     <ClCompile Include="g_personnel.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="statistique.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Accueil.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Controleur.h" />
     <ClInclude Include="g_personnel.h">
       <FileType>CppForm</FileType>
@@ -141,8 +145,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+
     <EmbeddedResource Include="g_personnel.resx">
       <DependentUpon>g_personnel.h</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="statistique.resx">
       <DependentUpon>statistique.h</DependentUpon>
