@@ -6,10 +6,9 @@ using namespace System::Windows::Forms;
 using namespace System::Data;
 using namespace System::Drawing;
 
-ref class controleur
+
+ref class Controleur
 {
-public: 
-	String^ gettext(TextBox^);
-	void setlabel(Label^, TextBox^);
+
 };
 
