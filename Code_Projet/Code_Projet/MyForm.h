@@ -1,5 +1,5 @@
 #pragma once
-#include "controleur.h"
+#include "Controleur.h"
 
 namespace CodeProjet {
 
@@ -36,16 +36,19 @@ namespace CodeProjet {
 			}
 		}
 	private: System::Windows::Forms::Label^ label1;
-
-
-		   controleur^ oui;
 	private: System::Windows::Forms::TextBox^ textBox_user;
 	private: System::Windows::Forms::TextBox^ textBox_MDP;
-
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::PictureBox^ pictureBox1;
+
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
+		   Controleur^ monControleur;
+
+
+	private: System::Windows::Forms::Button^ btConnexion;
+	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ button2;
+
 
 
 	protected:
@@ -69,9 +72,10 @@ namespace CodeProjet {
 			this->textBox_MDP = (gcnew System::Windows::Forms::TextBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			this->btConnexion = (gcnew System::Windows::Forms::Button());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -124,14 +128,6 @@ namespace CodeProjet {
 			this->label3->TabIndex = 4;
 			this->label3->Text = L"Mot de passe";
 			// 
-			// pictureBox1
-			// 
-			this->pictureBox1->Location = System::Drawing::Point(-23, -46);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(100, 50);
-			this->pictureBox1->TabIndex = 5;
-			this->pictureBox1->TabStop = false;
-			// 
 			// pictureBox2
 			// 
 			this->pictureBox2->BackColor = System::Drawing::SystemColors::ButtonHighlight;
@@ -144,13 +140,43 @@ namespace CodeProjet {
 			this->pictureBox2->TabStop = false;
 			this->pictureBox2->Click += gcnew System::EventHandler(this, &MyForm::pictureBox2_Click);
 			// 
+			// btConnexion
+			// 
+			this->btConnexion->Location = System::Drawing::Point(171, 317);
+			this->btConnexion->Name = L"btConnexion";
+			this->btConnexion->Size = System::Drawing::Size(174, 32);
+			this->btConnexion->TabIndex = 9;
+			this->btConnexion->Text = L"Connexion";
+			this->btConnexion->UseVisualStyleBackColor = true;
+			this->btConnexion->Click += gcnew System::EventHandler(this, &MyForm::button1_Click_1);
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(108, 268);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->TabIndex = 10;
+			this->button1->Text = L"button1";
+			this->button1->UseVisualStyleBackColor = true;
+			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(379, 267);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(75, 23);
+			this->button2->TabIndex = 11;
+			this->button2->Text = L"button2";
+			this->button2->UseVisualStyleBackColor = true;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(636, 488);
+			this->Controls->Add(this->button2);
+			this->Controls->Add(this->button1);
+			this->Controls->Add(this->btConnexion);
 			this->Controls->Add(this->pictureBox2);
-			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->textBox_MDP);
@@ -161,7 +187,6 @@ namespace CodeProjet {
 			this->Name = L"MyForm";
 			this->Text = L"Authentification";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -169,7 +194,7 @@ namespace CodeProjet {
 		}
 #pragma endregion
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-		Control = gcnew controleur;
+		monControleur = gcnew Controleur;
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 
@@ -184,7 +209,9 @@ namespace CodeProjet {
 private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
-	textBox_MDP->UseSystemPasswordChar = false;
+	monControleur->mdp(textBox_MDP);
+}
+private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
