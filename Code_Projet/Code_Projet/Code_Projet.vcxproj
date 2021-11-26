@@ -117,6 +117,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -124,6 +125,7 @@
   <ItemGroup>
     <ClCompile Include="Accueil.cpp" />
     <ClCompile Include="Controleur.cpp" />
+    <ClCompile Include="g_personnel.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="statistique.cpp" />
   </ItemGroup>
@@ -132,6 +134,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Controleur.h" />
+    <ClInclude Include="g_personnel.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -140,8 +145,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Accueil.resx">
-      <DependentUpon>Accueil.h</DependentUpon>
+
+    <EmbeddedResource Include="g_personnel.resx">
+      <DependentUpon>g_personnel.h</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="statistique.resx">
       <DependentUpon>statistique.h</DependentUpon>
