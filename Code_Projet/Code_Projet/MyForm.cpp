@@ -1,5 +1,6 @@
 
-#include "MyForm.h"
+ #include "MyForm.h"
+
 #include "statistique.h"
 #include "Accueil.h"
 #include "g_personnel.h"
@@ -13,8 +14,10 @@ void Main(array<String^>^ args)
     Application::SetCompatibleTextRenderingDefault(false);
     //WinformCDemo is your project name
     CodeProjet::MyForm form;
+
     CodeProjet::Accueil Accueil;
     CodeProjet::g_personnel g_pers;
    // Application::Run(% form);
     Application::Run(% g_pers);
 }
+
