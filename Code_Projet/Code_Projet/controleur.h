@@ -15,6 +15,7 @@ private:
 	bool Invisible = false;
 public : 
 	void mdp(TextBox^);
-	void afficher_panel(Panel^);
-	void masquer_panel(Panel^);
+
+	void afficher_datagridView(DataGridView^);
 };
+
