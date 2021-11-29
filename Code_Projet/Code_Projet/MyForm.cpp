@@ -1,4 +1,4 @@
-#include "MyForm.h"
+/* #include "MyForm.h"
 #include "statistique.h"
 #include "Accueil.h"
 using namespace System;
@@ -17,3 +17,4 @@ void Main(array<String^>^ args)
 }
 
 
+*/
