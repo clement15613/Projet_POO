@@ -130,6 +130,7 @@
     <ClCompile Include="g_personnel.cpp" />
     <ClCompile Include="MapPersonnel.cpp" />
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="Personnel.cpp" />
     <ClCompile Include="statistique.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -146,18 +147,22 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Personnel.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="statistique.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-
     <EmbeddedResource Include="Accueil.resx">
       <DependentUpon>Accueil.h</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="g_personnel.resx">
       <DependentUpon>g_personnel.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personnel.resx">
+      <DependentUpon>Personnel.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="statistique.resx">
       <DependentUpon>statistique.h</DependentUpon>
