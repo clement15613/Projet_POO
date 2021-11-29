@@ -125,6 +125,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Accueil.cpp" />
+    <ClCompile Include="Connexion.cpp" />
     <ClCompile Include="Controleur.cpp" />
     <ClCompile Include="g_personnel.cpp" />
     <ClCompile Include="MyForm.cpp" />
@@ -134,6 +135,7 @@
     <ClInclude Include="Accueil.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Connexion.h" />
     <ClInclude Include="Controleur.h" />
     <ClInclude Include="g_personnel.h">
       <FileType>CppForm</FileType>
@@ -141,15 +143,14 @@
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="pch.h" />
     <ClInclude Include="statistique.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-
     <EmbeddedResource Include="g_personnel.resx">
       <DependentUpon>g_personnel.h</DependentUpon>
-
     </EmbeddedResource>
     <EmbeddedResource Include="statistique.resx">
       <DependentUpon>statistique.h</DependentUpon>
