@@ -175,6 +175,7 @@ namespace CodeProjet {
 			// 
 			this->btnGestionClients->Anchor = System::Windows::Forms::AnchorStyles::Top;
 			this->btnGestionClients->AutoSize = true;
+			this->btnGestionClients->CausesValidation = false;
 			this->btnGestionClients->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnGestionClients->Location = System::Drawing::Point(588, 32);
 			this->btnGestionClients->Name = L"btnGestionClients";
@@ -188,6 +189,7 @@ namespace CodeProjet {
 			// 
 			this->btnGEstionCommande->Anchor = System::Windows::Forms::AnchorStyles::Top;
 			this->btnGEstionCommande->AutoSize = true;
+			this->btnGEstionCommande->CausesValidation = false;
 			this->btnGEstionCommande->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnGEstionCommande->Location = System::Drawing::Point(761, 32);
 			this->btnGEstionCommande->Name = L"btnGEstionCommande";
@@ -201,6 +203,7 @@ namespace CodeProjet {
 			// 
 			this->btnGestionPersonnel->Anchor = System::Windows::Forms::AnchorStyles::Top;
 			this->btnGestionPersonnel->AutoSize = true;
+			this->btnGestionPersonnel->CausesValidation = false;
 			this->btnGestionPersonnel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnGestionPersonnel->Location = System::Drawing::Point(415, 32);
 			this->btnGestionPersonnel->Name = L"btnGestionPersonnel";
@@ -214,6 +217,7 @@ namespace CodeProjet {
 			// 
 			this->btnGestionstock->Anchor = System::Windows::Forms::AnchorStyles::Top;
 			this->btnGestionstock->AutoSize = true;
+			this->btnGestionstock->CausesValidation = false;
 			this->btnGestionstock->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnGestionstock->Location = System::Drawing::Point(934, 32);
 			this->btnGestionstock->Name = L"btnGestionstock";
@@ -227,6 +231,7 @@ namespace CodeProjet {
 			// 
 			this->btnMonProfil->Anchor = System::Windows::Forms::AnchorStyles::Top;
 			this->btnMonProfil->AutoSize = true;
+			this->btnMonProfil->CausesValidation = false;
 			this->btnMonProfil->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnMonProfil->Location = System::Drawing::Point(1280, 32);
 			this->btnMonProfil->Name = L"btnMonProfil";
@@ -240,6 +245,7 @@ namespace CodeProjet {
 			// 
 			this->btnGestionStatistique->Anchor = System::Windows::Forms::AnchorStyles::Top;
 			this->btnGestionStatistique->AutoSize = true;
+			this->btnGestionStatistique->CausesValidation = false;
 			this->btnGestionStatistique->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnGestionStatistique->Location = System::Drawing::Point(1107, 32);
 			this->btnGestionStatistique->Name = L"btnGestionStatistique";

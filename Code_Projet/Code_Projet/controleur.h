@@ -9,6 +9,9 @@ using namespace System::Drawing;
 
 ref class Controleur
 {
-
+private: 
+	bool state = true;
+public : 
+	void mdp(TextBox^);
 };
 
