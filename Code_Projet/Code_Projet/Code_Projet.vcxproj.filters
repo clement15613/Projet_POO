@@ -18,9 +18,31 @@
     <ClCompile Include="MyForm.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="statistique.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Controleur.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+
+    <ClCompile Include="g_personnel.cpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="statistique.h">
+
+
+
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+
+    <ClInclude Include="g_personnel.h">
+
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>

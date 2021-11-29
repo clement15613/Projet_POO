@@ -117,17 +117,48 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Accueil.cpp" />
+    <ClCompile Include="Controleur.cpp" />
+    <ClCompile Include="g_personnel.cpp" />
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="statistique.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Accueil.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Controleur.h" />
+    <ClInclude Include="g_personnel.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="statistique.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+
+    <EmbeddedResource Include="g_personnel.resx">
+      <DependentUpon>g_personnel.h</DependentUpon>
+
+    </EmbeddedResource>
+    <EmbeddedResource Include="statistique.resx">
+      <DependentUpon>statistique.h</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MyForm.resx">
+      <DependentUpon>MyForm.h</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
