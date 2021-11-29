@@ -90,6 +90,8 @@ namespace CodeProjet {
 	private: System::Windows::Forms::Panel^ panel8;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label_valeur_stock_precedent;
+	private: System::Windows::Forms::DataVisualization::Charting::Chart^ chart1;
+	private: System::Windows::Forms::Panel^ panel9;
 
 
 
@@ -122,6 +124,9 @@ namespace CodeProjet {
 			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
 			System::Windows::Forms::DataVisualization::Charting::Legend^ legend2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea3 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^ legend3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			this->btnGestionClients = (gcnew System::Windows::Forms::Button());
 			this->btnGEstionCommande = (gcnew System::Windows::Forms::Button());
 			this->btnGestionPersonnel = (gcnew System::Windows::Forms::Button());
@@ -147,6 +152,9 @@ namespace CodeProjet {
 			this->label_ValeurAchat = (gcnew System::Windows::Forms::Label());
 			this->panel6 = (gcnew System::Windows::Forms::Panel());
 			this->panel7 = (gcnew System::Windows::Forms::Panel());
+			this->panel8 = (gcnew System::Windows::Forms::Panel());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label_valeur_stock_precedent = (gcnew System::Windows::Forms::Label());
 			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
 			this->label_demarqueInconnu = (gcnew System::Windows::Forms::Label());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
@@ -155,9 +163,8 @@ namespace CodeProjet {
 			this->label_margeCommerciale = (gcnew System::Windows::Forms::Label());
 			this->label_TVA = (gcnew System::Windows::Forms::Label());
 			this->comboBoxTVA = (gcnew System::Windows::Forms::ComboBox());
-			this->panel8 = (gcnew System::Windows::Forms::Panel());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label_valeur_stock_precedent = (gcnew System::Windows::Forms::Label());
+			this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
+			this->panel9 = (gcnew System::Windows::Forms::Panel());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart_topPlusVendu))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart_topMoinsVendu))->BeginInit();
@@ -169,6 +176,8 @@ namespace CodeProjet {
 			this->panel6->SuspendLayout();
 			this->panel7->SuspendLayout();
 			this->panel8->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
+			this->panel9->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// btnGestionClients
@@ -389,7 +398,7 @@ namespace CodeProjet {
 			this->panel4->Controls->Add(this->label_valeur_stock_actuel);
 			this->panel4->Location = System::Drawing::Point(17, 181);
 			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(233, 88);
+			this->panel4->Size = System::Drawing::Size(233, 85);
 			this->panel4->TabIndex = 15;
 			// 
 			// label_prix_stock
@@ -468,8 +477,39 @@ namespace CodeProjet {
 			this->panel7->Controls->Add(this->comboBoxTVA);
 			this->panel7->Location = System::Drawing::Point(525, 153);
 			this->panel7->Name = L"panel7";
-			this->panel7->Size = System::Drawing::Size(747, 314);
+			this->panel7->Size = System::Drawing::Size(747, 269);
 			this->panel7->TabIndex = 18;
+			// 
+			// panel8
+			// 
+			this->panel8->Controls->Add(this->label1);
+			this->panel8->Controls->Add(this->label_valeur_stock_precedent);
+			this->panel8->Location = System::Drawing::Point(351, 181);
+			this->panel8->Name = L"panel8";
+			this->panel8->Size = System::Drawing::Size(245, 85);
+			this->panel8->TabIndex = 16;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(120, 52);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(72, 25);
+			this->label1->TabIndex = 13;
+			this->label1->Text = L"99999";
+			// 
+			// label_valeur_stock_precedent
+			// 
+			this->label_valeur_stock_precedent->AutoSize = true;
+			this->label_valeur_stock_precedent->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label_valeur_stock_precedent->Location = System::Drawing::Point(21, 12);
+			this->label_valeur_stock_precedent->Name = L"label_valeur_stock_precedent";
+			this->label_valeur_stock_precedent->Size = System::Drawing::Size(212, 40);
+			this->label_valeur_stock_precedent->TabIndex = 13;
+			this->label_valeur_stock_precedent->Text = L"Valeur commerciale du stock\r\n actuel";
 			// 
 			// comboBox2
 			// 
@@ -555,42 +595,36 @@ namespace CodeProjet {
 			this->comboBoxTVA->TabIndex = 0;
 			this->comboBoxTVA->Text = L"Aucun";
 			// 
-			// panel8
+			// chart1
 			// 
-			this->panel8->Controls->Add(this->label1);
-			this->panel8->Controls->Add(this->label_valeur_stock_precedent);
-			this->panel8->Location = System::Drawing::Point(348, 181);
-			this->panel8->Name = L"panel8";
-			this->panel8->Size = System::Drawing::Size(248, 103);
-			this->panel8->TabIndex = 16;
+			chartArea3->Name = L"ChartArea1";
+			this->chart1->ChartAreas->Add(chartArea3);
+			legend3->Name = L"Legend1";
+			this->chart1->Legends->Add(legend3);
+			this->chart1->Location = System::Drawing::Point(3, 25);
+			this->chart1->Name = L"chart1";
+			series3->ChartArea = L"ChartArea1";
+			series3->Legend = L"Legend1";
+			series3->Name = L"Series1";
+			this->chart1->Series->Add(series3);
+			this->chart1->Size = System::Drawing::Size(854, 464);
+			this->chart1->TabIndex = 19;
+			this->chart1->Text = L"chart1";
 			// 
-			// label1
+			// panel9
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(120, 52);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(72, 25);
-			this->label1->TabIndex = 13;
-			this->label1->Text = L"99999";
-			// 
-			// label_valeur_stock_precedent
-			// 
-			this->label_valeur_stock_precedent->AutoSize = true;
-			this->label_valeur_stock_precedent->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label_valeur_stock_precedent->Location = System::Drawing::Point(21, 12);
-			this->label_valeur_stock_precedent->Name = L"label_valeur_stock_precedent";
-			this->label_valeur_stock_precedent->Size = System::Drawing::Size(212, 40);
-			this->label_valeur_stock_precedent->TabIndex = 13;
-			this->label_valeur_stock_precedent->Text = L"Valeur commerciale du stock\r\n actuel";
+			this->panel9->Controls->Add(this->chart1);
+			this->panel9->Location = System::Drawing::Point(415, 428);
+			this->panel9->Name = L"panel9";
+			this->panel9->Size = System::Drawing::Size(857, 492);
+			this->panel9->TabIndex = 20;
 			// 
 			// statistique
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1904, 1041);
+			this->Controls->Add(this->panel9);
 			this->Controls->Add(this->panel7);
 			this->Controls->Add(this->panel6);
 			this->Controls->Add(this->panel5);
@@ -601,6 +635,7 @@ namespace CodeProjet {
 			this->Controls->Add(this->panel1);
 			this->Name = L"statistique";
 			this->Text = L"statistique";
+			this->Load += gcnew System::EventHandler(this, &statistique::statistique_Load);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart_topPlusVendu))->EndInit();
@@ -620,6 +655,8 @@ namespace CodeProjet {
 			this->panel7->PerformLayout();
 			this->panel8->ResumeLayout(false);
 			this->panel8->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->EndInit();
+			this->panel9->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -643,8 +680,7 @@ private: System::Void btnMonProfil_Click(System::Object^ sender, System::EventAr
 
 private: System::Void chart_topPlusVendu_Click(System::Object^ sender, System::EventArgs^ e) {
 }
-
-
-
+private: System::Void statistique_Load(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
