@@ -7,6 +7,7 @@ void Controleur::mdp(TextBox^ text) {
 	this->state = !state;
 	text->UseSystemPasswordChar = this -> state;
 }
+
 void Controleur::afficher_datagridView(DataGridView^ grid)
 {
 	Connexion co;
