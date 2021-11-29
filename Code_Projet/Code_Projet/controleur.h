@@ -11,7 +11,11 @@ ref class Controleur
 {
 private: 
 	bool state = true;
+	bool Visible = true;
+	bool Invisible = false;
 public : 
 	void mdp(TextBox^);
+
+	void afficher_datagridView(DataGridView^);
 };
 
