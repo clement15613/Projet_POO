@@ -24,7 +24,14 @@
     <ClCompile Include="Controleur.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="Accueil.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
     <ClCompile Include="g_personnel.cpp">
+
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="MapPersonnel.cpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClCompile>
     <ClCompile Include="Accueil.cpp">
@@ -48,6 +55,10 @@
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="Controleur.h">
+
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="MapPersonnel.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="Connexion.h">

@@ -1,0 +1,242 @@
+			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
+			this->personnelToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->afficherLePersonnelToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->ajouterUnPersonnelToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->modifierUnPersonnelToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->supprimerUnPersonnelToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->clientToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->afficherLesClientsToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->ajouterUnClientToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->modifierUnClientToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->supprimerUnClientToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->commandeToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->afficherLesCommandesToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->ajouterUneCommandeToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->modifierUneCommandeToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->supprimerUneCommandeToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->stockToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->afficherLeStockToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->ajouterUnArticleToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->modifierUnArticleToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->supprimerUnArticleToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->statistiqueToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+this->menuStrip1->SuspendLayout();
+
+
+// 
+			// menuStrip1
+			// 
+			this->menuStrip1->BackColor = System::Drawing::SystemColors::AppWorkspace;
+			this->menuStrip1->Dock = System::Windows::Forms::DockStyle::None;
+			this->menuStrip1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 18, System::Drawing::FontStyle::Bold));
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {
+				this->personnelToolStripMenuItem,
+					this->clientToolStripMenuItem, this->commandeToolStripMenuItem, this->stockToolStripMenuItem, this->statistiqueToolStripMenuItem
+			});
+			this->menuStrip1->LayoutStyle = System::Windows::Forms::ToolStripLayoutStyle::HorizontalStackWithOverflow;
+			this->menuStrip1->Location = System::Drawing::Point(334, 18);
+			this->menuStrip1->MdiWindowListItem = this->clientToolStripMenuItem;
+			this->menuStrip1->Name = L"menuStrip1";
+			this->menuStrip1->RenderMode = System::Windows::Forms::ToolStripRenderMode::Professional;
+			this->menuStrip1->RightToLeft = System::Windows::Forms::RightToLeft::No;
+			this->menuStrip1->ShowItemToolTips = true;
+			this->menuStrip1->Size = System::Drawing::Size(633, 40);
+			this->menuStrip1->TabIndex = 4;
+			this->menuStrip1->Text = L"barCommande";
+			// 
+			// personnelToolStripMenuItem
+			// 
+			this->personnelToolStripMenuItem->BackColor = System::Drawing::SystemColors::AppWorkspace;
+			this->personnelToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
+				this->afficherLePersonnelToolStripMenuItem,
+					this->ajouterUnPersonnelToolStripMenuItem, this->modifierUnPersonnelToolStripMenuItem, this->supprimerUnPersonnelToolStripMenuItem
+			});
+			this->personnelToolStripMenuItem->Name = L"personnelToolStripMenuItem";
+			this->personnelToolStripMenuItem->Size = System::Drawing::Size(140, 36);
+			this->personnelToolStripMenuItem->Text = L"Personnel";
+			// 
+			// afficherLePersonnelToolStripMenuItem
+			// 
+			this->afficherLePersonnelToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
+			this->afficherLePersonnelToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->afficherLePersonnelToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"afficherLePersonnelToolStripMenuItem.Image")));
+			this->afficherLePersonnelToolStripMenuItem->Name = L"afficherLePersonnelToolStripMenuItem";
+			this->afficherLePersonnelToolStripMenuItem->Size = System::Drawing::Size(254, 26);
+			this->afficherLePersonnelToolStripMenuItem->Text = L"Afficher le personnel";
+			// 
+			// ajouterUnPersonnelToolStripMenuItem
+			// 
+			this->ajouterUnPersonnelToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
+			this->ajouterUnPersonnelToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->ajouterUnPersonnelToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ajouterUnPersonnelToolStripMenuItem.Image")));
+			this->ajouterUnPersonnelToolStripMenuItem->Name = L"ajouterUnPersonnelToolStripMenuItem";
+			this->ajouterUnPersonnelToolStripMenuItem->Size = System::Drawing::Size(254, 26);
+			this->ajouterUnPersonnelToolStripMenuItem->Text = L"Ajouter un personnel";
+			// 
+			// modifierUnPersonnelToolStripMenuItem
+			// 
+			this->modifierUnPersonnelToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
+			this->modifierUnPersonnelToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->modifierUnPersonnelToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"modifierUnPersonnelToolStripMenuItem.Image")));
+			this->modifierUnPersonnelToolStripMenuItem->Name = L"modifierUnPersonnelToolStripMenuItem";
+			this->modifierUnPersonnelToolStripMenuItem->Size = System::Drawing::Size(254, 26);
+			this->modifierUnPersonnelToolStripMenuItem->Text = L"Modifier un personnel";
+			// 
+			// supprimerUnPersonnelToolStripMenuItem
+			// 
+			this->supprimerUnPersonnelToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
+			this->supprimerUnPersonnelToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->supprimerUnPersonnelToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"supprimerUnPersonnelToolStripMenuItem.Image")));
+			this->supprimerUnPersonnelToolStripMenuItem->Name = L"supprimerUnPersonnelToolStripMenuItem";
+			this->supprimerUnPersonnelToolStripMenuItem->Size = System::Drawing::Size(254, 26);
+			this->supprimerUnPersonnelToolStripMenuItem->Text = L"Supprimer un personnel";
+			// 
+			// clientToolStripMenuItem
+			// 
+			this->clientToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
+				this->afficherLesClientsToolStripMenuItem,
+					this->ajouterUnClientToolStripMenuItem, this->modifierUnClientToolStripMenuItem, this->supprimerUnClientToolStripMenuItem
+			});
+			this->clientToolStripMenuItem->Name = L"clientToolStripMenuItem";
+			this->clientToolStripMenuItem->Size = System::Drawing::Size(93, 36);
+			this->clientToolStripMenuItem->Text = L"Client";
+			// 
+			// afficherLesClientsToolStripMenuItem
+			// 
+			this->afficherLesClientsToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
+			this->afficherLesClientsToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->afficherLesClientsToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"afficherLesClientsToolStripMenuItem.Image")));
+			this->afficherLesClientsToolStripMenuItem->Name = L"afficherLesClientsToolStripMenuItem";
+			this->afficherLesClientsToolStripMenuItem->Size = System::Drawing::Size(222, 26);
+			this->afficherLesClientsToolStripMenuItem->Text = L"Afficher les clients";
+			// 
+			// ajouterUnClientToolStripMenuItem
+			// 
+			this->ajouterUnClientToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
+			this->ajouterUnClientToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->ajouterUnClientToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ajouterUnClientToolStripMenuItem.Image")));
+			this->ajouterUnClientToolStripMenuItem->Name = L"ajouterUnClientToolStripMenuItem";
+			this->ajouterUnClientToolStripMenuItem->Size = System::Drawing::Size(222, 26);
+			this->ajouterUnClientToolStripMenuItem->Text = L"Ajouter un client";
+			// 
+			// modifierUnClientToolStripMenuItem
+			// 
+			this->modifierUnClientToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
+			this->modifierUnClientToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->modifierUnClientToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"modifierUnClientToolStripMenuItem.Image")));
+			this->modifierUnClientToolStripMenuItem->Name = L"modifierUnClientToolStripMenuItem";
+			this->modifierUnClientToolStripMenuItem->Size = System::Drawing::Size(222, 26);
+			this->modifierUnClientToolStripMenuItem->Text = L"Modifier un client";
+			// 
+			// supprimerUnClientToolStripMenuItem
+			// 
+			this->supprimerUnClientToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
+			this->supprimerUnClientToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->supprimerUnClientToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"supprimerUnClientToolStripMenuItem.Image")));
+			this->supprimerUnClientToolStripMenuItem->Name = L"supprimerUnClientToolStripMenuItem";
+			this->supprimerUnClientToolStripMenuItem->Size = System::Drawing::Size(222, 26);
+			this->supprimerUnClientToolStripMenuItem->Text = L"Supprimer un client";
+			// 
+			// commandeToolStripMenuItem
+			// 
+			this->commandeToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
+				this->afficherLesCommandesToolStripMenuItem,
+					this->ajouterUneCommandeToolStripMenuItem, this->modifierUneCommandeToolStripMenuItem, this->supprimerUneCommandeToolStripMenuItem
+			});
+			this->commandeToolStripMenuItem->Name = L"commandeToolStripMenuItem";
+			this->commandeToolStripMenuItem->Size = System::Drawing::Size(157, 36);
+			this->commandeToolStripMenuItem->Text = L"Commande";
+			// 
+			// afficherLesCommandesToolStripMenuItem
+			// 
+			this->afficherLesCommandesToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
+			this->afficherLesCommandesToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->afficherLesCommandesToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"afficherLesCommandesToolStripMenuItem.Image")));
+			this->afficherLesCommandesToolStripMenuItem->Name = L"afficherLesCommandesToolStripMenuItem";
+			this->afficherLesCommandesToolStripMenuItem->Size = System::Drawing::Size(271, 26);
+			this->afficherLesCommandesToolStripMenuItem->Text = L"Afficher les commandes";
+			// 
+			// ajouterUneCommandeToolStripMenuItem
+			// 
+			this->ajouterUneCommandeToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
+			this->ajouterUneCommandeToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->ajouterUneCommandeToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ajouterUneCommandeToolStripMenuItem.Image")));
+			this->ajouterUneCommandeToolStripMenuItem->Name = L"ajouterUneCommandeToolStripMenuItem";
+			this->ajouterUneCommandeToolStripMenuItem->Size = System::Drawing::Size(271, 26);
+			this->ajouterUneCommandeToolStripMenuItem->Text = L"Ajouter une commande";
+			// 
+			// modifierUneCommandeToolStripMenuItem
+			// 
+			this->modifierUneCommandeToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
+			this->modifierUneCommandeToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->modifierUneCommandeToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"modifierUneCommandeToolStripMenuItem.Image")));
+			this->modifierUneCommandeToolStripMenuItem->Name = L"modifierUneCommandeToolStripMenuItem";
+			this->modifierUneCommandeToolStripMenuItem->Size = System::Drawing::Size(271, 26);
+			this->modifierUneCommandeToolStripMenuItem->Text = L"Modifier une commande";
+			// 
+			// supprimerUneCommandeToolStripMenuItem
+			// 
+			this->supprimerUneCommandeToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
+			this->supprimerUneCommandeToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->supprimerUneCommandeToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"supprimerUneCommandeToolStripMenuItem.Image")));
+			this->supprimerUneCommandeToolStripMenuItem->Name = L"supprimerUneCommandeToolStripMenuItem";
+			this->supprimerUneCommandeToolStripMenuItem->Size = System::Drawing::Size(271, 26);
+			this->supprimerUneCommandeToolStripMenuItem->Text = L"Supprimer une commande";
+			// 
+			// stockToolStripMenuItem
+			// 
+			this->stockToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
+				this->afficherLeStockToolStripMenuItem,
+					this->ajouterUnArticleToolStripMenuItem, this->modifierUnArticleToolStripMenuItem, this->supprimerUnArticleToolStripMenuItem
+			});
+			this->stockToolStripMenuItem->Name = L"stockToolStripMenuItem";
+			this->stockToolStripMenuItem->Size = System::Drawing::Size(88, 36);
+			this->stockToolStripMenuItem->Text = L"Stock";
+			// 
+			// afficherLeStockToolStripMenuItem
+			// 
+			this->afficherLeStockToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
+			this->afficherLeStockToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->afficherLeStockToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"afficherLeStockToolStripMenuItem.Image")));
+			this->afficherLeStockToolStripMenuItem->Name = L"afficherLeStockToolStripMenuItem";
+			this->afficherLeStockToolStripMenuItem->Size = System::Drawing::Size(227, 26);
+			this->afficherLeStockToolStripMenuItem->Text = L"Afficher le stock";
+			// 
+			// ajouterUnArticleToolStripMenuItem
+			// 
+			this->ajouterUnArticleToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
+			this->ajouterUnArticleToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->ajouterUnArticleToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ajouterUnArticleToolStripMenuItem.Image")));
+			this->ajouterUnArticleToolStripMenuItem->Name = L"ajouterUnArticleToolStripMenuItem";
+			this->ajouterUnArticleToolStripMenuItem->Size = System::Drawing::Size(227, 26);
+			this->ajouterUnArticleToolStripMenuItem->Text = L"Ajouter un article";
+			// 
+			// modifierUnArticleToolStripMenuItem
+			// 
+			this->modifierUnArticleToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
+			this->modifierUnArticleToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->modifierUnArticleToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"modifierUnArticleToolStripMenuItem.Image")));
+			this->modifierUnArticleToolStripMenuItem->Name = L"modifierUnArticleToolStripMenuItem";
+			this->modifierUnArticleToolStripMenuItem->Size = System::Drawing::Size(227, 26);
+			this->modifierUnArticleToolStripMenuItem->Text = L"Modifier un article";
+			// 
+			// supprimerUnArticleToolStripMenuItem
+			// 
+			this->supprimerUnArticleToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
+			this->supprimerUnArticleToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->supprimerUnArticleToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"supprimerUnArticleToolStripMenuItem.Image")));
+			this->supprimerUnArticleToolStripMenuItem->Name = L"supprimerUnArticleToolStripMenuItem";
+			this->supprimerUnArticleToolStripMenuItem->Size = System::Drawing::Size(227, 26);
+			this->supprimerUnArticleToolStripMenuItem->Text = L"Supprimer un article";
+			// 
+			// statistiqueToolStripMenuItem
+			// 
+			this->statistiqueToolStripMenuItem->Name = L"statistiqueToolStripMenuItem";
+			this->statistiqueToolStripMenuItem->Size = System::Drawing::Size(147, 36);
+			this->statistiqueToolStripMenuItem->Text = L"Statistique";
+
+
+this->Controls->Add(this->menuStrip1);
+			this->MainMenuStrip = this->menuStrip1;
+			this->menuStrip1->ResumeLayout(false);
+			this->menuStrip1->PerformLayout();

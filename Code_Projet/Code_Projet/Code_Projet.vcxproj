@@ -128,6 +128,7 @@
     <ClCompile Include="Connexion.cpp" />
     <ClCompile Include="Controleur.cpp" />
     <ClCompile Include="g_personnel.cpp" />
+    <ClCompile Include="MapPersonnel.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="statistique.cpp" />
   </ItemGroup>
@@ -140,6 +141,7 @@
     <ClInclude Include="g_personnel.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="MapPersonnel.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -149,6 +151,11 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+
+    <EmbeddedResource Include="Accueil.resx">
+      <DependentUpon>Accueil.h</DependentUpon>
+    </EmbeddedResource>
+
     <EmbeddedResource Include="g_personnel.resx">
       <DependentUpon>g_personnel.h</DependentUpon>
     </EmbeddedResource>
