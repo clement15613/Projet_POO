@@ -146,10 +146,11 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-
+    <EmbeddedResource Include="Accueil.resx">
+      <DependentUpon>Accueil.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="g_personnel.resx">
       <DependentUpon>g_personnel.h</DependentUpon>
-
     </EmbeddedResource>
     <EmbeddedResource Include="statistique.resx">
       <DependentUpon>statistique.h</DependentUpon>
