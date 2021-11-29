@@ -38,16 +38,11 @@ namespace CodeProjet {
 		}
 	private: System::Windows::Forms::GroupBox^ groupBox_modif_pers;
 
-		   
-	protected:
-		
+
 	protected:
 
+	protected:
 
-
-
-
-	private: System::Windows::Forms::Label^ Nom_personnel_creer;
 
 
 
@@ -58,17 +53,24 @@ namespace CodeProjet {
 
 
 
+	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Button^ btnGestionstock;
+	private: System::Windows::Forms::Button^ btnGEstionCommande;
+	private: System::Windows::Forms::Button^ btnMonProfil;
+	private: System::Windows::Forms::Button^ btnGestionClients;
+	private: System::Windows::Forms::Button^ btnGestionStatistique;
+	private: System::Windows::Forms::Button^ btnGestionPersonnel;
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::Button^ btn_cree_pers;
 
-		//Controleur^ GB1;
+		   //Controleur^ GB1;
 	private: System::Windows::Forms::Button^ btn_sup_pers;
 
 	private: System::Windows::Forms::Button^ btn_aff_pers;
 
 	private: System::Windows::Forms::Button^ btn_modif_pers;
 
-		//Controleur^ GB2;
+		   //Controleur^ GB2;
 
 
 
@@ -88,9 +90,9 @@ namespace CodeProjet {
 
 
 
-		   //Controleur^ GB1;
+		  //Controleur^ GB1;
 
-		  // Controleur^ GB1;
+		 // Controleur^ GB1;
 
 
 
@@ -116,32 +118,27 @@ namespace CodeProjet {
 
 
 	private: System::Windows::Forms::Label^ label33;
-public: System::Windows::Forms::Panel^ panel_aff;
-private:
-private: System::Windows::Forms::TextBox^ textBox8;
-public:
-private: System::Windows::Forms::TextBox^ textBox6;
-private: System::Windows::Forms::TextBox^ textBox7;
-private: System::Windows::Forms::TextBox^ textBox9;
-private: System::Windows::Forms::TextBox^ textBox10;
-private: System::Windows::Forms::Label^ label5;
-private: System::Windows::Forms::Label^ label6;
-private: System::Windows::Forms::Label^ label7;
-private: System::Windows::Forms::Label^ label8;
-private: System::Windows::Forms::Label^ label9;
-private: System::Windows::Forms::Label^ label14;
-public: System::Windows::Forms::Panel^ panel_sup;
-private:
-
-private:
-
-public:
-private: System::Windows::Forms::Label^ label10;
-
-
-
+	public: System::Windows::Forms::Panel^ panel_aff;
+	private:
+	private: System::Windows::Forms::TextBox^ textBox8;
+	public:
+	private: System::Windows::Forms::TextBox^ textBox6;
+	private: System::Windows::Forms::TextBox^ textBox7;
+	private: System::Windows::Forms::TextBox^ textBox9;
+	private: System::Windows::Forms::TextBox^ textBox10;
+	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::Label^ label6;
+	private: System::Windows::Forms::Label^ label7;
+	private: System::Windows::Forms::Label^ label8;
+	private: System::Windows::Forms::Label^ label9;
+	private: System::Windows::Forms::Label^ label14;
+	public: System::Windows::Forms::Panel^ panel_sup;
+	private:
 
+	private:
 
+	public:
+	private: System::Windows::Forms::Label^ label10;
 
 
 
@@ -149,26 +146,26 @@ private: System::Windows::Forms::Label^ label10;
 
 
 
-private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel2;
-private: System::Windows::Forms::Label^ label30;
-private: System::Windows::Forms::TextBox^ textBox21;
-private: System::Windows::Forms::Label^ label31;
-private: System::Windows::Forms::TextBox^ textBox22;
-private: System::Windows::Forms::TextBox^ textBox24;
-private: System::Windows::Forms::Label^ label32;
-private: System::Windows::Forms::TextBox^ textBox25;
-private: System::Windows::Forms::Label^ label42;
-private: System::Windows::Forms::Label^ label38;
-private: System::Windows::Forms::Label^ label41;
-private: System::Windows::Forms::TextBox^ textBox30;
-private: System::Windows::Forms::Label^ label40;
-private: System::Windows::Forms::Label^ label39;
-private: System::Windows::Forms::DateTimePicker^ dateTimePicker5;
 
 
 
 
 
+	private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel2;
+	private: System::Windows::Forms::Label^ label30;
+	private: System::Windows::Forms::TextBox^ textBox21;
+	private: System::Windows::Forms::Label^ label31;
+	private: System::Windows::Forms::TextBox^ textBox22;
+	private: System::Windows::Forms::TextBox^ textBox24;
+	private: System::Windows::Forms::Label^ label32;
+	private: System::Windows::Forms::TextBox^ textBox25;
+	private: System::Windows::Forms::Label^ label42;
+	private: System::Windows::Forms::Label^ label38;
+	private: System::Windows::Forms::Label^ label41;
+	private: System::Windows::Forms::TextBox^ textBox30;
+	private: System::Windows::Forms::Label^ label40;
+	private: System::Windows::Forms::Label^ label39;
+	private: System::Windows::Forms::DateTimePicker^ dateTimePicker5;
 
 
 
@@ -176,154 +173,128 @@ private: System::Windows::Forms::DateTimePicker^ dateTimePicker5;
 
 
 
-private: System::Windows::Forms::Panel^ panel3;
-private: System::Windows::Forms::Label^ label44;
-private: System::Windows::Forms::TextBox^ textBox1;
-private: System::Windows::Forms::Label^ label1;
-private: System::Windows::Forms::TextBox^ textBox2;
-private: System::Windows::Forms::TextBox^ textBox3;
-private: System::Windows::Forms::Label^ label3;
-private: System::Windows::Forms::TextBox^ textBox4;
-private: System::Windows::Forms::Label^ label4;
-private: System::Windows::Forms::TextBox^ textBox5;
-private: System::Windows::Forms::Label^ label24;
-private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
-private: System::Windows::Forms::Label^ label25;
-private: System::Windows::Forms::Label^ label26;
-private: System::Windows::Forms::Label^ label43;
-private: System::Windows::Forms::ComboBox^ comboBox1;
-private: System::Windows::Forms::Label^ label28;
-private: System::Windows::Forms::Button^ button5;
-private: System::Windows::Forms::Button^ button4;
-private: System::Windows::Forms::Label^ label2;
-private: System::Windows::Forms::ComboBox^ comboBox3;
-private: System::Windows::Forms::Label^ label11;
-private: System::Windows::Forms::Button^ button2;
-private: System::Windows::Forms::Panel^ panel4;
-private: System::Windows::Forms::Button^ button1;
-private: System::Windows::Forms::Label^ label12;
-private: System::Windows::Forms::TextBox^ textBox11;
-private: System::Windows::Forms::Label^ label13;
-private: System::Windows::Forms::TextBox^ textBox12;
-private: System::Windows::Forms::TextBox^ textBox13;
-private: System::Windows::Forms::Label^ label15;
-private: System::Windows::Forms::TextBox^ textBox14;
-private: System::Windows::Forms::Label^ label16;
-private: System::Windows::Forms::TextBox^ textBox15;
-private: System::Windows::Forms::Label^ label34;
-private: System::Windows::Forms::DateTimePicker^ dateTimePicker2;
-private: System::Windows::Forms::Label^ label35;
-private: System::Windows::Forms::Label^ label36;
-private: System::Windows::Forms::Button^ button6;
-private: System::Windows::Forms::Label^ label27;
-private: System::Windows::Forms::ComboBox^ comboBox2;
-private: System::Windows::Forms::Label^ label29;
-private: System::Windows::Forms::Label^ label17;
-private: System::Windows::Forms::Label^ label18;
-private: System::Windows::Forms::DateTimePicker^ dateTimePicker4;
-private: System::Windows::Forms::Label^ label19;
-private: System::Windows::Forms::TextBox^ textBox20;
-private: System::Windows::Forms::Label^ label20;
-private: System::Windows::Forms::TextBox^ textBox19;
-private: System::Windows::Forms::Label^ label21;
-private: System::Windows::Forms::TextBox^ textBox18;
-private: System::Windows::Forms::Label^ label23;
-private: System::Windows::Forms::TextBox^ textBox17;
-private: System::Windows::Forms::Label^ label22;
-private: System::Windows::Forms::TextBox^ textBox16;
-public: System::Windows::Forms::Panel^ panel_cree;
-private:
-private: System::Windows::Forms::Button^ button3;
-public:
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
+	private: System::Windows::Forms::Panel^ panel3;
+	private: System::Windows::Forms::Label^ label44;
 	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::TextBox^ textBox5;
-	private: System::Windows::Forms::TextBox^ textBox4;
-	private: System::Windows::Forms::TextBox^ textBox3;
+	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::TextBox^ textBox2;
-	private: System::Windows::Forms::MenuStrip^ menuStrip1;
-	private: System::Windows::Forms::ToolStripMenuItem^ personnelToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ afficherLePersonnelToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ ajouterUnPersonnelToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ modifierUnPersonnelToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ supprimerUnPersonnelToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ clientToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ afficherLesClientsToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ ajouterUnClientToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ modifierUnClientToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ supprimerUnClientToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ commandeToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ afficherLesCommandesToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ ajouterUneCommandeToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ modifierUneCommandeToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ supprimerUneCommandeToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ stockToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ afficherLeStockToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ ajouterUnArticleToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ modifierUnArticleToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ supprimerUnArticleToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ statistiqueToolStripMenuItem;
+	private: System::Windows::Forms::TextBox^ textBox3;
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::TextBox^ textBox4;
+	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::TextBox^ textBox5;
+	private: System::Windows::Forms::Label^ label24;
+	private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
+	private: System::Windows::Forms::Label^ label25;
+	private: System::Windows::Forms::Label^ label26;
+	private: System::Windows::Forms::Label^ label43;
+	private: System::Windows::Forms::ComboBox^ comboBox1;
+	private: System::Windows::Forms::Label^ label28;
+	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::ComboBox^ comboBox3;
+	private: System::Windows::Forms::Label^ label11;
+	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Panel^ panel4;
+	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Label^ label12;
+	private: System::Windows::Forms::TextBox^ textBox11;
+	private: System::Windows::Forms::Label^ label13;
+	private: System::Windows::Forms::TextBox^ textBox12;
+	private: System::Windows::Forms::TextBox^ textBox13;
+	private: System::Windows::Forms::Label^ label15;
+	private: System::Windows::Forms::TextBox^ textBox14;
+	private: System::Windows::Forms::Label^ label16;
+	private: System::Windows::Forms::TextBox^ textBox15;
+	private: System::Windows::Forms::Label^ label34;
+	private: System::Windows::Forms::DateTimePicker^ dateTimePicker2;
+	private: System::Windows::Forms::Label^ label35;
+	private: System::Windows::Forms::Label^ label36;
+	private: System::Windows::Forms::Button^ button6;
+	private: System::Windows::Forms::Label^ label27;
+	private: System::Windows::Forms::ComboBox^ comboBox2;
+	private: System::Windows::Forms::Label^ label29;
+	private: System::Windows::Forms::Label^ label17;
+	private: System::Windows::Forms::Label^ label18;
+	private: System::Windows::Forms::DateTimePicker^ dateTimePicker4;
+	private: System::Windows::Forms::Label^ label19;
+	private: System::Windows::Forms::TextBox^ textBox20;
+	private: System::Windows::Forms::Label^ label20;
+	private: System::Windows::Forms::TextBox^ textBox19;
+	private: System::Windows::Forms::Label^ label21;
+	private: System::Windows::Forms::TextBox^ textBox18;
+	private: System::Windows::Forms::Label^ label23;
+	private: System::Windows::Forms::TextBox^ textBox17;
+	private: System::Windows::Forms::Label^ label22;
+	private: System::Windows::Forms::TextBox^ textBox16;
+	public: System::Windows::Forms::Panel^ panel_cree;
+	private:
+	private: System::Windows::Forms::Button^ button3;
+	public:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -332,7 +303,7 @@ public:
 		/// <summary>
 		/// Variable nécessaire au concepteur.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -341,194 +312,353 @@ public:
 		/// </summary>
 		void InitializeComponent(void)
 		{
-
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(g_personnel::typeid));
-			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
-			this->cmdp_personnel_creer = (gcnew System::Windows::Forms::Label());
-			this->Prenom_employer_creer = (gcnew System::Windows::Forms::Label());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->mdp_personnel_creer = (gcnew System::Windows::Forms::Label());
-			this->Nom_personnel_creer = (gcnew System::Windows::Forms::Label());
-			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->flowLayoutPanel2 = (gcnew System::Windows::Forms::FlowLayoutPanel());
+			this->label30 = (gcnew System::Windows::Forms::Label());
+			this->btnGestionstock = (gcnew System::Windows::Forms::Button());
+			this->textBox21 = (gcnew System::Windows::Forms::TextBox());
+			this->btnGEstionCommande = (gcnew System::Windows::Forms::Button());
+			this->label31 = (gcnew System::Windows::Forms::Label());
+			this->btnMonProfil = (gcnew System::Windows::Forms::Button());
+			this->textBox22 = (gcnew System::Windows::Forms::TextBox());
+			this->btnGestionClients = (gcnew System::Windows::Forms::Button());
+			this->textBox24 = (gcnew System::Windows::Forms::TextBox());
+			this->btnGestionStatistique = (gcnew System::Windows::Forms::Button());
+			this->label32 = (gcnew System::Windows::Forms::Label());
+			this->btnGestionPersonnel = (gcnew System::Windows::Forms::Button());
+			this->textBox25 = (gcnew System::Windows::Forms::TextBox());
+			this->label42 = (gcnew System::Windows::Forms::Label());
+			this->label38 = (gcnew System::Windows::Forms::Label());
+			this->label41 = (gcnew System::Windows::Forms::Label());
+			this->textBox30 = (gcnew System::Windows::Forms::TextBox());
+			this->label40 = (gcnew System::Windows::Forms::Label());
+			this->label39 = (gcnew System::Windows::Forms::Label());
+			this->dateTimePicker5 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->btn_sup_pers = (gcnew System::Windows::Forms::Button());
+			this->btn_aff_pers = (gcnew System::Windows::Forms::Button());
+			this->btn_modif_pers = (gcnew System::Windows::Forms::Button());
+			this->btn_cree_pers = (gcnew System::Windows::Forms::Button());
+			this->panel_modif = (gcnew System::Windows::Forms::Panel());
+			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->label44 = (gcnew System::Windows::Forms::Label());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
+			this->label24 = (gcnew System::Windows::Forms::Label());
+			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->label25 = (gcnew System::Windows::Forms::Label());
+			this->label26 = (gcnew System::Windows::Forms::Label());
+			this->label43 = (gcnew System::Windows::Forms::Label());
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->label28 = (gcnew System::Windows::Forms::Label());
+			this->label33 = (gcnew System::Windows::Forms::Label());
+			this->panel_aff = (gcnew System::Windows::Forms::Panel());
+			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->label14 = (gcnew System::Windows::Forms::Label());
+			this->panel_sup = (gcnew System::Windows::Forms::Panel());
+			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->label17 = (gcnew System::Windows::Forms::Label());
+			this->label18 = (gcnew System::Windows::Forms::Label());
+			this->dateTimePicker4 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->label19 = (gcnew System::Windows::Forms::Label());
+			this->textBox20 = (gcnew System::Windows::Forms::TextBox());
+			this->label20 = (gcnew System::Windows::Forms::Label());
+			this->textBox19 = (gcnew System::Windows::Forms::TextBox());
+			this->label21 = (gcnew System::Windows::Forms::Label());
+			this->textBox18 = (gcnew System::Windows::Forms::TextBox());
+			this->label23 = (gcnew System::Windows::Forms::Label());
+			this->textBox17 = (gcnew System::Windows::Forms::TextBox());
+			this->label22 = (gcnew System::Windows::Forms::Label());
+			this->textBox16 = (gcnew System::Windows::Forms::TextBox());
+			this->panel_cree = (gcnew System::Windows::Forms::Panel());
+			this->label27 = (gcnew System::Windows::Forms::Label());
+			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
+			this->label29 = (gcnew System::Windows::Forms::Label());
 			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->panel4 = (gcnew System::Windows::Forms::Panel());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
-			this->personnelToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->afficherLePersonnelToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->ajouterUnPersonnelToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->modifierUnPersonnelToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->supprimerUnPersonnelToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->clientToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->afficherLesClientsToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->ajouterUnClientToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->modifierUnClientToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->supprimerUnClientToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->commandeToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->afficherLesCommandesToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->ajouterUneCommandeToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->modifierUneCommandeToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->supprimerUneCommandeToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->stockToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->afficherLeStockToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->ajouterUnArticleToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->modifierUnArticleToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->supprimerUnArticleToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->statistiqueToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->groupBox1->SuspendLayout();
+			this->label12 = (gcnew System::Windows::Forms::Label());
+			this->textBox11 = (gcnew System::Windows::Forms::TextBox());
+			this->label13 = (gcnew System::Windows::Forms::Label());
+			this->textBox12 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox13 = (gcnew System::Windows::Forms::TextBox());
+			this->label15 = (gcnew System::Windows::Forms::Label());
+			this->textBox14 = (gcnew System::Windows::Forms::TextBox());
+			this->label16 = (gcnew System::Windows::Forms::Label());
+			this->textBox15 = (gcnew System::Windows::Forms::TextBox());
+			this->label34 = (gcnew System::Windows::Forms::Label());
+			this->dateTimePicker2 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->label35 = (gcnew System::Windows::Forms::Label());
+			this->label36 = (gcnew System::Windows::Forms::Label());
+			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
-			this->menuStrip1->SuspendLayout();
+			this->panel_modif->SuspendLayout();
+			this->panel3->SuspendLayout();
+			this->panel_aff->SuspendLayout();
+			this->panel_sup->SuspendLayout();
+			this->panel_cree->SuspendLayout();
+			this->panel4->SuspendLayout();
 			this->SuspendLayout();
 			// 
-			// groupBox1
+			// panel1
 			// 
-			this->groupBox1->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
-			this->groupBox1->Controls->Add(this->textBox5);
-			this->groupBox1->Controls->Add(this->textBox4);
-			this->groupBox1->Controls->Add(this->textBox3);
-			this->groupBox1->Controls->Add(this->textBox2);
-			this->groupBox1->Controls->Add(this->textBox1);
-			this->groupBox1->Controls->Add(this->dateTimePicker1);
-			this->groupBox1->Controls->Add(this->cmdp_personnel_creer);
-			this->groupBox1->Controls->Add(this->Prenom_employer_creer);
-			this->groupBox1->Controls->Add(this->label4);
-			this->groupBox1->Controls->Add(this->label3);
-			this->groupBox1->Controls->Add(this->mdp_personnel_creer);
-			this->groupBox1->Controls->Add(this->Nom_personnel_creer);
-			this->groupBox1->Controls->Add(this->label1);
-			this->groupBox1->Location = System::Drawing::Point(197, 100);
-			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(1064, 524);
-			this->groupBox1->TabIndex = 0;
-			this->groupBox1->TabStop = false;
-			this->groupBox1->Text = L"groupBox1";
-			this->groupBox1->Enter += gcnew System::EventHandler(this, &g_personnel::groupBox1_Enter);
+			this->panel1->Controls->Add(this->flowLayoutPanel2);
+			this->panel1->Controls->Add(this->label30);
+			this->panel1->Controls->Add(this->btnGestionstock);
+			this->panel1->Controls->Add(this->textBox21);
+			this->panel1->Controls->Add(this->btnGEstionCommande);
+			this->panel1->Controls->Add(this->label31);
+			this->panel1->Controls->Add(this->btnMonProfil);
+			this->panel1->Controls->Add(this->textBox22);
+			this->panel1->Controls->Add(this->btnGestionClients);
+			this->panel1->Controls->Add(this->textBox24);
+			this->panel1->Controls->Add(this->btnGestionStatistique);
+			this->panel1->Controls->Add(this->label32);
+			this->panel1->Controls->Add(this->btnGestionPersonnel);
+			this->panel1->Controls->Add(this->textBox25);
+			this->panel1->Controls->Add(this->label42);
+			this->panel1->Controls->Add(this->label38);
+			this->panel1->Controls->Add(this->label41);
+			this->panel1->Controls->Add(this->textBox30);
+			this->panel1->Controls->Add(this->label40);
+			this->panel1->Controls->Add(this->label39);
+			this->panel1->Controls->Add(this->dateTimePicker5);
+			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
+			this->panel1->Location = System::Drawing::Point(0, 0);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(1518, 97);
+			this->panel1->TabIndex = 2;
 			// 
-			// textBox5
+			// flowLayoutPanel2
 			// 
-			this->textBox5->Location = System::Drawing::Point(690, 107);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(160, 20);
-			this->textBox5->TabIndex = 12;
+			this->flowLayoutPanel2->Location = System::Drawing::Point(223, 97);
+			this->flowLayoutPanel2->Name = L"flowLayoutPanel2";
+			this->flowLayoutPanel2->Size = System::Drawing::Size(936, 572);
+			this->flowLayoutPanel2->TabIndex = 54;
 			// 
-			// textBox4
+			// label30
 			// 
-			this->textBox4->Location = System::Drawing::Point(690, 208);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(160, 20);
-			this->textBox4->TabIndex = 11;
+			this->label30->AutoSize = true;
+			this->label30->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.25F));
+			this->label30->Location = System::Drawing::Point(223, 672);
+			this->label30->Name = L"label30";
+			this->label30->Size = System::Drawing::Size(331, 25);
+			this->label30->TabIndex = 53;
+			this->label30->Text = L"Quel profil voulez vous modifier \?";
 			// 
-			// textBox3
+			// btnGestionstock
 			// 
-			this->textBox3->Location = System::Drawing::Point(295, 311);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(160, 20);
-			this->textBox3->TabIndex = 10;
+			this->btnGestionstock->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->btnGestionstock->AutoSize = true;
+			this->btnGestionstock->CausesValidation = false;
+			this->btnGestionstock->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnGestionstock->Location = System::Drawing::Point(848, 22);
+			this->btnGestionstock->Name = L"btnGestionstock";
+			this->btnGestionstock->Size = System::Drawing::Size(175, 49);
+			this->btnGestionstock->TabIndex = 13;
+			this->btnGestionstock->Text = L"Gestion stock";
+			this->btnGestionstock->UseVisualStyleBackColor = true;
 			// 
-			// textBox2
+			// textBox21
 			// 
-			this->textBox2->Location = System::Drawing::Point(296, 211);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(160, 20);
-			this->textBox2->TabIndex = 9;
+			this->textBox21->Location = System::Drawing::Point(223, 700);
+			this->textBox21->Name = L"textBox21";
+			this->textBox21->Size = System::Drawing::Size(638, 20);
+			this->textBox21->TabIndex = 52;
 			// 
-			// textBox1
+			// btnGEstionCommande
 			// 
-			this->textBox1->Location = System::Drawing::Point(296, 105);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(160, 20);
-			this->textBox1->TabIndex = 8;
+			this->btnGEstionCommande->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->btnGEstionCommande->AutoSize = true;
+			this->btnGEstionCommande->CausesValidation = false;
+			this->btnGEstionCommande->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnGEstionCommande->Location = System::Drawing::Point(675, 22);
+			this->btnGEstionCommande->Name = L"btnGEstionCommande";
+			this->btnGEstionCommande->Size = System::Drawing::Size(175, 49);
+			this->btnGEstionCommande->TabIndex = 9;
+			this->btnGEstionCommande->Text = L"Gestion Commande";
+			this->btnGEstionCommande->UseVisualStyleBackColor = true;
 			// 
-			// dateTimePicker1
+			// label31
 			// 
-			this->dateTimePicker1->Location = System::Drawing::Point(690, 312);
-			this->dateTimePicker1->Name = L"dateTimePicker1";
-			this->dateTimePicker1->Size = System::Drawing::Size(200, 20);
-			this->dateTimePicker1->TabIndex = 7;
+			this->label31->AutoSize = true;
+			this->label31->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
+			this->label31->Location = System::Drawing::Point(223, 723);
+			this->label31->Name = L"label31";
+			this->label31->Size = System::Drawing::Size(61, 24);
+			this->label31->TabIndex = 41;
+			this->label31->Text = L"Nom :";
 			// 
-			// cmdp_personnel_creer
+			// btnMonProfil
 			// 
-			this->cmdp_personnel_creer->AutoSize = true;
-			this->cmdp_personnel_creer->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
-			this->cmdp_personnel_creer->Location = System::Drawing::Point(30, 308);
-			this->cmdp_personnel_creer->Name = L"cmdp_personnel_creer";
-			this->cmdp_personnel_creer->Size = System::Drawing::Size(259, 24);
-			this->cmdp_personnel_creer->TabIndex = 6;
-			this->cmdp_personnel_creer->Text = L"Cofirmation de Mot de passe :";
+			this->btnMonProfil->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->btnMonProfil->AutoSize = true;
+			this->btnMonProfil->CausesValidation = false;
+			this->btnMonProfil->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnMonProfil->Location = System::Drawing::Point(1194, 22);
+			this->btnMonProfil->Name = L"btnMonProfil";
+			this->btnMonProfil->Size = System::Drawing::Size(175, 49);
+			this->btnMonProfil->TabIndex = 12;
+			this->btnMonProfil->Text = L"Profil";
+			this->btnMonProfil->UseVisualStyleBackColor = true;
 			// 
-			// Prenom_employer_creer
+			// textBox22
 			// 
-			this->Prenom_employer_creer->AutoSize = true;
-			this->Prenom_employer_creer->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
-			this->Prenom_employer_creer->Location = System::Drawing::Point(597, 100);
-			this->Prenom_employer_creer->Name = L"Prenom_employer_creer";
-			this->Prenom_employer_creer->Size = System::Drawing::Size(87, 24);
-			this->Prenom_employer_creer->TabIndex = 5;
-			this->Prenom_employer_creer->Text = L"Prénom :";
-			this->Prenom_employer_creer->Click += gcnew System::EventHandler(this, &g_personnel::label5_Click);
+			this->textBox22->Location = System::Drawing::Point(223, 750);
+			this->textBox22->Name = L"textBox22";
+			this->textBox22->Size = System::Drawing::Size(638, 20);
+			this->textBox22->TabIndex = 51;
 			// 
-			// label4
+			// btnGestionClients
 			// 
-			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
-			this->label4->Location = System::Drawing::Point(515, 306);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(169, 24);
-			this->label4->TabIndex = 4;
-			this->label4->Text = L"Date d\'embauche :";
+			this->btnGestionClients->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->btnGestionClients->AutoSize = true;
+			this->btnGestionClients->CausesValidation = false;
+			this->btnGestionClients->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnGestionClients->Location = System::Drawing::Point(502, 22);
+			this->btnGestionClients->Name = L"btnGestionClients";
+			this->btnGestionClients->Size = System::Drawing::Size(175, 49);
+			this->btnGestionClients->TabIndex = 8;
+			this->btnGestionClients->Text = L"Gestion Clients";
+			this->btnGestionClients->UseVisualStyleBackColor = true;
 			// 
-			// label3
+			// textBox24
 			// 
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
-			this->label3->Location = System::Drawing::Point(525, 203);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(159, 24);
-			this->label3->TabIndex = 3;
-			this->label3->Text = L"Nom d\'utilisateur :";
+			this->textBox24->Location = System::Drawing::Point(223, 776);
+			this->textBox24->Name = L"textBox24";
+			this->textBox24->Size = System::Drawing::Size(638, 20);
+			this->textBox24->TabIndex = 50;
 			// 
-			// mdp_personnel_creer
+			// btnGestionStatistique
 			// 
-			this->mdp_personnel_creer->AutoSize = true;
-			this->mdp_personnel_creer->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
-			this->mdp_personnel_creer->Location = System::Drawing::Point(156, 206);
-			this->mdp_personnel_creer->Name = L"mdp_personnel_creer";
-			this->mdp_personnel_creer->Size = System::Drawing::Size(133, 24);
-			this->mdp_personnel_creer->TabIndex = 2;
-			this->mdp_personnel_creer->Text = L"Mot de passe :";
+			this->btnGestionStatistique->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->btnGestionStatistique->AutoSize = true;
+			this->btnGestionStatistique->CausesValidation = false;
+			this->btnGestionStatistique->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnGestionStatistique->Location = System::Drawing::Point(1021, 22);
+			this->btnGestionStatistique->Name = L"btnGestionStatistique";
+			this->btnGestionStatistique->Size = System::Drawing::Size(175, 49);
+			this->btnGestionStatistique->TabIndex = 11;
+			this->btnGestionStatistique->Text = L"Gestion Statistique";
+			this->btnGestionStatistique->UseVisualStyleBackColor = true;
 			// 
-			// Nom_personnel_creer
+			// label32
 			// 
-			this->Nom_personnel_creer->AutoSize = true;
-			this->Nom_personnel_creer->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
-			this->Nom_personnel_creer->Location = System::Drawing::Point(228, 102);
-			this->Nom_personnel_creer->Name = L"Nom_personnel_creer";
-			this->Nom_personnel_creer->Size = System::Drawing::Size(61, 24);
-			this->Nom_personnel_creer->TabIndex = 1;
-			this->Nom_personnel_creer->Text = L"Nom :";
+			this->label32->AutoSize = true;
+			this->label32->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
+			this->label32->Location = System::Drawing::Point(223, 799);
+			this->label32->Name = L"label32";
+			this->label32->Size = System::Drawing::Size(133, 24);
+			this->label32->TabIndex = 42;
+			this->label32->Text = L"Mot de passe :";
 			// 
-			// label1
+			// btnGestionPersonnel
 			// 
-			this->label1->AccessibleName = L"";
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnGestionPersonnel->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->btnGestionPersonnel->AutoSize = true;
+			this->btnGestionPersonnel->CausesValidation = false;
+			this->btnGestionPersonnel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnGestionPersonnel->Location = System::Drawing::Point(329, 22);
+			this->btnGestionPersonnel->Name = L"btnGestionPersonnel";
+			this->btnGestionPersonnel->Size = System::Drawing::Size(175, 49);
+			this->btnGestionPersonnel->TabIndex = 10;
+			this->btnGestionPersonnel->Text = L"Gestion Personnel";
+			this->btnGestionPersonnel->UseVisualStyleBackColor = true;
+			// 
+			// textBox25
+			// 
+			this->textBox25->Location = System::Drawing::Point(223, 826);
+			this->textBox25->Name = L"textBox25";
+			this->textBox25->Size = System::Drawing::Size(638, 20);
+			this->textBox25->TabIndex = 49;
+			// 
+			// label42
+			// 
+			this->label42->AccessibleName = L"";
+			this->label42->AutoSize = true;
+			this->label42->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(7, 20);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(164, 18);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"Créer un Personnel :";
-			this->label1->Click += gcnew System::EventHandler(this, &g_personnel::label1_Click);
-
+			this->label42->Location = System::Drawing::Point(223, 973);
+			this->label42->Name = L"label42";
+			this->label42->Size = System::Drawing::Size(183, 18);
+			this->label42->TabIndex = 40;
+			this->label42->Text = L"Modifier un Personnel :";
+			// 
+			// label38
+			// 
+			this->label38->AutoSize = true;
+			this->label38->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
+			this->label38->Location = System::Drawing::Point(223, 849);
+			this->label38->Name = L"label38";
+			this->label38->Size = System::Drawing::Size(159, 24);
+			this->label38->TabIndex = 43;
+			this->label38->Text = L"Nom d\'utilisateur :";
+			// 
+			// label41
+			// 
+			this->label41->AutoSize = true;
+			this->label41->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
+			this->label41->Location = System::Drawing::Point(316, 949);
+			this->label41->Name = L"label41";
+			this->label41->Size = System::Drawing::Size(259, 24);
+			this->label41->TabIndex = 46;
+			this->label41->Text = L"Cofirmation de Mot de passe :";
+			// 
+			// textBox30
+			// 
+			this->textBox30->Location = System::Drawing::Point(223, 876);
+			this->textBox30->Name = L"textBox30";
+			this->textBox30->Size = System::Drawing::Size(638, 20);
+			this->textBox30->TabIndex = 48;
+			// 
+			// label40
+			// 
+			this->label40->AutoSize = true;
+			this->label40->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
+			this->label40->Location = System::Drawing::Point(223, 949);
+			this->label40->Name = L"label40";
+			this->label40->Size = System::Drawing::Size(87, 24);
+			this->label40->TabIndex = 45;
+			this->label40->Text = L"Prénom :";
+			// 
+			// label39
+			// 
+			this->label39->AutoSize = true;
+			this->label39->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
+			this->label39->Location = System::Drawing::Point(223, 899);
+			this->label39->Name = L"label39";
+			this->label39->Size = System::Drawing::Size(169, 24);
+			this->label39->TabIndex = 44;
+			this->label39->Text = L"Date d\'embauche :";
+			// 
+			// dateTimePicker5
+			// 
+			this->dateTimePicker5->Location = System::Drawing::Point(223, 926);
+			this->dateTimePicker5->Name = L"dateTimePicker5";
+			this->dateTimePicker5->Size = System::Drawing::Size(678, 20);
+			this->dateTimePicker5->TabIndex = 47;
 			// 
 			// panel2
 			// 
@@ -537,7 +667,6 @@ public:
 			this->panel2->Controls->Add(this->btn_modif_pers);
 			this->panel2->Controls->Add(this->btn_cree_pers);
 			this->panel2->Dock = System::Windows::Forms::DockStyle::Left;
-
 			this->panel2->Location = System::Drawing::Point(0, 97);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(180, 844);
@@ -652,16 +781,9 @@ public:
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(160, 20);
 			this->textBox2->TabIndex = 52;
-
 			// 
-			this->button3->Location = System::Drawing::Point(21, 291);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(146, 82);
-			this->button3->TabIndex = 2;
-			this->button3->Text = L"Créer un Personnel";
-			this->button3->UseVisualStyleBackColor = true;
+			// textBox3
 			// 
-
 			this->textBox3->Location = System::Drawing::Point(325, 348);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(160, 20);
@@ -676,16 +798,9 @@ public:
 			this->label3->Size = System::Drawing::Size(133, 24);
 			this->label3->TabIndex = 43;
 			this->label3->Text = L"Mot de passe :";
-
 			// 
-			this->button2->Location = System::Drawing::Point(21, 203);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(146, 82);
-			this->button2->TabIndex = 1;
-			this->button2->Text = L"Créer un Personnel";
-			this->button2->UseVisualStyleBackColor = true;
+			// textBox4
 			// 
-
 			this->textBox4->Location = System::Drawing::Point(326, 248);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(160, 20);
@@ -700,228 +815,9 @@ public:
 			this->label4->Size = System::Drawing::Size(159, 24);
 			this->label4->TabIndex = 44;
 			this->label4->Text = L"Nom d\'utilisateur :";
-
 			// 
-			this->button1->Location = System::Drawing::Point(21, 115);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(146, 82);
-			this->button1->TabIndex = 0;
-			this->button1->Text = L"Créer un Personnel";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &g_personnel::button1_Click);
+			// textBox5
 			// 
-
-			// menuStrip1
-			// 
-			this->menuStrip1->BackColor = System::Drawing::SystemColors::AppWorkspace;
-			this->menuStrip1->Dock = System::Windows::Forms::DockStyle::None;
-			this->menuStrip1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 18, System::Drawing::FontStyle::Bold));
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {
-				this->personnelToolStripMenuItem,
-					this->clientToolStripMenuItem, this->commandeToolStripMenuItem, this->stockToolStripMenuItem, this->statistiqueToolStripMenuItem
-			});
-			this->menuStrip1->LayoutStyle = System::Windows::Forms::ToolStripLayoutStyle::HorizontalStackWithOverflow;
-			this->menuStrip1->Location = System::Drawing::Point(334, 18);
-			this->menuStrip1->MdiWindowListItem = this->clientToolStripMenuItem;
-			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->RenderMode = System::Windows::Forms::ToolStripRenderMode::Professional;
-			this->menuStrip1->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->menuStrip1->ShowItemToolTips = true;
-			this->menuStrip1->Size = System::Drawing::Size(633, 40);
-			this->menuStrip1->TabIndex = 4;
-			this->menuStrip1->Text = L"barCommande";
-			// 
-			// personnelToolStripMenuItem
-			// 
-			this->personnelToolStripMenuItem->BackColor = System::Drawing::SystemColors::AppWorkspace;
-			this->personnelToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
-				this->afficherLePersonnelToolStripMenuItem,
-					this->ajouterUnPersonnelToolStripMenuItem, this->modifierUnPersonnelToolStripMenuItem, this->supprimerUnPersonnelToolStripMenuItem
-			});
-			this->personnelToolStripMenuItem->Name = L"personnelToolStripMenuItem";
-			this->personnelToolStripMenuItem->Size = System::Drawing::Size(140, 36);
-			this->personnelToolStripMenuItem->Text = L"Personnel";
-			// 
-			// afficherLePersonnelToolStripMenuItem
-			// 
-			this->afficherLePersonnelToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
-			this->afficherLePersonnelToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
-			this->afficherLePersonnelToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"afficherLePersonnelToolStripMenuItem.Image")));
-			this->afficherLePersonnelToolStripMenuItem->Name = L"afficherLePersonnelToolStripMenuItem";
-			this->afficherLePersonnelToolStripMenuItem->Size = System::Drawing::Size(254, 26);
-			this->afficherLePersonnelToolStripMenuItem->Text = L"Afficher le personnel";
-			// 
-			// ajouterUnPersonnelToolStripMenuItem
-			// 
-			this->ajouterUnPersonnelToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
-			this->ajouterUnPersonnelToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
-			this->ajouterUnPersonnelToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ajouterUnPersonnelToolStripMenuItem.Image")));
-			this->ajouterUnPersonnelToolStripMenuItem->Name = L"ajouterUnPersonnelToolStripMenuItem";
-			this->ajouterUnPersonnelToolStripMenuItem->Size = System::Drawing::Size(254, 26);
-			this->ajouterUnPersonnelToolStripMenuItem->Text = L"Ajouter un personnel";
-			// 
-			// modifierUnPersonnelToolStripMenuItem
-			// 
-			this->modifierUnPersonnelToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
-			this->modifierUnPersonnelToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
-			this->modifierUnPersonnelToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"modifierUnPersonnelToolStripMenuItem.Image")));
-			this->modifierUnPersonnelToolStripMenuItem->Name = L"modifierUnPersonnelToolStripMenuItem";
-			this->modifierUnPersonnelToolStripMenuItem->Size = System::Drawing::Size(254, 26);
-			this->modifierUnPersonnelToolStripMenuItem->Text = L"Modifier un personnel";
-			// 
-			// supprimerUnPersonnelToolStripMenuItem
-			// 
-			this->supprimerUnPersonnelToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
-			this->supprimerUnPersonnelToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
-			this->supprimerUnPersonnelToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"supprimerUnPersonnelToolStripMenuItem.Image")));
-			this->supprimerUnPersonnelToolStripMenuItem->Name = L"supprimerUnPersonnelToolStripMenuItem";
-			this->supprimerUnPersonnelToolStripMenuItem->Size = System::Drawing::Size(254, 26);
-			this->supprimerUnPersonnelToolStripMenuItem->Text = L"Supprimer un personnel";
-			// 
-			// clientToolStripMenuItem
-			// 
-			this->clientToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
-				this->afficherLesClientsToolStripMenuItem,
-					this->ajouterUnClientToolStripMenuItem, this->modifierUnClientToolStripMenuItem, this->supprimerUnClientToolStripMenuItem
-			});
-			this->clientToolStripMenuItem->Name = L"clientToolStripMenuItem";
-			this->clientToolStripMenuItem->Size = System::Drawing::Size(93, 36);
-			this->clientToolStripMenuItem->Text = L"Client";
-			// 
-			// afficherLesClientsToolStripMenuItem
-			// 
-			this->afficherLesClientsToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
-			this->afficherLesClientsToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
-			this->afficherLesClientsToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"afficherLesClientsToolStripMenuItem.Image")));
-			this->afficherLesClientsToolStripMenuItem->Name = L"afficherLesClientsToolStripMenuItem";
-			this->afficherLesClientsToolStripMenuItem->Size = System::Drawing::Size(222, 26);
-			this->afficherLesClientsToolStripMenuItem->Text = L"Afficher les clients";
-			// 
-			// ajouterUnClientToolStripMenuItem
-			// 
-			this->ajouterUnClientToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
-			this->ajouterUnClientToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
-			this->ajouterUnClientToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ajouterUnClientToolStripMenuItem.Image")));
-			this->ajouterUnClientToolStripMenuItem->Name = L"ajouterUnClientToolStripMenuItem";
-			this->ajouterUnClientToolStripMenuItem->Size = System::Drawing::Size(222, 26);
-			this->ajouterUnClientToolStripMenuItem->Text = L"Ajouter un client";
-			// 
-			// modifierUnClientToolStripMenuItem
-			// 
-			this->modifierUnClientToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
-			this->modifierUnClientToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
-			this->modifierUnClientToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"modifierUnClientToolStripMenuItem.Image")));
-			this->modifierUnClientToolStripMenuItem->Name = L"modifierUnClientToolStripMenuItem";
-			this->modifierUnClientToolStripMenuItem->Size = System::Drawing::Size(222, 26);
-			this->modifierUnClientToolStripMenuItem->Text = L"Modifier un client";
-			// 
-			// supprimerUnClientToolStripMenuItem
-			// 
-			this->supprimerUnClientToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
-			this->supprimerUnClientToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
-			this->supprimerUnClientToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"supprimerUnClientToolStripMenuItem.Image")));
-			this->supprimerUnClientToolStripMenuItem->Name = L"supprimerUnClientToolStripMenuItem";
-			this->supprimerUnClientToolStripMenuItem->Size = System::Drawing::Size(222, 26);
-			this->supprimerUnClientToolStripMenuItem->Text = L"Supprimer un client";
-			// 
-			// commandeToolStripMenuItem
-			// 
-			this->commandeToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
-				this->afficherLesCommandesToolStripMenuItem,
-					this->ajouterUneCommandeToolStripMenuItem, this->modifierUneCommandeToolStripMenuItem, this->supprimerUneCommandeToolStripMenuItem
-			});
-			this->commandeToolStripMenuItem->Name = L"commandeToolStripMenuItem";
-			this->commandeToolStripMenuItem->Size = System::Drawing::Size(157, 36);
-			this->commandeToolStripMenuItem->Text = L"Commande";
-			// 
-			// afficherLesCommandesToolStripMenuItem
-			// 
-			this->afficherLesCommandesToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
-			this->afficherLesCommandesToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
-			this->afficherLesCommandesToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"afficherLesCommandesToolStripMenuItem.Image")));
-			this->afficherLesCommandesToolStripMenuItem->Name = L"afficherLesCommandesToolStripMenuItem";
-			this->afficherLesCommandesToolStripMenuItem->Size = System::Drawing::Size(271, 26);
-			this->afficherLesCommandesToolStripMenuItem->Text = L"Afficher les commandes";
-			// 
-			// ajouterUneCommandeToolStripMenuItem
-			// 
-			this->ajouterUneCommandeToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
-			this->ajouterUneCommandeToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
-			this->ajouterUneCommandeToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ajouterUneCommandeToolStripMenuItem.Image")));
-			this->ajouterUneCommandeToolStripMenuItem->Name = L"ajouterUneCommandeToolStripMenuItem";
-			this->ajouterUneCommandeToolStripMenuItem->Size = System::Drawing::Size(271, 26);
-			this->ajouterUneCommandeToolStripMenuItem->Text = L"Ajouter une commande";
-			// 
-			// modifierUneCommandeToolStripMenuItem
-			// 
-			this->modifierUneCommandeToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
-			this->modifierUneCommandeToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
-			this->modifierUneCommandeToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"modifierUneCommandeToolStripMenuItem.Image")));
-			this->modifierUneCommandeToolStripMenuItem->Name = L"modifierUneCommandeToolStripMenuItem";
-			this->modifierUneCommandeToolStripMenuItem->Size = System::Drawing::Size(271, 26);
-			this->modifierUneCommandeToolStripMenuItem->Text = L"Modifier une commande";
-			// 
-			// supprimerUneCommandeToolStripMenuItem
-			// 
-			this->supprimerUneCommandeToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
-			this->supprimerUneCommandeToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
-			this->supprimerUneCommandeToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"supprimerUneCommandeToolStripMenuItem.Image")));
-			this->supprimerUneCommandeToolStripMenuItem->Name = L"supprimerUneCommandeToolStripMenuItem";
-			this->supprimerUneCommandeToolStripMenuItem->Size = System::Drawing::Size(271, 26);
-			this->supprimerUneCommandeToolStripMenuItem->Text = L"Supprimer une commande";
-			// 
-			// stockToolStripMenuItem
-			// 
-			this->stockToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
-				this->afficherLeStockToolStripMenuItem,
-					this->ajouterUnArticleToolStripMenuItem, this->modifierUnArticleToolStripMenuItem, this->supprimerUnArticleToolStripMenuItem
-			});
-			this->stockToolStripMenuItem->Name = L"stockToolStripMenuItem";
-			this->stockToolStripMenuItem->Size = System::Drawing::Size(88, 36);
-			this->stockToolStripMenuItem->Text = L"Stock";
-			// 
-			// afficherLeStockToolStripMenuItem
-			// 
-			this->afficherLeStockToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
-			this->afficherLeStockToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
-			this->afficherLeStockToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"afficherLeStockToolStripMenuItem.Image")));
-			this->afficherLeStockToolStripMenuItem->Name = L"afficherLeStockToolStripMenuItem";
-			this->afficherLeStockToolStripMenuItem->Size = System::Drawing::Size(227, 26);
-			this->afficherLeStockToolStripMenuItem->Text = L"Afficher le stock";
-			// 
-			// ajouterUnArticleToolStripMenuItem
-			// 
-			this->ajouterUnArticleToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
-			this->ajouterUnArticleToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
-			this->ajouterUnArticleToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ajouterUnArticleToolStripMenuItem.Image")));
-			this->ajouterUnArticleToolStripMenuItem->Name = L"ajouterUnArticleToolStripMenuItem";
-			this->ajouterUnArticleToolStripMenuItem->Size = System::Drawing::Size(227, 26);
-			this->ajouterUnArticleToolStripMenuItem->Text = L"Ajouter un article";
-			// 
-			// modifierUnArticleToolStripMenuItem
-			// 
-			this->modifierUnArticleToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
-			this->modifierUnArticleToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
-			this->modifierUnArticleToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"modifierUnArticleToolStripMenuItem.Image")));
-			this->modifierUnArticleToolStripMenuItem->Name = L"modifierUnArticleToolStripMenuItem";
-			this->modifierUnArticleToolStripMenuItem->Size = System::Drawing::Size(227, 26);
-			this->modifierUnArticleToolStripMenuItem->Text = L"Modifier un article";
-			// 
-			// supprimerUnArticleToolStripMenuItem
-			// 
-			this->supprimerUnArticleToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
-			this->supprimerUnArticleToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
-			this->supprimerUnArticleToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"supprimerUnArticleToolStripMenuItem.Image")));
-			this->supprimerUnArticleToolStripMenuItem->Name = L"supprimerUnArticleToolStripMenuItem";
-			this->supprimerUnArticleToolStripMenuItem->Size = System::Drawing::Size(227, 26);
-			this->supprimerUnArticleToolStripMenuItem->Text = L"Supprimer un article";
-			// 
-			// statistiqueToolStripMenuItem
-			// 
-			this->statistiqueToolStripMenuItem->Name = L"statistiqueToolStripMenuItem";
-			this->statistiqueToolStripMenuItem->Size = System::Drawing::Size(147, 36);
-			this->statistiqueToolStripMenuItem->Text = L"Statistique";
-
 			this->textBox5->Location = System::Drawing::Point(326, 142);
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(160, 20);
@@ -1532,7 +1428,6 @@ public:
 			this->label36->Size = System::Drawing::Size(259, 24);
 			this->label36->TabIndex = 47;
 			this->label36->Text = L"Cofirmation de Mot de passe :";
-
 			// 
 			// g_personnel
 			// 
@@ -1540,61 +1435,69 @@ public:
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1518, 941);
 			this->Controls->Add(this->panel2);
-
-			this->Controls->Add(this->groupBox1);
-			this->Controls->Add(this->menuStrip1);
-			this->MainMenuStrip = this->menuStrip1;
+			this->Controls->Add(this->panel1);
+			this->Controls->Add(this->panel_sup);
+			this->Controls->Add(this->panel_aff);
+			this->Controls->Add(this->panel_cree);
+			this->Controls->Add(this->panel_modif);
 			this->Name = L"g_personnel";
 			this->Text = L"g_personnel";
-			this->groupBox1->ResumeLayout(false);
-			this->groupBox1->PerformLayout();
+			this->panel1->ResumeLayout(false);
+			this->panel1->PerformLayout();
 			this->panel2->ResumeLayout(false);
-			this->menuStrip1->ResumeLayout(false);
-			this->menuStrip1->PerformLayout();
-
+			this->panel_modif->ResumeLayout(false);
+			this->panel_modif->PerformLayout();
+			this->panel3->ResumeLayout(false);
+			this->panel3->PerformLayout();
+			this->panel_aff->ResumeLayout(false);
+			this->panel_aff->PerformLayout();
+			this->panel_sup->ResumeLayout(false);
+			this->panel_sup->PerformLayout();
+			this->panel_cree->ResumeLayout(false);
+			this->panel_cree->PerformLayout();
+			this->panel4->ResumeLayout(false);
+			this->panel4->PerformLayout();
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion
-private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-	//GB1 = gcnew Controleur;
-	//GB2 = gcnew Controleur;
-}
+	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		//GB1 = gcnew Controleur;
+		//GB2 = gcnew Controleur;
+	}
 
-private: System::Void btn_cree_pers_Click(System::Object^ sender, System::EventArgs^ e) {
-	
-	//GB2->masquer_panel(panel4);
-	//GB1->afficher_panel(panel3);
-	panel_cree->Visible = true;
-	panel_modif->Visible = false;
-	panel_aff->Visible = false;
-	panel_sup -> Visible = false;
-}
-private: System::Void btn_modif_pers_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void btn_cree_pers_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	//GB2->masquer_panel(panel3);
-	//GB1->afficher_panel(panel4);
-	panel_cree->Visible = false;
-	panel_modif->Visible = true;
-	panel_aff->Visible = false;
-	panel_sup->Visible = false;
-}
+		//GB2->masquer_panel(panel4);
+		//GB1->afficher_panel(panel3);
+		panel_cree->Visible = true;
+		panel_modif->Visible = false;
+		panel_aff->Visible = false;
+		panel_sup->Visible = false;
+	}
+	private: System::Void btn_modif_pers_Click(System::Object^ sender, System::EventArgs^ e) {
 
-private: System::Void btn_aff_pers_Click(System::Object^ sender, System::EventArgs^ e) {
-	panel_aff->Visible = true;
-	panel_cree->Visible = false;
-	panel_modif->Visible = false;
-	panel_sup->Visible = false;
-}
+		//GB2->masquer_panel(panel3);
+		//GB1->afficher_panel(panel4);
+		panel_cree->Visible = false;
+		panel_modif->Visible = true;
+		panel_aff->Visible = false;
+		panel_sup->Visible = false;
+	}
+
+	private: System::Void btn_aff_pers_Click(System::Object^ sender, System::EventArgs^ e) {
+		panel_aff->Visible = true;
+		panel_cree->Visible = false;
+		panel_modif->Visible = false;
+		panel_sup->Visible = false;
+	}
 
 
-private: System::Void btn_sup_pers_Click(System::Object^ sender, System::EventArgs^ e) {
-	panel_aff->Visible = false;
-	panel_cree->Visible = false;
-	panel_modif->Visible = false;
-	panel_sup->Visible = true;
-}
-
-};
+	private: System::Void btn_sup_pers_Click(System::Object^ sender, System::EventArgs^ e) {
+		panel_aff->Visible = false;
+		panel_cree->Visible = false;
+		panel_modif->Visible = false;
+		panel_sup->Visible = true;
+	}
+	};
 }

@@ -11,13 +11,13 @@ ref class MapPersonnel
 	int id_superieur;
 	int id_addrese;
 
-public :
+/*public:
 	int getIdPersonnel();
 	String^ getNom();
 	String^ getPrenom();
 	DateTime^ getDateEmbauche();
 	String^ getMotDePasse();
 	int getIdSuperieur();
-	int getIdAdresse();
+	int getIdAdresse();*/
 };
 
