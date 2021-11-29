@@ -1,6 +1,7 @@
  #include "MyForm.h"
 #include "statistique.h"
 #include "Accueil.h"
+#include "g_personnel.h"
 using namespace System;
 using namespace System::Windows::Forms;
 
@@ -12,8 +13,9 @@ void Main(array<String^>^ args)
     //WinformCDemo is your project name
     CodeProjet::MyForm form;
     CodeProjet::Accueil form1;
+    CodeProjet::g_personnel form2;
    // Application::Run(% form);
-    Application::Run(% form1);
+    Application::Run(% form2);
 }
 
 
