@@ -24,10 +24,11 @@
     <ClCompile Include="Controleur.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-
+    <ClCompile Include="Accueil.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
     <ClCompile Include="g_personnel.cpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-
+      <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -35,14 +36,15 @@
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="statistique.h">
-
-
-
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-
     <ClInclude Include="g_personnel.h">
-
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Accueil.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Controleur.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
