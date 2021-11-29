@@ -9,7 +9,7 @@ ref class Connexion
 		void actionRows(String^);
 		int actionRowsID(String^);
 		DataSet^ getRows(String^, String^);
-
+		SqlDataReader^ dataReader(String^);
 	private:
 		void setSQL(String^);
 		

@@ -13,5 +13,6 @@ private:
 	bool state = true;
 public : 
 	void mdp(TextBox^);
+	void afficher_datagridView(DataGridView^);
 };
 

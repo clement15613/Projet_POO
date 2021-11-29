@@ -11,8 +11,23 @@ Connexion::Connexion()
 
 }
 
+
+SqlDataReader^ Connexion::dataReader(String^ rqSql) 
+{
+	setSQL(rqSql);
+	this->cmd->CommandText = this->rqSql;
+	connect->Open();
+	return cmd->ExecuteReader();
+};
+
+
 void Connexion::actionRows(String^ rqSql)
 {
+		this->setSQL(rqSql);
+		this->cmd->CommandText = this->rqSql;
+		this->connect->Open();
+		this->cmd->ExecuteNonQuery();
+		this->connect->Close();
 }
 
 int Connexion::actionRowsID(String^ rqSql) { return 0; }
@@ -29,15 +44,6 @@ DataSet^ Connexion::getRows(String^ rqSql, String^ dataTableName)
 
 void Connexion::setSQL(String^ rqSql)
 {
-	{
-		if (rqSql == "RIEN")
-		{
-			this->rqSql = rqSql;
-		}
-		else
-		{
-			this->rqSql = "RIEN";
-		}
-	}
+	this->rqSql = rqSql;
 }
 
