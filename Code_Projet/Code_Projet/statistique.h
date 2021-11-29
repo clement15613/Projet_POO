@@ -125,20 +125,20 @@ namespace CodeProjet {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea10 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^ legend10 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series10 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea11 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^ legend11 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series11 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea12 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^ legend12 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series12 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::DataPoint^ dataPoint7 = (gcnew System::Windows::Forms::DataVisualization::Charting::DataPoint(1,
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^ legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^ legend2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea3 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^ legend3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::DataPoint^ dataPoint1 = (gcnew System::Windows::Forms::DataVisualization::Charting::DataPoint(1,
 				10000));
-			System::Windows::Forms::DataVisualization::Charting::DataPoint^ dataPoint8 = (gcnew System::Windows::Forms::DataVisualization::Charting::DataPoint(9000,
+			System::Windows::Forms::DataVisualization::Charting::DataPoint^ dataPoint2 = (gcnew System::Windows::Forms::DataVisualization::Charting::DataPoint(9000,
 				2019));
-			System::Windows::Forms::DataVisualization::Charting::Title^ title4 = (gcnew System::Windows::Forms::DataVisualization::Charting::Title());
+			System::Windows::Forms::DataVisualization::Charting::Title^ title1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Title());
 			this->btnGestionClients = (gcnew System::Windows::Forms::Button());
 			this->btnGEstionCommande = (gcnew System::Windows::Forms::Button());
 			this->btnGestionPersonnel = (gcnew System::Windows::Forms::Button());
@@ -294,33 +294,35 @@ namespace CodeProjet {
 			// 
 			// chart_topPlusVendu
 			// 
-			chartArea10->Name = L"ChartArea1";
-			this->chart_topPlusVendu->ChartAreas->Add(chartArea10);
-			legend10->Name = L"Legend1";
-			this->chart_topPlusVendu->Legends->Add(legend10);
+			chartArea1->AxisX->MajorGrid->Enabled = false;
+			chartArea1->Name = L"ChartArea1";
+			this->chart_topPlusVendu->ChartAreas->Add(chartArea1);
+			legend1->Name = L"Legend1";
+			this->chart_topPlusVendu->Legends->Add(legend1);
 			this->chart_topPlusVendu->Location = System::Drawing::Point(1315, 153);
 			this->chart_topPlusVendu->Name = L"chart_topPlusVendu";
-			series10->ChartArea = L"ChartArea1";
-			series10->Legend = L"Legend1";
-			series10->Name = L"2020";
-			this->chart_topPlusVendu->Series->Add(series10);
+			series1->ChartArea = L"ChartArea1";
+			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Pie;
+			series1->Legend = L"Legend1";
+			series1->Name = L"series1";
+			series1->YValuesPerPoint = 4;
+			this->chart_topPlusVendu->Series->Add(series1);
 			this->chart_topPlusVendu->Size = System::Drawing::Size(558, 345);
-			this->chart_topPlusVendu->TabIndex = 9;
+			this->chart_topPlusVendu->TabIndex = 10;
 			this->chart_topPlusVendu->Text = L"chart_topPlusVendu";
-
 			// 
 			// chart_topMoinsVendu
 			// 
-			chartArea11->Name = L"ChartArea1";
-			this->chart_topMoinsVendu->ChartAreas->Add(chartArea11);
-			legend11->Name = L"Legend1";
-			this->chart_topMoinsVendu->Legends->Add(legend11);
+			chartArea2->Name = L"ChartArea1";
+			this->chart_topMoinsVendu->ChartAreas->Add(chartArea2);
+			legend2->Name = L"Legend1";
+			this->chart_topMoinsVendu->Legends->Add(legend2);
 			this->chart_topMoinsVendu->Location = System::Drawing::Point(1315, 530);
 			this->chart_topMoinsVendu->Name = L"chart_topMoinsVendu";
-			series11->ChartArea = L"ChartArea1";
-			series11->Legend = L"Legend1";
-			series11->Name = L"Series1";
-			this->chart_topMoinsVendu->Series->Add(series11);
+			series2->ChartArea = L"ChartArea1";
+			series2->Legend = L"Legend1";
+			series2->Name = L"series1";
+			this->chart_topMoinsVendu->Series->Add(series2);
 			this->chart_topMoinsVendu->Size = System::Drawing::Size(558, 345);
 			this->chart_topMoinsVendu->TabIndex = 10;
 			this->chart_topMoinsVendu->Text = L"chart_topMoinsVendu";
@@ -617,32 +619,32 @@ namespace CodeProjet {
 			// 
 			// chart_chiffreAffaire
 			// 
-			chartArea12->Name = L"ChartArea1";
-			this->chart_chiffreAffaire->ChartAreas->Add(chartArea12);
-			legend12->Name = L"Legend1";
-			this->chart_chiffreAffaire->Legends->Add(legend12);
+			chartArea3->Name = L"ChartArea1";
+			this->chart_chiffreAffaire->ChartAreas->Add(chartArea3);
+			legend3->Name = L"Legend1";
+			this->chart_chiffreAffaire->Legends->Add(legend3);
 			this->chart_chiffreAffaire->Location = System::Drawing::Point(12, 25);
 			this->chart_chiffreAffaire->Name = L"chart_chiffreAffaire";
-			series12->ChartArea = L"ChartArea1";
-			series12->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
-			series12->CustomProperties = L"IsXAxisQuantitative=True, EmptyPointValue=Zero";
-			series12->EmptyPointStyle->AxisLabel = L"mois";
-			series12->IsXValueIndexed = true;
-			series12->Legend = L"Legend1";
-			series12->LegendText = L"2010";
-			series12->Name = L"Series1";
-			dataPoint7->AxisLabel = L"";
-			series12->Points->Add(dataPoint7);
-			series12->Points->Add(dataPoint8);
-			series12->XValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::String;
-			this->chart_chiffreAffaire->Series->Add(series12);
+			series3->ChartArea = L"ChartArea1";
+			series3->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
+			series3->CustomProperties = L"IsXAxisQuantitative=True, EmptyPointValue=Zero";
+			series3->EmptyPointStyle->AxisLabel = L"mois";
+			series3->IsXValueIndexed = true;
+			series3->Legend = L"Legend1";
+			series3->LegendText = L"2010";
+			series3->Name = L"Series1";
+			dataPoint1->AxisLabel = L"";
+			series3->Points->Add(dataPoint1);
+			series3->Points->Add(dataPoint2);
+			series3->XValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::String;
+			this->chart_chiffreAffaire->Series->Add(series3);
 			this->chart_chiffreAffaire->Size = System::Drawing::Size(842, 464);
 			this->chart_chiffreAffaire->TabIndex = 19;
 			this->chart_chiffreAffaire->Tag = L"Graphique du chiifre d\'affaire";
 			this->chart_chiffreAffaire->Text = L"Graphique du chiifre d\'affaire";
-			title4->Name = L"Chiffre d\'affaire";
-			title4->Text = L"Graphique de l\'evolution du chiffre d\'affaire";
-			this->chart_chiffreAffaire->Titles->Add(title4);
+			title1->Name = L"Chiffre d\'affaire";
+			title1->Text = L"Graphique de l\'evolution du chiffre d\'affaire";
+			this->chart_chiffreAffaire->Titles->Add(title1);
 			// 
 			// panel9
 			// 
@@ -700,6 +702,8 @@ private: System::Void statistique_Load(System::Object^ sender, System::EventArgs
 {
 	moncontroleur1 = gcnew Controleur;
 	moncontroleur1->afficher_datagridView(dataGridView1);
+	moncontroleur1->afficher_top(chart_topPlusVendu, "select TOP 10 nom_article,quantite from Composer inner join Article on Composer.id_article = Article.id_article order by quantite desc");
+	moncontroleur1->afficher_top(chart_topMoinsVendu, "select TOP 10 nom_article,quantite from Composer inner join Article on Composer.id_article = Article.id_article order by quantite ASC");
 }
 
 private: System::Void btnGestionStatistique_Click(System::Object^ sender, System::EventArgs^ e) 
@@ -716,8 +720,6 @@ private: System::Void btnGestionstock_Click(System::Object^ sender, System::Even
 }
 private: System::Void btnMonProfil_Click(System::Object^ sender, System::EventArgs^ e) {
 }
-
-
 
 
 };
