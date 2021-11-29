@@ -24,3 +24,21 @@ void Controleur::afficher_datagridView(DataGridView^ grid)
 	}
 
 }
+void Controleur::afficher_top(Chart^ chart, String^ query)
+	{
+	Connexion co;
+	SqlDataReader^ read;
+	read = co.dataReader(query);
+	if(read->HasRows)
+	{
+		chart->Visible = true;
+		DataTable^ table = gcnew DataTable();
+		table->Load(read);
+		chart->DataSource = table;
+		chart->Series["series1"]->XValueMember = "nom_article";
+		chart->Series["series1"]->YValueMembers = "quantite";
+
+		chart->DataBind();
+	}
+	 
+	}
