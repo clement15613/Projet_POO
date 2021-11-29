@@ -1,4 +1,5 @@
 #pragma once
+#include "controleur.h"
 
 namespace CodeProjet {
 
@@ -8,6 +9,7 @@ namespace CodeProjet {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	
 
 	/// <summary>
 	/// Description résumée de statistique
@@ -90,6 +92,13 @@ namespace CodeProjet {
 	private: System::Windows::Forms::Panel^ panel8;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label_valeur_stock_precedent;
+	private: System::Windows::Forms::DataVisualization::Charting::Chart^ chart_chiffreAffaire;
+
+	private: System::Windows::Forms::Panel^ panel9;
+
+
+
+		   Controleur^ moncontroleur1;
 
 
 
@@ -116,12 +125,20 @@ namespace CodeProjet {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^ legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^ legend2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea10 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^ legend10 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series10 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea11 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^ legend11 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series11 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea12 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^ legend12 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series12 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::DataPoint^ dataPoint7 = (gcnew System::Windows::Forms::DataVisualization::Charting::DataPoint(1,
+				10000));
+			System::Windows::Forms::DataVisualization::Charting::DataPoint^ dataPoint8 = (gcnew System::Windows::Forms::DataVisualization::Charting::DataPoint(9000,
+				2019));
+			System::Windows::Forms::DataVisualization::Charting::Title^ title4 = (gcnew System::Windows::Forms::DataVisualization::Charting::Title());
 			this->btnGestionClients = (gcnew System::Windows::Forms::Button());
 			this->btnGEstionCommande = (gcnew System::Windows::Forms::Button());
 			this->btnGestionPersonnel = (gcnew System::Windows::Forms::Button());
@@ -147,6 +164,9 @@ namespace CodeProjet {
 			this->label_ValeurAchat = (gcnew System::Windows::Forms::Label());
 			this->panel6 = (gcnew System::Windows::Forms::Panel());
 			this->panel7 = (gcnew System::Windows::Forms::Panel());
+			this->panel8 = (gcnew System::Windows::Forms::Panel());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label_valeur_stock_precedent = (gcnew System::Windows::Forms::Label());
 			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
 			this->label_demarqueInconnu = (gcnew System::Windows::Forms::Label());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
@@ -155,9 +175,8 @@ namespace CodeProjet {
 			this->label_margeCommerciale = (gcnew System::Windows::Forms::Label());
 			this->label_TVA = (gcnew System::Windows::Forms::Label());
 			this->comboBoxTVA = (gcnew System::Windows::Forms::ComboBox());
-			this->panel8 = (gcnew System::Windows::Forms::Panel());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label_valeur_stock_precedent = (gcnew System::Windows::Forms::Label());
+			this->chart_chiffreAffaire = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
+			this->panel9 = (gcnew System::Windows::Forms::Panel());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart_topPlusVendu))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart_topMoinsVendu))->BeginInit();
@@ -169,6 +188,8 @@ namespace CodeProjet {
 			this->panel6->SuspendLayout();
 			this->panel7->SuspendLayout();
 			this->panel8->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart_chiffreAffaire))->BeginInit();
+			this->panel9->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// btnGestionClients
@@ -273,45 +294,45 @@ namespace CodeProjet {
 			// 
 			// chart_topPlusVendu
 			// 
-			chartArea1->Name = L"ChartArea1";
-			this->chart_topPlusVendu->ChartAreas->Add(chartArea1);
-			legend1->Name = L"Legend1";
-			this->chart_topPlusVendu->Legends->Add(legend1);
-			this->chart_topPlusVendu->Location = System::Drawing::Point(1292, 153);
+			chartArea10->Name = L"ChartArea1";
+			this->chart_topPlusVendu->ChartAreas->Add(chartArea10);
+			legend10->Name = L"Legend1";
+			this->chart_topPlusVendu->Legends->Add(legend10);
+			this->chart_topPlusVendu->Location = System::Drawing::Point(1315, 153);
 			this->chart_topPlusVendu->Name = L"chart_topPlusVendu";
-			series1->ChartArea = L"ChartArea1";
-			series1->Legend = L"Legend1";
-			series1->Name = L"Series1";
-			this->chart_topPlusVendu->Series->Add(series1);
-			this->chart_topPlusVendu->Size = System::Drawing::Size(600, 326);
+			series10->ChartArea = L"ChartArea1";
+			series10->Legend = L"Legend1";
+			series10->Name = L"2020";
+			this->chart_topPlusVendu->Series->Add(series10);
+			this->chart_topPlusVendu->Size = System::Drawing::Size(558, 345);
 			this->chart_topPlusVendu->TabIndex = 9;
 			this->chart_topPlusVendu->Text = L"chart_topPlusVendu";
-			this->chart_topPlusVendu->Click += gcnew System::EventHandler(this, &statistique::chart_topPlusVendu_Click);
+
 			// 
 			// chart_topMoinsVendu
 			// 
-			chartArea2->Name = L"ChartArea1";
-			this->chart_topMoinsVendu->ChartAreas->Add(chartArea2);
-			legend2->Name = L"Legend1";
-			this->chart_topMoinsVendu->Legends->Add(legend2);
-			this->chart_topMoinsVendu->Location = System::Drawing::Point(1292, 485);
+			chartArea11->Name = L"ChartArea1";
+			this->chart_topMoinsVendu->ChartAreas->Add(chartArea11);
+			legend11->Name = L"Legend1";
+			this->chart_topMoinsVendu->Legends->Add(legend11);
+			this->chart_topMoinsVendu->Location = System::Drawing::Point(1315, 530);
 			this->chart_topMoinsVendu->Name = L"chart_topMoinsVendu";
-			series2->ChartArea = L"ChartArea1";
-			series2->Legend = L"Legend1";
-			series2->Name = L"Series1";
-			this->chart_topMoinsVendu->Series->Add(series2);
-			this->chart_topMoinsVendu->Size = System::Drawing::Size(600, 354);
+			series11->ChartArea = L"ChartArea1";
+			series11->Legend = L"Legend1";
+			series11->Name = L"Series1";
+			this->chart_topMoinsVendu->Series->Add(series11);
+			this->chart_topMoinsVendu->Size = System::Drawing::Size(558, 345);
 			this->chart_topMoinsVendu->TabIndex = 10;
 			this->chart_topMoinsVendu->Text = L"chart_topMoinsVendu";
 			// 
 			// label_panierMoyen
 			// 
 			this->label_panierMoyen->AutoSize = true;
-			this->label_panierMoyen->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label_panierMoyen->Font = (gcnew System::Drawing::Font(L"Century", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label_panierMoyen->Location = System::Drawing::Point(3, 15);
 			this->label_panierMoyen->Name = L"label_panierMoyen";
-			this->label_panierMoyen->Size = System::Drawing::Size(284, 20);
+			this->label_panierMoyen->Size = System::Drawing::Size(334, 20);
 			this->label_panierMoyen->TabIndex = 11;
 			this->label_panierMoyen->Text = L"Montant du panier moyen après remise";
 			// 
@@ -319,9 +340,11 @@ namespace CodeProjet {
 			// 
 			this->panel2->Controls->Add(this->label_prix_panier_moyen);
 			this->panel2->Controls->Add(this->label_panierMoyen);
+			this->panel2->Font = (gcnew System::Drawing::Font(L"Century", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->panel2->Location = System::Drawing::Point(12, 153);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(292, 103);
+			this->panel2->Size = System::Drawing::Size(341, 103);
 			this->panel2->TabIndex = 13;
 			// 
 			// label_prix_panier_moyen
@@ -331,18 +354,18 @@ namespace CodeProjet {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label_prix_panier_moyen->Location = System::Drawing::Point(123, 54);
 			this->label_prix_panier_moyen->Name = L"label_prix_panier_moyen";
-			this->label_prix_panier_moyen->Size = System::Drawing::Size(72, 25);
+			this->label_prix_panier_moyen->Size = System::Drawing::Size(90, 25);
 			this->label_prix_panier_moyen->TabIndex = 12;
-			this->label_prix_panier_moyen->Text = L"99999";
+			this->label_prix_panier_moyen->Text = L"99999 €";
 			// 
 			// label_chiffre_daffaire
 			// 
 			this->label_chiffre_daffaire->AutoSize = true;
-			this->label_chiffre_daffaire->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label_chiffre_daffaire->Location = System::Drawing::Point(146, 14);
+			this->label_chiffre_daffaire->Font = (gcnew System::Drawing::Font(L"Century", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label_chiffre_daffaire->Location = System::Drawing::Point(162, 19);
 			this->label_chiffre_daffaire->Name = L"label_chiffre_daffaire";
-			this->label_chiffre_daffaire->Size = System::Drawing::Size(228, 24);
+			this->label_chiffre_daffaire->Size = System::Drawing::Size(281, 23);
 			this->label_chiffre_daffaire->TabIndex = 13;
 			this->label_chiffre_daffaire->Text = L"Chiffre d\'affaire sur le mois";
 			// 
@@ -352,7 +375,7 @@ namespace CodeProjet {
 			this->panel3->Controls->Add(this->label_chiffre_daffaire);
 			this->panel3->Location = System::Drawing::Point(12, 262);
 			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(507, 160);
+			this->panel3->Size = System::Drawing::Size(582, 160);
 			this->panel3->TabIndex = 14;
 			// 
 			// label_prix_chiffre_affaire
@@ -360,34 +383,34 @@ namespace CodeProjet {
 			this->label_prix_chiffre_affaire->AutoSize = true;
 			this->label_prix_chiffre_affaire->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label_prix_chiffre_affaire->Location = System::Drawing::Point(207, 72);
+			this->label_prix_chiffre_affaire->Location = System::Drawing::Point(233, 71);
 			this->label_prix_chiffre_affaire->Name = L"label_prix_chiffre_affaire";
-			this->label_prix_chiffre_affaire->Size = System::Drawing::Size(107, 37);
+			this->label_prix_chiffre_affaire->Size = System::Drawing::Size(134, 37);
 			this->label_prix_chiffre_affaire->TabIndex = 13;
-			this->label_prix_chiffre_affaire->Text = L"99999";
+			this->label_prix_chiffre_affaire->Text = L"99999 €";
 			// 
 			// dataGridView1
 			// 
 			this->dataGridView1->AllowUserToAddRows = false;
 			this->dataGridView1->AllowUserToDeleteRows = false;
-			this->dataGridView1->AllowUserToOrderColumns = true;
+			this->dataGridView1->BackgroundColor = System::Drawing::SystemColors::ButtonFace;
+			this->dataGridView1->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(8, 54);
+			this->dataGridView1->Location = System::Drawing::Point(8, 62);
 			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->ReadOnly = true;
-			this->dataGridView1->Size = System::Drawing::Size(371, 457);
+			this->dataGridView1->RightToLeft = System::Windows::Forms::RightToLeft::No;
+			this->dataGridView1->Size = System::Drawing::Size(386, 449);
 			this->dataGridView1->TabIndex = 15;
 			// 
 			// label_articleSeuil
 			// 
-			this->label_articleSeuil->AutoSize = true;
-			this->label_articleSeuil->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label_articleSeuil->Font = (gcnew System::Drawing::Font(L"Century", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label_articleSeuil->Location = System::Drawing::Point(3, 10);
 			this->label_articleSeuil->Name = L"label_articleSeuil";
-			this->label_articleSeuil->Size = System::Drawing::Size(391, 20);
+			this->label_articleSeuil->Size = System::Drawing::Size(391, 49);
 			this->label_articleSeuil->TabIndex = 16;
-			this->label_articleSeuil->Text = L"Liste des articles sous le seuil de réapprovisionnement";
+			this->label_articleSeuil->Text = L"Liste des articles sous le seuil \r\nde réapprovisionnement\r\n";
 			// 
 			// panel4
 			// 
@@ -395,7 +418,7 @@ namespace CodeProjet {
 			this->panel4->Controls->Add(this->label_valeur_stock_actuel);
 			this->panel4->Location = System::Drawing::Point(17, 181);
 			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(233, 88);
+			this->panel4->Size = System::Drawing::Size(233, 85);
 			this->panel4->TabIndex = 15;
 			// 
 			// label_prix_stock
@@ -403,20 +426,20 @@ namespace CodeProjet {
 			this->label_prix_stock->AutoSize = true;
 			this->label_prix_stock->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label_prix_stock->Location = System::Drawing::Point(119, 52);
+			this->label_prix_stock->Location = System::Drawing::Point(101, 52);
 			this->label_prix_stock->Name = L"label_prix_stock";
-			this->label_prix_stock->Size = System::Drawing::Size(72, 25);
+			this->label_prix_stock->Size = System::Drawing::Size(90, 25);
 			this->label_prix_stock->TabIndex = 13;
-			this->label_prix_stock->Text = L"99999";
+			this->label_prix_stock->Text = L"99999 €";
 			// 
 			// label_valeur_stock_actuel
 			// 
 			this->label_valeur_stock_actuel->AutoSize = true;
-			this->label_valeur_stock_actuel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label_valeur_stock_actuel->Font = (gcnew System::Drawing::Font(L"Century", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->label_valeur_stock_actuel->Location = System::Drawing::Point(5, 12);
 			this->label_valeur_stock_actuel->Name = L"label_valeur_stock_actuel";
-			this->label_valeur_stock_actuel->Size = System::Drawing::Size(216, 40);
+			this->label_valeur_stock_actuel->Size = System::Drawing::Size(224, 40);
 			this->label_valeur_stock_actuel->TabIndex = 13;
 			this->label_valeur_stock_actuel->Text = L"Valeur commerciale du stock \r\nactuel";
 			// 
@@ -424,9 +447,9 @@ namespace CodeProjet {
 			// 
 			this->panel5->Controls->Add(this->label_valeur_achat_stock);
 			this->panel5->Controls->Add(this->label_ValeurAchat);
-			this->panel5->Location = System::Drawing::Point(310, 153);
+			this->panel5->Location = System::Drawing::Point(359, 153);
 			this->panel5->Name = L"panel5";
-			this->panel5->Size = System::Drawing::Size(209, 103);
+			this->panel5->Size = System::Drawing::Size(235, 103);
 			this->panel5->TabIndex = 16;
 			// 
 			// label_valeur_achat_stock
@@ -436,18 +459,18 @@ namespace CodeProjet {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label_valeur_achat_stock->Location = System::Drawing::Point(74, 55);
 			this->label_valeur_achat_stock->Name = L"label_valeur_achat_stock";
-			this->label_valeur_achat_stock->Size = System::Drawing::Size(72, 25);
+			this->label_valeur_achat_stock->Size = System::Drawing::Size(90, 25);
 			this->label_valeur_achat_stock->TabIndex = 13;
-			this->label_valeur_achat_stock->Text = L"99999";
+			this->label_valeur_achat_stock->Text = L"99999 €";
 			// 
 			// label_ValeurAchat
 			// 
 			this->label_ValeurAchat->AutoSize = true;
-			this->label_ValeurAchat->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label_ValeurAchat->Font = (gcnew System::Drawing::Font(L"Century", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label_ValeurAchat->Location = System::Drawing::Point(24, 15);
 			this->label_ValeurAchat->Name = L"label_ValeurAchat";
-			this->label_ValeurAchat->Size = System::Drawing::Size(175, 20);
+			this->label_ValeurAchat->Size = System::Drawing::Size(204, 20);
 			this->label_ValeurAchat->TabIndex = 13;
 			this->label_ValeurAchat->Text = L"Valeur d\'achat du stock\r\n";
 			// 
@@ -472,10 +495,41 @@ namespace CodeProjet {
 			this->panel7->Controls->Add(this->label_margeCommerciale);
 			this->panel7->Controls->Add(this->label_TVA);
 			this->panel7->Controls->Add(this->comboBoxTVA);
-			this->panel7->Location = System::Drawing::Point(525, 153);
+			this->panel7->Location = System::Drawing::Point(641, 153);
 			this->panel7->Name = L"panel7";
-			this->panel7->Size = System::Drawing::Size(747, 314);
+			this->panel7->Size = System::Drawing::Size(668, 269);
 			this->panel7->TabIndex = 18;
+			// 
+			// panel8
+			// 
+			this->panel8->Controls->Add(this->label1);
+			this->panel8->Controls->Add(this->label_valeur_stock_precedent);
+			this->panel8->Location = System::Drawing::Point(351, 181);
+			this->panel8->Name = L"panel8";
+			this->panel8->Size = System::Drawing::Size(245, 85);
+			this->panel8->TabIndex = 16;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(120, 52);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(90, 25);
+			this->label1->TabIndex = 13;
+			this->label1->Text = L"99999 €";
+			// 
+			// label_valeur_stock_precedent
+			// 
+			this->label_valeur_stock_precedent->AutoSize = true;
+			this->label_valeur_stock_precedent->Font = (gcnew System::Drawing::Font(L"Century", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label_valeur_stock_precedent->Location = System::Drawing::Point(21, 12);
+			this->label_valeur_stock_precedent->Name = L"label_valeur_stock_precedent";
+			this->label_valeur_stock_precedent->Size = System::Drawing::Size(220, 40);
+			this->label_valeur_stock_precedent->TabIndex = 13;
+			this->label_valeur_stock_precedent->Text = L"Valeur commerciale du stock\r\n actuel";
 			// 
 			// comboBox2
 			// 
@@ -490,11 +544,11 @@ namespace CodeProjet {
 			// label_demarqueInconnu
 			// 
 			this->label_demarqueInconnu->AutoSize = true;
-			this->label_demarqueInconnu->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label_demarqueInconnu->Font = (gcnew System::Drawing::Font(L"Century", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->label_demarqueInconnu->Location = System::Drawing::Point(369, 97);
 			this->label_demarqueInconnu->Name = L"label_demarqueInconnu";
-			this->label_demarqueInconnu->Size = System::Drawing::Size(289, 24);
+			this->label_demarqueInconnu->Size = System::Drawing::Size(284, 20);
 			this->label_demarqueInconnu->TabIndex = 6;
 			this->label_demarqueInconnu->Text = L"Montant de la démarque inconnu";
 			// 
@@ -511,11 +565,11 @@ namespace CodeProjet {
 			// label_remiseCommerciale
 			// 
 			this->label_remiseCommerciale->AutoSize = true;
-			this->label_remiseCommerciale->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label_remiseCommerciale->Location = System::Drawing::Point(369, 16);
+			this->label_remiseCommerciale->Font = (gcnew System::Drawing::Font(L"Century", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label_remiseCommerciale->Location = System::Drawing::Point(365, 16);
 			this->label_remiseCommerciale->Name = L"label_remiseCommerciale";
-			this->label_remiseCommerciale->Size = System::Drawing::Size(299, 24);
+			this->label_remiseCommerciale->Size = System::Drawing::Size(293, 20);
 			this->label_remiseCommerciale->TabIndex = 4;
 			this->label_remiseCommerciale->Text = L"Montant de la remise commerciale";
 			// 
@@ -532,22 +586,22 @@ namespace CodeProjet {
 			// label_margeCommerciale
 			// 
 			this->label_margeCommerciale->AutoSize = true;
-			this->label_margeCommerciale->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label_margeCommerciale->Font = (gcnew System::Drawing::Font(L"Century", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->label_margeCommerciale->Location = System::Drawing::Point(22, 97);
 			this->label_margeCommerciale->Name = L"label_margeCommerciale";
-			this->label_margeCommerciale->Size = System::Drawing::Size(296, 24);
+			this->label_margeCommerciale->Size = System::Drawing::Size(290, 20);
 			this->label_margeCommerciale->TabIndex = 2;
 			this->label_margeCommerciale->Text = L"Montant de la marge commerciale";
 			// 
 			// label_TVA
 			// 
 			this->label_TVA->AutoSize = true;
-			this->label_TVA->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label_TVA->Font = (gcnew System::Drawing::Font(L"Century", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label_TVA->Location = System::Drawing::Point(22, 16);
 			this->label_TVA->Name = L"label_TVA";
-			this->label_TVA->Size = System::Drawing::Size(166, 24);
+			this->label_TVA->Size = System::Drawing::Size(168, 20);
 			this->label_TVA->TabIndex = 1;
 			this->label_TVA->Text = L"Montant de la TVA";
 			// 
@@ -561,42 +615,50 @@ namespace CodeProjet {
 			this->comboBoxTVA->TabIndex = 0;
 			this->comboBoxTVA->Text = L"Aucun";
 			// 
-			// panel8
+			// chart_chiffreAffaire
 			// 
-			this->panel8->Controls->Add(this->label1);
-			this->panel8->Controls->Add(this->label_valeur_stock_precedent);
-			this->panel8->Location = System::Drawing::Point(348, 181);
-			this->panel8->Name = L"panel8";
-			this->panel8->Size = System::Drawing::Size(248, 103);
-			this->panel8->TabIndex = 16;
+			chartArea12->Name = L"ChartArea1";
+			this->chart_chiffreAffaire->ChartAreas->Add(chartArea12);
+			legend12->Name = L"Legend1";
+			this->chart_chiffreAffaire->Legends->Add(legend12);
+			this->chart_chiffreAffaire->Location = System::Drawing::Point(12, 25);
+			this->chart_chiffreAffaire->Name = L"chart_chiffreAffaire";
+			series12->ChartArea = L"ChartArea1";
+			series12->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
+			series12->CustomProperties = L"IsXAxisQuantitative=True, EmptyPointValue=Zero";
+			series12->EmptyPointStyle->AxisLabel = L"mois";
+			series12->IsXValueIndexed = true;
+			series12->Legend = L"Legend1";
+			series12->LegendText = L"2010";
+			series12->Name = L"Series1";
+			dataPoint7->AxisLabel = L"";
+			series12->Points->Add(dataPoint7);
+			series12->Points->Add(dataPoint8);
+			series12->XValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::String;
+			this->chart_chiffreAffaire->Series->Add(series12);
+			this->chart_chiffreAffaire->Size = System::Drawing::Size(842, 464);
+			this->chart_chiffreAffaire->TabIndex = 19;
+			this->chart_chiffreAffaire->Tag = L"Graphique du chiifre d\'affaire";
+			this->chart_chiffreAffaire->Text = L"Graphique du chiifre d\'affaire";
+			title4->Name = L"Chiffre d\'affaire";
+			title4->Text = L"Graphique de l\'evolution du chiffre d\'affaire";
+			this->chart_chiffreAffaire->Titles->Add(title4);
 			// 
-			// label1
+			// panel9
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(120, 52);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(72, 25);
-			this->label1->TabIndex = 13;
-			this->label1->Text = L"99999";
-			// 
-			// label_valeur_stock_precedent
-			// 
-			this->label_valeur_stock_precedent->AutoSize = true;
-			this->label_valeur_stock_precedent->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label_valeur_stock_precedent->Location = System::Drawing::Point(21, 12);
-			this->label_valeur_stock_precedent->Name = L"label_valeur_stock_precedent";
-			this->label_valeur_stock_precedent->Size = System::Drawing::Size(212, 40);
-			this->label_valeur_stock_precedent->TabIndex = 13;
-			this->label_valeur_stock_precedent->Text = L"Valeur commerciale du stock\r\n actuel";
+			this->panel9->Controls->Add(this->chart_chiffreAffaire);
+			this->panel9->Location = System::Drawing::Point(415, 428);
+			this->panel9->Name = L"panel9";
+			this->panel9->Size = System::Drawing::Size(857, 492);
+			this->panel9->TabIndex = 20;
 			// 
 			// statistique
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::SystemColors::Control;
 			this->ClientSize = System::Drawing::Size(1904, 1041);
+			this->Controls->Add(this->panel9);
 			this->Controls->Add(this->panel7);
 			this->Controls->Add(this->panel6);
 			this->Controls->Add(this->panel5);
@@ -607,6 +669,7 @@ namespace CodeProjet {
 			this->Controls->Add(this->panel1);
 			this->Name = L"statistique";
 			this->Text = L"statistique";
+			this->Load += gcnew System::EventHandler(this, &statistique::statistique_Load);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart_topPlusVendu))->EndInit();
@@ -621,16 +684,23 @@ namespace CodeProjet {
 			this->panel5->ResumeLayout(false);
 			this->panel5->PerformLayout();
 			this->panel6->ResumeLayout(false);
-			this->panel6->PerformLayout();
 			this->panel7->ResumeLayout(false);
 			this->panel7->PerformLayout();
 			this->panel8->ResumeLayout(false);
 			this->panel8->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart_chiffreAffaire))->EndInit();
+			this->panel9->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
+
+private: System::Void statistique_Load(System::Object^ sender, System::EventArgs^ e) 
+{
+	moncontroleur1 = gcnew Controleur;
+	moncontroleur1->afficher_datagridView(dataGridView1);
+}
 
 private: System::Void btnGestionStatistique_Click(System::Object^ sender, System::EventArgs^ e) 
 {
@@ -647,8 +717,6 @@ private: System::Void btnGestionstock_Click(System::Object^ sender, System::Even
 private: System::Void btnMonProfil_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 
-private: System::Void chart_topPlusVendu_Click(System::Object^ sender, System::EventArgs^ e) {
-}
 
 
 
