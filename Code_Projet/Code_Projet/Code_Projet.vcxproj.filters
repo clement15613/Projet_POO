@@ -35,9 +35,9 @@
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="statistique.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Controleur.h">
+
+
+
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
 

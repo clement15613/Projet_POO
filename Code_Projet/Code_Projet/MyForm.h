@@ -11,7 +11,7 @@ namespace CodeProjet {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Description rÈsumÈe de MyForm
+	/// Description r√©sum√©e de MyForm
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
@@ -26,7 +26,7 @@ namespace CodeProjet {
 
 	protected:
 		/// <summary>
-		/// Nettoyage des ressources utilisÈes.
+		/// Nettoyage des ressources utilis√©es.
 		/// </summary>
 		~MyForm()
 		{
@@ -36,6 +36,8 @@ namespace CodeProjet {
 			}
 		}
 	private: System::Windows::Forms::Label^ label1;
+
+
 	private: System::Windows::Forms::TextBox^ textBox_user;
 	private: System::Windows::Forms::TextBox^ textBox_MDP;
 	private: System::Windows::Forms::Label^ label2;
@@ -57,14 +59,14 @@ namespace CodeProjet {
 
 	private:
 		/// <summary>
-		/// Variable nÈcessaire au concepteur.
+		/// Variable n√©cessaire au concepteur.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// MÈthode requise pour la prise en charge du concepteur - ne modifiez pas
-		/// le contenu de cette mÈthode avec l'Èditeur de code.
+		/// M√©thode requise pour la prise en charge du concepteur - ne modifiez pas
+		/// le contenu de cette m√©thode avec l'√©diteur de code.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -162,7 +164,7 @@ namespace CodeProjet {
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(84, 13);
 			this->label4->TabIndex = 10;
-			this->label4->Text = L"Identifiant oubliÈ";
+			this->label4->Text = L"Identifiant oubli√©";
 			// 
 			// label5
 			// 
@@ -174,7 +176,7 @@ namespace CodeProjet {
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(102, 13);
 			this->label5->TabIndex = 11;
-			this->label5->Text = L"Mot de passe oubliÈ";
+			this->label5->Text = L"Mot de passe oubli√©";
 			// 
 			// MyForm
 			// 
@@ -203,7 +205,9 @@ namespace CodeProjet {
 		}
 #pragma endregion
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+
 		monControleur = gcnew Controleur;
+
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 
