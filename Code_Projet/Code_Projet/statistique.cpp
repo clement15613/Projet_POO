@@ -1,3 +1,4 @@
+/*
 #include "statistique.h"
 #include "MyForm.h"
 using namespace System;
@@ -12,3 +13,4 @@ void Main(array<String^>^ args)
     CodeProjet::statistique statistique;
     Application::Run(% statistique);
 }
+*/
