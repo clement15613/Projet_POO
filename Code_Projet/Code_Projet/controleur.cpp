@@ -77,3 +77,22 @@ void Controleur::afficher_top(Chart^ chart, String^ query)
 			}
 		}
 	}
+
+	void Controleur::gestion_panel(Panel^ panel1, Panel^ panel2, Panel^ panel3, Panel^ panel4, bool statut) 
+	{
+		if (statut == true)
+		{
+			panel1->Visible = false;
+			panel2->Visible = false;
+			panel3->Visible = false;
+			panel4->Visible = false;
+		}
+
+		else if (statut == false)
+		{
+			panel1->Visible = true;
+			panel2->Visible = false;
+			panel3->Visible = false;
+			panel4->Visible = false;
+		}
+	}
