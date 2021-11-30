@@ -3,8 +3,8 @@
 
 #include "statistique.h"
 #include "Accueil.h"
-#include "g_personnel.h"
 #include "Personnel.h"
+#include "Commande.h"
 
 using namespace System;
 using namespace System::Windows::Forms;
@@ -18,9 +18,9 @@ void Main(array<String^>^ args)
     CodeProjet::MyForm form;
     CodeProjet::statistique stat;
     CodeProjet::Accueil Accueil;
-    CodeProjet::g_personnel g_pers;
     CodeProjet::Personnel perso;
+    CodeProjet::Commande cmd;
    // Application::Run(% form);
-    Application::Run(% form);
+    Application::Run(% cmd);
 }
 
