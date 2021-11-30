@@ -27,7 +27,6 @@
     <ClCompile Include="Accueil.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-
     <ClCompile Include="Accueil.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
@@ -37,7 +36,6 @@
     <ClCompile Include="Personnel.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-
     <ClCompile Include="MapPersonnel.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
@@ -71,6 +69,9 @@
     <ClCompile Include="Commande.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="Article.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -97,7 +98,6 @@
     <ClInclude Include="Personnel.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-
     <ClInclude Include="MapClient.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
@@ -122,12 +122,13 @@
     <ClInclude Include="MapComposer.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-	  <ClInclude Include="MapVille.h">
-		  <Filter>Fichiers d%27en-tête</Filter>
-	  </ClInclude>
+    <ClInclude Include="MapVille.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
     <ClInclude Include="Commande.h">
-		
-
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Article.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
