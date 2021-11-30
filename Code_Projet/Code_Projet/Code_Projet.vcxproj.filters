@@ -122,9 +122,11 @@
     <ClInclude Include="MapComposer.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="MapVille.h">
-
+	  <ClInclude Include="MapVille.h">
+		  <Filter>Fichiers d%27en-tête</Filter>
+	  </ClInclude>
     <ClInclude Include="Commande.h">
+		
 
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
