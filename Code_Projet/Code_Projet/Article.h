@@ -166,35 +166,6 @@ private: System::Windows::Forms::Label^ LQuestionSupprimer;
 			this->BtnLabelRechercherArticle = (gcnew System::Windows::Forms::Button());
 			this->BtnLabelAjouterArticle = (gcnew System::Windows::Forms::Button());
 			this->PanelAjouterArticle = (gcnew System::Windows::Forms::Panel());
-			this->PanelModifier = (gcnew System::Windows::Forms::Panel());
-			this->PanelAfficherArticle = (gcnew System::Windows::Forms::Panel());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->LCouleurAfficher = (gcnew System::Windows::Forms::Label());
-			this->comboBoxCouleurAfficher = (gcnew System::Windows::Forms::ComboBox());
-			this->LNomArticleAfficher = (gcnew System::Windows::Forms::Label());
-			this->comboBoxNomArticleAfficher = (gcnew System::Windows::Forms::ComboBox());
-			this->LStockAfficher = (gcnew System::Windows::Forms::Label());
-			this->numericUpDownStockAfficher = (gcnew System::Windows::Forms::NumericUpDown());
-			this->BtnRechercherCommande = (gcnew System::Windows::Forms::Button());
-			this->LNatureArticleAfficher = (gcnew System::Windows::Forms::Label());
-			this->comboBoxNatureArticleAfficher = (gcnew System::Windows::Forms::ComboBox());
-			this->LQuestionAfficher = (gcnew System::Windows::Forms::Label());
-			this->dataGridViewRechercherCommande = (gcnew System::Windows::Forms::DataGridView());
-			this->BtnModifier = (gcnew System::Windows::Forms::Button());
-			this->LQuantiteModifier = (gcnew System::Windows::Forms::Label());
-			this->LSeuilModifier = (gcnew System::Windows::Forms::Label());
-			this->LTauxTvaModifier = (gcnew System::Windows::Forms::Label());
-			this->LPrixHtModifier = (gcnew System::Windows::Forms::Label());
-			this->LCouleurModifier = (gcnew System::Windows::Forms::Label());
-			this->LNatureModifier = (gcnew System::Windows::Forms::Label());
-			this->LNomArticleModifier = (gcnew System::Windows::Forms::Label());
-			this->TBQuantiteModifier = (gcnew System::Windows::Forms::TextBox());
-			this->TBNatureModifier = (gcnew System::Windows::Forms::TextBox());
-			this->TBSeuilModifier = (gcnew System::Windows::Forms::TextBox());
-			this->TBCouleurModifier = (gcnew System::Windows::Forms::TextBox());
-			this->TBTauxTvaModifier = (gcnew System::Windows::Forms::TextBox());
-			this->TBPrixHTModifier = (gcnew System::Windows::Forms::TextBox());
-			this->TBNomArticleModifier = (gcnew System::Windows::Forms::TextBox());
 			this->BtnAjouter = (gcnew System::Windows::Forms::Button());
 			this->LQuantiteStockAjouter = (gcnew System::Windows::Forms::Label());
 			this->LSeuilApprovisionnementAjouter = (gcnew System::Windows::Forms::Label());
@@ -210,6 +181,35 @@ private: System::Windows::Forms::Label^ LQuestionSupprimer;
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->TBPrixHTAjouter = (gcnew System::Windows::Forms::TextBox());
 			this->TBNomArticleAjouter = (gcnew System::Windows::Forms::TextBox());
+			this->PanelModifier = (gcnew System::Windows::Forms::Panel());
+			this->BtnModifier = (gcnew System::Windows::Forms::Button());
+			this->LQuantiteModifier = (gcnew System::Windows::Forms::Label());
+			this->LSeuilModifier = (gcnew System::Windows::Forms::Label());
+			this->LTauxTvaModifier = (gcnew System::Windows::Forms::Label());
+			this->LPrixHtModifier = (gcnew System::Windows::Forms::Label());
+			this->LCouleurModifier = (gcnew System::Windows::Forms::Label());
+			this->LNatureModifier = (gcnew System::Windows::Forms::Label());
+			this->LNomArticleModifier = (gcnew System::Windows::Forms::Label());
+			this->TBQuantiteModifier = (gcnew System::Windows::Forms::TextBox());
+			this->TBNatureModifier = (gcnew System::Windows::Forms::TextBox());
+			this->TBSeuilModifier = (gcnew System::Windows::Forms::TextBox());
+			this->TBCouleurModifier = (gcnew System::Windows::Forms::TextBox());
+			this->TBTauxTvaModifier = (gcnew System::Windows::Forms::TextBox());
+			this->TBPrixHTModifier = (gcnew System::Windows::Forms::TextBox());
+			this->TBNomArticleModifier = (gcnew System::Windows::Forms::TextBox());
+			this->PanelAfficherArticle = (gcnew System::Windows::Forms::Panel());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->LCouleurAfficher = (gcnew System::Windows::Forms::Label());
+			this->comboBoxCouleurAfficher = (gcnew System::Windows::Forms::ComboBox());
+			this->LNomArticleAfficher = (gcnew System::Windows::Forms::Label());
+			this->comboBoxNomArticleAfficher = (gcnew System::Windows::Forms::ComboBox());
+			this->LStockAfficher = (gcnew System::Windows::Forms::Label());
+			this->numericUpDownStockAfficher = (gcnew System::Windows::Forms::NumericUpDown());
+			this->BtnRechercherCommande = (gcnew System::Windows::Forms::Button());
+			this->LNatureArticleAfficher = (gcnew System::Windows::Forms::Label());
+			this->comboBoxNatureArticleAfficher = (gcnew System::Windows::Forms::ComboBox());
+			this->LQuestionAfficher = (gcnew System::Windows::Forms::Label());
+			this->dataGridViewRechercherCommande = (gcnew System::Windows::Forms::DataGridView());
 			this->PanelSupprimerArticle = (gcnew System::Windows::Forms::Panel());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->BtnSupprimer = (gcnew System::Windows::Forms::Button());
@@ -481,6 +481,128 @@ private: System::Windows::Forms::Label^ LQuestionSupprimer;
 			this->PanelAjouterArticle->Size = System::Drawing::Size(781, 540);
 			this->PanelAjouterArticle->TabIndex = 15;
 			// 
+			// BtnAjouter
+			// 
+			this->BtnAjouter->Location = System::Drawing::Point(471, 403);
+			this->BtnAjouter->Name = L"BtnAjouter";
+			this->BtnAjouter->Size = System::Drawing::Size(104, 29);
+			this->BtnAjouter->TabIndex = 14;
+			this->BtnAjouter->Text = L"Ajouter";
+			this->BtnAjouter->UseVisualStyleBackColor = true;
+			// 
+			// LQuantiteStockAjouter
+			// 
+			this->LQuantiteStockAjouter->AutoSize = true;
+			this->LQuantiteStockAjouter->Location = System::Drawing::Point(101, 411);
+			this->LQuantiteStockAjouter->Name = L"LQuantiteStockAjouter";
+			this->LQuantiteStockAjouter->Size = System::Drawing::Size(100, 13);
+			this->LQuantiteStockAjouter->TabIndex = 13;
+			this->LQuantiteStockAjouter->Text = L"Quantité en stock : ";
+			// 
+			// LSeuilApprovisionnementAjouter
+			// 
+			this->LSeuilApprovisionnementAjouter->AutoSize = true;
+			this->LSeuilApprovisionnementAjouter->Location = System::Drawing::Point(392, 303);
+			this->LSeuilApprovisionnementAjouter->Name = L"LSeuilApprovisionnementAjouter";
+			this->LSeuilApprovisionnementAjouter->Size = System::Drawing::Size(130, 13);
+			this->LSeuilApprovisionnementAjouter->TabIndex = 12;
+			this->LSeuilApprovisionnementAjouter->Text = L"Seuil d\'approvisionnement";
+			this->LSeuilApprovisionnementAjouter->Click += gcnew System::EventHandler(this, &Article::label6_Click);
+			// 
+			// LTauxTvaAjouter
+			// 
+			this->LTauxTvaAjouter->AutoSize = true;
+			this->LTauxTvaAjouter->Location = System::Drawing::Point(392, 222);
+			this->LTauxTvaAjouter->Name = L"LTauxTvaAjouter";
+			this->LTauxTvaAjouter->Size = System::Drawing::Size(55, 13);
+			this->LTauxTvaAjouter->TabIndex = 11;
+			this->LTauxTvaAjouter->Text = L"Taux TVA";
+			// 
+			// LPrixHTAjouter
+			// 
+			this->LPrixHTAjouter->AutoSize = true;
+			this->LPrixHTAjouter->Location = System::Drawing::Point(392, 137);
+			this->LPrixHTAjouter->Name = L"LPrixHTAjouter";
+			this->LPrixHTAjouter->Size = System::Drawing::Size(70, 13);
+			this->LPrixHTAjouter->TabIndex = 10;
+			this->LPrixHTAjouter->Text = L"Prix hors-taxe";
+			// 
+			// LCouleurAjouter
+			// 
+			this->LCouleurAjouter->AutoSize = true;
+			this->LCouleurAjouter->Location = System::Drawing::Point(101, 303);
+			this->LCouleurAjouter->Name = L"LCouleurAjouter";
+			this->LCouleurAjouter->Size = System::Drawing::Size(93, 13);
+			this->LCouleurAjouter->TabIndex = 9;
+			this->LCouleurAjouter->Text = L"Couleur de l\'article";
+			// 
+			// LNatureAjouter
+			// 
+			this->LNatureAjouter->AutoSize = true;
+			this->LNatureAjouter->Location = System::Drawing::Point(101, 222);
+			this->LNatureAjouter->Name = L"LNatureAjouter";
+			this->LNatureAjouter->Size = System::Drawing::Size(39, 13);
+			this->LNatureAjouter->TabIndex = 8;
+			this->LNatureAjouter->Text = L"Nature";
+			// 
+			// LNomArticleAjouter
+			// 
+			this->LNomArticleAjouter->AutoSize = true;
+			this->LNomArticleAjouter->Location = System::Drawing::Point(101, 137);
+			this->LNomArticleAjouter->Name = L"LNomArticleAjouter";
+			this->LNomArticleAjouter->Size = System::Drawing::Size(79, 13);
+			this->LNomArticleAjouter->TabIndex = 7;
+			this->LNomArticleAjouter->Text = L"Nom de l\'article";
+			// 
+			// TBStockAjouter
+			// 
+			this->TBStockAjouter->Location = System::Drawing::Point(207, 408);
+			this->TBStockAjouter->Name = L"TBStockAjouter";
+			this->TBStockAjouter->Size = System::Drawing::Size(216, 20);
+			this->TBStockAjouter->TabIndex = 6;
+			// 
+			// TBNatureAjouter
+			// 
+			this->TBNatureAjouter->Location = System::Drawing::Point(104, 238);
+			this->TBNatureAjouter->Name = L"TBNatureAjouter";
+			this->TBNatureAjouter->Size = System::Drawing::Size(171, 20);
+			this->TBNatureAjouter->TabIndex = 5;
+			// 
+			// textBox5
+			// 
+			this->textBox5->Location = System::Drawing::Point(395, 319);
+			this->textBox5->Name = L"textBox5";
+			this->textBox5->Size = System::Drawing::Size(208, 20);
+			this->textBox5->TabIndex = 4;
+			// 
+			// TBCouleurAjouter
+			// 
+			this->TBCouleurAjouter->Location = System::Drawing::Point(104, 319);
+			this->TBCouleurAjouter->Name = L"TBCouleurAjouter";
+			this->TBCouleurAjouter->Size = System::Drawing::Size(171, 20);
+			this->TBCouleurAjouter->TabIndex = 3;
+			// 
+			// textBox3
+			// 
+			this->textBox3->Location = System::Drawing::Point(395, 238);
+			this->textBox3->Name = L"textBox3";
+			this->textBox3->Size = System::Drawing::Size(208, 20);
+			this->textBox3->TabIndex = 2;
+			// 
+			// TBPrixHTAjouter
+			// 
+			this->TBPrixHTAjouter->Location = System::Drawing::Point(395, 153);
+			this->TBPrixHTAjouter->Name = L"TBPrixHTAjouter";
+			this->TBPrixHTAjouter->Size = System::Drawing::Size(208, 20);
+			this->TBPrixHTAjouter->TabIndex = 1;
+			// 
+			// TBNomArticleAjouter
+			// 
+			this->TBNomArticleAjouter->Location = System::Drawing::Point(104, 153);
+			this->TBNomArticleAjouter->Name = L"TBNomArticleAjouter";
+			this->TBNomArticleAjouter->Size = System::Drawing::Size(171, 20);
+			this->TBNomArticleAjouter->TabIndex = 0;
+			// 
 			// PanelModifier
 			// 
 			this->PanelModifier->Controls->Add(this->BtnModifier);
@@ -502,128 +624,6 @@ private: System::Windows::Forms::Label^ LQuestionSupprimer;
 			this->PanelModifier->Name = L"PanelModifier";
 			this->PanelModifier->Size = System::Drawing::Size(781, 540);
 			this->PanelModifier->TabIndex = 16;
-			// 
-			// PanelAfficherArticle
-			// 
-			this->PanelAfficherArticle->Controls->Add(this->button1);
-			this->PanelAfficherArticle->Controls->Add(this->LCouleurAfficher);
-			this->PanelAfficherArticle->Controls->Add(this->comboBoxCouleurAfficher);
-			this->PanelAfficherArticle->Controls->Add(this->LNomArticleAfficher);
-			this->PanelAfficherArticle->Controls->Add(this->comboBoxNomArticleAfficher);
-			this->PanelAfficherArticle->Controls->Add(this->LStockAfficher);
-			this->PanelAfficherArticle->Controls->Add(this->numericUpDownStockAfficher);
-			this->PanelAfficherArticle->Controls->Add(this->BtnRechercherCommande);
-			this->PanelAfficherArticle->Controls->Add(this->LNatureArticleAfficher);
-			this->PanelAfficherArticle->Controls->Add(this->comboBoxNatureArticleAfficher);
-			this->PanelAfficherArticle->Controls->Add(this->LQuestionAfficher);
-			this->PanelAfficherArticle->Controls->Add(this->dataGridViewRechercherCommande);
-			this->PanelAfficherArticle->Location = System::Drawing::Point(405, 84);
-			this->PanelAfficherArticle->Name = L"PanelAfficherArticle";
-			this->PanelAfficherArticle->Size = System::Drawing::Size(964, 611);
-			this->PanelAfficherArticle->TabIndex = 28;
-			this->PanelAfficherArticle->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Article::PanelAfficherArticle_Paint);
-			// 
-			// button1
-			// 
-			this->button1->Location = System::Drawing::Point(292, 133);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(154, 37);
-			this->button1->TabIndex = 19;
-			this->button1->Text = L"Article sous le seuil\r\nde réapprovisionnement";
-			this->button1->UseVisualStyleBackColor = true;
-			// 
-			// LCouleurAfficher
-			// 
-			this->LCouleurAfficher->AutoSize = true;
-			this->LCouleurAfficher->Location = System::Drawing::Point(54, 133);
-			this->LCouleurAfficher->Name = L"LCouleurAfficher";
-			this->LCouleurAfficher->Size = System::Drawing::Size(43, 13);
-			this->LCouleurAfficher->TabIndex = 18;
-			this->LCouleurAfficher->Text = L"Couleur";
-			// 
-			// comboBoxCouleurAfficher
-			// 
-			this->comboBoxCouleurAfficher->FormattingEnabled = true;
-			this->comboBoxCouleurAfficher->Location = System::Drawing::Point(57, 149);
-			this->comboBoxCouleurAfficher->Name = L"comboBoxCouleurAfficher";
-			this->comboBoxCouleurAfficher->Size = System::Drawing::Size(121, 21);
-			this->comboBoxCouleurAfficher->TabIndex = 17;
-			// 
-			// LNomArticleAfficher
-			// 
-			this->LNomArticleAfficher->AutoSize = true;
-			this->LNomArticleAfficher->Location = System::Drawing::Point(54, 78);
-			this->LNomArticleAfficher->Name = L"LNomArticleAfficher";
-			this->LNomArticleAfficher->Size = System::Drawing::Size(79, 13);
-			this->LNomArticleAfficher->TabIndex = 16;
-			this->LNomArticleAfficher->Text = L"Nom de l\'article";
-			// 
-			// comboBoxNomArticleAfficher
-			// 
-			this->comboBoxNomArticleAfficher->FormattingEnabled = true;
-			this->comboBoxNomArticleAfficher->Location = System::Drawing::Point(57, 94);
-			this->comboBoxNomArticleAfficher->Name = L"comboBoxNomArticleAfficher";
-			this->comboBoxNomArticleAfficher->Size = System::Drawing::Size(121, 21);
-			this->comboBoxNomArticleAfficher->TabIndex = 15;
-			// 
-			// LStockAfficher
-			// 
-			this->LStockAfficher->AutoSize = true;
-			this->LStockAfficher->Location = System::Drawing::Point(567, 78);
-			this->LStockAfficher->Name = L"LStockAfficher";
-			this->LStockAfficher->Size = System::Drawing::Size(35, 13);
-			this->LStockAfficher->TabIndex = 14;
-			this->LStockAfficher->Text = L"Stock";
-			// 
-			// numericUpDownStockAfficher
-			// 
-			this->numericUpDownStockAfficher->Location = System::Drawing::Point(570, 94);
-			this->numericUpDownStockAfficher->Name = L"numericUpDownStockAfficher";
-			this->numericUpDownStockAfficher->Size = System::Drawing::Size(81, 20);
-			this->numericUpDownStockAfficher->TabIndex = 13;
-			// 
-			// BtnRechercherCommande
-			// 
-			this->BtnRechercherCommande->Location = System::Drawing::Point(570, 133);
-			this->BtnRechercherCommande->Name = L"BtnRechercherCommande";
-			this->BtnRechercherCommande->Size = System::Drawing::Size(151, 38);
-			this->BtnRechercherCommande->TabIndex = 12;
-			this->BtnRechercherCommande->Text = L"Rechercher";
-			this->BtnRechercherCommande->UseVisualStyleBackColor = true;
-			// 
-			// LNatureArticleAfficher
-			// 
-			this->LNatureArticleAfficher->AutoSize = true;
-			this->LNatureArticleAfficher->Location = System::Drawing::Point(303, 78);
-			this->LNatureArticleAfficher->Name = L"LNatureArticleAfficher";
-			this->LNatureArticleAfficher->Size = System::Drawing::Size(89, 13);
-			this->LNatureArticleAfficher->TabIndex = 9;
-			this->LNatureArticleAfficher->Text = L"Nature de l\'article";
-			// 
-			// comboBoxNatureArticleAfficher
-			// 
-			this->comboBoxNatureArticleAfficher->FormattingEnabled = true;
-			this->comboBoxNatureArticleAfficher->Location = System::Drawing::Point(306, 94);
-			this->comboBoxNatureArticleAfficher->Name = L"comboBoxNatureArticleAfficher";
-			this->comboBoxNatureArticleAfficher->Size = System::Drawing::Size(121, 21);
-			this->comboBoxNatureArticleAfficher->TabIndex = 4;
-			// 
-			// LQuestionAfficher
-			// 
-			this->LQuestionAfficher->AutoSize = true;
-			this->LQuestionAfficher->Location = System::Drawing::Point(54, 52);
-			this->LQuestionAfficher->Name = L"LQuestionAfficher";
-			this->LQuestionAfficher->Size = System::Drawing::Size(223, 13);
-			this->LQuestionAfficher->TabIndex = 1;
-			this->LQuestionAfficher->Text = L"Quel(s) est/sont le/les critères de recherche \?";
-			// 
-			// dataGridViewRechercherCommande
-			// 
-			this->dataGridViewRechercherCommande->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridViewRechercherCommande->Location = System::Drawing::Point(57, 179);
-			this->dataGridViewRechercherCommande->Name = L"dataGridViewRechercherCommande";
-			this->dataGridViewRechercherCommande->Size = System::Drawing::Size(664, 343);
-			this->dataGridViewRechercherCommande->TabIndex = 0;
 			// 
 			// BtnModifier
 			// 
@@ -746,127 +746,127 @@ private: System::Windows::Forms::Label^ LQuestionSupprimer;
 			this->TBNomArticleModifier->Size = System::Drawing::Size(171, 20);
 			this->TBNomArticleModifier->TabIndex = 0;
 			// 
-			// BtnAjouter
+			// PanelAfficherArticle
 			// 
-			this->BtnAjouter->Location = System::Drawing::Point(471, 403);
-			this->BtnAjouter->Name = L"BtnAjouter";
-			this->BtnAjouter->Size = System::Drawing::Size(104, 29);
-			this->BtnAjouter->TabIndex = 14;
-			this->BtnAjouter->Text = L"Ajouter";
-			this->BtnAjouter->UseVisualStyleBackColor = true;
+			this->PanelAfficherArticle->Controls->Add(this->button1);
+			this->PanelAfficherArticle->Controls->Add(this->LCouleurAfficher);
+			this->PanelAfficherArticle->Controls->Add(this->comboBoxCouleurAfficher);
+			this->PanelAfficherArticle->Controls->Add(this->LNomArticleAfficher);
+			this->PanelAfficherArticle->Controls->Add(this->comboBoxNomArticleAfficher);
+			this->PanelAfficherArticle->Controls->Add(this->LStockAfficher);
+			this->PanelAfficherArticle->Controls->Add(this->numericUpDownStockAfficher);
+			this->PanelAfficherArticle->Controls->Add(this->BtnRechercherCommande);
+			this->PanelAfficherArticle->Controls->Add(this->LNatureArticleAfficher);
+			this->PanelAfficherArticle->Controls->Add(this->comboBoxNatureArticleAfficher);
+			this->PanelAfficherArticle->Controls->Add(this->LQuestionAfficher);
+			this->PanelAfficherArticle->Controls->Add(this->dataGridViewRechercherCommande);
+			this->PanelAfficherArticle->Location = System::Drawing::Point(405, 84);
+			this->PanelAfficherArticle->Name = L"PanelAfficherArticle";
+			this->PanelAfficherArticle->Size = System::Drawing::Size(964, 611);
+			this->PanelAfficherArticle->TabIndex = 28;
+			this->PanelAfficherArticle->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Article::PanelAfficherArticle_Paint);
 			// 
-			// LQuantiteStockAjouter
+			// button1
 			// 
-			this->LQuantiteStockAjouter->AutoSize = true;
-			this->LQuantiteStockAjouter->Location = System::Drawing::Point(101, 411);
-			this->LQuantiteStockAjouter->Name = L"LQuantiteStockAjouter";
-			this->LQuantiteStockAjouter->Size = System::Drawing::Size(100, 13);
-			this->LQuantiteStockAjouter->TabIndex = 13;
-			this->LQuantiteStockAjouter->Text = L"Quantité en stock : ";
+			this->button1->Location = System::Drawing::Point(292, 133);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(154, 37);
+			this->button1->TabIndex = 19;
+			this->button1->Text = L"Article sous le seuil\r\nde réapprovisionnement";
+			this->button1->UseVisualStyleBackColor = true;
 			// 
-			// LSeuilApprovisionnementAjouter
+			// LCouleurAfficher
 			// 
-			this->LSeuilApprovisionnementAjouter->AutoSize = true;
-			this->LSeuilApprovisionnementAjouter->Location = System::Drawing::Point(392, 303);
-			this->LSeuilApprovisionnementAjouter->Name = L"LSeuilApprovisionnementAjouter";
-			this->LSeuilApprovisionnementAjouter->Size = System::Drawing::Size(130, 13);
-			this->LSeuilApprovisionnementAjouter->TabIndex = 12;
-			this->LSeuilApprovisionnementAjouter->Text = L"Seuil d\'approvisionnement";
-			this->LSeuilApprovisionnementAjouter->Click += gcnew System::EventHandler(this, &Article::label6_Click);
+			this->LCouleurAfficher->AutoSize = true;
+			this->LCouleurAfficher->Location = System::Drawing::Point(54, 133);
+			this->LCouleurAfficher->Name = L"LCouleurAfficher";
+			this->LCouleurAfficher->Size = System::Drawing::Size(43, 13);
+			this->LCouleurAfficher->TabIndex = 18;
+			this->LCouleurAfficher->Text = L"Couleur";
 			// 
-			// LTauxTvaAjouter
+			// comboBoxCouleurAfficher
 			// 
-			this->LTauxTvaAjouter->AutoSize = true;
-			this->LTauxTvaAjouter->Location = System::Drawing::Point(392, 222);
-			this->LTauxTvaAjouter->Name = L"LTauxTvaAjouter";
-			this->LTauxTvaAjouter->Size = System::Drawing::Size(55, 13);
-			this->LTauxTvaAjouter->TabIndex = 11;
-			this->LTauxTvaAjouter->Text = L"Taux TVA";
+			this->comboBoxCouleurAfficher->FormattingEnabled = true;
+			this->comboBoxCouleurAfficher->Location = System::Drawing::Point(57, 149);
+			this->comboBoxCouleurAfficher->Name = L"comboBoxCouleurAfficher";
+			this->comboBoxCouleurAfficher->Size = System::Drawing::Size(121, 21);
+			this->comboBoxCouleurAfficher->TabIndex = 17;
 			// 
-			// LPrixHTAjouter
+			// LNomArticleAfficher
 			// 
-			this->LPrixHTAjouter->AutoSize = true;
-			this->LPrixHTAjouter->Location = System::Drawing::Point(392, 137);
-			this->LPrixHTAjouter->Name = L"LPrixHTAjouter";
-			this->LPrixHTAjouter->Size = System::Drawing::Size(70, 13);
-			this->LPrixHTAjouter->TabIndex = 10;
-			this->LPrixHTAjouter->Text = L"Prix hors-taxe";
+			this->LNomArticleAfficher->AutoSize = true;
+			this->LNomArticleAfficher->Location = System::Drawing::Point(54, 78);
+			this->LNomArticleAfficher->Name = L"LNomArticleAfficher";
+			this->LNomArticleAfficher->Size = System::Drawing::Size(79, 13);
+			this->LNomArticleAfficher->TabIndex = 16;
+			this->LNomArticleAfficher->Text = L"Nom de l\'article";
 			// 
-			// LCouleurAjouter
+			// comboBoxNomArticleAfficher
 			// 
-			this->LCouleurAjouter->AutoSize = true;
-			this->LCouleurAjouter->Location = System::Drawing::Point(101, 303);
-			this->LCouleurAjouter->Name = L"LCouleurAjouter";
-			this->LCouleurAjouter->Size = System::Drawing::Size(93, 13);
-			this->LCouleurAjouter->TabIndex = 9;
-			this->LCouleurAjouter->Text = L"Couleur de l\'article";
+			this->comboBoxNomArticleAfficher->FormattingEnabled = true;
+			this->comboBoxNomArticleAfficher->Location = System::Drawing::Point(57, 94);
+			this->comboBoxNomArticleAfficher->Name = L"comboBoxNomArticleAfficher";
+			this->comboBoxNomArticleAfficher->Size = System::Drawing::Size(121, 21);
+			this->comboBoxNomArticleAfficher->TabIndex = 15;
 			// 
-			// LNatureAjouter
+			// LStockAfficher
 			// 
-			this->LNatureAjouter->AutoSize = true;
-			this->LNatureAjouter->Location = System::Drawing::Point(101, 222);
-			this->LNatureAjouter->Name = L"LNatureAjouter";
-			this->LNatureAjouter->Size = System::Drawing::Size(39, 13);
-			this->LNatureAjouter->TabIndex = 8;
-			this->LNatureAjouter->Text = L"Nature";
+			this->LStockAfficher->AutoSize = true;
+			this->LStockAfficher->Location = System::Drawing::Point(567, 78);
+			this->LStockAfficher->Name = L"LStockAfficher";
+			this->LStockAfficher->Size = System::Drawing::Size(35, 13);
+			this->LStockAfficher->TabIndex = 14;
+			this->LStockAfficher->Text = L"Stock";
 			// 
-			// LNomArticleAjouter
+			// numericUpDownStockAfficher
 			// 
-			this->LNomArticleAjouter->AutoSize = true;
-			this->LNomArticleAjouter->Location = System::Drawing::Point(101, 137);
-			this->LNomArticleAjouter->Name = L"LNomArticleAjouter";
-			this->LNomArticleAjouter->Size = System::Drawing::Size(79, 13);
-			this->LNomArticleAjouter->TabIndex = 7;
-			this->LNomArticleAjouter->Text = L"Nom de l\'article";
+			this->numericUpDownStockAfficher->Location = System::Drawing::Point(570, 94);
+			this->numericUpDownStockAfficher->Name = L"numericUpDownStockAfficher";
+			this->numericUpDownStockAfficher->Size = System::Drawing::Size(81, 20);
+			this->numericUpDownStockAfficher->TabIndex = 13;
 			// 
-			// TBStockAjouter
+			// BtnRechercherCommande
 			// 
-			this->TBStockAjouter->Location = System::Drawing::Point(207, 408);
-			this->TBStockAjouter->Name = L"TBStockAjouter";
-			this->TBStockAjouter->Size = System::Drawing::Size(216, 20);
-			this->TBStockAjouter->TabIndex = 6;
+			this->BtnRechercherCommande->Location = System::Drawing::Point(570, 133);
+			this->BtnRechercherCommande->Name = L"BtnRechercherCommande";
+			this->BtnRechercherCommande->Size = System::Drawing::Size(151, 38);
+			this->BtnRechercherCommande->TabIndex = 12;
+			this->BtnRechercherCommande->Text = L"Rechercher";
+			this->BtnRechercherCommande->UseVisualStyleBackColor = true;
 			// 
-			// TBNatureAjouter
+			// LNatureArticleAfficher
 			// 
-			this->TBNatureAjouter->Location = System::Drawing::Point(104, 238);
-			this->TBNatureAjouter->Name = L"TBNatureAjouter";
-			this->TBNatureAjouter->Size = System::Drawing::Size(171, 20);
-			this->TBNatureAjouter->TabIndex = 5;
+			this->LNatureArticleAfficher->AutoSize = true;
+			this->LNatureArticleAfficher->Location = System::Drawing::Point(303, 78);
+			this->LNatureArticleAfficher->Name = L"LNatureArticleAfficher";
+			this->LNatureArticleAfficher->Size = System::Drawing::Size(89, 13);
+			this->LNatureArticleAfficher->TabIndex = 9;
+			this->LNatureArticleAfficher->Text = L"Nature de l\'article";
 			// 
-			// textBox5
+			// comboBoxNatureArticleAfficher
 			// 
-			this->textBox5->Location = System::Drawing::Point(395, 319);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(208, 20);
-			this->textBox5->TabIndex = 4;
+			this->comboBoxNatureArticleAfficher->FormattingEnabled = true;
+			this->comboBoxNatureArticleAfficher->Location = System::Drawing::Point(306, 94);
+			this->comboBoxNatureArticleAfficher->Name = L"comboBoxNatureArticleAfficher";
+			this->comboBoxNatureArticleAfficher->Size = System::Drawing::Size(121, 21);
+			this->comboBoxNatureArticleAfficher->TabIndex = 4;
 			// 
-			// TBCouleurAjouter
+			// LQuestionAfficher
 			// 
-			this->TBCouleurAjouter->Location = System::Drawing::Point(104, 319);
-			this->TBCouleurAjouter->Name = L"TBCouleurAjouter";
-			this->TBCouleurAjouter->Size = System::Drawing::Size(171, 20);
-			this->TBCouleurAjouter->TabIndex = 3;
+			this->LQuestionAfficher->AutoSize = true;
+			this->LQuestionAfficher->Location = System::Drawing::Point(54, 52);
+			this->LQuestionAfficher->Name = L"LQuestionAfficher";
+			this->LQuestionAfficher->Size = System::Drawing::Size(223, 13);
+			this->LQuestionAfficher->TabIndex = 1;
+			this->LQuestionAfficher->Text = L"Quel(s) est/sont le/les critères de recherche \?";
 			// 
-			// textBox3
+			// dataGridViewRechercherCommande
 			// 
-			this->textBox3->Location = System::Drawing::Point(395, 238);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(208, 20);
-			this->textBox3->TabIndex = 2;
-			// 
-			// TBPrixHTAjouter
-			// 
-			this->TBPrixHTAjouter->Location = System::Drawing::Point(395, 153);
-			this->TBPrixHTAjouter->Name = L"TBPrixHTAjouter";
-			this->TBPrixHTAjouter->Size = System::Drawing::Size(208, 20);
-			this->TBPrixHTAjouter->TabIndex = 1;
-			// 
-			// TBNomArticleAjouter
-			// 
-			this->TBNomArticleAjouter->Location = System::Drawing::Point(104, 153);
-			this->TBNomArticleAjouter->Name = L"TBNomArticleAjouter";
-			this->TBNomArticleAjouter->Size = System::Drawing::Size(171, 20);
-			this->TBNomArticleAjouter->TabIndex = 0;
+			this->dataGridViewRechercherCommande->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridViewRechercherCommande->Location = System::Drawing::Point(57, 179);
+			this->dataGridViewRechercherCommande->Name = L"dataGridViewRechercherCommande";
+			this->dataGridViewRechercherCommande->Size = System::Drawing::Size(664, 343);
+			this->dataGridViewRechercherCommande->TabIndex = 0;
 			// 
 			// PanelSupprimerArticle
 			// 
