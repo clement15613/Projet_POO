@@ -149,8 +149,8 @@
       <FileType>CppForm</FileType>
     </ClInclude>
 
-    <ClInclude Include="Connexion.h" />
-    <ClInclude Include="Controleur.h" />
+    
+    
     <ClInclude Include="MapAdresse.h" />
     <ClInclude Include="MapArticle.h" />
     <ClInclude Include="MapClient.h" />

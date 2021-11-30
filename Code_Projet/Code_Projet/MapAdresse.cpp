@@ -6,7 +6,7 @@ int MapAdresse::getid_adresse()
 }
 int MapAdresse::setid_adresse(int Newid_adresse)
 {
-	id_adresse = Newid_adresse;
+	return id_adresse = Newid_adresse;
 }
 int MapAdresse::getnumero()
 {
@@ -14,7 +14,7 @@ int MapAdresse::getnumero()
 }
 int MapAdresse::setnumero(int Newnumero)
 {
-	numero = Newnumero;
+	return numero = Newnumero;
 }
 String^ MapAdresse::getrue()
 {
@@ -22,7 +22,7 @@ String^ MapAdresse::getrue()
 }
 String^ MapAdresse::setrue(String^ Newrue)
 {
-	rue = Newrue;
+	return rue = Newrue;
 }
 String^ MapAdresse::getcomplement()
 {
@@ -30,5 +30,5 @@ String^ MapAdresse::getcomplement()
 }
 String^ MapAdresse::setcomplement(String^ Newcomplement)
 {
-	complement = Newcomplement;
+	return complement = Newcomplement;
 }
