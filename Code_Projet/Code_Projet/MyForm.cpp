@@ -21,6 +21,6 @@ void Main(array<String^>^ args)
     CodeProjet::Personnel perso;
     CodeProjet::Commande cmd;
    // Application::Run(% form);
-    Application::Run(% perso);
+    Application::Run(% form);
 }
 

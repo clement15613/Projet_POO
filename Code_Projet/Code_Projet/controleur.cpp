@@ -26,11 +26,11 @@ void Controleur::afficher_datagridView(DataGridView^ grid)
 
 }
 void Controleur::afficher_top(Chart^ chart, String^ query)
-	{
+{
 	Connexion co;
 	SqlDataReader^ read;
 	read = co.dataReader(query);
-	if(read->HasRows)
+	if (read->HasRows)
 	{
 		chart->Visible = true;
 		DataTable^ table = gcnew DataTable();
@@ -38,8 +38,42 @@ void Controleur::afficher_top(Chart^ chart, String^ query)
 		chart->DataSource = table;
 		chart->Series["series1"]->XValueMember = "nom_article";
 		chart->Series["series1"]->YValueMembers = "quantite";
-
 		chart->DataBind();
+	};
+}
+
+	void Controleur::afficher_chiffre_affaireMois(Chart^ chart,String^ year)
+	{
+		Connexion co;
+		SqlDataReader^ read;
+		read = co.dataReader("select month(date_payment) as mois, SUM(quantite * prix_HT) as total from Payment inner join Composer on Payment.id_commande = Composer.id_commande inner join Article on Composer.id_article=Article.id_article where year(date_payment) = " + year + " group by month(date_payment)");
+		if (read->HasRows)
+		{
+			DataTable^ table = gcnew DataTable();
+			table->Load(read);
+			chart->DataSource = table;
+			chart->Series->Add(year);
+			chart->Series[year]->XValueMember = "mois";
+			chart->Series[year]->YValueMembers = "total";
+			chart->Series[year]->ChartTypeName = "spline";
+			chart->DataBind();
+		}
 	}
-	 
+
+	void Controleur::afficher_label_sql(Label^ label,String^ sql)
+	{
+		Connexion co;
+		SqlDataReader^ read;
+		read = co.dataReader(sql);
+		//Label->Caption = Format(Date, "dddd dd/mm/yyyy")
+
+		if(read->HasRows)
+		{
+			while (read->Read())
+			{
+				String^ txt = read[0]->ToString();
+				//txt->Format("{0:n}", 1234);
+				label->Text = txt->Format("{0:n}", read[0]) + " €";
+			}
+		}
 	}

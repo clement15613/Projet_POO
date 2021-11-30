@@ -16,8 +16,9 @@ private:
 	bool Invisible = false;
 public : 
 	void mdp(TextBox^);
-
 	void afficher_datagridView(DataGridView^);
 	void afficher_top(Chart^,String^);
+	void afficher_chiffre_affaireMois(Chart^,String^);
+	void afficher_label_sql(Label^, String^);
 };
 
