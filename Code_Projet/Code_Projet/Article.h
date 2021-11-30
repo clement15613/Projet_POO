@@ -1,4 +1,5 @@
 #pragma once
+#include "controleur.h"
 
 namespace CodeProjet {
 
@@ -123,7 +124,7 @@ private: System::Windows::Forms::Panel^ PanelSupprimerArticle;
 private: System::Windows::Forms::ComboBox^ comboBox1;
 private: System::Windows::Forms::Button^ BtnSupprimer;
 private: System::Windows::Forms::Label^ LQuestionSupprimer;
-
+	   Controleur^ moncontroleur;
 
 	private:
 		/// <summary>
@@ -940,35 +941,33 @@ private: System::Windows::Forms::Label^ LQuestionSupprimer;
 #pragma endregion
 	private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-private: System::Void Article_Load(System::Object^ sender, System::EventArgs^ e) {
-	PanelAjouterArticle->Visible = false;
-	PanelAfficherArticle->Visible = false;
-	PanelModifier->Visible = false;
-	PanelSupprimerArticle->Visible = false;
+private: System::Void Article_Load(System::Object^ sender, System::EventArgs^ e) 
+{
+	moncontroleur = gcnew Controleur;
+	moncontroleur->gestion_panel(PanelAjouterArticle, PanelAfficherArticle, PanelModifier, PanelSupprimerArticle, false);
 }
-private: System::Void BtnLabelAjouterArticle_Click(System::Object^ sender, System::EventArgs^ e) {
-	PanelAjouterArticle->Visible = true;
-	PanelAfficherArticle->Visible = false;
-	PanelModifier->Visible = false;
-	PanelSupprimerArticle->Visible = false;
+
+
+private: System::Void BtnLabelAjouterArticle_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	moncontroleur->gestion_panel(PanelAjouterArticle, PanelAfficherArticle, PanelModifier, PanelSupprimerArticle, true);
 }
-private: System::Void BtnLabelRechercherArticle_Click(System::Object^ sender, System::EventArgs^ e) {
-	PanelAjouterArticle->Visible = false;
-	PanelAfficherArticle->Visible = true;
-	PanelModifier->Visible = false;
-	PanelSupprimerArticle->Visible = false;
+
+
+private: System::Void BtnLabelRechercherArticle_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	moncontroleur->gestion_panel(PanelAfficherArticle, PanelAjouterArticle, PanelModifier, PanelSupprimerArticle, true);
 }
-private: System::Void BtnLabelModifierArticle_Click(System::Object^ sender, System::EventArgs^ e) {
-	PanelAjouterArticle->Visible = false;
-	PanelAfficherArticle->Visible = false;
-	PanelModifier->Visible = true;
-	PanelSupprimerArticle->Visible = false;
+
+
+private: System::Void BtnLabelModifierArticle_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	moncontroleur->gestion_panel(PanelModifier, PanelAfficherArticle, PanelAjouterArticle, PanelSupprimerArticle, true);
 }
+
+
 private: System::Void BtnLabelSupprimerArticle_Click(System::Object^ sender, System::EventArgs^ e) {
-	PanelAjouterArticle->Visible = false;
-	PanelAfficherArticle->Visible = false;
-	PanelModifier->Visible = false;
-	PanelSupprimerArticle->Visible = true;
+	moncontroleur->gestion_panel(PanelSupprimerArticle, PanelAjouterArticle, PanelModifier, PanelAfficherArticle, true);
 }
 private: System::Void PanelAfficherArticle_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }

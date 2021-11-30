@@ -1,4 +1,6 @@
 #pragma once
+#include "controleur.h"
+
 
 namespace CodeProjet {
 
@@ -110,7 +112,8 @@ namespace CodeProjet {
 	private: System::Windows::Forms::DateTimePicker^ dateTimePickerNaissanceAjouter;
 	private: System::Windows::Forms::TextBox^ TBPrenomAjouter;
 	private: System::Windows::Forms::TextBox^ TBNomAjouter;
-	private: System::Windows::Forms::Panel^ PanelAfficherPersonnel;
+	private: System::Windows::Forms::Panel^ PanelAfficherClient;
+
 	private: System::Windows::Forms::Label^ LDatePremierAchatAfficher;
 	private: System::Windows::Forms::DateTimePicker^ dateTimePickerPremierAchatAfficher;
 	private: System::Windows::Forms::Button^ BtnRechercherClient;
@@ -124,6 +127,7 @@ namespace CodeProjet {
 	private: System::Windows::Forms::DateTimePicker^ dateTimePickerDateNaissanceAfficher;
 	private: System::Windows::Forms::Label^ LQuestionAfficher;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
+		   Controleur^ monControleur;
 
 	private:
 		/// <summary>
@@ -171,6 +175,23 @@ namespace CodeProjet {
 			this->LQuestionSupprimer = (gcnew System::Windows::Forms::Label());
 			this->BtnSupprimerClient = (gcnew System::Windows::Forms::Button());
 			this->PanelModifierClient = (gcnew System::Windows::Forms::Panel());
+			this->LDatePremierAchatModiifer = (gcnew System::Windows::Forms::Label());
+			this->dateTimePickerPremierAchatModifier = (gcnew System::Windows::Forms::DateTimePicker());
+			this->BtnModifierClient = (gcnew System::Windows::Forms::Button());
+			this->LVilleModifier = (gcnew System::Windows::Forms::Label());
+			this->BoxVilleModifier = (gcnew System::Windows::Forms::ComboBox());
+			this->LNomRueModifier = (gcnew System::Windows::Forms::Label());
+			this->LNumVoieModifier = (gcnew System::Windows::Forms::Label());
+			this->LComplementModifier = (gcnew System::Windows::Forms::Label());
+			this->LPrenomModifier = (gcnew System::Windows::Forms::Label());
+			this->LDateNaissanceModifier = (gcnew System::Windows::Forms::Label());
+			this->LNomModifier = (gcnew System::Windows::Forms::Label());
+			this->TBComplementModifier = (gcnew System::Windows::Forms::TextBox());
+			this->TBNomRueModifier = (gcnew System::Windows::Forms::TextBox());
+			this->TBNumRueModifier = (gcnew System::Windows::Forms::TextBox());
+			this->dateTimePickerNaissanceModifier = (gcnew System::Windows::Forms::DateTimePicker());
+			this->TBPrenomModifier = (gcnew System::Windows::Forms::TextBox());
+			this->TBNomModifier = (gcnew System::Windows::Forms::TextBox());
 			this->PanelAjouterClient = (gcnew System::Windows::Forms::Panel());
 			this->LPremierAchatAjouter = (gcnew System::Windows::Forms::Label());
 			this->dateTimePickerPremierAchatAjouter = (gcnew System::Windows::Forms::DateTimePicker());
@@ -189,24 +210,7 @@ namespace CodeProjet {
 			this->dateTimePickerNaissanceAjouter = (gcnew System::Windows::Forms::DateTimePicker());
 			this->TBPrenomAjouter = (gcnew System::Windows::Forms::TextBox());
 			this->TBNomAjouter = (gcnew System::Windows::Forms::TextBox());
-			this->LDatePremierAchatModiifer = (gcnew System::Windows::Forms::Label());
-			this->dateTimePickerPremierAchatModifier = (gcnew System::Windows::Forms::DateTimePicker());
-			this->BtnModifierClient = (gcnew System::Windows::Forms::Button());
-			this->LVilleModifier = (gcnew System::Windows::Forms::Label());
-			this->BoxVilleModifier = (gcnew System::Windows::Forms::ComboBox());
-			this->LNomRueModifier = (gcnew System::Windows::Forms::Label());
-			this->LNumVoieModifier = (gcnew System::Windows::Forms::Label());
-			this->LComplementModifier = (gcnew System::Windows::Forms::Label());
-			this->LPrenomModifier = (gcnew System::Windows::Forms::Label());
-			this->LDateNaissanceModifier = (gcnew System::Windows::Forms::Label());
-			this->LNomModifier = (gcnew System::Windows::Forms::Label());
-			this->TBComplementModifier = (gcnew System::Windows::Forms::TextBox());
-			this->TBNomRueModifier = (gcnew System::Windows::Forms::TextBox());
-			this->TBNumRueModifier = (gcnew System::Windows::Forms::TextBox());
-			this->dateTimePickerNaissanceModifier = (gcnew System::Windows::Forms::DateTimePicker());
-			this->TBPrenomModifier = (gcnew System::Windows::Forms::TextBox());
-			this->TBNomModifier = (gcnew System::Windows::Forms::TextBox());
-			this->PanelAfficherPersonnel = (gcnew System::Windows::Forms::Panel());
+			this->PanelAfficherClient = (gcnew System::Windows::Forms::Panel());
 			this->LDatePremierAchatAfficher = (gcnew System::Windows::Forms::Label());
 			this->dateTimePickerPremierAchatAfficher = (gcnew System::Windows::Forms::DateTimePicker());
 			this->BtnRechercherClient = (gcnew System::Windows::Forms::Button());
@@ -224,7 +228,7 @@ namespace CodeProjet {
 			this->PanelSupprimerClient->SuspendLayout();
 			this->PanelModifierClient->SuspendLayout();
 			this->PanelAjouterClient->SuspendLayout();
-			this->PanelAfficherPersonnel->SuspendLayout();
+			this->PanelAfficherClient->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -534,6 +538,144 @@ namespace CodeProjet {
 			this->PanelModifierClient->Size = System::Drawing::Size(523, 446);
 			this->PanelModifierClient->TabIndex = 25;
 			// 
+			// LDatePremierAchatModiifer
+			// 
+			this->LDatePremierAchatModiifer->AutoSize = true;
+			this->LDatePremierAchatModiifer->Location = System::Drawing::Point(17, 258);
+			this->LDatePremierAchatModiifer->Name = L"LDatePremierAchatModiifer";
+			this->LDatePremierAchatModiifer->Size = System::Drawing::Size(112, 13);
+			this->LDatePremierAchatModiifer->TabIndex = 23;
+			this->LDatePremierAchatModiifer->Text = L"Date du premier achat";
+			// 
+			// dateTimePickerPremierAchatModifier
+			// 
+			this->dateTimePickerPremierAchatModifier->Location = System::Drawing::Point(20, 274);
+			this->dateTimePickerPremierAchatModifier->Name = L"dateTimePickerPremierAchatModifier";
+			this->dateTimePickerPremierAchatModifier->Size = System::Drawing::Size(186, 20);
+			this->dateTimePickerPremierAchatModifier->TabIndex = 22;
+			// 
+			// BtnModifierClient
+			// 
+			this->BtnModifierClient->Location = System::Drawing::Point(138, 383);
+			this->BtnModifierClient->Name = L"BtnModifierClient";
+			this->BtnModifierClient->Size = System::Drawing::Size(185, 46);
+			this->BtnModifierClient->TabIndex = 21;
+			this->BtnModifierClient->Text = L"Modifier";
+			this->BtnModifierClient->UseVisualStyleBackColor = true;
+			// 
+			// LVilleModifier
+			// 
+			this->LVilleModifier->AutoSize = true;
+			this->LVilleModifier->Location = System::Drawing::Point(330, 258);
+			this->LVilleModifier->Name = L"LVilleModifier";
+			this->LVilleModifier->Size = System::Drawing::Size(26, 13);
+			this->LVilleModifier->TabIndex = 20;
+			this->LVilleModifier->Text = L"Ville";
+			// 
+			// BoxVilleModifier
+			// 
+			this->BoxVilleModifier->FormattingEnabled = true;
+			this->BoxVilleModifier->Location = System::Drawing::Point(333, 274);
+			this->BoxVilleModifier->Name = L"BoxVilleModifier";
+			this->BoxVilleModifier->Size = System::Drawing::Size(121, 21);
+			this->BoxVilleModifier->TabIndex = 19;
+			// 
+			// LNomRueModifier
+			// 
+			this->LNomRueModifier->AutoSize = true;
+			this->LNomRueModifier->Location = System::Drawing::Point(330, 100);
+			this->LNomRueModifier->Name = L"LNomRueModifier";
+			this->LNomRueModifier->Size = System::Drawing::Size(67, 13);
+			this->LNomRueModifier->TabIndex = 18;
+			this->LNomRueModifier->Text = L"Nom de voie";
+			// 
+			// LNumVoieModifier
+			// 
+			this->LNumVoieModifier->AutoSize = true;
+			this->LNumVoieModifier->Location = System::Drawing::Point(330, 18);
+			this->LNumVoieModifier->Name = L"LNumVoieModifier";
+			this->LNumVoieModifier->Size = System::Drawing::Size(82, 13);
+			this->LNumVoieModifier->TabIndex = 17;
+			this->LNumVoieModifier->Text = L"Numéro de voie";
+			// 
+			// LComplementModifier
+			// 
+			this->LComplementModifier->AutoSize = true;
+			this->LComplementModifier->Location = System::Drawing::Point(330, 187);
+			this->LComplementModifier->Name = L"LComplementModifier";
+			this->LComplementModifier->Size = System::Drawing::Size(113, 13);
+			this->LComplementModifier->TabIndex = 16;
+			this->LComplementModifier->Text = L"Complément d\'adresse";
+			// 
+			// LPrenomModifier
+			// 
+			this->LPrenomModifier->AutoSize = true;
+			this->LPrenomModifier->Location = System::Drawing::Point(17, 100);
+			this->LPrenomModifier->Name = L"LPrenomModifier";
+			this->LPrenomModifier->Size = System::Drawing::Size(43, 13);
+			this->LPrenomModifier->TabIndex = 13;
+			this->LPrenomModifier->Text = L"Prénom";
+			// 
+			// LDateNaissanceModifier
+			// 
+			this->LDateNaissanceModifier->AutoSize = true;
+			this->LDateNaissanceModifier->Location = System::Drawing::Point(17, 187);
+			this->LDateNaissanceModifier->Name = L"LDateNaissanceModifier";
+			this->LDateNaissanceModifier->Size = System::Drawing::Size(96, 13);
+			this->LDateNaissanceModifier->TabIndex = 11;
+			this->LDateNaissanceModifier->Text = L"Date de naissance";
+			// 
+			// LNomModifier
+			// 
+			this->LNomModifier->AutoSize = true;
+			this->LNomModifier->Location = System::Drawing::Point(17, 18);
+			this->LNomModifier->Name = L"LNomModifier";
+			this->LNomModifier->Size = System::Drawing::Size(29, 13);
+			this->LNomModifier->TabIndex = 10;
+			this->LNomModifier->Text = L"Nom";
+			// 
+			// TBComplementModifier
+			// 
+			this->TBComplementModifier->Location = System::Drawing::Point(333, 203);
+			this->TBComplementModifier->Name = L"TBComplementModifier";
+			this->TBComplementModifier->Size = System::Drawing::Size(66, 20);
+			this->TBComplementModifier->TabIndex = 8;
+			// 
+			// TBNomRueModifier
+			// 
+			this->TBNomRueModifier->Location = System::Drawing::Point(333, 116);
+			this->TBNomRueModifier->Name = L"TBNomRueModifier";
+			this->TBNomRueModifier->Size = System::Drawing::Size(100, 20);
+			this->TBNomRueModifier->TabIndex = 7;
+			// 
+			// TBNumRueModifier
+			// 
+			this->TBNumRueModifier->Location = System::Drawing::Point(333, 34);
+			this->TBNumRueModifier->Name = L"TBNumRueModifier";
+			this->TBNumRueModifier->Size = System::Drawing::Size(100, 20);
+			this->TBNumRueModifier->TabIndex = 6;
+			// 
+			// dateTimePickerNaissanceModifier
+			// 
+			this->dateTimePickerNaissanceModifier->Location = System::Drawing::Point(20, 203);
+			this->dateTimePickerNaissanceModifier->Name = L"dateTimePickerNaissanceModifier";
+			this->dateTimePickerNaissanceModifier->Size = System::Drawing::Size(186, 20);
+			this->dateTimePickerNaissanceModifier->TabIndex = 4;
+			// 
+			// TBPrenomModifier
+			// 
+			this->TBPrenomModifier->Location = System::Drawing::Point(20, 116);
+			this->TBPrenomModifier->Name = L"TBPrenomModifier";
+			this->TBPrenomModifier->Size = System::Drawing::Size(100, 20);
+			this->TBPrenomModifier->TabIndex = 1;
+			// 
+			// TBNomModifier
+			// 
+			this->TBNomModifier->Location = System::Drawing::Point(20, 34);
+			this->TBNomModifier->Name = L"TBNomModifier";
+			this->TBNomModifier->Size = System::Drawing::Size(100, 20);
+			this->TBNomModifier->TabIndex = 0;
+			// 
 			// PanelAjouterClient
 			// 
 			this->PanelAjouterClient->Controls->Add(this->LPremierAchatAjouter);
@@ -696,163 +838,25 @@ namespace CodeProjet {
 			this->TBNomAjouter->Size = System::Drawing::Size(100, 20);
 			this->TBNomAjouter->TabIndex = 0;
 			// 
-			// LDatePremierAchatModiifer
+			// PanelAfficherClient
 			// 
-			this->LDatePremierAchatModiifer->AutoSize = true;
-			this->LDatePremierAchatModiifer->Location = System::Drawing::Point(17, 258);
-			this->LDatePremierAchatModiifer->Name = L"LDatePremierAchatModiifer";
-			this->LDatePremierAchatModiifer->Size = System::Drawing::Size(112, 13);
-			this->LDatePremierAchatModiifer->TabIndex = 23;
-			this->LDatePremierAchatModiifer->Text = L"Date du premier achat";
-			// 
-			// dateTimePickerPremierAchatModifier
-			// 
-			this->dateTimePickerPremierAchatModifier->Location = System::Drawing::Point(20, 274);
-			this->dateTimePickerPremierAchatModifier->Name = L"dateTimePickerPremierAchatModifier";
-			this->dateTimePickerPremierAchatModifier->Size = System::Drawing::Size(186, 20);
-			this->dateTimePickerPremierAchatModifier->TabIndex = 22;
-			// 
-			// BtnModifierClient
-			// 
-			this->BtnModifierClient->Location = System::Drawing::Point(138, 383);
-			this->BtnModifierClient->Name = L"BtnModifierClient";
-			this->BtnModifierClient->Size = System::Drawing::Size(185, 46);
-			this->BtnModifierClient->TabIndex = 21;
-			this->BtnModifierClient->Text = L"Modifier";
-			this->BtnModifierClient->UseVisualStyleBackColor = true;
-			// 
-			// LVilleModifier
-			// 
-			this->LVilleModifier->AutoSize = true;
-			this->LVilleModifier->Location = System::Drawing::Point(330, 258);
-			this->LVilleModifier->Name = L"LVilleModifier";
-			this->LVilleModifier->Size = System::Drawing::Size(26, 13);
-			this->LVilleModifier->TabIndex = 20;
-			this->LVilleModifier->Text = L"Ville";
-			// 
-			// BoxVilleModifier
-			// 
-			this->BoxVilleModifier->FormattingEnabled = true;
-			this->BoxVilleModifier->Location = System::Drawing::Point(333, 274);
-			this->BoxVilleModifier->Name = L"BoxVilleModifier";
-			this->BoxVilleModifier->Size = System::Drawing::Size(121, 21);
-			this->BoxVilleModifier->TabIndex = 19;
-			// 
-			// LNomRueModifier
-			// 
-			this->LNomRueModifier->AutoSize = true;
-			this->LNomRueModifier->Location = System::Drawing::Point(330, 100);
-			this->LNomRueModifier->Name = L"LNomRueModifier";
-			this->LNomRueModifier->Size = System::Drawing::Size(67, 13);
-			this->LNomRueModifier->TabIndex = 18;
-			this->LNomRueModifier->Text = L"Nom de voie";
-			// 
-			// LNumVoieModifier
-			// 
-			this->LNumVoieModifier->AutoSize = true;
-			this->LNumVoieModifier->Location = System::Drawing::Point(330, 18);
-			this->LNumVoieModifier->Name = L"LNumVoieModifier";
-			this->LNumVoieModifier->Size = System::Drawing::Size(82, 13);
-			this->LNumVoieModifier->TabIndex = 17;
-			this->LNumVoieModifier->Text = L"Numéro de voie";
-			// 
-			// LComplementModifier
-			// 
-			this->LComplementModifier->AutoSize = true;
-			this->LComplementModifier->Location = System::Drawing::Point(330, 187);
-			this->LComplementModifier->Name = L"LComplementModifier";
-			this->LComplementModifier->Size = System::Drawing::Size(113, 13);
-			this->LComplementModifier->TabIndex = 16;
-			this->LComplementModifier->Text = L"Complément d\'adresse";
-			// 
-			// LPrenomModifier
-			// 
-			this->LPrenomModifier->AutoSize = true;
-			this->LPrenomModifier->Location = System::Drawing::Point(17, 100);
-			this->LPrenomModifier->Name = L"LPrenomModifier";
-			this->LPrenomModifier->Size = System::Drawing::Size(43, 13);
-			this->LPrenomModifier->TabIndex = 13;
-			this->LPrenomModifier->Text = L"Prénom";
-			// 
-			// LDateNaissanceModifier
-			// 
-			this->LDateNaissanceModifier->AutoSize = true;
-			this->LDateNaissanceModifier->Location = System::Drawing::Point(17, 187);
-			this->LDateNaissanceModifier->Name = L"LDateNaissanceModifier";
-			this->LDateNaissanceModifier->Size = System::Drawing::Size(96, 13);
-			this->LDateNaissanceModifier->TabIndex = 11;
-			this->LDateNaissanceModifier->Text = L"Date de naissance";
-			// 
-			// LNomModifier
-			// 
-			this->LNomModifier->AutoSize = true;
-			this->LNomModifier->Location = System::Drawing::Point(17, 18);
-			this->LNomModifier->Name = L"LNomModifier";
-			this->LNomModifier->Size = System::Drawing::Size(29, 13);
-			this->LNomModifier->TabIndex = 10;
-			this->LNomModifier->Text = L"Nom";
-			// 
-			// TBComplementModifier
-			// 
-			this->TBComplementModifier->Location = System::Drawing::Point(333, 203);
-			this->TBComplementModifier->Name = L"TBComplementModifier";
-			this->TBComplementModifier->Size = System::Drawing::Size(66, 20);
-			this->TBComplementModifier->TabIndex = 8;
-			// 
-			// TBNomRueModifier
-			// 
-			this->TBNomRueModifier->Location = System::Drawing::Point(333, 116);
-			this->TBNomRueModifier->Name = L"TBNomRueModifier";
-			this->TBNomRueModifier->Size = System::Drawing::Size(100, 20);
-			this->TBNomRueModifier->TabIndex = 7;
-			// 
-			// TBNumRueModifier
-			// 
-			this->TBNumRueModifier->Location = System::Drawing::Point(333, 34);
-			this->TBNumRueModifier->Name = L"TBNumRueModifier";
-			this->TBNumRueModifier->Size = System::Drawing::Size(100, 20);
-			this->TBNumRueModifier->TabIndex = 6;
-			// 
-			// dateTimePickerNaissanceModifier
-			// 
-			this->dateTimePickerNaissanceModifier->Location = System::Drawing::Point(20, 203);
-			this->dateTimePickerNaissanceModifier->Name = L"dateTimePickerNaissanceModifier";
-			this->dateTimePickerNaissanceModifier->Size = System::Drawing::Size(186, 20);
-			this->dateTimePickerNaissanceModifier->TabIndex = 4;
-			// 
-			// TBPrenomModifier
-			// 
-			this->TBPrenomModifier->Location = System::Drawing::Point(20, 116);
-			this->TBPrenomModifier->Name = L"TBPrenomModifier";
-			this->TBPrenomModifier->Size = System::Drawing::Size(100, 20);
-			this->TBPrenomModifier->TabIndex = 1;
-			// 
-			// TBNomModifier
-			// 
-			this->TBNomModifier->Location = System::Drawing::Point(20, 34);
-			this->TBNomModifier->Name = L"TBNomModifier";
-			this->TBNomModifier->Size = System::Drawing::Size(100, 20);
-			this->TBNomModifier->TabIndex = 0;
-			// 
-			// PanelAfficherPersonnel
-			// 
-			this->PanelAfficherPersonnel->Controls->Add(this->LDatePremierAchatAfficher);
-			this->PanelAfficherPersonnel->Controls->Add(this->dateTimePickerPremierAchatAfficher);
-			this->PanelAfficherPersonnel->Controls->Add(this->BtnRechercherClient);
-			this->PanelAfficherPersonnel->Controls->Add(this->LVilleAfficher);
-			this->PanelAfficherPersonnel->Controls->Add(this->LPrenomAfficher);
-			this->PanelAfficherPersonnel->Controls->Add(this->LNomAfficher);
-			this->PanelAfficherPersonnel->Controls->Add(this->LDateNaissanceAfficher);
-			this->PanelAfficherPersonnel->Controls->Add(this->comboBoxVilleAfficher);
-			this->PanelAfficherPersonnel->Controls->Add(this->comboBoxPrenomAfficher);
-			this->PanelAfficherPersonnel->Controls->Add(this->BoxNomAfficher);
-			this->PanelAfficherPersonnel->Controls->Add(this->dateTimePickerDateNaissanceAfficher);
-			this->PanelAfficherPersonnel->Controls->Add(this->LQuestionAfficher);
-			this->PanelAfficherPersonnel->Controls->Add(this->dataGridView1);
-			this->PanelAfficherPersonnel->Location = System::Drawing::Point(481, 109);
-			this->PanelAfficherPersonnel->Name = L"PanelAfficherPersonnel";
-			this->PanelAfficherPersonnel->Size = System::Drawing::Size(676, 479);
-			this->PanelAfficherPersonnel->TabIndex = 26;
+			this->PanelAfficherClient->Controls->Add(this->LDatePremierAchatAfficher);
+			this->PanelAfficherClient->Controls->Add(this->dateTimePickerPremierAchatAfficher);
+			this->PanelAfficherClient->Controls->Add(this->BtnRechercherClient);
+			this->PanelAfficherClient->Controls->Add(this->LVilleAfficher);
+			this->PanelAfficherClient->Controls->Add(this->LPrenomAfficher);
+			this->PanelAfficherClient->Controls->Add(this->LNomAfficher);
+			this->PanelAfficherClient->Controls->Add(this->LDateNaissanceAfficher);
+			this->PanelAfficherClient->Controls->Add(this->comboBoxVilleAfficher);
+			this->PanelAfficherClient->Controls->Add(this->comboBoxPrenomAfficher);
+			this->PanelAfficherClient->Controls->Add(this->BoxNomAfficher);
+			this->PanelAfficherClient->Controls->Add(this->dateTimePickerDateNaissanceAfficher);
+			this->PanelAfficherClient->Controls->Add(this->LQuestionAfficher);
+			this->PanelAfficherClient->Controls->Add(this->dataGridView1);
+			this->PanelAfficherClient->Location = System::Drawing::Point(481, 109);
+			this->PanelAfficherClient->Name = L"PanelAfficherClient";
+			this->PanelAfficherClient->Size = System::Drawing::Size(676, 479);
+			this->PanelAfficherClient->TabIndex = 26;
 			// 
 			// LDatePremierAchatAfficher
 			// 
@@ -968,15 +972,15 @@ namespace CodeProjet {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1256, 637);
-			this->Controls->Add(this->PanelAjouterClient);
-			this->Controls->Add(this->PanelModifierClient);
-			this->Controls->Add(this->PanelSupprimerClient);
 			this->Controls->Add(this->BtnLabelSupprimerClient);
 			this->Controls->Add(this->BtnLabelModifierClient);
 			this->Controls->Add(this->BtnLabelRechercherClient);
 			this->Controls->Add(this->BtnLabelAjouterClient);
 			this->Controls->Add(this->menuStrip1);
-			this->Controls->Add(this->PanelAfficherPersonnel);
+			this->Controls->Add(this->PanelAfficherClient);
+			this->Controls->Add(this->PanelAjouterClient);
+			this->Controls->Add(this->PanelModifierClient);
+			this->Controls->Add(this->PanelSupprimerClient);
 			this->Name = L"Client";
 			this->Text = L"Client";
 			this->Load += gcnew System::EventHandler(this, &Client::Client_Load);
@@ -988,8 +992,8 @@ namespace CodeProjet {
 			this->PanelModifierClient->PerformLayout();
 			this->PanelAjouterClient->ResumeLayout(false);
 			this->PanelAjouterClient->PerformLayout();
-			this->PanelAfficherPersonnel->ResumeLayout(false);
-			this->PanelAfficherPersonnel->PerformLayout();
+			this->PanelAfficherClient->ResumeLayout(false);
+			this->PanelAfficherClient->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -997,34 +1001,20 @@ namespace CodeProjet {
 		}
 #pragma endregion
 	private: System::Void Client_Load(System::Object^ sender, System::EventArgs^ e) {
-		PanelAfficherPersonnel->Visible = false;
-		PanelAjouterClient->Visible = false;
-		PanelModifierClient->Visible = false;
-		PanelSupprimerClient->Visible = false;
+		monControleur = gcnew Controleur;
+		monControleur->gestion_panel(PanelAjouterClient, PanelModifierClient, PanelAfficherClient, PanelSupprimerClient, false);
 	}
 private: System::Void BtnLabelAjouterPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
-	PanelAfficherPersonnel->Visible = false;
-	PanelAjouterClient->Visible = true;
-	PanelModifierClient->Visible = false;
-	PanelSupprimerClient->Visible = false;
+	monControleur->gestion_panel(PanelAjouterClient, PanelAfficherClient, PanelModifierClient, PanelSupprimerClient, true);
 }
 private: System::Void BtnLabelRechercherPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
-	PanelAfficherPersonnel->Visible = true;
-	PanelAjouterClient->Visible = false;
-	PanelModifierClient->Visible = false;
-	PanelSupprimerClient->Visible = false;
+	monControleur->gestion_panel(PanelAfficherClient, PanelAjouterClient, PanelModifierClient, PanelSupprimerClient, true);
 }
 private: System::Void BtnLabelModifierPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
-	PanelAfficherPersonnel->Visible = false;
-	PanelAjouterClient->Visible = false;
-	PanelModifierClient->Visible = true;
-	PanelSupprimerClient->Visible = false;
+	monControleur->gestion_panel(PanelModifierClient, PanelAjouterClient, PanelAfficherClient, PanelSupprimerClient, true);
 }
 private: System::Void BtnLabelSupprimerPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
-	PanelAfficherPersonnel->Visible = false;
-	PanelAjouterClient->Visible = false;
-	PanelModifierClient->Visible = false;
-	PanelSupprimerClient->Visible = true;
+	monControleur->gestion_panel(PanelSupprimerClient, PanelAjouterClient, PanelModifierClient, PanelAfficherClient, true);
 }
 };
 }

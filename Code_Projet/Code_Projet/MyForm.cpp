@@ -25,6 +25,6 @@ void Main(array<String^>^ args)
     CodeProjet::Article article;
     CodeProjet::Client client;
    // Application::Run(% form);
-    Application::Run(% client);
+    Application::Run(% perso);
 }
 
