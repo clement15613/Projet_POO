@@ -50,7 +50,7 @@ namespace CodeProjet {
 	private: System::Windows::Forms::Button^ btConnexion;
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::Button^ button1;
+
 
 
 
@@ -81,7 +81,6 @@ namespace CodeProjet {
 			this->btConnexion = (gcnew System::Windows::Forms::Button());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->button1 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -180,22 +179,12 @@ namespace CodeProjet {
 			this->label5->TabIndex = 11;
 			this->label5->Text = L"Mot de passe oublié";
 			// 
-			// button1
-			// 
-			this->button1->Location = System::Drawing::Point(48, 81);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(52, 141);
-			this->button1->TabIndex = 12;
-			this->button1->Text = L"button1";
-			this->button1->UseVisualStyleBackColor = true;
-			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Control;
 			this->ClientSize = System::Drawing::Size(636, 361);
-			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->btConnexion);
