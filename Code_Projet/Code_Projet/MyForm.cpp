@@ -14,10 +14,11 @@ void Main(array<String^>^ args)
     Application::SetCompatibleTextRenderingDefault(false);
     //WinformCDemo is your project name
     CodeProjet::MyForm form;
+    CodeProjet::statistique stats;
 
     CodeProjet::Accueil Accueil;
     CodeProjet::g_personnel g_pers;
    // Application::Run(% form);
-    Application::Run(% g_pers);
+    Application::Run(% stats);
 }
 
