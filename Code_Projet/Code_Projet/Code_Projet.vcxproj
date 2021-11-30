@@ -126,6 +126,7 @@
   <ItemGroup>
     <ClCompile Include="Accueil.cpp" />
     <ClCompile Include="Article.cpp" />
+    <ClCompile Include="Client.cpp" />
     <ClCompile Include="Commande.cpp" />
     <ClCompile Include="Connexion.cpp" />
     <ClCompile Include="Controleur.cpp" />
@@ -148,6 +149,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Article.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Client.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MapAdresse.h" />
@@ -182,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Article.resx">
       <DependentUpon>Article.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client.resx">
+      <DependentUpon>Client.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Commande.resx">
       <DependentUpon>Commande.h</DependentUpon>
