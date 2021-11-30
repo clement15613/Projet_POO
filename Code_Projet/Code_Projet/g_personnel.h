@@ -53,13 +53,13 @@ namespace CodeProjet {
 
 
 
-	private: System::Windows::Forms::Panel^ panel1;
-	private: System::Windows::Forms::Button^ btnGestionstock;
-	private: System::Windows::Forms::Button^ btnGEstionCommande;
-	private: System::Windows::Forms::Button^ btnMonProfil;
-	private: System::Windows::Forms::Button^ btnGestionClients;
-	private: System::Windows::Forms::Button^ btnGestionStatistique;
-	private: System::Windows::Forms::Button^ btnGestionPersonnel;
+
+
+
+
+
+
+
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::Button^ btn_cree_pers;
 
@@ -151,21 +151,21 @@ namespace CodeProjet {
 
 
 
-	private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel2;
-	private: System::Windows::Forms::Label^ label30;
-	private: System::Windows::Forms::TextBox^ textBox21;
-	private: System::Windows::Forms::Label^ label31;
-	private: System::Windows::Forms::TextBox^ textBox22;
-	private: System::Windows::Forms::TextBox^ textBox24;
-	private: System::Windows::Forms::Label^ label32;
-	private: System::Windows::Forms::TextBox^ textBox25;
-	private: System::Windows::Forms::Label^ label42;
-	private: System::Windows::Forms::Label^ label38;
-	private: System::Windows::Forms::Label^ label41;
-	private: System::Windows::Forms::TextBox^ textBox30;
-	private: System::Windows::Forms::Label^ label40;
-	private: System::Windows::Forms::Label^ label39;
-	private: System::Windows::Forms::DateTimePicker^ dateTimePicker5;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -236,6 +236,28 @@ namespace CodeProjet {
 	public: System::Windows::Forms::Panel^ panel_cree;
 	private:
 	private: System::Windows::Forms::Button^ button3;
+private: System::Windows::Forms::MenuStrip^ menuStrip1;
+private: System::Windows::Forms::ToolStripMenuItem^ personnelToolStripMenuItem;
+private: System::Windows::Forms::ToolStripMenuItem^ afficherUnPersonnelToolStripMenuItem;
+private: System::Windows::Forms::ToolStripMenuItem^ ajouterUnPersonnelToolStripMenuItem;
+private: System::Windows::Forms::ToolStripMenuItem^ modifierUnPersonnelToolStripMenuItem;
+private: System::Windows::Forms::ToolStripMenuItem^ supprimerUnPersonnelToolStripMenuItem;
+private: System::Windows::Forms::ToolStripMenuItem^ clientToolStripMenuItem;
+private: System::Windows::Forms::ToolStripMenuItem^ afficherLesClientsToolStripMenuItem;
+private: System::Windows::Forms::ToolStripMenuItem^ ajouterUnClientToolStripMenuItem;
+private: System::Windows::Forms::ToolStripMenuItem^ modifierUnClientToolStripMenuItem;
+private: System::Windows::Forms::ToolStripMenuItem^ supprimerUnClientToolStripMenuItem;
+private: System::Windows::Forms::ToolStripMenuItem^ commandeToolStripMenuItem;
+private: System::Windows::Forms::ToolStripMenuItem^ afficherLesCommandesToolStripMenuItem;
+private: System::Windows::Forms::ToolStripMenuItem^ ajouterUneCommandeToolStripMenuItem;
+private: System::Windows::Forms::ToolStripMenuItem^ modifierUneCommandeToolStripMenuItem;
+private: System::Windows::Forms::ToolStripMenuItem^ supprimerUneCommandeToolStripMenuItem;
+private: System::Windows::Forms::ToolStripMenuItem^ stockToolStripMenuItem;
+private: System::Windows::Forms::ToolStripMenuItem^ afficherLesStocksToolStripMenuItem;
+private: System::Windows::Forms::ToolStripMenuItem^ ajouterUnArticleToolStripMenuItem;
+private: System::Windows::Forms::ToolStripMenuItem^ modifierUnArticleToolStripMenuItem;
+private: System::Windows::Forms::ToolStripMenuItem^ supprimerUnArticleToolStripMenuItem;
+private: System::Windows::Forms::ToolStripMenuItem^ statistiqueToolStripMenuItem;
 	public:
 
 
@@ -312,28 +334,6 @@ namespace CodeProjet {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->flowLayoutPanel2 = (gcnew System::Windows::Forms::FlowLayoutPanel());
-			this->label30 = (gcnew System::Windows::Forms::Label());
-			this->btnGestionstock = (gcnew System::Windows::Forms::Button());
-			this->textBox21 = (gcnew System::Windows::Forms::TextBox());
-			this->btnGEstionCommande = (gcnew System::Windows::Forms::Button());
-			this->label31 = (gcnew System::Windows::Forms::Label());
-			this->btnMonProfil = (gcnew System::Windows::Forms::Button());
-			this->textBox22 = (gcnew System::Windows::Forms::TextBox());
-			this->btnGestionClients = (gcnew System::Windows::Forms::Button());
-			this->textBox24 = (gcnew System::Windows::Forms::TextBox());
-			this->btnGestionStatistique = (gcnew System::Windows::Forms::Button());
-			this->label32 = (gcnew System::Windows::Forms::Label());
-			this->btnGestionPersonnel = (gcnew System::Windows::Forms::Button());
-			this->textBox25 = (gcnew System::Windows::Forms::TextBox());
-			this->label42 = (gcnew System::Windows::Forms::Label());
-			this->label38 = (gcnew System::Windows::Forms::Label());
-			this->label41 = (gcnew System::Windows::Forms::Label());
-			this->textBox30 = (gcnew System::Windows::Forms::TextBox());
-			this->label40 = (gcnew System::Windows::Forms::Label());
-			this->label39 = (gcnew System::Windows::Forms::Label());
-			this->dateTimePicker5 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->btn_sup_pers = (gcnew System::Windows::Forms::Button());
 			this->btn_aff_pers = (gcnew System::Windows::Forms::Button());
@@ -412,7 +412,28 @@ namespace CodeProjet {
 			this->textBox16 = (gcnew System::Windows::Forms::TextBox());
 			this->panel_cree = (gcnew System::Windows::Forms::Panel());
 			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->panel1->SuspendLayout();
+			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
+			this->personnelToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->clientToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->commandeToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->stockToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->statistiqueToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->afficherUnPersonnelToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->ajouterUnPersonnelToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->modifierUnPersonnelToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->supprimerUnPersonnelToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->afficherLesClientsToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->ajouterUnClientToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->modifierUnClientToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->supprimerUnClientToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->afficherLesCommandesToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->ajouterUneCommandeToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->modifierUneCommandeToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->supprimerUneCommandeToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->afficherLesStocksToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->ajouterUnArticleToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->modifierUnArticleToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->supprimerUnArticleToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->panel2->SuspendLayout();
 			this->panel_modif->SuspendLayout();
 			this->panel3->SuspendLayout();
@@ -420,245 +441,8 @@ namespace CodeProjet {
 			this->panel_sup->SuspendLayout();
 			this->panel4->SuspendLayout();
 			this->panel_cree->SuspendLayout();
+			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
-			// 
-			// panel1
-			// 
-			this->panel1->Controls->Add(this->flowLayoutPanel2);
-			this->panel1->Controls->Add(this->label30);
-			this->panel1->Controls->Add(this->btnGestionstock);
-			this->panel1->Controls->Add(this->textBox21);
-			this->panel1->Controls->Add(this->btnGEstionCommande);
-			this->panel1->Controls->Add(this->label31);
-			this->panel1->Controls->Add(this->btnMonProfil);
-			this->panel1->Controls->Add(this->textBox22);
-			this->panel1->Controls->Add(this->btnGestionClients);
-			this->panel1->Controls->Add(this->textBox24);
-			this->panel1->Controls->Add(this->btnGestionStatistique);
-			this->panel1->Controls->Add(this->label32);
-			this->panel1->Controls->Add(this->btnGestionPersonnel);
-			this->panel1->Controls->Add(this->textBox25);
-			this->panel1->Controls->Add(this->label42);
-			this->panel1->Controls->Add(this->label38);
-			this->panel1->Controls->Add(this->label41);
-			this->panel1->Controls->Add(this->textBox30);
-			this->panel1->Controls->Add(this->label40);
-			this->panel1->Controls->Add(this->label39);
-			this->panel1->Controls->Add(this->dateTimePicker5);
-			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
-			this->panel1->Location = System::Drawing::Point(0, 0);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(1518, 97);
-			this->panel1->TabIndex = 2;
-			// 
-			// flowLayoutPanel2
-			// 
-			this->flowLayoutPanel2->Location = System::Drawing::Point(223, 97);
-			this->flowLayoutPanel2->Name = L"flowLayoutPanel2";
-			this->flowLayoutPanel2->Size = System::Drawing::Size(936, 572);
-			this->flowLayoutPanel2->TabIndex = 54;
-			// 
-			// label30
-			// 
-			this->label30->AutoSize = true;
-			this->label30->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.25F));
-			this->label30->Location = System::Drawing::Point(223, 672);
-			this->label30->Name = L"label30";
-			this->label30->Size = System::Drawing::Size(331, 25);
-			this->label30->TabIndex = 53;
-			this->label30->Text = L"Quel profil voulez vous modifier \?";
-			// 
-			// btnGestionstock
-			// 
-			this->btnGestionstock->Anchor = System::Windows::Forms::AnchorStyles::Top;
-			this->btnGestionstock->AutoSize = true;
-			this->btnGestionstock->CausesValidation = false;
-			this->btnGestionstock->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnGestionstock->Location = System::Drawing::Point(848, 22);
-			this->btnGestionstock->Name = L"btnGestionstock";
-			this->btnGestionstock->Size = System::Drawing::Size(175, 49);
-			this->btnGestionstock->TabIndex = 13;
-			this->btnGestionstock->Text = L"Gestion stock";
-			this->btnGestionstock->UseVisualStyleBackColor = true;
-			// 
-			// textBox21
-			// 
-			this->textBox21->Location = System::Drawing::Point(223, 700);
-			this->textBox21->Name = L"textBox21";
-			this->textBox21->Size = System::Drawing::Size(638, 20);
-			this->textBox21->TabIndex = 52;
-			// 
-			// btnGEstionCommande
-			// 
-			this->btnGEstionCommande->Anchor = System::Windows::Forms::AnchorStyles::Top;
-			this->btnGEstionCommande->AutoSize = true;
-			this->btnGEstionCommande->CausesValidation = false;
-			this->btnGEstionCommande->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnGEstionCommande->Location = System::Drawing::Point(675, 22);
-			this->btnGEstionCommande->Name = L"btnGEstionCommande";
-			this->btnGEstionCommande->Size = System::Drawing::Size(175, 49);
-			this->btnGEstionCommande->TabIndex = 9;
-			this->btnGEstionCommande->Text = L"Gestion Commande";
-			this->btnGEstionCommande->UseVisualStyleBackColor = true;
-			// 
-			// label31
-			// 
-			this->label31->AutoSize = true;
-			this->label31->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
-			this->label31->Location = System::Drawing::Point(223, 723);
-			this->label31->Name = L"label31";
-			this->label31->Size = System::Drawing::Size(61, 24);
-			this->label31->TabIndex = 41;
-			this->label31->Text = L"Nom :";
-			// 
-			// btnMonProfil
-			// 
-			this->btnMonProfil->Anchor = System::Windows::Forms::AnchorStyles::Top;
-			this->btnMonProfil->AutoSize = true;
-			this->btnMonProfil->CausesValidation = false;
-			this->btnMonProfil->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnMonProfil->Location = System::Drawing::Point(1194, 22);
-			this->btnMonProfil->Name = L"btnMonProfil";
-			this->btnMonProfil->Size = System::Drawing::Size(175, 49);
-			this->btnMonProfil->TabIndex = 12;
-			this->btnMonProfil->Text = L"Profil";
-			this->btnMonProfil->UseVisualStyleBackColor = true;
-			// 
-			// textBox22
-			// 
-			this->textBox22->Location = System::Drawing::Point(223, 750);
-			this->textBox22->Name = L"textBox22";
-			this->textBox22->Size = System::Drawing::Size(638, 20);
-			this->textBox22->TabIndex = 51;
-			// 
-			// btnGestionClients
-			// 
-			this->btnGestionClients->Anchor = System::Windows::Forms::AnchorStyles::Top;
-			this->btnGestionClients->AutoSize = true;
-			this->btnGestionClients->CausesValidation = false;
-			this->btnGestionClients->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnGestionClients->Location = System::Drawing::Point(502, 22);
-			this->btnGestionClients->Name = L"btnGestionClients";
-			this->btnGestionClients->Size = System::Drawing::Size(175, 49);
-			this->btnGestionClients->TabIndex = 8;
-			this->btnGestionClients->Text = L"Gestion Clients";
-			this->btnGestionClients->UseVisualStyleBackColor = true;
-			// 
-			// textBox24
-			// 
-			this->textBox24->Location = System::Drawing::Point(223, 776);
-			this->textBox24->Name = L"textBox24";
-			this->textBox24->Size = System::Drawing::Size(638, 20);
-			this->textBox24->TabIndex = 50;
-			// 
-			// btnGestionStatistique
-			// 
-			this->btnGestionStatistique->Anchor = System::Windows::Forms::AnchorStyles::Top;
-			this->btnGestionStatistique->AutoSize = true;
-			this->btnGestionStatistique->CausesValidation = false;
-			this->btnGestionStatistique->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnGestionStatistique->Location = System::Drawing::Point(1021, 22);
-			this->btnGestionStatistique->Name = L"btnGestionStatistique";
-			this->btnGestionStatistique->Size = System::Drawing::Size(175, 49);
-			this->btnGestionStatistique->TabIndex = 11;
-			this->btnGestionStatistique->Text = L"Gestion Statistique";
-			this->btnGestionStatistique->UseVisualStyleBackColor = true;
-			// 
-			// label32
-			// 
-			this->label32->AutoSize = true;
-			this->label32->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
-			this->label32->Location = System::Drawing::Point(223, 799);
-			this->label32->Name = L"label32";
-			this->label32->Size = System::Drawing::Size(133, 24);
-			this->label32->TabIndex = 42;
-			this->label32->Text = L"Mot de passe :";
-			// 
-			// btnGestionPersonnel
-			// 
-			this->btnGestionPersonnel->Anchor = System::Windows::Forms::AnchorStyles::Top;
-			this->btnGestionPersonnel->AutoSize = true;
-			this->btnGestionPersonnel->CausesValidation = false;
-			this->btnGestionPersonnel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnGestionPersonnel->Location = System::Drawing::Point(329, 22);
-			this->btnGestionPersonnel->Name = L"btnGestionPersonnel";
-			this->btnGestionPersonnel->Size = System::Drawing::Size(175, 49);
-			this->btnGestionPersonnel->TabIndex = 10;
-			this->btnGestionPersonnel->Text = L"Gestion Personnel";
-			this->btnGestionPersonnel->UseVisualStyleBackColor = true;
-			// 
-			// textBox25
-			// 
-			this->textBox25->Location = System::Drawing::Point(223, 826);
-			this->textBox25->Name = L"textBox25";
-			this->textBox25->Size = System::Drawing::Size(638, 20);
-			this->textBox25->TabIndex = 49;
-			// 
-			// label42
-			// 
-			this->label42->AccessibleName = L"";
-			this->label42->AutoSize = true;
-			this->label42->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label42->Location = System::Drawing::Point(223, 973);
-			this->label42->Name = L"label42";
-			this->label42->Size = System::Drawing::Size(183, 18);
-			this->label42->TabIndex = 40;
-			this->label42->Text = L"Modifier un Personnel :";
-			// 
-			// label38
-			// 
-			this->label38->AutoSize = true;
-			this->label38->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
-			this->label38->Location = System::Drawing::Point(223, 849);
-			this->label38->Name = L"label38";
-			this->label38->Size = System::Drawing::Size(159, 24);
-			this->label38->TabIndex = 43;
-			this->label38->Text = L"Nom d\'utilisateur :";
-			// 
-			// label41
-			// 
-			this->label41->AutoSize = true;
-			this->label41->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
-			this->label41->Location = System::Drawing::Point(316, 949);
-			this->label41->Name = L"label41";
-			this->label41->Size = System::Drawing::Size(259, 24);
-			this->label41->TabIndex = 46;
-			this->label41->Text = L"Cofirmation de Mot de passe :";
-			// 
-			// textBox30
-			// 
-			this->textBox30->Location = System::Drawing::Point(223, 876);
-			this->textBox30->Name = L"textBox30";
-			this->textBox30->Size = System::Drawing::Size(638, 20);
-			this->textBox30->TabIndex = 48;
-			// 
-			// label40
-			// 
-			this->label40->AutoSize = true;
-			this->label40->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
-			this->label40->Location = System::Drawing::Point(223, 949);
-			this->label40->Name = L"label40";
-			this->label40->Size = System::Drawing::Size(87, 24);
-			this->label40->TabIndex = 45;
-			this->label40->Text = L"Prénom :";
-			// 
-			// label39
-			// 
-			this->label39->AutoSize = true;
-			this->label39->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
-			this->label39->Location = System::Drawing::Point(223, 899);
-			this->label39->Name = L"label39";
-			this->label39->Size = System::Drawing::Size(169, 24);
-			this->label39->TabIndex = 44;
-			this->label39->Text = L"Date d\'embauche :";
-			// 
-			// dateTimePicker5
-			// 
-			this->dateTimePicker5->Location = System::Drawing::Point(223, 926);
-			this->dateTimePicker5->Name = L"dateTimePicker5";
-			this->dateTimePicker5->Size = System::Drawing::Size(678, 20);
-			this->dateTimePicker5->TabIndex = 47;
 			// 
 			// panel2
 			// 
@@ -667,9 +451,9 @@ namespace CodeProjet {
 			this->panel2->Controls->Add(this->btn_modif_pers);
 			this->panel2->Controls->Add(this->btn_cree_pers);
 			this->panel2->Dock = System::Windows::Forms::DockStyle::Left;
-			this->panel2->Location = System::Drawing::Point(0, 97);
+			this->panel2->Location = System::Drawing::Point(0, 0);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(180, 844);
+			this->panel2->Size = System::Drawing::Size(180, 749);
 			this->panel2->TabIndex = 3;
 			// 
 			// btn_sup_pers
@@ -723,7 +507,7 @@ namespace CodeProjet {
 			this->panel_modif->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->panel_modif->Location = System::Drawing::Point(0, 0);
 			this->panel_modif->Name = L"panel_modif";
-			this->panel_modif->Size = System::Drawing::Size(1518, 941);
+			this->panel_modif->Size = System::Drawing::Size(1321, 749);
 			this->panel_modif->TabIndex = 27;
 			this->panel_modif->Visible = false;
 			// 
@@ -937,7 +721,7 @@ namespace CodeProjet {
 			this->panel_aff->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->panel_aff->Location = System::Drawing::Point(0, 0);
 			this->panel_aff->Name = L"panel_aff";
-			this->panel_aff->Size = System::Drawing::Size(1518, 941);
+			this->panel_aff->Size = System::Drawing::Size(1321, 749);
 			this->panel_aff->TabIndex = 50;
 			// 
 			// label2
@@ -1086,10 +870,11 @@ namespace CodeProjet {
 			this->panel_sup->Controls->Add(this->comboBox2);
 			this->panel_sup->Controls->Add(this->label29);
 			this->panel_sup->Controls->Add(this->label10);
+			this->panel_sup->Controls->Add(this->menuStrip1);
 			this->panel_sup->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->panel_sup->Location = System::Drawing::Point(0, 0);
 			this->panel_sup->Name = L"panel_sup";
-			this->panel_sup->Size = System::Drawing::Size(1518, 941);
+			this->panel_sup->Size = System::Drawing::Size(1321, 749);
 			this->panel_sup->TabIndex = 27;
 			this->panel_sup->Visible = false;
 			// 
@@ -1416,7 +1201,7 @@ namespace CodeProjet {
 			this->panel_cree->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->panel_cree->Location = System::Drawing::Point(0, 0);
 			this->panel_cree->Name = L"panel_cree";
-			this->panel_cree->Size = System::Drawing::Size(1518, 941);
+			this->panel_cree->Size = System::Drawing::Size(1321, 749);
 			this->panel_cree->TabIndex = 26;
 			this->panel_cree->Visible = false;
 			// 
@@ -1429,21 +1214,185 @@ namespace CodeProjet {
 			this->button3->Text = L"Créer le Personnel";
 			this->button3->UseVisualStyleBackColor = true;
 			// 
+			// menuStrip1
+			// 
+			this->menuStrip1->BackColor = System::Drawing::SystemColors::AppWorkspace;
+			this->menuStrip1->Dock = System::Windows::Forms::DockStyle::None;
+			this->menuStrip1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 20, System::Drawing::FontStyle::Bold));
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {
+				this->personnelToolStripMenuItem,
+					this->clientToolStripMenuItem, this->commandeToolStripMenuItem, this->stockToolStripMenuItem, this->statistiqueToolStripMenuItem
+			});
+			this->menuStrip1->Location = System::Drawing::Point(418, 34);
+			this->menuStrip1->Name = L"menuStrip1";
+			this->menuStrip1->RenderMode = System::Windows::Forms::ToolStripRenderMode::Professional;
+			this->menuStrip1->Size = System::Drawing::Size(709, 45);
+			this->menuStrip1->TabIndex = 61;
+			this->menuStrip1->Text = L"menuStrip1";
+			// 
+			// personnelToolStripMenuItem
+			// 
+			this->personnelToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
+				this->afficherUnPersonnelToolStripMenuItem,
+					this->ajouterUnPersonnelToolStripMenuItem, this->modifierUnPersonnelToolStripMenuItem, this->supprimerUnPersonnelToolStripMenuItem
+			});
+			this->personnelToolStripMenuItem->Name = L"personnelToolStripMenuItem";
+			this->personnelToolStripMenuItem->Size = System::Drawing::Size(155, 41);
+			this->personnelToolStripMenuItem->Text = L"Personnel";
+			// 
+			// clientToolStripMenuItem
+			// 
+			this->clientToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
+				this->afficherLesClientsToolStripMenuItem,
+					this->ajouterUnClientToolStripMenuItem, this->modifierUnClientToolStripMenuItem, this->supprimerUnClientToolStripMenuItem
+			});
+			this->clientToolStripMenuItem->Name = L"clientToolStripMenuItem";
+			this->clientToolStripMenuItem->Size = System::Drawing::Size(104, 41);
+			this->clientToolStripMenuItem->Text = L"Client";
+			// 
+			// commandeToolStripMenuItem
+			// 
+			this->commandeToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
+				this->afficherLesCommandesToolStripMenuItem,
+					this->ajouterUneCommandeToolStripMenuItem, this->modifierUneCommandeToolStripMenuItem, this->supprimerUneCommandeToolStripMenuItem
+			});
+			this->commandeToolStripMenuItem->Name = L"commandeToolStripMenuItem";
+			this->commandeToolStripMenuItem->Size = System::Drawing::Size(176, 41);
+			this->commandeToolStripMenuItem->Text = L"Commande";
+			// 
+			// stockToolStripMenuItem
+			// 
+			this->stockToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
+				this->afficherLesStocksToolStripMenuItem,
+					this->ajouterUnArticleToolStripMenuItem, this->modifierUnArticleToolStripMenuItem, this->supprimerUnArticleToolStripMenuItem
+			});
+			this->stockToolStripMenuItem->Name = L"stockToolStripMenuItem";
+			this->stockToolStripMenuItem->Size = System::Drawing::Size(99, 41);
+			this->stockToolStripMenuItem->Text = L"Stock";
+			// 
+			// statistiqueToolStripMenuItem
+			// 
+			this->statistiqueToolStripMenuItem->Name = L"statistiqueToolStripMenuItem";
+			this->statistiqueToolStripMenuItem->Size = System::Drawing::Size(167, 41);
+			this->statistiqueToolStripMenuItem->Text = L"Statistique";
+			// 
+			// afficherUnPersonnelToolStripMenuItem
+			// 
+			this->afficherUnPersonnelToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
+			this->afficherUnPersonnelToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->afficherUnPersonnelToolStripMenuItem->Name = L"afficherUnPersonnelToolStripMenuItem";
+			this->afficherUnPersonnelToolStripMenuItem->Size = System::Drawing::Size(256, 26);
+			this->afficherUnPersonnelToolStripMenuItem->Text = L"Afficher un personnel";
+			// 
+			// ajouterUnPersonnelToolStripMenuItem
+			// 
+			this->ajouterUnPersonnelToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
+			this->ajouterUnPersonnelToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->ajouterUnPersonnelToolStripMenuItem->Name = L"ajouterUnPersonnelToolStripMenuItem";
+			this->ajouterUnPersonnelToolStripMenuItem->Size = System::Drawing::Size(256, 26);
+			this->ajouterUnPersonnelToolStripMenuItem->Text = L"Ajouter un personnel";
+			// 
+			// modifierUnPersonnelToolStripMenuItem
+			// 
+			this->modifierUnPersonnelToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
+			this->modifierUnPersonnelToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->modifierUnPersonnelToolStripMenuItem->Name = L"modifierUnPersonnelToolStripMenuItem";
+			this->modifierUnPersonnelToolStripMenuItem->Size = System::Drawing::Size(256, 26);
+			this->modifierUnPersonnelToolStripMenuItem->Text = L"Modifier un personnel";
+			// 
+			// supprimerUnPersonnelToolStripMenuItem
+			// 
+			this->supprimerUnPersonnelToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
+			this->supprimerUnPersonnelToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->supprimerUnPersonnelToolStripMenuItem->Name = L"supprimerUnPersonnelToolStripMenuItem";
+			this->supprimerUnPersonnelToolStripMenuItem->Size = System::Drawing::Size(256, 26);
+			this->supprimerUnPersonnelToolStripMenuItem->Text = L"Supprimer un personnel";
+			// 
+			// afficherLesClientsToolStripMenuItem
+			// 
+			this->afficherLesClientsToolStripMenuItem->Name = L"afficherLesClientsToolStripMenuItem";
+			this->afficherLesClientsToolStripMenuItem->Size = System::Drawing::Size(346, 42);
+			this->afficherLesClientsToolStripMenuItem->Text = L"Afficher les clients";
+			// 
+			// ajouterUnClientToolStripMenuItem
+			// 
+			this->ajouterUnClientToolStripMenuItem->Name = L"ajouterUnClientToolStripMenuItem";
+			this->ajouterUnClientToolStripMenuItem->Size = System::Drawing::Size(346, 42);
+			this->ajouterUnClientToolStripMenuItem->Text = L"Ajouter un client";
+			// 
+			// modifierUnClientToolStripMenuItem
+			// 
+			this->modifierUnClientToolStripMenuItem->Name = L"modifierUnClientToolStripMenuItem";
+			this->modifierUnClientToolStripMenuItem->Size = System::Drawing::Size(346, 42);
+			this->modifierUnClientToolStripMenuItem->Text = L"Modifier un client";
+			// 
+			// supprimerUnClientToolStripMenuItem
+			// 
+			this->supprimerUnClientToolStripMenuItem->Name = L"supprimerUnClientToolStripMenuItem";
+			this->supprimerUnClientToolStripMenuItem->Size = System::Drawing::Size(346, 42);
+			this->supprimerUnClientToolStripMenuItem->Text = L"Supprimer un client";
+			// 
+			// afficherLesCommandesToolStripMenuItem
+			// 
+			this->afficherLesCommandesToolStripMenuItem->Name = L"afficherLesCommandesToolStripMenuItem";
+			this->afficherLesCommandesToolStripMenuItem->Size = System::Drawing::Size(433, 42);
+			this->afficherLesCommandesToolStripMenuItem->Text = L"Afficher les commandes";
+			// 
+			// ajouterUneCommandeToolStripMenuItem
+			// 
+			this->ajouterUneCommandeToolStripMenuItem->Name = L"ajouterUneCommandeToolStripMenuItem";
+			this->ajouterUneCommandeToolStripMenuItem->Size = System::Drawing::Size(433, 42);
+			this->ajouterUneCommandeToolStripMenuItem->Text = L"Ajouter une commande";
+			// 
+			// modifierUneCommandeToolStripMenuItem
+			// 
+			this->modifierUneCommandeToolStripMenuItem->Name = L"modifierUneCommandeToolStripMenuItem";
+			this->modifierUneCommandeToolStripMenuItem->Size = System::Drawing::Size(433, 42);
+			this->modifierUneCommandeToolStripMenuItem->Text = L"Modifier une commande";
+			// 
+			// supprimerUneCommandeToolStripMenuItem
+			// 
+			this->supprimerUneCommandeToolStripMenuItem->Name = L"supprimerUneCommandeToolStripMenuItem";
+			this->supprimerUneCommandeToolStripMenuItem->Size = System::Drawing::Size(433, 42);
+			this->supprimerUneCommandeToolStripMenuItem->Text = L"Supprimer une commande";
+			// 
+			// afficherLesStocksToolStripMenuItem
+			// 
+			this->afficherLesStocksToolStripMenuItem->Name = L"afficherLesStocksToolStripMenuItem";
+			this->afficherLesStocksToolStripMenuItem->Size = System::Drawing::Size(357, 42);
+			this->afficherLesStocksToolStripMenuItem->Text = L"Afficher les stocks";
+			// 
+			// ajouterUnArticleToolStripMenuItem
+			// 
+			this->ajouterUnArticleToolStripMenuItem->Name = L"ajouterUnArticleToolStripMenuItem";
+			this->ajouterUnArticleToolStripMenuItem->Size = System::Drawing::Size(357, 42);
+			this->ajouterUnArticleToolStripMenuItem->Text = L"Ajouter un article";
+			// 
+			// modifierUnArticleToolStripMenuItem
+			// 
+			this->modifierUnArticleToolStripMenuItem->Name = L"modifierUnArticleToolStripMenuItem";
+			this->modifierUnArticleToolStripMenuItem->Size = System::Drawing::Size(357, 42);
+			this->modifierUnArticleToolStripMenuItem->Text = L"Modifier un article";
+			// 
+			// supprimerUnArticleToolStripMenuItem
+			// 
+			this->supprimerUnArticleToolStripMenuItem->Name = L"supprimerUnArticleToolStripMenuItem";
+			this->supprimerUnArticleToolStripMenuItem->Size = System::Drawing::Size(357, 42);
+			this->supprimerUnArticleToolStripMenuItem->Text = L"Supprimer un article";
+			// 
 			// g_personnel
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1518, 941);
+			this->ClientSize = System::Drawing::Size(1321, 749);
 			this->Controls->Add(this->panel2);
-			this->Controls->Add(this->panel1);
-			this->Controls->Add(this->panel_cree);
-			this->Controls->Add(this->panel_modif);
 			this->Controls->Add(this->panel_sup);
 			this->Controls->Add(this->panel_aff);
+			this->Controls->Add(this->panel_cree);
+			this->Controls->Add(this->panel_modif);
+			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"g_personnel";
 			this->Text = L"g_personnel";
-			this->panel1->ResumeLayout(false);
-			this->panel1->PerformLayout();
 			this->panel2->ResumeLayout(false);
 			this->panel_modif->ResumeLayout(false);
 			this->panel_modif->PerformLayout();
@@ -1457,6 +1406,8 @@ namespace CodeProjet {
 			this->panel4->PerformLayout();
 			this->panel_cree->ResumeLayout(false);
 			this->panel_cree->PerformLayout();
+			this->menuStrip1->ResumeLayout(false);
+			this->menuStrip1->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
