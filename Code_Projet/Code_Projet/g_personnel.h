@@ -340,7 +340,9 @@ namespace CodeProjet {
 			this->btn_modif_pers = (gcnew System::Windows::Forms::Button());
 			this->btn_cree_pers = (gcnew System::Windows::Forms::Button());
 			this->panel_modif = (gcnew System::Windows::Forms::Panel());
+			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->label44 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
@@ -359,6 +361,10 @@ namespace CodeProjet {
 			this->label28 = (gcnew System::Windows::Forms::Label());
 			this->label33 = (gcnew System::Windows::Forms::Label());
 			this->panel_aff = (gcnew System::Windows::Forms::Panel());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
+			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
@@ -371,32 +377,6 @@ namespace CodeProjet {
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label14 = (gcnew System::Windows::Forms::Label());
 			this->panel_sup = (gcnew System::Windows::Forms::Panel());
-			this->label10 = (gcnew System::Windows::Forms::Label());
-			this->label17 = (gcnew System::Windows::Forms::Label());
-			this->label18 = (gcnew System::Windows::Forms::Label());
-			this->dateTimePicker4 = (gcnew System::Windows::Forms::DateTimePicker());
-			this->label19 = (gcnew System::Windows::Forms::Label());
-			this->textBox20 = (gcnew System::Windows::Forms::TextBox());
-			this->label20 = (gcnew System::Windows::Forms::Label());
-			this->textBox19 = (gcnew System::Windows::Forms::TextBox());
-			this->label21 = (gcnew System::Windows::Forms::Label());
-			this->textBox18 = (gcnew System::Windows::Forms::TextBox());
-			this->label23 = (gcnew System::Windows::Forms::Label());
-			this->textBox17 = (gcnew System::Windows::Forms::TextBox());
-			this->label22 = (gcnew System::Windows::Forms::Label());
-			this->textBox16 = (gcnew System::Windows::Forms::TextBox());
-			this->panel_cree = (gcnew System::Windows::Forms::Panel());
-			this->label27 = (gcnew System::Windows::Forms::Label());
-			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
-			this->label29 = (gcnew System::Windows::Forms::Label());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->button5 = (gcnew System::Windows::Forms::Button());
-			this->button6 = (gcnew System::Windows::Forms::Button());
-			this->label11 = (gcnew System::Windows::Forms::Label());
-			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
-			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->panel4 = (gcnew System::Windows::Forms::Panel());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label12 = (gcnew System::Windows::Forms::Label());
@@ -412,14 +392,34 @@ namespace CodeProjet {
 			this->dateTimePicker2 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->label35 = (gcnew System::Windows::Forms::Label());
 			this->label36 = (gcnew System::Windows::Forms::Label());
+			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->label27 = (gcnew System::Windows::Forms::Label());
+			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
+			this->label29 = (gcnew System::Windows::Forms::Label());
+			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->label17 = (gcnew System::Windows::Forms::Label());
+			this->label18 = (gcnew System::Windows::Forms::Label());
+			this->dateTimePicker4 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->label19 = (gcnew System::Windows::Forms::Label());
+			this->textBox20 = (gcnew System::Windows::Forms::TextBox());
+			this->label20 = (gcnew System::Windows::Forms::Label());
+			this->textBox19 = (gcnew System::Windows::Forms::TextBox());
+			this->label21 = (gcnew System::Windows::Forms::Label());
+			this->textBox18 = (gcnew System::Windows::Forms::TextBox());
+			this->label23 = (gcnew System::Windows::Forms::Label());
+			this->textBox17 = (gcnew System::Windows::Forms::TextBox());
+			this->label22 = (gcnew System::Windows::Forms::Label());
+			this->textBox16 = (gcnew System::Windows::Forms::TextBox());
+			this->panel_cree = (gcnew System::Windows::Forms::Panel());
+			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->panel_modif->SuspendLayout();
 			this->panel3->SuspendLayout();
 			this->panel_aff->SuspendLayout();
 			this->panel_sup->SuspendLayout();
-			this->panel_cree->SuspendLayout();
 			this->panel4->SuspendLayout();
+			this->panel_cree->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// panel1
@@ -727,6 +727,15 @@ namespace CodeProjet {
 			this->panel_modif->TabIndex = 27;
 			this->panel_modif->Visible = false;
 			// 
+			// button5
+			// 
+			this->button5->Location = System::Drawing::Point(715, 231);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(146, 82);
+			this->button5->TabIndex = 55;
+			this->button5->Text = L"Suivant";
+			this->button5->UseVisualStyleBackColor = true;
+			// 
 			// panel3
 			// 
 			this->panel3->Controls->Add(this->button4);
@@ -747,6 +756,15 @@ namespace CodeProjet {
 			this->panel3->Name = L"panel3";
 			this->panel3->Size = System::Drawing::Size(956, 527);
 			this->panel3->TabIndex = 42;
+			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(428, 442);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(146, 82);
+			this->button4->TabIndex = 4;
+			this->button4->Text = L"Modifier le Personnel";
+			this->button4->UseVisualStyleBackColor = true;
 			// 
 			// label44
 			// 
@@ -922,6 +940,42 @@ namespace CodeProjet {
 			this->panel_aff->Size = System::Drawing::Size(1518, 941);
 			this->panel_aff->TabIndex = 50;
 			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(735, 209);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(71, 13);
+			this->label2->TabIndex = 58;
+			this->label2->Text = L"(prénom nom)";
+			// 
+			// comboBox3
+			// 
+			this->comboBox3->FormattingEnabled = true;
+			this->comboBox3->Location = System::Drawing::Point(827, 187);
+			this->comboBox3->Name = L"comboBox3";
+			this->comboBox3->Size = System::Drawing::Size(225, 21);
+			this->comboBox3->TabIndex = 57;
+			// 
+			// label11
+			// 
+			this->label11->AutoSize = true;
+			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.25F));
+			this->label11->Location = System::Drawing::Point(490, 184);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(326, 25);
+			this->label11->TabIndex = 56;
+			this->label11->Text = L"Quel profil voulez vous afficher \?";
+			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(718, 265);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(146, 82);
+			this->button2->TabIndex = 51;
+			this->button2->Text = L"Afficher le Personnel";
+			this->button2->UseVisualStyleBackColor = true;
+			// 
 			// textBox8
 			// 
 			this->textBox8->Location = System::Drawing::Point(1041, 645);
@@ -1038,6 +1092,184 @@ namespace CodeProjet {
 			this->panel_sup->Size = System::Drawing::Size(1518, 941);
 			this->panel_sup->TabIndex = 27;
 			this->panel_sup->Visible = false;
+			// 
+			// panel4
+			// 
+			this->panel4->Controls->Add(this->button1);
+			this->panel4->Controls->Add(this->label12);
+			this->panel4->Controls->Add(this->textBox11);
+			this->panel4->Controls->Add(this->label13);
+			this->panel4->Controls->Add(this->textBox12);
+			this->panel4->Controls->Add(this->textBox13);
+			this->panel4->Controls->Add(this->label15);
+			this->panel4->Controls->Add(this->textBox14);
+			this->panel4->Controls->Add(this->label16);
+			this->panel4->Controls->Add(this->textBox15);
+			this->panel4->Controls->Add(this->label34);
+			this->panel4->Controls->Add(this->dateTimePicker2);
+			this->panel4->Controls->Add(this->label35);
+			this->panel4->Controls->Add(this->label36);
+			this->panel4->Location = System::Drawing::Point(341, 346);
+			this->panel4->Name = L"panel4";
+			this->panel4->Size = System::Drawing::Size(956, 527);
+			this->panel4->TabIndex = 60;
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(397, 430);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(146, 82);
+			this->button1->TabIndex = 4;
+			this->button1->Text = L"Supprimer le Personnel";
+			this->button1->UseVisualStyleBackColor = true;
+			// 
+			// label12
+			// 
+			this->label12->AutoSize = true;
+			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.25F));
+			this->label12->Location = System::Drawing::Point(271, 62);
+			this->label12->Name = L"label12";
+			this->label12->Size = System::Drawing::Size(401, 25);
+			this->label12->TabIndex = 54;
+			this->label12->Text = L"Confirmation du personnel a supprimer \?";
+			// 
+			// textBox11
+			// 
+			this->textBox11->Location = System::Drawing::Point(720, 144);
+			this->textBox11->Name = L"textBox11";
+			this->textBox11->Size = System::Drawing::Size(160, 20);
+			this->textBox11->TabIndex = 53;
+			// 
+			// label13
+			// 
+			this->label13->AutoSize = true;
+			this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
+			this->label13->Location = System::Drawing::Point(258, 139);
+			this->label13->Name = L"label13";
+			this->label13->Size = System::Drawing::Size(61, 24);
+			this->label13->TabIndex = 42;
+			this->label13->Text = L"Nom :";
+			// 
+			// textBox12
+			// 
+			this->textBox12->Location = System::Drawing::Point(720, 248);
+			this->textBox12->Name = L"textBox12";
+			this->textBox12->Size = System::Drawing::Size(160, 20);
+			this->textBox12->TabIndex = 52;
+			// 
+			// textBox13
+			// 
+			this->textBox13->Location = System::Drawing::Point(325, 348);
+			this->textBox13->Name = L"textBox13";
+			this->textBox13->Size = System::Drawing::Size(160, 20);
+			this->textBox13->TabIndex = 51;
+			// 
+			// label15
+			// 
+			this->label15->AutoSize = true;
+			this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
+			this->label15->Location = System::Drawing::Point(186, 243);
+			this->label15->Name = L"label15";
+			this->label15->Size = System::Drawing::Size(133, 24);
+			this->label15->TabIndex = 43;
+			this->label15->Text = L"Mot de passe :";
+			// 
+			// textBox14
+			// 
+			this->textBox14->Location = System::Drawing::Point(326, 248);
+			this->textBox14->Name = L"textBox14";
+			this->textBox14->Size = System::Drawing::Size(160, 20);
+			this->textBox14->TabIndex = 50;
+			// 
+			// label16
+			// 
+			this->label16->AutoSize = true;
+			this->label16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
+			this->label16->Location = System::Drawing::Point(555, 243);
+			this->label16->Name = L"label16";
+			this->label16->Size = System::Drawing::Size(159, 24);
+			this->label16->TabIndex = 44;
+			this->label16->Text = L"Nom d\'utilisateur :";
+			// 
+			// textBox15
+			// 
+			this->textBox15->Location = System::Drawing::Point(326, 142);
+			this->textBox15->Name = L"textBox15";
+			this->textBox15->Size = System::Drawing::Size(160, 20);
+			this->textBox15->TabIndex = 49;
+			// 
+			// label34
+			// 
+			this->label34->AutoSize = true;
+			this->label34->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
+			this->label34->Location = System::Drawing::Point(545, 343);
+			this->label34->Name = L"label34";
+			this->label34->Size = System::Drawing::Size(169, 24);
+			this->label34->TabIndex = 45;
+			this->label34->Text = L"Date d\'embauche :";
+			// 
+			// dateTimePicker2
+			// 
+			this->dateTimePicker2->Location = System::Drawing::Point(720, 349);
+			this->dateTimePicker2->Name = L"dateTimePicker2";
+			this->dateTimePicker2->Size = System::Drawing::Size(200, 20);
+			this->dateTimePicker2->TabIndex = 48;
+			// 
+			// label35
+			// 
+			this->label35->AutoSize = true;
+			this->label35->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
+			this->label35->Location = System::Drawing::Point(627, 137);
+			this->label35->Name = L"label35";
+			this->label35->Size = System::Drawing::Size(87, 24);
+			this->label35->TabIndex = 46;
+			this->label35->Text = L"Prénom :";
+			// 
+			// label36
+			// 
+			this->label36->AutoSize = true;
+			this->label36->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
+			this->label36->Location = System::Drawing::Point(60, 345);
+			this->label36->Name = L"label36";
+			this->label36->Size = System::Drawing::Size(259, 24);
+			this->label36->TabIndex = 47;
+			this->label36->Text = L"Cofirmation de Mot de passe :";
+			// 
+			// button6
+			// 
+			this->button6->Location = System::Drawing::Point(755, 247);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(146, 82);
+			this->button6->TabIndex = 59;
+			this->button6->Text = L"Suivant";
+			this->button6->UseVisualStyleBackColor = true;
+			// 
+			// label27
+			// 
+			this->label27->AutoSize = true;
+			this->label27->Location = System::Drawing::Point(787, 207);
+			this->label27->Name = L"label27";
+			this->label27->Size = System::Drawing::Size(71, 13);
+			this->label27->TabIndex = 43;
+			this->label27->Text = L"(prénom nom)";
+			// 
+			// comboBox2
+			// 
+			this->comboBox2->FormattingEnabled = true;
+			this->comboBox2->Location = System::Drawing::Point(891, 186);
+			this->comboBox2->Name = L"comboBox2";
+			this->comboBox2->Size = System::Drawing::Size(225, 21);
+			this->comboBox2->TabIndex = 42;
+			// 
+			// label29
+			// 
+			this->label29->AutoSize = true;
+			this->label29->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.25F));
+			this->label29->Location = System::Drawing::Point(542, 182);
+			this->label29->Name = L"label29";
+			this->label29->Size = System::Drawing::Size(343, 25);
+			this->label29->TabIndex = 41;
+			this->label29->Text = L"Quel profil voulez vous supprimé \?";
 			// 
 			// label10
 			// 
@@ -1188,246 +1420,14 @@ namespace CodeProjet {
 			this->panel_cree->TabIndex = 26;
 			this->panel_cree->Visible = false;
 			// 
-			// label27
-			// 
-			this->label27->AutoSize = true;
-			this->label27->Location = System::Drawing::Point(787, 207);
-			this->label27->Name = L"label27";
-			this->label27->Size = System::Drawing::Size(71, 13);
-			this->label27->TabIndex = 43;
-			this->label27->Text = L"(prénom nom)";
-			// 
-			// comboBox2
-			// 
-			this->comboBox2->FormattingEnabled = true;
-			this->comboBox2->Location = System::Drawing::Point(891, 186);
-			this->comboBox2->Name = L"comboBox2";
-			this->comboBox2->Size = System::Drawing::Size(225, 21);
-			this->comboBox2->TabIndex = 42;
-			// 
-			// label29
-			// 
-			this->label29->AutoSize = true;
-			this->label29->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.25F));
-			this->label29->Location = System::Drawing::Point(542, 182);
-			this->label29->Name = L"label29";
-			this->label29->Size = System::Drawing::Size(343, 25);
-			this->label29->TabIndex = 41;
-			this->label29->Text = L"Quel profil voulez vous supprimé \?";
-			// 
-			// button2
-			// 
-			this->button2->Location = System::Drawing::Point(718, 265);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(146, 82);
-			this->button2->TabIndex = 51;
-			this->button2->Text = L"Afficher le Personnel";
-			this->button2->UseVisualStyleBackColor = true;
-			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(784, 558);
+			this->button3->Location = System::Drawing::Point(790, 694);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(146, 82);
 			this->button3->TabIndex = 4;
 			this->button3->Text = L"Créer le Personnel";
 			this->button3->UseVisualStyleBackColor = true;
-			// 
-			// button4
-			// 
-			this->button4->Location = System::Drawing::Point(428, 442);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(146, 82);
-			this->button4->TabIndex = 4;
-			this->button4->Text = L"Modifier le Personnel";
-			this->button4->UseVisualStyleBackColor = true;
-			// 
-			// button5
-			// 
-			this->button5->Location = System::Drawing::Point(715, 231);
-			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(146, 82);
-			this->button5->TabIndex = 55;
-			this->button5->Text = L"Suivant";
-			this->button5->UseVisualStyleBackColor = true;
-			// 
-			// button6
-			// 
-			this->button6->Location = System::Drawing::Point(755, 247);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(146, 82);
-			this->button6->TabIndex = 59;
-			this->button6->Text = L"Suivant";
-			this->button6->UseVisualStyleBackColor = true;
-			// 
-			// label11
-			// 
-			this->label11->AutoSize = true;
-			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.25F));
-			this->label11->Location = System::Drawing::Point(490, 184);
-			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(326, 25);
-			this->label11->TabIndex = 56;
-			this->label11->Text = L"Quel profil voulez vous afficher \?";
-			// 
-			// comboBox3
-			// 
-			this->comboBox3->FormattingEnabled = true;
-			this->comboBox3->Location = System::Drawing::Point(827, 187);
-			this->comboBox3->Name = L"comboBox3";
-			this->comboBox3->Size = System::Drawing::Size(225, 21);
-			this->comboBox3->TabIndex = 57;
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(735, 209);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(71, 13);
-			this->label2->TabIndex = 58;
-			this->label2->Text = L"(prénom nom)";
-			// 
-			// panel4
-			// 
-			this->panel4->Controls->Add(this->button1);
-			this->panel4->Controls->Add(this->label12);
-			this->panel4->Controls->Add(this->textBox11);
-			this->panel4->Controls->Add(this->label13);
-			this->panel4->Controls->Add(this->textBox12);
-			this->panel4->Controls->Add(this->textBox13);
-			this->panel4->Controls->Add(this->label15);
-			this->panel4->Controls->Add(this->textBox14);
-			this->panel4->Controls->Add(this->label16);
-			this->panel4->Controls->Add(this->textBox15);
-			this->panel4->Controls->Add(this->label34);
-			this->panel4->Controls->Add(this->dateTimePicker2);
-			this->panel4->Controls->Add(this->label35);
-			this->panel4->Controls->Add(this->label36);
-			this->panel4->Location = System::Drawing::Point(341, 346);
-			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(956, 527);
-			this->panel4->TabIndex = 60;
-			// 
-			// button1
-			// 
-			this->button1->Location = System::Drawing::Point(397, 430);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(146, 82);
-			this->button1->TabIndex = 4;
-			this->button1->Text = L"Supprimer le Personnel";
-			this->button1->UseVisualStyleBackColor = true;
-			// 
-			// label12
-			// 
-			this->label12->AutoSize = true;
-			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.25F));
-			this->label12->Location = System::Drawing::Point(271, 62);
-			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(401, 25);
-			this->label12->TabIndex = 54;
-			this->label12->Text = L"Confirmation du personnel a supprimer \?";
-			// 
-			// textBox11
-			// 
-			this->textBox11->Location = System::Drawing::Point(720, 144);
-			this->textBox11->Name = L"textBox11";
-			this->textBox11->Size = System::Drawing::Size(160, 20);
-			this->textBox11->TabIndex = 53;
-			// 
-			// label13
-			// 
-			this->label13->AutoSize = true;
-			this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
-			this->label13->Location = System::Drawing::Point(258, 139);
-			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(61, 24);
-			this->label13->TabIndex = 42;
-			this->label13->Text = L"Nom :";
-			// 
-			// textBox12
-			// 
-			this->textBox12->Location = System::Drawing::Point(720, 248);
-			this->textBox12->Name = L"textBox12";
-			this->textBox12->Size = System::Drawing::Size(160, 20);
-			this->textBox12->TabIndex = 52;
-			// 
-			// textBox13
-			// 
-			this->textBox13->Location = System::Drawing::Point(325, 348);
-			this->textBox13->Name = L"textBox13";
-			this->textBox13->Size = System::Drawing::Size(160, 20);
-			this->textBox13->TabIndex = 51;
-			// 
-			// label15
-			// 
-			this->label15->AutoSize = true;
-			this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
-			this->label15->Location = System::Drawing::Point(186, 243);
-			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(133, 24);
-			this->label15->TabIndex = 43;
-			this->label15->Text = L"Mot de passe :";
-			// 
-			// textBox14
-			// 
-			this->textBox14->Location = System::Drawing::Point(326, 248);
-			this->textBox14->Name = L"textBox14";
-			this->textBox14->Size = System::Drawing::Size(160, 20);
-			this->textBox14->TabIndex = 50;
-			// 
-			// label16
-			// 
-			this->label16->AutoSize = true;
-			this->label16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
-			this->label16->Location = System::Drawing::Point(555, 243);
-			this->label16->Name = L"label16";
-			this->label16->Size = System::Drawing::Size(159, 24);
-			this->label16->TabIndex = 44;
-			this->label16->Text = L"Nom d\'utilisateur :";
-			// 
-			// textBox15
-			// 
-			this->textBox15->Location = System::Drawing::Point(326, 142);
-			this->textBox15->Name = L"textBox15";
-			this->textBox15->Size = System::Drawing::Size(160, 20);
-			this->textBox15->TabIndex = 49;
-			// 
-			// label34
-			// 
-			this->label34->AutoSize = true;
-			this->label34->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
-			this->label34->Location = System::Drawing::Point(545, 343);
-			this->label34->Name = L"label34";
-			this->label34->Size = System::Drawing::Size(169, 24);
-			this->label34->TabIndex = 45;
-			this->label34->Text = L"Date d\'embauche :";
-			// 
-			// dateTimePicker2
-			// 
-			this->dateTimePicker2->Location = System::Drawing::Point(720, 349);
-			this->dateTimePicker2->Name = L"dateTimePicker2";
-			this->dateTimePicker2->Size = System::Drawing::Size(200, 20);
-			this->dateTimePicker2->TabIndex = 48;
-			// 
-			// label35
-			// 
-			this->label35->AutoSize = true;
-			this->label35->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
-			this->label35->Location = System::Drawing::Point(627, 137);
-			this->label35->Name = L"label35";
-			this->label35->Size = System::Drawing::Size(87, 24);
-			this->label35->TabIndex = 46;
-			this->label35->Text = L"Prénom :";
-			// 
-			// label36
-			// 
-			this->label36->AutoSize = true;
-			this->label36->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
-			this->label36->Location = System::Drawing::Point(60, 345);
-			this->label36->Name = L"label36";
-			this->label36->Size = System::Drawing::Size(259, 24);
-			this->label36->TabIndex = 47;
-			this->label36->Text = L"Cofirmation de Mot de passe :";
 			// 
 			// g_personnel
 			// 
@@ -1436,10 +1436,10 @@ namespace CodeProjet {
 			this->ClientSize = System::Drawing::Size(1518, 941);
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
-			this->Controls->Add(this->panel_sup);
-			this->Controls->Add(this->panel_aff);
 			this->Controls->Add(this->panel_cree);
 			this->Controls->Add(this->panel_modif);
+			this->Controls->Add(this->panel_sup);
+			this->Controls->Add(this->panel_aff);
 			this->Name = L"g_personnel";
 			this->Text = L"g_personnel";
 			this->panel1->ResumeLayout(false);
@@ -1453,10 +1453,10 @@ namespace CodeProjet {
 			this->panel_aff->PerformLayout();
 			this->panel_sup->ResumeLayout(false);
 			this->panel_sup->PerformLayout();
-			this->panel_cree->ResumeLayout(false);
-			this->panel_cree->PerformLayout();
 			this->panel4->ResumeLayout(false);
 			this->panel4->PerformLayout();
+			this->panel_cree->ResumeLayout(false);
+			this->panel_cree->PerformLayout();
 			this->ResumeLayout(false);
 
 		}

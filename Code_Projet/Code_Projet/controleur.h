@@ -18,7 +18,7 @@ public :
 	void mdp(TextBox^);
 
 	void afficher_datagridView(DataGridView^);
-	void afficher_datagridView(DataGridView^); 
+	//void afficher_datagridView(DataGridView^); 
 	void afficher_top(Chart^,String^);
 };
 
