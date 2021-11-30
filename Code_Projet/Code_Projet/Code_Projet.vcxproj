@@ -127,8 +127,16 @@
     <ClCompile Include="Accueil.cpp" />
     <ClCompile Include="Connexion.cpp" />
     <ClCompile Include="Controleur.cpp" />
-    <ClCompile Include="g_personnel.cpp" />
+    <ClCompile Include="MapAdresse.cpp" />
+    <ClCompile Include="MapArticle.cpp" />
+    <ClCompile Include="MapClient.cpp" />
+    <ClCompile Include="MapCommande.cpp" />
+    <ClCompile Include="MapComposer.cpp" />
+    <ClCompile Include="MapFacturer.cpp" />
+    <ClCompile Include="MapLivrer.cpp" />
+    <ClCompile Include="MapPayment.cpp" />
     <ClCompile Include="MapPersonnel.cpp" />
+    <ClCompile Include="MapVille.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Personnel.cpp" />
     <ClCompile Include="statistique.cpp" />
@@ -139,10 +147,16 @@
     </ClInclude>
     <ClInclude Include="Connexion.h" />
     <ClInclude Include="Controleur.h" />
-    <ClInclude Include="g_personnel.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
+    <ClInclude Include="MapAdresse.h" />
+    <ClInclude Include="MapArticle.h" />
+    <ClInclude Include="MapClient.h" />
+    <ClInclude Include="MapCommande.h" />
+    <ClInclude Include="MapComposer.h" />
+    <ClInclude Include="MapFacturer.h" />
+    <ClInclude Include="MapLivrer.h" />
+    <ClInclude Include="MapPayment.h" />
     <ClInclude Include="MapPersonnel.h" />
+    <ClInclude Include="MapVille.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -157,9 +171,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Accueil.resx">
       <DependentUpon>Accueil.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="g_personnel.resx">
-      <DependentUpon>g_personnel.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Personnel.resx">
       <DependentUpon>Personnel.h</DependentUpon>

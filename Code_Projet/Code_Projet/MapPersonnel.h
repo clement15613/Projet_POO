@@ -4,20 +4,27 @@ using namespace System;
 ref class MapPersonnel
 {private :
 	int id_personnel;
-	String^ nom;
-	String^ prenom;
+	String^ Nom;
+	String^ Prenom;
 	DateTime^ dateEmbauche;
-	String^ motDePasse;
+	String^ MotDePasse;
 	int id_superieur;
-	int id_addrese;
+	int id_addresse;
 
-/*public:
-	int getIdPersonnel();
+public:
+	int getid_personnel();
+	void setid_personnel(int newId_personnel);
 	String^ getNom();
+	void setNom(String^ NewNom);
 	String^ getPrenom();
+	void setPrenom(String^ NewPrenom);
 	DateTime^ getDateEmbauche();
+	void setDateEmbauche(DateTime^ NewdateEmbauche);
 	String^ getMotDePasse();
-	int getIdSuperieur();
-	int getIdAdresse();*/
+	void setMotDePasse(String^ NewMotDePasse);
+	int getid_superieur();
+	void setid_superieur(int NewIdSuperieur);
+	int getid_adresse();
+	void setid_adresse(int NewIdAdresse);
 };
 
