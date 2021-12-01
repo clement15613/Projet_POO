@@ -20,5 +20,8 @@ public :
 	void afficher_top(Chart^,String^);
 	void afficher_chiffre_affaireMois(Chart^,String^);
 	void afficher_label_sql(Label^, String^);
+	void affichage_text_box(ComboBox^, TextBox^);
+	void btnafficher_chiffre_affaire(ComboBox^, Button^, MaskedTextBox^ , Label^);
+	void CalculAndrecupereValeurCommercialeStock(TextBox^, TextBox^, TextBox^, TextBox^, ComboBox^, ComboBox^, ComboBox^, ComboBox^, CheckBox^, CheckBox^, CheckBox^, CheckBox^,Label^);
 };
 
