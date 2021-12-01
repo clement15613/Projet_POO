@@ -128,7 +128,6 @@
     <ClCompile Include="Commande.cpp" />
     <ClCompile Include="Connexion.cpp" />
     <ClCompile Include="Controleur.cpp" />
-
     <ClCompile Include="MapAdresse.cpp" />
     <ClCompile Include="MapArticle.cpp" />
     <ClCompile Include="MapClient.cpp" />
@@ -137,7 +136,6 @@
     <ClCompile Include="MapFacturer.cpp" />
     <ClCompile Include="MapLivrer.cpp" />
     <ClCompile Include="MapPayment.cpp" />
-
     <ClCompile Include="MapPersonnel.cpp" />
     <ClCompile Include="MapVille.cpp" />
     <ClCompile Include="MyForm.cpp" />
@@ -148,9 +146,6 @@
     <ClInclude Include="Accueil.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-
-    
-    
     <ClInclude Include="MapAdresse.h" />
     <ClInclude Include="MapArticle.h" />
     <ClInclude Include="MapClient.h" />
@@ -159,13 +154,11 @@
     <ClInclude Include="MapFacturer.h" />
     <ClInclude Include="MapLivrer.h" />
     <ClInclude Include="MapPayment.h" />
-
     <ClInclude Include="Commande.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Connexion.h" />
     <ClInclude Include="Controleur.h" />
-
     <ClInclude Include="MapPersonnel.h" />
     <ClInclude Include="MapVille.h" />
     <ClInclude Include="MyForm.h">
@@ -183,11 +176,9 @@
     <EmbeddedResource Include="Accueil.resx">
       <DependentUpon>Accueil.h</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Commande.resx">
       <DependentUpon>Commande.h</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Personnel.resx">
       <DependentUpon>Personnel.h</DependentUpon>
     </EmbeddedResource>

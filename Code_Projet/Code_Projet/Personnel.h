@@ -752,7 +752,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			});
 			this->menuStrip1->Location = System::Drawing::Point(185, 9);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(909, 45);
+			this->menuStrip1->Size = System::Drawing::Size(1029, 45);
 			this->menuStrip1->TabIndex = 5;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -1146,6 +1146,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
+
 
 		}
 #pragma endregion

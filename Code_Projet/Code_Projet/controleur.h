@@ -1,4 +1,6 @@
 #pragma once
+
+
 using namespace System;
 using namespace System::ComponentModel;
 using namespace System::Collections;
@@ -19,5 +21,6 @@ public :
 
 	void afficher_datagridView(DataGridView^);
 	void afficher_top(Chart^,String^);
-};
 
+	void afficher_form(String^);
+};
