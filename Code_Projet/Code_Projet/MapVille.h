@@ -21,6 +21,7 @@ public:
     void setCodePostal(String^ CodePostal);
 
     String^ INSERT();
+    String^ UPDATE();
 
 };
 

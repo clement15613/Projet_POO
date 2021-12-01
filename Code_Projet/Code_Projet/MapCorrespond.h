@@ -16,5 +16,6 @@ public:
 
 	String^ INSERT();
 	String^ DELETE();
+	String^ UPDATE();
 };
 

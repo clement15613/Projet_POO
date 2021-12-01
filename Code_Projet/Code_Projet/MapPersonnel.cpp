@@ -80,5 +80,5 @@ String^ MapPersonnel::DELETE()
 
 String^ MapPersonnel::UPDATE()
 {
-	return "update personnel set nom_personnel = '" + getNom() + "', prenom_personnel = '" + getPrenom() + "','" + getDateEmbauche() + "','" + getNomUtilisateur() + "','" + getMotDePasse() + "'," + getid_adresse() + "," + getid_superieur() + "where id_personnel = " + getid_personnel();
+	return "update personnel set nom_personnel = '" + getNom() + "', prenom_personnel = '" + getPrenom() + "',date_embauche_personnel'" + getDateEmbauche() + "',nom_utilisateur_personnel'" + getNomUtilisateur() + "',mdp_personnel'" + getMotDePasse() + "',id_adresse" + getid_adresse() + ",id_personnel_superieur" + getid_superieur() + "where id_personnel = " + getid_personnel();
 }

@@ -31,3 +31,8 @@ String^ MapCorrespond::DELETE()
 {
 	return "delete from correspond where id_adresse = " + getIdAdresse();
 }
+
+String^ MapCorrespond::UPDATE()
+{
+	return "update correspond set id_ville = " + getIdVille() + " where id_adresse = " + getIdAdresse();
+}

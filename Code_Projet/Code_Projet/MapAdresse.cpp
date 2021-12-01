@@ -42,3 +42,8 @@ String^ MapAdresse::DELETE()
 {
 	return "delete from adresse where id_adresse = " + getid_adresse();
 }
+
+String^ MapAdresse::UPDATE()
+{
+	return "update adresse set numero =" + getnumero() + ", rue = '" + getrue() + "',complement = '" + getcomplement() + "' where id_adresse = " + getid_adresse();
+}
