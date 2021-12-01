@@ -31,6 +31,8 @@ void Controleur::afficher_datagridView(DataGridView^ grid)
 	}
 
 }
+
+
 void Controleur::afficher_top(Chart^ chart, String^ query)
 {
 	Connexion co;
@@ -69,9 +71,9 @@ void Controleur::afficher_top(Chart^ chart, String^ query)
 
 	void Controleur::afficher_label_sql(Label^ label, String^ sql)
 	{
-		Connexion co;
+		Connexion^ co;
 		SqlDataReader^ read;
-		read = co.dataReader(sql);
+		read = co->dataReader(sql);
 
 		if(read->HasRows)
 		{
@@ -82,6 +84,12 @@ void Controleur::afficher_top(Chart^ chart, String^ query)
 				label->Text = txt->Format("{0:n}", read[0]) + " €";
 			}
 		}
+		
+		if (label->Text == " €")
+		{
+			label->Text = "0 €";
+		}
+
 	}
 
 	void Controleur::gestion_panel(Panel^ panel1, Panel^ panel2, Panel^ panel3, Panel^ panel4, bool statut) 
@@ -89,17 +97,25 @@ void Controleur::afficher_top(Chart^ chart, String^ query)
 		if (statut == false)
 		{
 			panel1->Visible = false;
+			panel1->Enabled = false;
 			panel2->Visible = false;
+			panel2->Enabled = false;
 			panel3->Visible = false;
+			panel3->Enabled = false;
 			panel4->Visible = false;
+			panel4->Enabled = false;
 		}
 
 		else if (statut == true)
 		{
 			panel1->Visible = true;
+			panel1->Enabled = true;
 			panel2->Visible = false;
+			panel2->Enabled = false;
 			panel3->Visible = false;
+			panel3->Enabled = false;
 			panel4->Visible = false;
+			panel4->Enabled = false;
 		}
 	}
 
@@ -121,19 +137,7 @@ void Controleur::afficher_form(String^ of)
 		CodeProjet::Personnel^ pers = gcnew CodeProjet::Personnel();
 		pers->Show();
 	}
-}
-			if (read->HasRows)
-			{
-				while (read->Read())
-				{
-					String^ txt = read[0]->ToString();
-					label->Text = txt->Format("{0:n}", read[0]) + " €";
-				}
-			}
-			if (label->Text == " €")
-			{
-				label->Text = "0 €";
-			}
+
 			
 	}
 
@@ -290,9 +294,29 @@ void Controleur::afficher_form(String^ of)
 			valeurTVA = "3";
 		}
 	}
+}
 
 
+	void Controleur::CnxComboBox_BDD(ComboBox^ CB1, String^ query)
 	{
+		Connexion^ cnx = gcnew Connexion;
+		SqlDataReader^ retour;
+		retour = cnx->dataReader(query);
+		String^ valeur;
 
-	}
+		while (retour->Read())
+		{
+			//int coucou = sizeof(retour);
+			if(retour->FieldCount>1)
+			{
+				valeur = retour[0]->ToString() + " " + retour[1]->ToString();
+			}
+			else
+			{
+				valeur = retour[0]->ToString();
+			}
+			CB1->Items->Add(valeur);
+		}
+
+
 	}

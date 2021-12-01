@@ -164,7 +164,8 @@ private: System::Windows::Forms::Label^ LQuestionSupprimer;
 
 
 private: System::Windows::Forms::Label^ LNomPrenomSupprimer;
-private: System::Windows::Forms::ComboBox^ comboBox1;
+private: System::Windows::Forms::ComboBox^ comboBoxNomPrenomSupprimer;
+
 private: System::Windows::Forms::Panel^ PanelAfficherPersonnel;
 
 private: System::Windows::Forms::Label^ LSuperieurAffcher;
@@ -176,12 +177,16 @@ private: System::Windows::Forms::Label^ LPrenomAfficher;
 private: System::Windows::Forms::Label^ LNomAfficher;
 
 private: System::Windows::Forms::Label^ LDateEmbaucheAfficher;
+private: System::Windows::Forms::ComboBox^ comboBoxVilleAfficher;
+private: System::Windows::Forms::ComboBox^ comboBoxSupAfficher;
+private: System::Windows::Forms::ComboBox^ comboBoxPrenomAfficher;
+private: System::Windows::Forms::ComboBox^ ComboBoxNomAfficher;
 
 
-private: System::Windows::Forms::ComboBox^ comboBox5;
-private: System::Windows::Forms::ComboBox^ comboBox4;
-private: System::Windows::Forms::ComboBox^ comboBox3;
-private: System::Windows::Forms::ComboBox^ BoxNomAfficher;
+
+
+
+
 
 private: System::Windows::Forms::DateTimePicker^ dateTimePickerDateEmbaucheAfficher;
 private: System::Windows::Forms::Label^ LQuestionAfficher;
@@ -279,7 +284,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->monCompteToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->PanelSupprimerPersonnel = (gcnew System::Windows::Forms::Panel());
 			this->LNomPrenomSupprimer = (gcnew System::Windows::Forms::Label());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->comboBoxNomPrenomSupprimer = (gcnew System::Windows::Forms::ComboBox());
 			this->LQuestionSupprimer = (gcnew System::Windows::Forms::Label());
 			this->BtnSupprimerPersonnel = (gcnew System::Windows::Forms::Button());
 			this->PanelAfficherPersonnel = (gcnew System::Windows::Forms::Panel());
@@ -289,10 +294,10 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->LPrenomAfficher = (gcnew System::Windows::Forms::Label());
 			this->LNomAfficher = (gcnew System::Windows::Forms::Label());
 			this->LDateEmbaucheAfficher = (gcnew System::Windows::Forms::Label());
-			this->comboBox5 = (gcnew System::Windows::Forms::ComboBox());
-			this->comboBox4 = (gcnew System::Windows::Forms::ComboBox());
-			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
-			this->BoxNomAfficher = (gcnew System::Windows::Forms::ComboBox());
+			this->comboBoxVilleAfficher = (gcnew System::Windows::Forms::ComboBox());
+			this->comboBoxSupAfficher = (gcnew System::Windows::Forms::ComboBox());
+			this->comboBoxPrenomAfficher = (gcnew System::Windows::Forms::ComboBox());
+			this->ComboBoxNomAfficher = (gcnew System::Windows::Forms::ComboBox());
 			this->dateTimePickerDateEmbaucheAfficher = (gcnew System::Windows::Forms::DateTimePicker());
 			this->LQuestionAfficher = (gcnew System::Windows::Forms::Label());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
@@ -356,6 +361,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->BoxVilleAjouter->Location = System::Drawing::Point(333, 274);
 			this->BoxVilleAjouter->Name = L"BoxVilleAjouter";
 			this->BoxVilleAjouter->Size = System::Drawing::Size(121, 21);
+			this->BoxVilleAjouter->Sorted = true;
 			this->BoxVilleAjouter->TabIndex = 19;
 			// 
 			// LNomRueAjouter
@@ -554,6 +560,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->BoxVilleModifier->Location = System::Drawing::Point(333, 274);
 			this->BoxVilleModifier->Name = L"BoxVilleModifier";
 			this->BoxVilleModifier->Size = System::Drawing::Size(121, 21);
+			this->BoxVilleModifier->Sorted = true;
 			this->BoxVilleModifier->TabIndex = 19;
 			// 
 			// LNomRueModifier
@@ -752,12 +759,13 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			});
 			this->menuStrip1->Location = System::Drawing::Point(185, 9);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(909, 45);
+			this->menuStrip1->Size = System::Drawing::Size(1029, 45);
 			this->menuStrip1->TabIndex = 5;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
 			// personnelToolStripMenuItem
 			// 
+			this->personnelToolStripMenuItem->BackColor = System::Drawing::SystemColors::AppWorkspace;
 			this->personnelToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
 				this->afficherUnPersonnelToolStripMenuItem,
 					this->ajouterUnPersonnelToolStripMenuItem, this->modifierUnPersonnelToolStripMenuItem, this->supprimerUnPersonnelToolStripMenuItem
@@ -939,7 +947,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			// PanelSupprimerPersonnel
 			// 
 			this->PanelSupprimerPersonnel->Controls->Add(this->LNomPrenomSupprimer);
-			this->PanelSupprimerPersonnel->Controls->Add(this->comboBox1);
+			this->PanelSupprimerPersonnel->Controls->Add(this->comboBoxNomPrenomSupprimer);
 			this->PanelSupprimerPersonnel->Controls->Add(this->LQuestionSupprimer);
 			this->PanelSupprimerPersonnel->Controls->Add(this->BtnSupprimerPersonnel);
 			this->PanelSupprimerPersonnel->Location = System::Drawing::Point(624, 162);
@@ -956,13 +964,14 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->LNomPrenomSupprimer->TabIndex = 24;
 			this->LNomPrenomSupprimer->Text = L"Nom, Prénom";
 			// 
-			// comboBox1
+			// comboBoxNomPrenomSupprimer
 			// 
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(126, 115);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(247, 21);
-			this->comboBox1->TabIndex = 23;
+			this->comboBoxNomPrenomSupprimer->FormattingEnabled = true;
+			this->comboBoxNomPrenomSupprimer->Location = System::Drawing::Point(126, 115);
+			this->comboBoxNomPrenomSupprimer->Name = L"comboBoxNomPrenomSupprimer";
+			this->comboBoxNomPrenomSupprimer->Size = System::Drawing::Size(247, 21);
+			this->comboBoxNomPrenomSupprimer->Sorted = true;
+			this->comboBoxNomPrenomSupprimer->TabIndex = 23;
 			// 
 			// LQuestionSupprimer
 			// 
@@ -990,10 +999,10 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->PanelAfficherPersonnel->Controls->Add(this->LPrenomAfficher);
 			this->PanelAfficherPersonnel->Controls->Add(this->LNomAfficher);
 			this->PanelAfficherPersonnel->Controls->Add(this->LDateEmbaucheAfficher);
-			this->PanelAfficherPersonnel->Controls->Add(this->comboBox5);
-			this->PanelAfficherPersonnel->Controls->Add(this->comboBox4);
-			this->PanelAfficherPersonnel->Controls->Add(this->comboBox3);
-			this->PanelAfficherPersonnel->Controls->Add(this->BoxNomAfficher);
+			this->PanelAfficherPersonnel->Controls->Add(this->comboBoxVilleAfficher);
+			this->PanelAfficherPersonnel->Controls->Add(this->comboBoxSupAfficher);
+			this->PanelAfficherPersonnel->Controls->Add(this->comboBoxPrenomAfficher);
+			this->PanelAfficherPersonnel->Controls->Add(this->ComboBoxNomAfficher);
 			this->PanelAfficherPersonnel->Controls->Add(this->dateTimePickerDateEmbaucheAfficher);
 			this->PanelAfficherPersonnel->Controls->Add(this->LQuestionAfficher);
 			this->PanelAfficherPersonnel->Controls->Add(this->dataGridView1);
@@ -1056,37 +1065,42 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->LDateEmbaucheAfficher->TabIndex = 7;
 			this->LDateEmbaucheAfficher->Text = L"Date dembauche";
 			// 
-			// comboBox5
+			// comboBoxVilleAfficher
 			// 
-			this->comboBox5->FormattingEnabled = true;
-			this->comboBox5->Location = System::Drawing::Point(6, 93);
-			this->comboBox5->Name = L"comboBox5";
-			this->comboBox5->Size = System::Drawing::Size(121, 21);
-			this->comboBox5->TabIndex = 6;
+			this->comboBoxVilleAfficher->FormattingEnabled = true;
+			this->comboBoxVilleAfficher->ItemHeight = 13;
+			this->comboBoxVilleAfficher->Location = System::Drawing::Point(6, 93);
+			this->comboBoxVilleAfficher->Name = L"comboBoxVilleAfficher";
+			this->comboBoxVilleAfficher->Size = System::Drawing::Size(121, 21);
+			this->comboBoxVilleAfficher->Sorted = true;
+			this->comboBoxVilleAfficher->TabIndex = 6;
 			// 
-			// comboBox4
+			// comboBoxSupAfficher
 			// 
-			this->comboBox4->FormattingEnabled = true;
-			this->comboBox4->Location = System::Drawing::Point(309, 93);
-			this->comboBox4->Name = L"comboBox4";
-			this->comboBox4->Size = System::Drawing::Size(121, 21);
-			this->comboBox4->TabIndex = 5;
+			this->comboBoxSupAfficher->FormattingEnabled = true;
+			this->comboBoxSupAfficher->Location = System::Drawing::Point(309, 93);
+			this->comboBoxSupAfficher->Name = L"comboBoxSupAfficher";
+			this->comboBoxSupAfficher->Size = System::Drawing::Size(121, 21);
+			this->comboBoxSupAfficher->Sorted = true;
+			this->comboBoxSupAfficher->TabIndex = 5;
 			// 
-			// comboBox3
+			// comboBoxPrenomAfficher
 			// 
-			this->comboBox3->FormattingEnabled = true;
-			this->comboBox3->Location = System::Drawing::Point(549, 53);
-			this->comboBox3->Name = L"comboBox3";
-			this->comboBox3->Size = System::Drawing::Size(121, 21);
-			this->comboBox3->TabIndex = 4;
+			this->comboBoxPrenomAfficher->FormattingEnabled = true;
+			this->comboBoxPrenomAfficher->Location = System::Drawing::Point(549, 53);
+			this->comboBoxPrenomAfficher->Name = L"comboBoxPrenomAfficher";
+			this->comboBoxPrenomAfficher->Size = System::Drawing::Size(121, 21);
+			this->comboBoxPrenomAfficher->Sorted = true;
+			this->comboBoxPrenomAfficher->TabIndex = 4;
 			// 
-			// BoxNomAfficher
+			// ComboBoxNomAfficher
 			// 
-			this->BoxNomAfficher->FormattingEnabled = true;
-			this->BoxNomAfficher->Location = System::Drawing::Point(309, 51);
-			this->BoxNomAfficher->Name = L"BoxNomAfficher";
-			this->BoxNomAfficher->Size = System::Drawing::Size(121, 21);
-			this->BoxNomAfficher->TabIndex = 3;
+			this->ComboBoxNomAfficher->FormattingEnabled = true;
+			this->ComboBoxNomAfficher->Location = System::Drawing::Point(309, 51);
+			this->ComboBoxNomAfficher->Name = L"ComboBoxNomAfficher";
+			this->ComboBoxNomAfficher->Size = System::Drawing::Size(121, 21);
+			this->ComboBoxNomAfficher->Sorted = true;
+			this->ComboBoxNomAfficher->TabIndex = 3;
 			// 
 			// dateTimePickerDateEmbaucheAfficher
 			// 
@@ -1148,7 +1162,18 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 #pragma endregion
 	private: System::Void Personnel_Load(System::Object^ sender, System::EventArgs^ e) {
 		monControleur = gcnew Controleur;
+
 		monControleur->gestion_panel(PanelAjouterPersonnel, PanelModifierPersonnel, PanelAfficherPersonnel, PanelSupprimerPersonnel, false);
+
+		monControleur->CnxComboBox_BDD(ComboBoxNomAfficher, "Select (nom_Personnel) from Personnel");
+		monControleur->CnxComboBox_BDD(comboBoxPrenomAfficher, "select (prenom_Personnel) from Personnel");
+		monControleur->CnxComboBox_BDD(comboBoxSupAfficher, "select nom_Personnel, prenom_Personnel from Personnel where id_Personnel = id_Personnel_Superieur");
+		monControleur->CnxComboBox_BDD(comboBoxVilleAfficher, "select ville from Ville");
+		monControleur->CnxComboBox_BDD(comboBoxNomPrenomSupprimer, "select nom_Personnel, prenom_Personnel from Personnel");
+		monControleur->CnxComboBox_BDD(BoxVilleModifier, "select ville from Ville");
+		monControleur->CnxComboBox_BDD(BoxVilleAjouter, "select ville from Ville");
+
+		this->personnelToolStripMenuItem->BackColor = System::Drawing::SystemColors::ControlLight;
 	}
 	
 private: System::Void BtnLabelAjouterPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1163,6 +1188,7 @@ private: System::Void BtnLabelModifierPersonnel_Click(System::Object^ sender, Sy
 private: System::Void BtnLabelSupprimerPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
 	monControleur->gestion_panel(PanelSupprimerPersonnel, PanelAjouterPersonnel, PanelModifierPersonnel, PanelAfficherPersonnel, true);
 }
+
 
 };
 }
