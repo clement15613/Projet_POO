@@ -189,7 +189,7 @@ private: System::Windows::Forms::Label^ LQuestionAfficher;
 
 private: System::Windows::Forms::DataGridView^ dataGridView1;
 private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
-private: System::Windows::Forms::ToolStripMenuItem^ accueilToolStripMenuItem;
+
 	   Controleur^ aff_home;
 
 
@@ -296,7 +296,6 @@ private: System::Windows::Forms::ToolStripMenuItem^ accueilToolStripMenuItem;
 			this->dateTimePickerDateEmbaucheAfficher = (gcnew System::Windows::Forms::DateTimePicker());
 			this->LQuestionAfficher = (gcnew System::Windows::Forms::Label());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->accueilToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->PanelAjouterPersonnel->SuspendLayout();
 			this->PanelModifierPersonnel->SuspendLayout();
 			this->menuStrip1->SuspendLayout();
@@ -749,14 +748,14 @@ private: System::Windows::Forms::ToolStripMenuItem^ accueilToolStripMenuItem;
 			this->menuStrip1->BackColor = System::Drawing::SystemColors::AppWorkspace;
 			this->menuStrip1->Dock = System::Windows::Forms::DockStyle::None;
 			this->menuStrip1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 20, System::Drawing::FontStyle::Bold));
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(7) {
-				this->accueilToolStripMenuItem,
-					this->personnelToolStripMenuItem, this->clientToolStripMenuItem, this->commandeToolStripMenuItem, this->stockToolStripMenuItem,
-					this->statistiqueToolStripMenuItem, this->monCompteToolStripMenuItem
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(6) {
+				this->personnelToolStripMenuItem,
+					this->clientToolStripMenuItem, this->commandeToolStripMenuItem, this->stockToolStripMenuItem, this->statistiqueToolStripMenuItem,
+					this->monCompteToolStripMenuItem
 			});
 			this->menuStrip1->Location = System::Drawing::Point(185, 9);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(1150, 45);
+			this->menuStrip1->Size = System::Drawing::Size(909, 45);
 			this->menuStrip1->TabIndex = 5;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -1119,13 +1118,6 @@ private: System::Windows::Forms::ToolStripMenuItem^ accueilToolStripMenuItem;
 			this->dataGridView1->Size = System::Drawing::Size(664, 343);
 			this->dataGridView1->TabIndex = 0;
 			// 
-			// accueilToolStripMenuItem
-			// 
-			this->accueilToolStripMenuItem->Name = L"accueilToolStripMenuItem";
-			this->accueilToolStripMenuItem->Size = System::Drawing::Size(121, 41);
-			this->accueilToolStripMenuItem->Text = L"Accueil";
-			this->accueilToolStripMenuItem->Click += gcnew System::EventHandler(this, &Personnel::accueilToolStripMenuItem_Click);
-			// 
 			// Personnel
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1165,7 +1157,6 @@ private: System::Windows::Forms::ToolStripMenuItem^ accueilToolStripMenuItem;
 		PanelModifierPersonnel->Visible = false;
 		PanelSupprimerPersonnel->Visible = false;
 		PanelAfficherPersonnel->Visible = false;
-		aff_home = gcnew Controleur;
 	}
 	private: System::Void TBId_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -1205,9 +1196,6 @@ private: System::Void BtnLabelSupprimerPersonnel_Click(System::Object^ sender, S
 	PanelSupprimerPersonnel->Visible = true;
 	PanelAfficherPersonnel->Visible = false;
 }
-private: System::Void accueilToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Hide();
-	aff_home->afficher_form("Accueil");
-}
+
 };
 }
