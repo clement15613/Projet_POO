@@ -1,4 +1,5 @@
 #pragma once
+#include "controleur.h"
 
 namespace CodeProjet {
 
@@ -188,6 +189,8 @@ private: System::Windows::Forms::Label^ LQuestionAfficher;
 
 private: System::Windows::Forms::DataGridView^ dataGridView1;
 private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
+
+	   Controleur^ aff_home;
 
 
 	private:
@@ -1193,5 +1196,6 @@ private: System::Void BtnLabelSupprimerPersonnel_Click(System::Object^ sender, S
 	PanelSupprimerPersonnel->Visible = true;
 	PanelAfficherPersonnel->Visible = false;
 }
+
 };
 }

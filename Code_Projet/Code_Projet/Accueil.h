@@ -1,4 +1,5 @@
 #pragma once
+#include "controleur.h"
 
 namespace CodeProjet {
 
@@ -35,11 +36,18 @@ namespace CodeProjet {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::Button^ button4;
-	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::Button^ esp_pers;
+		   Controleur^ aff_pers;
+	private: System::Windows::Forms::Button^ esp_pers_m;
+	protected:
+
+
+	private: System::Windows::Forms::Button^ esp_pers_a;
+	private: System::Windows::Forms::Button^ esp_pers_s;
+	private: System::Windows::Forms::Button^ esp_pers_r;
+
+
+
 
 
 
@@ -100,11 +108,11 @@ namespace CodeProjet {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Accueil::typeid));
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->esp_pers = (gcnew System::Windows::Forms::Button());
+			this->esp_pers_m = (gcnew System::Windows::Forms::Button());
+			this->esp_pers_a = (gcnew System::Windows::Forms::Button());
+			this->esp_pers_s = (gcnew System::Windows::Forms::Button());
+			this->esp_pers_r = (gcnew System::Windows::Forms::Button());
 			this->button10 = (gcnew System::Windows::Forms::Button());
 			this->button11 = (gcnew System::Windows::Forms::Button());
 			this->button12 = (gcnew System::Windows::Forms::Button());
@@ -124,81 +132,81 @@ namespace CodeProjet {
 			this->button19 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
-			// button1
+			// esp_pers
 			// 
-			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(225)), static_cast<System::Int32>(static_cast<System::Byte>(225)),
+			this->esp_pers->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(225)), static_cast<System::Int32>(static_cast<System::Byte>(225)),
 				static_cast<System::Int32>(static_cast<System::Byte>(225)));
-			this->button1->Font = (gcnew System::Drawing::Font(L"Century", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->esp_pers->Font = (gcnew System::Drawing::Font(L"Century", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->button1->Location = System::Drawing::Point(12, 12);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(336, 69);
-			this->button1->TabIndex = 0;
-			this->button1->Text = L"Espace personnel";
-			this->button1->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
-			this->button1->UseVisualStyleBackColor = false;
-			this->button1->Click += gcnew System::EventHandler(this, &Accueil::button1_Click);
+			this->esp_pers->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->esp_pers->Location = System::Drawing::Point(12, 12);
+			this->esp_pers->Name = L"esp_pers";
+			this->esp_pers->Size = System::Drawing::Size(336, 69);
+			this->esp_pers->TabIndex = 0;
+			this->esp_pers->Text = L"Espace personnel";
+			this->esp_pers->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
+			this->esp_pers->UseVisualStyleBackColor = false;
+			this->esp_pers->Click += gcnew System::EventHandler(this, &Accueil::button1_Click);
 			// 
-			// button2
+			// esp_pers_m
 			// 
-			this->button2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(225)), static_cast<System::Int32>(static_cast<System::Byte>(225)),
+			this->esp_pers_m->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(225)), static_cast<System::Int32>(static_cast<System::Byte>(225)),
 				static_cast<System::Int32>(static_cast<System::Byte>(225)));
-			this->button2->Font = (gcnew System::Drawing::Font(L"Century", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->esp_pers_m->Font = (gcnew System::Drawing::Font(L"Century", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button2.Image")));
-			this->button2->Location = System::Drawing::Point(183, 87);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(165, 69);
-			this->button2->TabIndex = 1;
-			this->button2->Text = L"   Modifier";
-			this->button2->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
-			this->button2->UseVisualStyleBackColor = false;
+			this->esp_pers_m->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"esp_pers_m.Image")));
+			this->esp_pers_m->Location = System::Drawing::Point(183, 87);
+			this->esp_pers_m->Name = L"esp_pers_m";
+			this->esp_pers_m->Size = System::Drawing::Size(165, 69);
+			this->esp_pers_m->TabIndex = 1;
+			this->esp_pers_m->Text = L"   Modifier";
+			this->esp_pers_m->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
+			this->esp_pers_m->UseVisualStyleBackColor = false;
 			// 
-			// button3
+			// esp_pers_a
 			// 
-			this->button3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(225)), static_cast<System::Int32>(static_cast<System::Byte>(225)),
+			this->esp_pers_a->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(225)), static_cast<System::Int32>(static_cast<System::Byte>(225)),
 				static_cast<System::Int32>(static_cast<System::Byte>(225)));
-			this->button3->Font = (gcnew System::Drawing::Font(L"Century", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->esp_pers_a->Font = (gcnew System::Drawing::Font(L"Century", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button3.Image")));
-			this->button3->Location = System::Drawing::Point(12, 87);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(165, 69);
-			this->button3->TabIndex = 2;
-			this->button3->Text = L"    Ajouter";
-			this->button3->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
-			this->button3->UseVisualStyleBackColor = false;
+			this->esp_pers_a->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"esp_pers_a.Image")));
+			this->esp_pers_a->Location = System::Drawing::Point(12, 87);
+			this->esp_pers_a->Name = L"esp_pers_a";
+			this->esp_pers_a->Size = System::Drawing::Size(165, 69);
+			this->esp_pers_a->TabIndex = 2;
+			this->esp_pers_a->Text = L"    Ajouter";
+			this->esp_pers_a->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
+			this->esp_pers_a->UseVisualStyleBackColor = false;
 			// 
-			// button4
+			// esp_pers_s
 			// 
-			this->button4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(225)), static_cast<System::Int32>(static_cast<System::Byte>(225)),
+			this->esp_pers_s->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(225)), static_cast<System::Int32>(static_cast<System::Byte>(225)),
 				static_cast<System::Int32>(static_cast<System::Byte>(225)));
-			this->button4->Font = (gcnew System::Drawing::Font(L"Century", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->esp_pers_s->Font = (gcnew System::Drawing::Font(L"Century", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button4.Image")));
-			this->button4->Location = System::Drawing::Point(12, 162);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(165, 69);
-			this->button4->TabIndex = 3;
-			this->button4->Text = L"   Supprimer";
-			this->button4->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
-			this->button4->UseVisualStyleBackColor = false;
+			this->esp_pers_s->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"esp_pers_s.Image")));
+			this->esp_pers_s->Location = System::Drawing::Point(12, 162);
+			this->esp_pers_s->Name = L"esp_pers_s";
+			this->esp_pers_s->Size = System::Drawing::Size(165, 69);
+			this->esp_pers_s->TabIndex = 3;
+			this->esp_pers_s->Text = L"   Supprimer";
+			this->esp_pers_s->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
+			this->esp_pers_s->UseVisualStyleBackColor = false;
 			// 
-			// button5
+			// esp_pers_r
 			// 
-			this->button5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(225)), static_cast<System::Int32>(static_cast<System::Byte>(225)),
+			this->esp_pers_r->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(225)), static_cast<System::Int32>(static_cast<System::Byte>(225)),
 				static_cast<System::Int32>(static_cast<System::Byte>(225)));
-			this->button5->Font = (gcnew System::Drawing::Font(L"Century", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->esp_pers_r->Font = (gcnew System::Drawing::Font(L"Century", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button5.Image")));
-			this->button5->Location = System::Drawing::Point(183, 162);
-			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(165, 69);
-			this->button5->TabIndex = 4;
-			this->button5->Text = L"Rechercher";
-			this->button5->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
-			this->button5->UseVisualStyleBackColor = false;
+			this->esp_pers_r->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"esp_pers_r.Image")));
+			this->esp_pers_r->Location = System::Drawing::Point(183, 162);
+			this->esp_pers_r->Name = L"esp_pers_r";
+			this->esp_pers_r->Size = System::Drawing::Size(165, 69);
+			this->esp_pers_r->TabIndex = 4;
+			this->esp_pers_r->Text = L"Rechercher";
+			this->esp_pers_r->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
+			this->esp_pers_r->UseVisualStyleBackColor = false;
 			// 
 			// button10
 			// 
@@ -478,11 +486,11 @@ namespace CodeProjet {
 			this->Controls->Add(this->button13);
 			this->Controls->Add(this->button15);
 			this->Controls->Add(this->button10);
-			this->Controls->Add(this->button5);
-			this->Controls->Add(this->button4);
-			this->Controls->Add(this->button2);
-			this->Controls->Add(this->button1);
-			this->Controls->Add(this->button3);
+			this->Controls->Add(this->esp_pers_r);
+			this->Controls->Add(this->esp_pers_s);
+			this->Controls->Add(this->esp_pers_m);
+			this->Controls->Add(this->esp_pers);
+			this->Controls->Add(this->esp_pers_a);
 			this->Controls->Add(this->button21);
 			this->Font = (gcnew System::Drawing::Font(L"Century", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -496,8 +504,11 @@ namespace CodeProjet {
 		}
 #pragma endregion
 	private: System::Void Accueil_Load(System::Object^ sender, System::EventArgs^ e) {
+		aff_pers = gcnew Controleur;
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Hide();
+		aff_pers->afficher_form("personnel");
 	}
 };
 }
