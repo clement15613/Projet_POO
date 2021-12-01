@@ -1,4 +1,6 @@
 #pragma once
+
+
 using namespace System;
 using namespace System::ComponentModel;
 using namespace System::Collections;
@@ -21,5 +23,8 @@ public :
 	void afficher_chiffre_affaireMois(Chart^,String^);
 	void afficher_label_sql(Label^, String^);
 	void gestion_panel(Panel^, Panel^, Panel^, Panel^, bool);
-};
 
+
+
+	void afficher_form(String^);
+};

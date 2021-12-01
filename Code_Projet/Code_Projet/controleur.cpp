@@ -1,6 +1,11 @@
-#include "Controleur.h"
+#include "controleur.h"
 #include "pch.h"
 #include "Connexion.h"
+#include "Accueil.h"
+#include "Commande.h"
+#include "MyForm.h"
+#include "Personnel.h"
+#include "statistique.h"
 
 
 void Controleur::mdp(TextBox^ text) {
@@ -96,3 +101,23 @@ void Controleur::afficher_top(Chart^ chart, String^ query)
 			panel4->Visible = false;
 		}
 	}
+
+void Controleur::afficher_form(String^ of)
+{
+	//throw gcnew System::NotImplementedException();
+	if (of == "Accueil")
+	{
+		CodeProjet::Accueil^ Acc = gcnew CodeProjet::Accueil();
+		Acc->Show();
+	}
+	else if (of == "statistique")
+	{
+		CodeProjet::statistique^ stat = gcnew CodeProjet::statistique();
+		stat->Show();
+	}
+	else if (of == "personnel")
+	{
+		CodeProjet::Personnel^ pers = gcnew CodeProjet::Personnel();
+		pers->Show();
+	}
+}

@@ -1163,5 +1163,6 @@ private: System::Void BtnLabelModifierPersonnel_Click(System::Object^ sender, Sy
 private: System::Void BtnLabelSupprimerPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
 	monControleur->gestion_panel(PanelSupprimerPersonnel, PanelAjouterPersonnel, PanelModifierPersonnel, PanelAfficherPersonnel, true);
 }
+
 };
 }
