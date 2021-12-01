@@ -5,6 +5,8 @@
 #include "Accueil.h"
 #include "Personnel.h"
 #include "Commande.h"
+#include "Article.h"
+#include "Client.h"
 
 using namespace System;
 using namespace System::Windows::Forms;
@@ -20,6 +22,8 @@ void Main(array<String^>^ args)
     CodeProjet::Accueil Accueil;
     CodeProjet::Personnel perso;
     CodeProjet::Commande cmd;
+    CodeProjet::Article article;
+    CodeProjet::Client client;
    // Application::Run(% form);
     Application::Run(% form);
 }

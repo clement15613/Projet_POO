@@ -190,7 +190,7 @@ private: System::Windows::Forms::Label^ LQuestionAfficher;
 private: System::Windows::Forms::DataGridView^ dataGridView1;
 private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 
-	   Controleur^ aff_home;
+	   Controleur^ monControleur;
 
 
 	private:
@@ -331,7 +331,6 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->PanelAjouterPersonnel->Name = L"PanelAjouterPersonnel";
 			this->PanelAjouterPersonnel->Size = System::Drawing::Size(523, 446);
 			this->PanelAjouterPersonnel->TabIndex = 0;
-			this->PanelAjouterPersonnel->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Personnel::PanelAjouterPersonnel_Paint);
 			// 
 			// BtnAjouterPersonnel
 			// 
@@ -412,7 +411,6 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->LPrenomAjouter->Size = System::Drawing::Size(43, 13);
 			this->LPrenomAjouter->TabIndex = 13;
 			this->LPrenomAjouter->Text = L"Prénom";
-			this->LPrenomAjouter->Click += gcnew System::EventHandler(this, &Personnel::LPrenom_Click);
 			// 
 			// LUserAjouter
 			// 
@@ -440,7 +438,6 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->LNomAjouter->Size = System::Drawing::Size(29, 13);
 			this->LNomAjouter->TabIndex = 10;
 			this->LNomAjouter->Text = L"Nom";
-			this->LNomAjouter->Click += gcnew System::EventHandler(this, &Personnel::LNom_Click);
 			// 
 			// TBSuperieurAjouter
 			// 
@@ -949,7 +946,6 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->PanelSupprimerPersonnel->Name = L"PanelSupprimerPersonnel";
 			this->PanelSupprimerPersonnel->Size = System::Drawing::Size(523, 446);
 			this->PanelSupprimerPersonnel->TabIndex = 23;
-			this->PanelSupprimerPersonnel->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Personnel::PanelSupprimerPersonnel_Paint);
 			// 
 			// LNomPrenomSupprimer
 			// 
@@ -1003,9 +999,8 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->PanelAfficherPersonnel->Controls->Add(this->dataGridView1);
 			this->PanelAfficherPersonnel->Location = System::Drawing::Point(471, 162);
 			this->PanelAfficherPersonnel->Name = L"PanelAfficherPersonnel";
-			this->PanelAfficherPersonnel->Size = System::Drawing::Size(676, 479);
+			this->PanelAfficherPersonnel->Size = System::Drawing::Size(676, 456);
 			this->PanelAfficherPersonnel->TabIndex = 25;
-			this->PanelAfficherPersonnel->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Personnel::panel1_Paint);
 			// 
 			// BtnRechercherPersonnel
 			// 
@@ -1051,7 +1046,6 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->LNomAfficher->Size = System::Drawing::Size(29, 13);
 			this->LNomAfficher->TabIndex = 8;
 			this->LNomAfficher->Text = L"Nom";
-			this->LNomAfficher->Click += gcnew System::EventHandler(this, &Personnel::label3_Click);
 			// 
 			// LDateEmbaucheAfficher
 			// 
@@ -1115,23 +1109,23 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Location = System::Drawing::Point(6, 132);
 			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(664, 343);
+			this->dataGridView1->Size = System::Drawing::Size(664, 314);
 			this->dataGridView1->TabIndex = 0;
 			// 
 			// Personnel
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1301, 620);
-			this->Controls->Add(this->PanelSupprimerPersonnel);
+			this->ClientSize = System::Drawing::Size(1301, 628);
 			this->Controls->Add(this->BtnLabelSupprimerPersonnel);
 			this->Controls->Add(this->BtnLabelModifierPersonnel);
 			this->Controls->Add(this->BtnLabelRechercherPersonnel);
-			this->Controls->Add(this->PanelModifierPersonnel);
 			this->Controls->Add(this->BtnLabelAjouterPersonnel);
 			this->Controls->Add(this->menuStrip1);
-			this->Controls->Add(this->PanelAjouterPersonnel);
 			this->Controls->Add(this->PanelAfficherPersonnel);
+			this->Controls->Add(this->PanelSupprimerPersonnel);
+			this->Controls->Add(this->PanelModifierPersonnel);
+			this->Controls->Add(this->PanelAjouterPersonnel);
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"Personnel";
 			this->Text = L"Personnel";
@@ -1153,48 +1147,21 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 		}
 #pragma endregion
 	private: System::Void Personnel_Load(System::Object^ sender, System::EventArgs^ e) {
-		PanelAjouterPersonnel->Visible = false;
-		PanelModifierPersonnel->Visible = false;
-		PanelSupprimerPersonnel->Visible = false;
-		PanelAfficherPersonnel->Visible = false;
+		monControleur = gcnew Controleur;
+		monControleur->gestion_panel(PanelAjouterPersonnel, PanelModifierPersonnel, PanelAfficherPersonnel, PanelSupprimerPersonnel, false);
 	}
-	private: System::Void TBId_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void LNom_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void LPrenom_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void PanelAjouterPersonnel_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-}
-private: System::Void PanelSupprimerPersonnel_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-}
-private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-}
-private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
-}
+	
 private: System::Void BtnLabelAjouterPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
-	PanelAjouterPersonnel->Visible = true;
-	PanelModifierPersonnel->Visible = false;
-	PanelSupprimerPersonnel->Visible = false;
-	PanelAfficherPersonnel->Visible = false;
+	monControleur->gestion_panel(PanelAjouterPersonnel, PanelAfficherPersonnel, PanelModifierPersonnel, PanelSupprimerPersonnel, true);
 }
 private: System::Void BtnLabelRechercherPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
-	PanelAjouterPersonnel->Visible = false;
-	PanelModifierPersonnel->Visible = false;
-	PanelSupprimerPersonnel->Visible = false;
-	PanelAfficherPersonnel->Visible = true;
+	monControleur->gestion_panel(PanelAfficherPersonnel, PanelAjouterPersonnel, PanelModifierPersonnel, PanelSupprimerPersonnel, true);
 }
 private: System::Void BtnLabelModifierPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
-	PanelAjouterPersonnel->Visible = false;
-	PanelModifierPersonnel->Visible = true;
-	PanelSupprimerPersonnel->Visible = false;
-	PanelAfficherPersonnel->Visible = false;
+	monControleur->gestion_panel(PanelModifierPersonnel, PanelAjouterPersonnel, PanelAfficherPersonnel, PanelSupprimerPersonnel, true);
 }
 private: System::Void BtnLabelSupprimerPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
-	PanelAjouterPersonnel->Visible = false;
-	PanelModifierPersonnel->Visible = false;
-	PanelSupprimerPersonnel->Visible = true;
-	PanelAfficherPersonnel->Visible = false;
+	monControleur->gestion_panel(PanelSupprimerPersonnel, PanelAjouterPersonnel, PanelModifierPersonnel, PanelAfficherPersonnel, true);
 }
 
 };

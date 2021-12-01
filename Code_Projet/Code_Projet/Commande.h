@@ -1,5 +1,5 @@
 #pragma once
-
+#include "controleur.h"
 namespace CodeProjet {
 
 	using namespace System;
@@ -145,12 +145,13 @@ private: System::Windows::Forms::Button^ BtnAffficherArticleCommande;
 private: System::Windows::Forms::Button^ BtnModifierArticleModifier;
 private: System::Windows::Forms::Button^ BtnSupprimerArticleModifier;
 private: System::Windows::Forms::GroupBox^ groupBoxPourArticle;
-private: System::Windows::Forms::Panel^ PanelSupprimer;
+private: System::Windows::Forms::Panel^ PanelSupprimerCommande;
+
 private: System::Windows::Forms::Button^ BtnSupprimer;
 private: System::Windows::Forms::TextBox^ TBReferenceSupprimer;
 private: System::Windows::Forms::Label^ LInfoSupprimer;
 
-
+	   Controleur^ monControleur;
 
 
 
@@ -258,7 +259,7 @@ private: System::Windows::Forms::Label^ LInfoSupprimer;
 			this->dateTimePickerDateCommandeAfficher = (gcnew System::Windows::Forms::DateTimePicker());
 			this->LQuestionAfficher = (gcnew System::Windows::Forms::Label());
 			this->dataGridViewRechercherCommande = (gcnew System::Windows::Forms::DataGridView());
-			this->PanelSupprimer = (gcnew System::Windows::Forms::Panel());
+			this->PanelSupprimerCommande = (gcnew System::Windows::Forms::Panel());
 			this->BtnSupprimer = (gcnew System::Windows::Forms::Button());
 			this->TBReferenceSupprimer = (gcnew System::Windows::Forms::TextBox());
 			this->LInfoSupprimer = (gcnew System::Windows::Forms::Label());
@@ -273,7 +274,7 @@ private: System::Windows::Forms::Label^ LInfoSupprimer;
 			this->PanelAfficherCommande->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownNbrArticleAfficher))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewRechercherCommande))->BeginInit();
-			this->PanelSupprimer->SuspendLayout();
+			this->PanelSupprimerCommande->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// menuStrip1
@@ -538,7 +539,6 @@ private: System::Windows::Forms::Label^ LInfoSupprimer;
 			this->PanelAjouterCommande->Name = L"PanelAjouterCommande";
 			this->PanelAjouterCommande->Size = System::Drawing::Size(764, 488);
 			this->PanelAjouterCommande->TabIndex = 11;
-			this->PanelAjouterCommande->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Commande::PanelAjouterCommande_Paint);
 			// 
 			// BtnAjouterCommande
 			// 
@@ -755,7 +755,6 @@ private: System::Windows::Forms::Label^ LInfoSupprimer;
 			this->groupBoxPourArticle->TabIndex = 28;
 			this->groupBoxPourArticle->TabStop = false;
 			this->groupBoxPourArticle->Text = L"Article";
-			this->groupBoxPourArticle->Enter += gcnew System::EventHandler(this, &Commande::groupBox1_Enter);
 			// 
 			// dataGridViewModifier
 			// 
@@ -1113,15 +1112,15 @@ private: System::Windows::Forms::Label^ LInfoSupprimer;
 			this->dataGridViewRechercherCommande->Size = System::Drawing::Size(664, 343);
 			this->dataGridViewRechercherCommande->TabIndex = 0;
 			// 
-			// PanelSupprimer
+			// PanelSupprimerCommande
 			// 
-			this->PanelSupprimer->Controls->Add(this->BtnSupprimer);
-			this->PanelSupprimer->Controls->Add(this->TBReferenceSupprimer);
-			this->PanelSupprimer->Controls->Add(this->LInfoSupprimer);
-			this->PanelSupprimer->Location = System::Drawing::Point(486, 124);
-			this->PanelSupprimer->Name = L"PanelSupprimer";
-			this->PanelSupprimer->Size = System::Drawing::Size(777, 488);
-			this->PanelSupprimer->TabIndex = 28;
+			this->PanelSupprimerCommande->Controls->Add(this->BtnSupprimer);
+			this->PanelSupprimerCommande->Controls->Add(this->TBReferenceSupprimer);
+			this->PanelSupprimerCommande->Controls->Add(this->LInfoSupprimer);
+			this->PanelSupprimerCommande->Location = System::Drawing::Point(486, 124);
+			this->PanelSupprimerCommande->Name = L"PanelSupprimerCommande";
+			this->PanelSupprimerCommande->Size = System::Drawing::Size(777, 488);
+			this->PanelSupprimerCommande->TabIndex = 28;
 			// 
 			// BtnSupprimer
 			// 
@@ -1153,13 +1152,13 @@ private: System::Windows::Forms::Label^ LInfoSupprimer;
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1278, 629);
-			this->Controls->Add(this->PanelSupprimer);
-			this->Controls->Add(this->PanelAjouterCommande);
 			this->Controls->Add(this->BtnLabelSupprimerCommande);
 			this->Controls->Add(this->BtnLabelModifierCommande);
 			this->Controls->Add(this->BtnLabelRechercherCommande);
 			this->Controls->Add(this->BtnLabelAjouterCommande);
 			this->Controls->Add(this->menuStrip1);
+			this->Controls->Add(this->PanelSupprimerCommande);
+			this->Controls->Add(this->PanelAjouterCommande);
 			this->Controls->Add(this->PanelModifierCommande);
 			this->Controls->Add(this->PanelAfficherCommande);
 			this->Name = L"Commande";
@@ -1181,46 +1180,35 @@ private: System::Windows::Forms::Label^ LInfoSupprimer;
 			this->PanelAfficherCommande->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownNbrArticleAfficher))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewRechercherCommande))->EndInit();
-			this->PanelSupprimer->ResumeLayout(false);
-			this->PanelSupprimer->PerformLayout();
+			this->PanelSupprimerCommande->ResumeLayout(false);
+			this->PanelSupprimerCommande->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	private: System::Void PanelAjouterCommande_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-	}
-private: System::Void groupBox1_Enter(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void BtnLabelAjouterCommande_Click(System::Object^ sender, System::EventArgs^ e) {
-	PanelAfficherCommande->Visible = false;
-	PanelModifierCommande->Visible = false;
-	PanelAjouterCommande->Visible = true;
-	PanelSupprimer->Visible = false;
-}
+	
 private: System::Void Commande_Load(System::Object^ sender, System::EventArgs^ e) {
-	PanelAfficherCommande->Visible = false;
-	PanelModifierCommande->Visible = false;
-	PanelAjouterCommande->Visible = false;
-	PanelSupprimer->Visible = false;
+	monControleur = gcnew Controleur;
+	monControleur->gestion_panel(PanelAjouterCommande, PanelModifierCommande, PanelAfficherCommande, PanelSupprimerCommande, false);
+
 }
+
+
+
+private: System::Void BtnLabelAjouterCommande_Click(System::Object^ sender, System::EventArgs^ e) {
+	monControleur->gestion_panel(PanelAjouterCommande, PanelModifierCommande, PanelAfficherCommande, PanelSupprimerCommande, true);
+}
+
+
 private: System::Void BtnLabelRechercherCommande_Click(System::Object^ sender, System::EventArgs^ e) {
-	PanelAfficherCommande->Visible = true;
-	PanelModifierCommande->Visible = false;
-	PanelAjouterCommande->Visible = false;
-	PanelSupprimer->Visible = false;
+	monControleur->gestion_panel(PanelAfficherCommande, PanelAjouterCommande, PanelModifierCommande, PanelSupprimerCommande, true);
 }
 private: System::Void BtnLabelModifierCommande_Click(System::Object^ sender, System::EventArgs^ e) {
-	PanelAfficherCommande->Visible = false;
-	PanelModifierCommande->Visible = true;
-	PanelAjouterCommande->Visible = false;
-	PanelSupprimer->Visible = false;
+	monControleur->gestion_panel(PanelModifierCommande, PanelAjouterCommande, PanelSupprimerCommande, PanelAfficherCommande, true);
 }
 private: System::Void BtnLabelSupprimerCommande_Click(System::Object^ sender, System::EventArgs^ e) {
-	PanelAfficherCommande->Visible = false;
-	PanelModifierCommande->Visible = false;
-	PanelAjouterCommande->Visible = false;
-	PanelSupprimer->Visible = true;
+	monControleur->gestion_panel(PanelSupprimerCommande, PanelAjouterCommande, PanelModifierCommande, PanelAfficherCommande, true);
 }
 };
 }
