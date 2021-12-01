@@ -26,3 +26,8 @@ String^ MapCorrespond::INSERT()
 {
 	return "insert into correspond values (" + getIdVille() + "," + getIdAdresse() + ")";
 }
+
+String^ MapCorrespond::DELETE()
+{
+	return "delete from correspond where id_adresse = " + getIdAdresse();
+}

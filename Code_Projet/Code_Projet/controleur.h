@@ -48,6 +48,6 @@ public :
 	void CnxComboBox_BDD(ComboBox^, String^);
 
 	void ajouterPersonnel(TextBox^,TextBox^,DateTimePicker^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^,ComboBox^, TextBox^);
-	void supprimerPersonnel(TextBox^);
+	void supprimerPersonnel(ComboBox^);
 };
 

@@ -196,6 +196,8 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 
 	   Controleur^ monControleur;
+private: System::Windows::Forms::Label^ LNomPrenomModifier;
+private: System::Windows::Forms::ComboBox^ comboBoxNomPrenomModifer;
 
 
 	private:
@@ -301,6 +303,8 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->dateTimePickerDateEmbaucheAfficher = (gcnew System::Windows::Forms::DateTimePicker());
 			this->LQuestionAfficher = (gcnew System::Windows::Forms::Label());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->comboBoxNomPrenomModifer = (gcnew System::Windows::Forms::ComboBox());
+			this->LNomPrenomModifier = (gcnew System::Windows::Forms::Label());
 			this->PanelAjouterPersonnel->SuspendLayout();
 			this->PanelModifierPersonnel->SuspendLayout();
 			this->menuStrip1->SuspendLayout();
@@ -511,6 +515,8 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			// 
 			// PanelModifierPersonnel
 			// 
+			this->PanelModifierPersonnel->Controls->Add(this->LNomPrenomModifier);
+			this->PanelModifierPersonnel->Controls->Add(this->comboBoxNomPrenomModifer);
 			this->PanelModifierPersonnel->Controls->Add(this->BtnModifierPersonnel);
 			this->PanelModifierPersonnel->Controls->Add(this->LVilleModifier);
 			this->PanelModifierPersonnel->Controls->Add(this->BoxVilleModifier);
@@ -532,14 +538,14 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->PanelModifierPersonnel->Controls->Add(this->TBMdpModifier);
 			this->PanelModifierPersonnel->Controls->Add(this->TBPrenomModifier);
 			this->PanelModifierPersonnel->Controls->Add(this->TBNomModifier);
-			this->PanelModifierPersonnel->Location = System::Drawing::Point(624, 162);
+			this->PanelModifierPersonnel->Location = System::Drawing::Point(624, 96);
 			this->PanelModifierPersonnel->Name = L"PanelModifierPersonnel";
-			this->PanelModifierPersonnel->Size = System::Drawing::Size(523, 446);
+			this->PanelModifierPersonnel->Size = System::Drawing::Size(523, 512);
 			this->PanelModifierPersonnel->TabIndex = 22;
 			// 
 			// BtnModifierPersonnel
 			// 
-			this->BtnModifierPersonnel->Location = System::Drawing::Point(138, 383);
+			this->BtnModifierPersonnel->Location = System::Drawing::Point(138, 449);
 			this->BtnModifierPersonnel->Name = L"BtnModifierPersonnel";
 			this->BtnModifierPersonnel->Size = System::Drawing::Size(185, 46);
 			this->BtnModifierPersonnel->TabIndex = 21;
@@ -549,7 +555,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			// LVilleModifier
 			// 
 			this->LVilleModifier->AutoSize = true;
-			this->LVilleModifier->Location = System::Drawing::Point(330, 258);
+			this->LVilleModifier->Location = System::Drawing::Point(330, 324);
 			this->LVilleModifier->Name = L"LVilleModifier";
 			this->LVilleModifier->Size = System::Drawing::Size(26, 13);
 			this->LVilleModifier->TabIndex = 20;
@@ -558,7 +564,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			// BoxVilleModifier
 			// 
 			this->BoxVilleModifier->FormattingEnabled = true;
-			this->BoxVilleModifier->Location = System::Drawing::Point(333, 274);
+			this->BoxVilleModifier->Location = System::Drawing::Point(333, 340);
 			this->BoxVilleModifier->Name = L"BoxVilleModifier";
 			this->BoxVilleModifier->Size = System::Drawing::Size(121, 21);
 			this->BoxVilleModifier->Sorted = true;
@@ -567,7 +573,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			// LNomRueModifier
 			// 
 			this->LNomRueModifier->AutoSize = true;
-			this->LNomRueModifier->Location = System::Drawing::Point(330, 100);
+			this->LNomRueModifier->Location = System::Drawing::Point(330, 166);
 			this->LNomRueModifier->Name = L"LNomRueModifier";
 			this->LNomRueModifier->Size = System::Drawing::Size(67, 13);
 			this->LNomRueModifier->TabIndex = 18;
@@ -576,7 +582,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			// LNumVoieModifier
 			// 
 			this->LNumVoieModifier->AutoSize = true;
-			this->LNumVoieModifier->Location = System::Drawing::Point(330, 18);
+			this->LNumVoieModifier->Location = System::Drawing::Point(330, 84);
 			this->LNumVoieModifier->Name = L"LNumVoieModifier";
 			this->LNumVoieModifier->Size = System::Drawing::Size(82, 13);
 			this->LNumVoieModifier->TabIndex = 17;
@@ -585,7 +591,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			// LComplementModifier
 			// 
 			this->LComplementModifier->AutoSize = true;
-			this->LComplementModifier->Location = System::Drawing::Point(330, 187);
+			this->LComplementModifier->Location = System::Drawing::Point(330, 253);
 			this->LComplementModifier->Name = L"LComplementModifier";
 			this->LComplementModifier->Size = System::Drawing::Size(113, 13);
 			this->LComplementModifier->TabIndex = 16;
@@ -594,7 +600,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			// LSuperieurModifier
 			// 
 			this->LSuperieurModifier->AutoSize = true;
-			this->LSuperieurModifier->Location = System::Drawing::Point(330, 323);
+			this->LSuperieurModifier->Location = System::Drawing::Point(330, 389);
 			this->LSuperieurModifier->Name = L"LSuperieurModifier";
 			this->LSuperieurModifier->Size = System::Drawing::Size(52, 13);
 			this->LSuperieurModifier->TabIndex = 15;
@@ -603,7 +609,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			// LMdpModifier
 			// 
 			this->LMdpModifier->AutoSize = true;
-			this->LMdpModifier->Location = System::Drawing::Point(17, 323);
+			this->LMdpModifier->Location = System::Drawing::Point(17, 389);
 			this->LMdpModifier->Name = L"LMdpModifier";
 			this->LMdpModifier->Size = System::Drawing::Size(71, 13);
 			this->LMdpModifier->TabIndex = 14;
@@ -612,7 +618,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			// LPrenomModifier
 			// 
 			this->LPrenomModifier->AutoSize = true;
-			this->LPrenomModifier->Location = System::Drawing::Point(17, 100);
+			this->LPrenomModifier->Location = System::Drawing::Point(17, 166);
 			this->LPrenomModifier->Name = L"LPrenomModifier";
 			this->LPrenomModifier->Size = System::Drawing::Size(43, 13);
 			this->LPrenomModifier->TabIndex = 13;
@@ -621,7 +627,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			// LUserModifier
 			// 
 			this->LUserModifier->AutoSize = true;
-			this->LUserModifier->Location = System::Drawing::Point(17, 258);
+			this->LUserModifier->Location = System::Drawing::Point(17, 324);
 			this->LUserModifier->Name = L"LUserModifier";
 			this->LUserModifier->Size = System::Drawing::Size(84, 13);
 			this->LUserModifier->TabIndex = 12;
@@ -630,7 +636,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			// LDateEmbaucheModifier
 			// 
 			this->LDateEmbaucheModifier->AutoSize = true;
-			this->LDateEmbaucheModifier->Location = System::Drawing::Point(17, 187);
+			this->LDateEmbaucheModifier->Location = System::Drawing::Point(17, 253);
 			this->LDateEmbaucheModifier->Name = L"LDateEmbaucheModifier";
 			this->LDateEmbaucheModifier->Size = System::Drawing::Size(91, 13);
 			this->LDateEmbaucheModifier->TabIndex = 11;
@@ -639,7 +645,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			// LNomModifier
 			// 
 			this->LNomModifier->AutoSize = true;
-			this->LNomModifier->Location = System::Drawing::Point(17, 18);
+			this->LNomModifier->Location = System::Drawing::Point(17, 84);
 			this->LNomModifier->Name = L"LNomModifier";
 			this->LNomModifier->Size = System::Drawing::Size(29, 13);
 			this->LNomModifier->TabIndex = 10;
@@ -647,63 +653,63 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			// 
 			// TBSuperieurModifier
 			// 
-			this->TBSuperieurModifier->Location = System::Drawing::Point(333, 339);
+			this->TBSuperieurModifier->Location = System::Drawing::Point(333, 405);
 			this->TBSuperieurModifier->Name = L"TBSuperieurModifier";
 			this->TBSuperieurModifier->Size = System::Drawing::Size(144, 20);
 			this->TBSuperieurModifier->TabIndex = 9;
 			// 
 			// TBComplementModifier
 			// 
-			this->TBComplementModifier->Location = System::Drawing::Point(333, 203);
+			this->TBComplementModifier->Location = System::Drawing::Point(333, 269);
 			this->TBComplementModifier->Name = L"TBComplementModifier";
 			this->TBComplementModifier->Size = System::Drawing::Size(66, 20);
 			this->TBComplementModifier->TabIndex = 8;
 			// 
 			// TBNomRueModifier
 			// 
-			this->TBNomRueModifier->Location = System::Drawing::Point(333, 116);
+			this->TBNomRueModifier->Location = System::Drawing::Point(333, 182);
 			this->TBNomRueModifier->Name = L"TBNomRueModifier";
 			this->TBNomRueModifier->Size = System::Drawing::Size(100, 20);
 			this->TBNomRueModifier->TabIndex = 7;
 			// 
 			// TBNumRueModifier
 			// 
-			this->TBNumRueModifier->Location = System::Drawing::Point(333, 34);
+			this->TBNumRueModifier->Location = System::Drawing::Point(333, 100);
 			this->TBNumRueModifier->Name = L"TBNumRueModifier";
 			this->TBNumRueModifier->Size = System::Drawing::Size(100, 20);
 			this->TBNumRueModifier->TabIndex = 6;
 			// 
 			// dateTimePickerEmbaucheModifier
 			// 
-			this->dateTimePickerEmbaucheModifier->Location = System::Drawing::Point(20, 203);
+			this->dateTimePickerEmbaucheModifier->Location = System::Drawing::Point(20, 269);
 			this->dateTimePickerEmbaucheModifier->Name = L"dateTimePickerEmbaucheModifier";
 			this->dateTimePickerEmbaucheModifier->Size = System::Drawing::Size(186, 20);
 			this->dateTimePickerEmbaucheModifier->TabIndex = 4;
 			// 
 			// TBUserModifier
 			// 
-			this->TBUserModifier->Location = System::Drawing::Point(20, 274);
+			this->TBUserModifier->Location = System::Drawing::Point(20, 340);
 			this->TBUserModifier->Name = L"TBUserModifier";
 			this->TBUserModifier->Size = System::Drawing::Size(100, 20);
 			this->TBUserModifier->TabIndex = 3;
 			// 
 			// TBMdpModifier
 			// 
-			this->TBMdpModifier->Location = System::Drawing::Point(20, 339);
+			this->TBMdpModifier->Location = System::Drawing::Point(20, 405);
 			this->TBMdpModifier->Name = L"TBMdpModifier";
 			this->TBMdpModifier->Size = System::Drawing::Size(100, 20);
 			this->TBMdpModifier->TabIndex = 2;
 			// 
 			// TBPrenomModifier
 			// 
-			this->TBPrenomModifier->Location = System::Drawing::Point(20, 116);
+			this->TBPrenomModifier->Location = System::Drawing::Point(20, 182);
 			this->TBPrenomModifier->Name = L"TBPrenomModifier";
 			this->TBPrenomModifier->Size = System::Drawing::Size(100, 20);
 			this->TBPrenomModifier->TabIndex = 1;
 			// 
 			// TBNomModifier
 			// 
-			this->TBNomModifier->Location = System::Drawing::Point(20, 34);
+			this->TBNomModifier->Location = System::Drawing::Point(20, 100);
 			this->TBNomModifier->Name = L"TBNomModifier";
 			this->TBNomModifier->Size = System::Drawing::Size(100, 20);
 			this->TBNomModifier->TabIndex = 0;
@@ -991,6 +997,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->BtnSupprimerPersonnel->TabIndex = 21;
 			this->BtnSupprimerPersonnel->Text = L"Supprimer";
 			this->BtnSupprimerPersonnel->UseVisualStyleBackColor = true;
+			this->BtnSupprimerPersonnel->Click += gcnew System::EventHandler(this, &Personnel::BtnSupprimerPersonnel_Click);
 			// 
 			// PanelAfficherPersonnel
 			// 
@@ -1127,6 +1134,23 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->dataGridView1->Size = System::Drawing::Size(664, 314);
 			this->dataGridView1->TabIndex = 0;
 			// 
+			// comboBoxNomPrenomModifer
+			// 
+			this->comboBoxNomPrenomModifer->FormattingEnabled = true;
+			this->comboBoxNomPrenomModifer->Location = System::Drawing::Point(202, 14);
+			this->comboBoxNomPrenomModifer->Name = L"comboBoxNomPrenomModifer";
+			this->comboBoxNomPrenomModifer->Size = System::Drawing::Size(171, 21);
+			this->comboBoxNomPrenomModifer->TabIndex = 22;
+			// 
+			// LNomPrenomModifier
+			// 
+			this->LNomPrenomModifier->AutoSize = true;
+			this->LNomPrenomModifier->Location = System::Drawing::Point(124, 17);
+			this->LNomPrenomModifier->Name = L"LNomPrenomModifier";
+			this->LNomPrenomModifier->Size = System::Drawing::Size(76, 13);
+			this->LNomPrenomModifier->TabIndex = 23;
+			this->LNomPrenomModifier->Text = L"Nom, prénom :";
+			// 
 			// Personnel
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1137,10 +1161,10 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->Controls->Add(this->BtnLabelRechercherPersonnel);
 			this->Controls->Add(this->BtnLabelAjouterPersonnel);
 			this->Controls->Add(this->menuStrip1);
+			this->Controls->Add(this->PanelModifierPersonnel);
 			this->Controls->Add(this->PanelAjouterPersonnel);
 			this->Controls->Add(this->PanelAfficherPersonnel);
 			this->Controls->Add(this->PanelSupprimerPersonnel);
-			this->Controls->Add(this->PanelModifierPersonnel);
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"Personnel";
 			this->Text = L"Personnel";
@@ -1185,19 +1209,30 @@ private: System::Void BtnLabelRechercherPersonnel_Click(System::Object^ sender, 
 	monControleur->CnxComboBox_BDD(comboBoxSupAfficher, "select nom_Personnel, prenom_Personnel from Personnel where id_Personnel = id_Personnel_Superieur");
 	monControleur->CnxComboBox_BDD(comboBoxVilleAfficher, "select ville from Ville");
 }
-private: System::Void BtnLabelModifierPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void BtnLabelModifierPersonnel_Click(System::Object^ sender, System::EventArgs^ e) 
+{
 	monControleur->gestion_panel(PanelModifierPersonnel, PanelAjouterPersonnel, PanelAfficherPersonnel, PanelSupprimerPersonnel, true);
 	monControleur->CnxComboBox_BDD(BoxVilleModifier, "select ville from Ville");
+	monControleur->CnxComboBox_BDD(comboBoxNomPrenomModifer, "select nom_personnel, prenom_personnel from personnel");
 }
-private: System::Void BtnLabelSupprimerPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void BtnLabelSupprimerPersonnel_Click(System::Object^ sender, System::EventArgs^ e) 
+{
 	monControleur->gestion_panel(PanelSupprimerPersonnel, PanelAjouterPersonnel, PanelModifierPersonnel, PanelAfficherPersonnel, true);
 	monControleur->CnxComboBox_BDD(comboBoxNomPrenomSupprimer, "select nom_Personnel, prenom_Personnel from Personnel");
 }
 
 
-private: System::Void BtnAjouterPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void BtnAjouterPersonnel_Click(System::Object^ sender, System::EventArgs^ e) 
+{
 	monControleur->ajouterPersonnel(TBNomAjouter, TBPrenomAjouter, dateTimePickerEmbaucheAjouter, TBUserAjouter,
 		TBMdpAjouter, TBNumRueAjouter, TBNumRueAjouter, TBComplementAjouter, BoxVilleAjouter, TBSuperieurAjouter);
+}
+private: System::Void BtnSupprimerPersonnel_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	monControleur->supprimerPersonnel(comboBoxNomPrenomSupprimer);
+	
+	
+
 }
 };
 }

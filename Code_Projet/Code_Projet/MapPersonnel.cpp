@@ -72,3 +72,13 @@ String^ MapPersonnel::INSERT()
 {
 	return "insert into personnel values('" + getNom() + "','" + getPrenom() + "','" + getDateEmbauche() + "','" + getNomUtilisateur() + "','" + getMotDePasse() + "'," + getid_adresse() + "," + getid_superieur() + ")";
 }
+
+String^ MapPersonnel::DELETE()
+{
+	return "delete from personnel where nom_personnel = '" + getNom() + "' and prenom_personnel = '" + getPrenom()+"'";
+}
+
+String^ MapPersonnel::UPDATE()
+{
+	return "update personnel set nom_personnel = '" + getNom() + "', prenom_personnel = '" + getPrenom() + "','" + getDateEmbauche() + "','" + getNomUtilisateur() + "','" + getMotDePasse() + "'," + getid_adresse() + "," + getid_superieur() + "where id_personnel = " + getid_personnel();
+}

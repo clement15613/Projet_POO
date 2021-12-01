@@ -15,5 +15,6 @@ public:
 	void SetIdAdresse(int);
 
 	String^ INSERT();
+	String^ DELETE();
 };
 

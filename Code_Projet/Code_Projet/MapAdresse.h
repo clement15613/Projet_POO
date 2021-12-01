@@ -20,5 +20,6 @@ public:
 	String^ getcomplement();
 	String^ setcomplement(String^ Newcomplement);
 	String^ INSERT();
+	String^ DELETE();
 };
 

@@ -314,6 +314,7 @@ void Controleur::afficher_form(String^ of)
 
 	void Controleur::CnxComboBox_BDD(ComboBox^ CB1, String^ query)
 	{
+		CB1->Items->Clear();
 		Connexion^ cnx = gcnew Connexion;
 		SqlDataReader^ retour;
 		retour = cnx->dataReader(query);
@@ -343,27 +344,53 @@ void Controleur::afficher_form(String^ of)
 		int idVille;
 		int idAdresse;
 		int idSuperieur;
+
 		mPersonnel->setNom(nom->Text);
 		mPersonnel->setPrenom(prenom->Text);
 		mPersonnel->setDateEmbauche(dateEmbauche->Value);
 		mPersonnel->setNomUtilisateur(user->Text);
 		mPersonnel->setMotDePasse(MDP->Text);
+		mPersonnel->setid_superieur(1);
+
 		mAdresse->setnumero(Convert::ToInt32(numRue->Text));
+		mAdresse->setrue(nomRue->Text);
 		mAdresse->setcomplement(complement->Text);
+
 		mVille->setVille(ville->Text);
 		mVille->setCodePostal("00000");
-		mPersonnel->setid_superieur(1);
+
+		
 		idVille = maCNX->actionRowsID(mVille->INSERT());
-		mCorrespond->setIdVille(idVille);
+
 		idAdresse = maCNX->actionRowsID(mAdresse->INSERT());
+
+		mCorrespond->setIdVille(idVille);
 		mCorrespond->SetIdAdresse(idAdresse);
+
 		mPersonnel->setid_adresse(idAdresse);
+
 		maCNX->actionRows(mCorrespond->INSERT());
 		maCNX->actionRows(mPersonnel->INSERT());
 	}
 
-	void Controleur::supprimerPersonnel(TextBox^ nomPrenom)
+	void Controleur::supprimerPersonnel(ComboBox^ nomPrenom)
 	{
+		int idAdresse;
+		String^ result = nomPrenom->Text;
+		array<String^>^ stringarray = result->Split(' ');
+		
+		mPersonnel->setNom(stringarray[0]);
+		mPersonnel->setPrenom(stringarray[1]);
+
+		idAdresse = maCNX->actionRowsID("select id_adresse from personnel where nom_personnel = '" + mPersonnel->getNom() + "' and prenom_personnel = '" + mPersonnel->getPrenom() + "'");
+
+		maCNX->actionRows(mPersonnel->DELETE());
+
+		mCorrespond->SetIdAdresse(idAdresse);
+		maCNX->actionRows(mCorrespond->DELETE());
+
+		mAdresse->setid_adresse(idAdresse);
+		maCNX->actionRows(mAdresse->DELETE());
 
 	}
 

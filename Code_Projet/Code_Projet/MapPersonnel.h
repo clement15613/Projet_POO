@@ -38,7 +38,7 @@ public:
 	void setid_adresse(int NewIdAdresse);
 
 	String^ INSERT();
-	//String^ UPDATE();
-	//String^ DELETE();
+	String^ UPDATE();
+	String^ DELETE();
 };
 

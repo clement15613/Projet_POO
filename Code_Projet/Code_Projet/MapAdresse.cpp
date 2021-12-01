@@ -37,3 +37,8 @@ String^ MapAdresse::INSERT()
 {
 	return "insert into adresse values(" + getnumero() + ",'" + getrue() + "','" + getcomplement() + "');SELECT @@IDENTITY;";
 }
+
+String^ MapAdresse::DELETE()
+{
+	return "delete from adresse where id_adresse = " + getid_adresse();
+}
