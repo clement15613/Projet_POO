@@ -1,5 +1,7 @@
 #pragma once
 #include "Controleur.h"
+#include "Accueil.h"
+#include "Connexion.h"
 
 namespace CodeProjet {
 
@@ -45,10 +47,8 @@ namespace CodeProjet {
 
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
 		   Controleur^ monControleur;
-
-
 	private: System::Windows::Forms::Button^ btConnexion;
-	private: System::Windows::Forms::Label^ label4;
+		   Controleur^ aff_acc;
 	private: System::Windows::Forms::Label^ label5;
 
 
@@ -79,7 +79,6 @@ namespace CodeProjet {
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->btConnexion = (gcnew System::Windows::Forms::Button());
-			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->SuspendLayout();
@@ -153,19 +152,7 @@ namespace CodeProjet {
 			this->btConnexion->TabIndex = 9;
 			this->btConnexion->Text = L"Connexion";
 			this->btConnexion->UseVisualStyleBackColor = true;
-			this->btConnexion->Click += gcnew System::EventHandler(this, &MyForm::button1_Click_1);
-			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Underline, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(168, 239);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(84, 13);
-			this->label4->TabIndex = 10;
-			this->label4->Text = L"Identifiant oublié";
+			this->btConnexion->Click += gcnew System::EventHandler(this, &MyForm::btConnextion_Click_1);
 			// 
 			// label5
 			// 
@@ -173,11 +160,12 @@ namespace CodeProjet {
 			this->label5->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Underline, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(351, 239);
+			this->label5->Location = System::Drawing::Point(265, 238);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(102, 13);
 			this->label5->TabIndex = 11;
 			this->label5->Text = L"Mot de passe oublié";
+			this->label5->Click += gcnew System::EventHandler(this, &MyForm::label5_Click);
 			// 
 			// MyForm
 			// 
@@ -186,7 +174,6 @@ namespace CodeProjet {
 			this->BackColor = System::Drawing::SystemColors::Control;
 			this->ClientSize = System::Drawing::Size(636, 361);
 			this->Controls->Add(this->label5);
-			this->Controls->Add(this->label4);
 			this->Controls->Add(this->btConnexion);
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->label3);
@@ -206,9 +193,8 @@ namespace CodeProjet {
 		}
 #pragma endregion
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-
 		monControleur = gcnew Controleur;
-
+		aff_acc = gcnew Controleur;
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 
@@ -225,7 +211,12 @@ private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e)
 private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
 	monControleur->mdp(textBox_MDP);
 }
-private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void btConnextion_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	aff_acc->afficher_form("Accueil");
+}
+private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
+	MessageBox::Show("Merci de contacté votre administrateur réseau");
 }
 };
 }

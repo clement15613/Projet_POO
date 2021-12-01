@@ -1,6 +1,12 @@
-#include "Controleur.h"
+#include "controleur.h"
 #include "pch.h"
 #include "Connexion.h"
+#include "Accueil.h"
+#include "Commande.h"
+#include "MyForm.h"
+#include "Personnel.h"
+#include "statistique.h"
+#include<sstream>
 
 
 void Controleur::mdp(TextBox^ text) {
@@ -60,12 +66,12 @@ void Controleur::afficher_top(Chart^ chart, String^ query)
 		}
 	}
 
-	void Controleur::afficher_label_sql(Label^ label,String^ sql)
+
+	void Controleur::afficher_label_sql(Label^ label, String^ sql)
 	{
 		Connexion co;
 		SqlDataReader^ read;
 		read = co.dataReader(sql);
-		//Label->Caption = Format(Date, "dddd dd/mm/yyyy")
 
 		if(read->HasRows)
 		{
@@ -95,4 +101,198 @@ void Controleur::afficher_top(Chart^ chart, String^ query)
 			panel3->Visible = false;
 			panel4->Visible = false;
 		}
+	}
+
+void Controleur::afficher_form(String^ of)
+{
+	//throw gcnew System::NotImplementedException();
+	if (of == "Accueil")
+	{
+		CodeProjet::Accueil^ Acc = gcnew CodeProjet::Accueil();
+		Acc->Show();
+	}
+	else if (of == "statistique")
+	{
+		CodeProjet::statistique^ stat = gcnew CodeProjet::statistique();
+		stat->Show();
+	}
+	else if (of == "personnel")
+	{
+		CodeProjet::Personnel^ pers = gcnew CodeProjet::Personnel();
+		pers->Show();
+	}
+}
+			if (read->HasRows)
+			{
+				while (read->Read())
+				{
+					String^ txt = read[0]->ToString();
+					label->Text = txt->Format("{0:n}", read[0]) + " €";
+				}
+			}
+			if (label->Text == " €")
+			{
+				label->Text = "0 €";
+			}
+			
+	}
+
+	void Controleur::affichage_text_box(ComboBox^ ComboB, TextBox^ textB)
+	{
+		if (ComboB->Enabled == true)
+		{
+			ComboB->Enabled = false;
+		}
+		else
+		{
+			ComboB->Enabled = true;
+		}
+
+		
+		if(ComboB->Visible == true)
+		{
+			ComboB->Visible = false;
+		}
+		else
+		{
+			ComboB->Visible = true;
+		}
+
+/// //////////////		/// //////////////		/// //////////////
+		if (textB->Enabled == true)
+		{
+			textB->Enabled = false;
+		}
+		else
+		{
+			textB->Enabled = true;
+		}
+
+		if (textB->Visible == true)
+		{
+			textB->Visible = false;
+		}
+		else
+		{
+			textB->Visible = true;
+		}
+
+	}
+
+	void Controleur::btnafficher_chiffre_affaire(ComboBox^ ComboB, Button^ btn, MaskedTextBox^ textB,Label^ lab)
+	{
+
+		String^ mois;
+		if (ComboB->Text == "Janvier")
+		{
+			mois = "1";
+		}
+		if (ComboB->Text == "Février")
+		{
+			mois = "2";
+		}
+		if (ComboB->Text == "Mars")
+		{
+			mois = "3";
+		}
+		if (ComboB->Text == "Avril")
+		{
+			mois = "4";
+		}
+		if (ComboB->Text == "Mai")
+		{
+			mois = "5";
+		}
+		if (ComboB->Text == "Juin")
+		{
+			mois = "6";
+		}
+		if (ComboB->Text == "Juillet")
+		{
+			mois = "7";
+		}
+		if (ComboB->Text == "Août")
+		{
+			mois = "8";
+		}
+		if (ComboB->Text == "Septembre")
+		{
+			mois = "9";
+		}
+		if (ComboB->Text == "Octobre")
+		{
+			mois = "10";
+		}
+		if (ComboB->Text == "Novembre")
+		{
+			mois = "11";
+		}
+		if (ComboB->Text == "Décembre")
+		{
+			mois = "12";
+		}
+		String^ annee = textB->Text->ToString();
+	    afficher_label_sql(lab, "select SUM(quantite * prix_HT) as total from Payment inner join Composer on Payment.id_commande = Composer.id_commande inner join Article on Composer.id_article=Article.id_article where month(date_payment) = " + mois + " and year(date_payment) = " + annee);
+		
+	}
+
+	void Controleur::CalculAndrecupereValeurCommercialeStock(TextBox^ TVATB, TextBox^ RemiseTB, TextBox^ MargeTB, TextBox^  DemarqueTB, ComboBox^ TVACB, ComboBox^ RemiseCB, ComboBox^ MargeCB, ComboBox^ DemarqueCB,CheckBox^ TVACHECK, CheckBox^ RemiseCHECK, CheckBox^ MARGECHECk, CheckBox^ DemarqueCHECK,Label^ lab)
+	{
+		String^ valeurTVA;
+		String^ ValeurRemise;
+		String^ ValeurMarge;
+		String^ ValeurDemarque;
+
+	if(TVACHECK->Checked == true)
+	{
+		valeurTVA = TVATB->Text;
+	}
+	else
+	{
+		if(TVACB->Text == "Aucun")
+		{
+			valeurTVA = "0";
+		}
+		if (TVACB->Text == "10%")
+		{
+			valeurTVA = "1";
+		}
+		if (TVACB->Text == "20%")
+		{
+			valeurTVA = "2";
+		}
+		if (TVACB->Text == "30%")
+		{
+			valeurTVA = "3";
+		}
+	}
+	
+	if (RemiseCHECK->Checked == true)
+	{
+		valeurTVA = TVATB->Text;
+	}
+	else
+	{
+		if (TVACB->Text == "Aucun")
+		{
+			valeurTVA = "0";
+		}
+		if (TVACB->Text == "10%")
+		{
+			valeurTVA = "1";
+		}
+		if (TVACB->Text == "20%")
+		{
+			valeurTVA = "2";
+		}
+		if (TVACB->Text == "30%")
+		{
+			valeurTVA = "3";
+		}
+	}
+
+
+	{
+
+	}
 	}
