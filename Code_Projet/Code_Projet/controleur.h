@@ -18,9 +18,13 @@ private:
 	bool Invisible = false;
 public : 
 	void mdp(TextBox^);
-
 	void afficher_datagridView(DataGridView^);
 	void afficher_top(Chart^,String^);
+	void afficher_chiffre_affaireMois(Chart^,String^);
+	void afficher_label_sql(Label^, String^);
+	void gestion_panel(Panel^, Panel^, Panel^, Panel^, bool);
 
-	void afficher_form(String^);
+
+
+	void afficher_form(String^, int pan);
 };

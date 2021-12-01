@@ -1,6 +1,7 @@
 #pragma once
 #include "controleur.h"
 
+
 namespace CodeProjet {
 
 	using namespace System;
@@ -190,7 +191,7 @@ private: System::Windows::Forms::Label^ LQuestionAfficher;
 private: System::Windows::Forms::DataGridView^ dataGridView1;
 private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 
-	   Controleur^ aff_home;
+	   Controleur^ moncontroleur;
 
 
 	private:
@@ -331,7 +332,6 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->PanelAjouterPersonnel->Name = L"PanelAjouterPersonnel";
 			this->PanelAjouterPersonnel->Size = System::Drawing::Size(523, 446);
 			this->PanelAjouterPersonnel->TabIndex = 0;
-			this->PanelAjouterPersonnel->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Personnel::PanelAjouterPersonnel_Paint);
 			// 
 			// BtnAjouterPersonnel
 			// 
@@ -412,7 +412,6 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->LPrenomAjouter->Size = System::Drawing::Size(43, 13);
 			this->LPrenomAjouter->TabIndex = 13;
 			this->LPrenomAjouter->Text = L"Prénom";
-			this->LPrenomAjouter->Click += gcnew System::EventHandler(this, &Personnel::LPrenom_Click);
 			// 
 			// LUserAjouter
 			// 
@@ -440,7 +439,6 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->LNomAjouter->Size = System::Drawing::Size(29, 13);
 			this->LNomAjouter->TabIndex = 10;
 			this->LNomAjouter->Text = L"Nom";
-			this->LNomAjouter->Click += gcnew System::EventHandler(this, &Personnel::LNom_Click);
 			// 
 			// TBSuperieurAjouter
 			// 
@@ -755,7 +753,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			});
 			this->menuStrip1->Location = System::Drawing::Point(185, 9);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(909, 45);
+			this->menuStrip1->Size = System::Drawing::Size(1029, 45);
 			this->menuStrip1->TabIndex = 5;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -776,6 +774,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->afficherUnPersonnelToolStripMenuItem->Name = L"afficherUnPersonnelToolStripMenuItem";
 			this->afficherUnPersonnelToolStripMenuItem->Size = System::Drawing::Size(256, 26);
 			this->afficherUnPersonnelToolStripMenuItem->Text = L"Afficher le personnel";
+			this->afficherUnPersonnelToolStripMenuItem->Click += gcnew System::EventHandler(this, &Personnel::afficherUnPersonnelToolStripMenuItem_Click);
 			// 
 			// ajouterUnPersonnelToolStripMenuItem
 			// 
@@ -784,6 +783,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->ajouterUnPersonnelToolStripMenuItem->Name = L"ajouterUnPersonnelToolStripMenuItem";
 			this->ajouterUnPersonnelToolStripMenuItem->Size = System::Drawing::Size(256, 26);
 			this->ajouterUnPersonnelToolStripMenuItem->Text = L"Ajouter un personnel";
+			this->ajouterUnPersonnelToolStripMenuItem->Click += gcnew System::EventHandler(this, &Personnel::ajouterUnPersonnelToolStripMenuItem_Click);
 			// 
 			// modifierUnPersonnelToolStripMenuItem
 			// 
@@ -792,6 +792,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->modifierUnPersonnelToolStripMenuItem->Name = L"modifierUnPersonnelToolStripMenuItem";
 			this->modifierUnPersonnelToolStripMenuItem->Size = System::Drawing::Size(256, 26);
 			this->modifierUnPersonnelToolStripMenuItem->Text = L"Modifier un personnel";
+			this->modifierUnPersonnelToolStripMenuItem->Click += gcnew System::EventHandler(this, &Personnel::modifierUnPersonnelToolStripMenuItem_Click);
 			// 
 			// supprimerUnPersonnelToolStripMenuItem
 			// 
@@ -800,6 +801,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->supprimerUnPersonnelToolStripMenuItem->Name = L"supprimerUnPersonnelToolStripMenuItem";
 			this->supprimerUnPersonnelToolStripMenuItem->Size = System::Drawing::Size(256, 26);
 			this->supprimerUnPersonnelToolStripMenuItem->Text = L"Supprimer un personnel";
+			this->supprimerUnPersonnelToolStripMenuItem->Click += gcnew System::EventHandler(this, &Personnel::supprimerUnPersonnelToolStripMenuItem_Click);
 			// 
 			// clientToolStripMenuItem
 			// 
@@ -818,6 +820,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->afficherUnClientToolStripMenuItem->Name = L"afficherUnClientToolStripMenuItem";
 			this->afficherUnClientToolStripMenuItem->Size = System::Drawing::Size(228, 26);
 			this->afficherUnClientToolStripMenuItem->Text = L"Afficher les clients";
+			this->afficherUnClientToolStripMenuItem->Click += gcnew System::EventHandler(this, &Personnel::afficherUnClientToolStripMenuItem_Click);
 			// 
 			// ajouterUnClientToolStripMenuItem
 			// 
@@ -826,6 +829,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->ajouterUnClientToolStripMenuItem->Name = L"ajouterUnClientToolStripMenuItem";
 			this->ajouterUnClientToolStripMenuItem->Size = System::Drawing::Size(228, 26);
 			this->ajouterUnClientToolStripMenuItem->Text = L"Ajouter un client ";
+			this->ajouterUnClientToolStripMenuItem->Click += gcnew System::EventHandler(this, &Personnel::ajouterUnClientToolStripMenuItem_Click);
 			// 
 			// modifierUnClientToolStripMenuItem
 			// 
@@ -834,6 +838,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->modifierUnClientToolStripMenuItem->Name = L"modifierUnClientToolStripMenuItem";
 			this->modifierUnClientToolStripMenuItem->Size = System::Drawing::Size(228, 26);
 			this->modifierUnClientToolStripMenuItem->Text = L"Modifier un client ";
+			this->modifierUnClientToolStripMenuItem->Click += gcnew System::EventHandler(this, &Personnel::modifierUnClientToolStripMenuItem_Click);
 			// 
 			// supprimerUnClientToolStripMenuItem
 			// 
@@ -842,6 +847,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->supprimerUnClientToolStripMenuItem->Name = L"supprimerUnClientToolStripMenuItem";
 			this->supprimerUnClientToolStripMenuItem->Size = System::Drawing::Size(228, 26);
 			this->supprimerUnClientToolStripMenuItem->Text = L"Supprimer un client ";
+			this->supprimerUnClientToolStripMenuItem->Click += gcnew System::EventHandler(this, &Personnel::supprimerUnClientToolStripMenuItem_Click);
 			// 
 			// commandeToolStripMenuItem
 			// 
@@ -860,6 +866,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->afficherLesCommandesToolStripMenuItem->Name = L"afficherLesCommandesToolStripMenuItem";
 			this->afficherLesCommandesToolStripMenuItem->Size = System::Drawing::Size(273, 26);
 			this->afficherLesCommandesToolStripMenuItem->Text = L"Afficher les commandes";
+			this->afficherLesCommandesToolStripMenuItem->Click += gcnew System::EventHandler(this, &Personnel::afficherLesCommandesToolStripMenuItem_Click);
 			// 
 			// ajouterUneCommandeToolStripMenuItem
 			// 
@@ -868,6 +875,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->ajouterUneCommandeToolStripMenuItem->Name = L"ajouterUneCommandeToolStripMenuItem";
 			this->ajouterUneCommandeToolStripMenuItem->Size = System::Drawing::Size(273, 26);
 			this->ajouterUneCommandeToolStripMenuItem->Text = L"Ajouter une commande";
+			this->ajouterUneCommandeToolStripMenuItem->Click += gcnew System::EventHandler(this, &Personnel::ajouterUneCommandeToolStripMenuItem_Click);
 			// 
 			// modifierUneCommandeToolStripMenuItem
 			// 
@@ -876,6 +884,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->modifierUneCommandeToolStripMenuItem->Name = L"modifierUneCommandeToolStripMenuItem";
 			this->modifierUneCommandeToolStripMenuItem->Size = System::Drawing::Size(273, 26);
 			this->modifierUneCommandeToolStripMenuItem->Text = L"Modifier une commande";
+			this->modifierUneCommandeToolStripMenuItem->Click += gcnew System::EventHandler(this, &Personnel::modifierUneCommandeToolStripMenuItem_Click);
 			// 
 			// supprimeruneCommandeToolStripMenuItem
 			// 
@@ -884,6 +893,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->supprimeruneCommandeToolStripMenuItem->Name = L"supprimeruneCommandeToolStripMenuItem";
 			this->supprimeruneCommandeToolStripMenuItem->Size = System::Drawing::Size(273, 26);
 			this->supprimeruneCommandeToolStripMenuItem->Text = L"Supprimer une commande";
+			this->supprimeruneCommandeToolStripMenuItem->Click += gcnew System::EventHandler(this, &Personnel::supprimeruneCommandeToolStripMenuItem_Click);
 			// 
 			// stockToolStripMenuItem
 			// 
@@ -902,6 +912,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->afficherLeStockToolStripMenuItem->Name = L"afficherLeStockToolStripMenuItem";
 			this->afficherLeStockToolStripMenuItem->Size = System::Drawing::Size(229, 26);
 			this->afficherLeStockToolStripMenuItem->Text = L"Afficher le stock";
+			this->afficherLeStockToolStripMenuItem->Click += gcnew System::EventHandler(this, &Personnel::afficherLeStockToolStripMenuItem_Click);
 			// 
 			// ajouterUnArticleToolStripMenuItem
 			// 
@@ -910,6 +921,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->ajouterUnArticleToolStripMenuItem->Name = L"ajouterUnArticleToolStripMenuItem";
 			this->ajouterUnArticleToolStripMenuItem->Size = System::Drawing::Size(229, 26);
 			this->ajouterUnArticleToolStripMenuItem->Text = L"Ajouter un article";
+			this->ajouterUnArticleToolStripMenuItem->Click += gcnew System::EventHandler(this, &Personnel::ajouterUnArticleToolStripMenuItem_Click);
 			// 
 			// modifierUnArticleToolStripMenuItem
 			// 
@@ -918,6 +930,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->modifierUnArticleToolStripMenuItem->Name = L"modifierUnArticleToolStripMenuItem";
 			this->modifierUnArticleToolStripMenuItem->Size = System::Drawing::Size(229, 26);
 			this->modifierUnArticleToolStripMenuItem->Text = L"Modifier un article";
+			this->modifierUnArticleToolStripMenuItem->Click += gcnew System::EventHandler(this, &Personnel::modifierUnArticleToolStripMenuItem_Click);
 			// 
 			// supprimerUnArticleToolStripMenuItem
 			// 
@@ -926,18 +939,21 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->supprimerUnArticleToolStripMenuItem->Name = L"supprimerUnArticleToolStripMenuItem";
 			this->supprimerUnArticleToolStripMenuItem->Size = System::Drawing::Size(229, 26);
 			this->supprimerUnArticleToolStripMenuItem->Text = L"Supprimer un article";
+			this->supprimerUnArticleToolStripMenuItem->Click += gcnew System::EventHandler(this, &Personnel::supprimerUnArticleToolStripMenuItem_Click);
 			// 
 			// statistiqueToolStripMenuItem
 			// 
 			this->statistiqueToolStripMenuItem->Name = L"statistiqueToolStripMenuItem";
 			this->statistiqueToolStripMenuItem->Size = System::Drawing::Size(167, 41);
 			this->statistiqueToolStripMenuItem->Text = L"Statistique";
+			this->statistiqueToolStripMenuItem->Click += gcnew System::EventHandler(this, &Personnel::statistiqueToolStripMenuItem_Click);
 			// 
 			// monCompteToolStripMenuItem
 			// 
 			this->monCompteToolStripMenuItem->Name = L"monCompteToolStripMenuItem";
 			this->monCompteToolStripMenuItem->Size = System::Drawing::Size(200, 41);
 			this->monCompteToolStripMenuItem->Text = L"Mon compte ";
+			this->monCompteToolStripMenuItem->Click += gcnew System::EventHandler(this, &Personnel::monCompteToolStripMenuItem_Click);
 			// 
 			// PanelSupprimerPersonnel
 			// 
@@ -949,7 +965,6 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->PanelSupprimerPersonnel->Name = L"PanelSupprimerPersonnel";
 			this->PanelSupprimerPersonnel->Size = System::Drawing::Size(523, 446);
 			this->PanelSupprimerPersonnel->TabIndex = 23;
-			this->PanelSupprimerPersonnel->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Personnel::PanelSupprimerPersonnel_Paint);
 			// 
 			// LNomPrenomSupprimer
 			// 
@@ -1003,9 +1018,8 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->PanelAfficherPersonnel->Controls->Add(this->dataGridView1);
 			this->PanelAfficherPersonnel->Location = System::Drawing::Point(471, 162);
 			this->PanelAfficherPersonnel->Name = L"PanelAfficherPersonnel";
-			this->PanelAfficherPersonnel->Size = System::Drawing::Size(676, 479);
+			this->PanelAfficherPersonnel->Size = System::Drawing::Size(676, 456);
 			this->PanelAfficherPersonnel->TabIndex = 25;
-			this->PanelAfficherPersonnel->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Personnel::panel1_Paint);
 			// 
 			// BtnRechercherPersonnel
 			// 
@@ -1051,7 +1065,6 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->LNomAfficher->Size = System::Drawing::Size(29, 13);
 			this->LNomAfficher->TabIndex = 8;
 			this->LNomAfficher->Text = L"Nom";
-			this->LNomAfficher->Click += gcnew System::EventHandler(this, &Personnel::label3_Click);
 			// 
 			// LDateEmbaucheAfficher
 			// 
@@ -1115,23 +1128,23 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Location = System::Drawing::Point(6, 132);
 			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(664, 343);
+			this->dataGridView1->Size = System::Drawing::Size(664, 314);
 			this->dataGridView1->TabIndex = 0;
 			// 
 			// Personnel
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1301, 620);
-			this->Controls->Add(this->PanelSupprimerPersonnel);
+			this->ClientSize = System::Drawing::Size(1301, 628);
 			this->Controls->Add(this->BtnLabelSupprimerPersonnel);
 			this->Controls->Add(this->BtnLabelModifierPersonnel);
 			this->Controls->Add(this->BtnLabelRechercherPersonnel);
-			this->Controls->Add(this->PanelModifierPersonnel);
 			this->Controls->Add(this->BtnLabelAjouterPersonnel);
 			this->Controls->Add(this->menuStrip1);
-			this->Controls->Add(this->PanelAjouterPersonnel);
 			this->Controls->Add(this->PanelAfficherPersonnel);
+			this->Controls->Add(this->PanelSupprimerPersonnel);
+			this->Controls->Add(this->PanelModifierPersonnel);
+			this->Controls->Add(this->PanelAjouterPersonnel);
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"Personnel";
 			this->Text = L"Personnel";
@@ -1153,49 +1166,98 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 		}
 #pragma endregion
 	private: System::Void Personnel_Load(System::Object^ sender, System::EventArgs^ e) {
-		PanelAjouterPersonnel->Visible = false;
-		PanelModifierPersonnel->Visible = false;
-		PanelSupprimerPersonnel->Visible = false;
-		PanelAfficherPersonnel->Visible = false;
+		moncontroleur = gcnew Controleur;
+		moncontroleur->gestion_panel(PanelAjouterPersonnel, PanelModifierPersonnel, PanelAfficherPersonnel, PanelSupprimerPersonnel, false);
 	}
-	private: System::Void TBId_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void LNom_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void LPrenom_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void PanelAjouterPersonnel_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-}
-private: System::Void PanelSupprimerPersonnel_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-}
-private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-}
-private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
-}
+	
+public: void setPanelAff(int);
+
 private: System::Void BtnLabelAjouterPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
-	PanelAjouterPersonnel->Visible = true;
-	PanelModifierPersonnel->Visible = false;
-	PanelSupprimerPersonnel->Visible = false;
-	PanelAfficherPersonnel->Visible = false;
+	moncontroleur->gestion_panel(PanelAjouterPersonnel, PanelAfficherPersonnel, PanelModifierPersonnel, PanelSupprimerPersonnel, true);
 }
 private: System::Void BtnLabelRechercherPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
-	PanelAjouterPersonnel->Visible = false;
-	PanelModifierPersonnel->Visible = false;
-	PanelSupprimerPersonnel->Visible = false;
-	PanelAfficherPersonnel->Visible = true;
+	moncontroleur->gestion_panel(PanelAfficherPersonnel, PanelAjouterPersonnel, PanelModifierPersonnel, PanelSupprimerPersonnel, true);
 }
 private: System::Void BtnLabelModifierPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
-	PanelAjouterPersonnel->Visible = false;
-	PanelModifierPersonnel->Visible = true;
-	PanelSupprimerPersonnel->Visible = false;
-	PanelAfficherPersonnel->Visible = false;
+	moncontroleur->gestion_panel(PanelModifierPersonnel, PanelAjouterPersonnel, PanelAfficherPersonnel, PanelSupprimerPersonnel, true);
 }
 private: System::Void BtnLabelSupprimerPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
-	PanelAjouterPersonnel->Visible = false;
-	PanelModifierPersonnel->Visible = false;
-	PanelSupprimerPersonnel->Visible = true;
-	PanelAfficherPersonnel->Visible = false;
+	moncontroleur->gestion_panel(PanelSupprimerPersonnel, PanelAjouterPersonnel, PanelModifierPersonnel, PanelAfficherPersonnel, true);
+}
+
+private: System::Void afficherUnPersonnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	moncontroleur->gestion_panel(PanelAfficherPersonnel, PanelAjouterPersonnel, PanelModifierPersonnel, PanelSupprimerPersonnel, true);
+}
+private: System::Void ajouterUnPersonnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	moncontroleur->gestion_panel(PanelAjouterPersonnel, PanelAfficherPersonnel, PanelModifierPersonnel, PanelSupprimerPersonnel, true);
+}
+private: System::Void modifierUnPersonnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	moncontroleur->gestion_panel(PanelModifierPersonnel, PanelAjouterPersonnel, PanelAfficherPersonnel, PanelSupprimerPersonnel, true);
+}
+private: System::Void supprimerUnPersonnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	moncontroleur->gestion_panel(PanelSupprimerPersonnel, PanelAjouterPersonnel, PanelModifierPersonnel, PanelAfficherPersonnel, true);
+}
+
+
+private: System::Void afficherUnClientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	moncontroleur->afficher_form("client", 1);
+}
+private: System::Void ajouterUnClientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	moncontroleur->afficher_form("client", 2);
+}
+private: System::Void modifierUnClientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	moncontroleur->afficher_form("client", 3);
+}
+private: System::Void supprimerUnClientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	moncontroleur->afficher_form("client", 4);
+}
+
+private: System::Void afficherLesCommandesToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	moncontroleur->afficher_form("commande", 2);
+}
+private: System::Void ajouterUneCommandeToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	moncontroleur->afficher_form("commande", 1);
+}
+private: System::Void modifierUneCommandeToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	moncontroleur->afficher_form("commande", 3);
+}
+private: System::Void supprimeruneCommandeToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	moncontroleur->afficher_form("commande", 4);
+}
+
+private: System::Void afficherLeStockToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	moncontroleur->afficher_form("article", 2);
+}
+private: System::Void ajouterUnArticleToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	moncontroleur->afficher_form("article", 1);
+}
+private: System::Void modifierUnArticleToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	moncontroleur->afficher_form("article", 3);
+}
+private: System::Void supprimerUnArticleToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	moncontroleur->afficher_form("article", 4);
+}
+
+private: System::Void statistiqueToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	moncontroleur->afficher_form("stats", 0);
+}
+
+private: System::Void monCompteToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 
 };
+
 }

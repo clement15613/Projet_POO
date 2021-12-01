@@ -46,11 +46,11 @@ namespace CodeProjet {
 	private: System::Windows::Forms::Label^ label3;
 
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
-		   Controleur^ monControleur;
+		   Controleur^ moncontroleur;
 	private: System::Windows::Forms::Button^ btConnexion;
 		   Controleur^ aff_acc;
 	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::Button^ button1;
+
 
 
 
@@ -80,7 +80,6 @@ namespace CodeProjet {
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->btConnexion = (gcnew System::Windows::Forms::Button());
 			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->button1 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -168,22 +167,12 @@ namespace CodeProjet {
 			this->label5->Text = L"Mot de passe oublié";
 			this->label5->Click += gcnew System::EventHandler(this, &MyForm::label5_Click);
 			// 
-			// button1
-			// 
-			this->button1->Location = System::Drawing::Point(48, 81);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(52, 141);
-			this->button1->TabIndex = 12;
-			this->button1->Text = L"button1";
-			this->button1->UseVisualStyleBackColor = true;
-			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Control;
 			this->ClientSize = System::Drawing::Size(636, 361);
-			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->btConnexion);
 			this->Controls->Add(this->pictureBox2);
@@ -204,7 +193,7 @@ namespace CodeProjet {
 		}
 #pragma endregion
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-		monControleur = gcnew Controleur;
+		moncontroleur = gcnew Controleur;
 		aff_acc = gcnew Controleur;
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -220,11 +209,11 @@ namespace CodeProjet {
 private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
-	monControleur->mdp(textBox_MDP);
+	moncontroleur->mdp(textBox_MDP);
 }
 private: System::Void btConnextion_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	aff_acc->afficher_form("Accueil");
+	aff_acc->afficher_form("Accueil",0);
 }
 private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
 	MessageBox::Show("Merci de contacté votre administrateur réseau");

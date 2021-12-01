@@ -133,11 +133,6 @@ namespace CodeProjet {
 			System::Windows::Forms::DataVisualization::Charting::Series^ series2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea3 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
 			System::Windows::Forms::DataVisualization::Charting::Legend^ legend3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::DataPoint^ dataPoint1 = (gcnew System::Windows::Forms::DataVisualization::Charting::DataPoint(1,
-				10000));
-			System::Windows::Forms::DataVisualization::Charting::DataPoint^ dataPoint2 = (gcnew System::Windows::Forms::DataVisualization::Charting::DataPoint(9000,
-				2019));
 			System::Windows::Forms::DataVisualization::Charting::Title^ title1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Title());
 			this->btnGestionClients = (gcnew System::Windows::Forms::Button());
 			this->btnGEstionCommande = (gcnew System::Windows::Forms::Button());
@@ -145,7 +140,6 @@ namespace CodeProjet {
 			this->btnGestionstock = (gcnew System::Windows::Forms::Button());
 			this->btnMonProfil = (gcnew System::Windows::Forms::Button());
 			this->btnGestionStatistique = (gcnew System::Windows::Forms::Button());
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->chart_topPlusVendu = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->chart_topMoinsVendu = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->label_panierMoyen = (gcnew System::Windows::Forms::Label());
@@ -177,7 +171,6 @@ namespace CodeProjet {
 			this->comboBoxTVA = (gcnew System::Windows::Forms::ComboBox());
 			this->chart_chiffreAffaire = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->panel9 = (gcnew System::Windows::Forms::Panel());
-			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart_topPlusVendu))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart_topMoinsVendu))->BeginInit();
 			this->panel2->SuspendLayout();
@@ -194,117 +187,61 @@ namespace CodeProjet {
 			// 
 			// btnGestionClients
 			// 
-			this->btnGestionClients->Anchor = System::Windows::Forms::AnchorStyles::Top;
-			this->btnGestionClients->AutoSize = true;
-			this->btnGestionClients->CausesValidation = false;
-			this->btnGestionClients->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnGestionClients->Location = System::Drawing::Point(588, 32);
+			this->btnGestionClients->Location = System::Drawing::Point(0, 0);
 			this->btnGestionClients->Name = L"btnGestionClients";
-			this->btnGestionClients->Size = System::Drawing::Size(175, 49);
-			this->btnGestionClients->TabIndex = 1;
-			this->btnGestionClients->Text = L"Gestion Clients";
-			this->btnGestionClients->UseVisualStyleBackColor = true;
-			this->btnGestionClients->Click += gcnew System::EventHandler(this, &statistique::btnGestionClients_Click);
+			this->btnGestionClients->Size = System::Drawing::Size(75, 23);
+			this->btnGestionClients->TabIndex = 0;
 			// 
 			// btnGEstionCommande
 			// 
-			this->btnGEstionCommande->Anchor = System::Windows::Forms::AnchorStyles::Top;
-			this->btnGEstionCommande->AutoSize = true;
-			this->btnGEstionCommande->CausesValidation = false;
-			this->btnGEstionCommande->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnGEstionCommande->Location = System::Drawing::Point(761, 32);
+			this->btnGEstionCommande->Location = System::Drawing::Point(0, 0);
 			this->btnGEstionCommande->Name = L"btnGEstionCommande";
-			this->btnGEstionCommande->Size = System::Drawing::Size(175, 49);
-			this->btnGEstionCommande->TabIndex = 2;
-			this->btnGEstionCommande->Text = L"Gestion Commande";
-			this->btnGEstionCommande->UseVisualStyleBackColor = true;
-			this->btnGEstionCommande->Click += gcnew System::EventHandler(this, &statistique::btnGEstionCommande_Click);
+			this->btnGEstionCommande->Size = System::Drawing::Size(75, 23);
+			this->btnGEstionCommande->TabIndex = 0;
 			// 
 			// btnGestionPersonnel
 			// 
-			this->btnGestionPersonnel->Anchor = System::Windows::Forms::AnchorStyles::Top;
-			this->btnGestionPersonnel->AutoSize = true;
-			this->btnGestionPersonnel->CausesValidation = false;
-			this->btnGestionPersonnel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnGestionPersonnel->Location = System::Drawing::Point(415, 32);
+			this->btnGestionPersonnel->Location = System::Drawing::Point(0, 0);
 			this->btnGestionPersonnel->Name = L"btnGestionPersonnel";
-			this->btnGestionPersonnel->Size = System::Drawing::Size(175, 49);
-			this->btnGestionPersonnel->TabIndex = 4;
-			this->btnGestionPersonnel->Text = L"Gestion Personnel";
-			this->btnGestionPersonnel->UseVisualStyleBackColor = true;
-			this->btnGestionPersonnel->Click += gcnew System::EventHandler(this, &statistique::btnGestionPersonnel_Click);
+			this->btnGestionPersonnel->Size = System::Drawing::Size(75, 23);
+			this->btnGestionPersonnel->TabIndex = 0;
 			// 
 			// btnGestionstock
 			// 
-			this->btnGestionstock->Anchor = System::Windows::Forms::AnchorStyles::Top;
-			this->btnGestionstock->AutoSize = true;
-			this->btnGestionstock->CausesValidation = false;
-			this->btnGestionstock->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnGestionstock->Location = System::Drawing::Point(934, 32);
+			this->btnGestionstock->Location = System::Drawing::Point(0, 0);
 			this->btnGestionstock->Name = L"btnGestionstock";
-			this->btnGestionstock->Size = System::Drawing::Size(175, 49);
-			this->btnGestionstock->TabIndex = 7;
-			this->btnGestionstock->Text = L"Gestion stock";
-			this->btnGestionstock->UseVisualStyleBackColor = true;
-			this->btnGestionstock->Click += gcnew System::EventHandler(this, &statistique::btnGestionstock_Click);
+			this->btnGestionstock->Size = System::Drawing::Size(75, 23);
+			this->btnGestionstock->TabIndex = 0;
 			// 
 			// btnMonProfil
 			// 
-			this->btnMonProfil->Anchor = System::Windows::Forms::AnchorStyles::Top;
-			this->btnMonProfil->AutoSize = true;
-			this->btnMonProfil->CausesValidation = false;
-			this->btnMonProfil->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnMonProfil->Location = System::Drawing::Point(1280, 32);
+			this->btnMonProfil->Location = System::Drawing::Point(0, 0);
 			this->btnMonProfil->Name = L"btnMonProfil";
-			this->btnMonProfil->Size = System::Drawing::Size(175, 49);
-			this->btnMonProfil->TabIndex = 6;
-			this->btnMonProfil->Text = L"Profil";
-			this->btnMonProfil->UseVisualStyleBackColor = true;
-			this->btnMonProfil->Click += gcnew System::EventHandler(this, &statistique::btnMonProfil_Click);
+			this->btnMonProfil->Size = System::Drawing::Size(75, 23);
+			this->btnMonProfil->TabIndex = 0;
 			// 
 			// btnGestionStatistique
 			// 
-			this->btnGestionStatistique->Anchor = System::Windows::Forms::AnchorStyles::Top;
-			this->btnGestionStatistique->AutoSize = true;
-			this->btnGestionStatistique->CausesValidation = false;
-			this->btnGestionStatistique->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnGestionStatistique->Location = System::Drawing::Point(1107, 32);
+			this->btnGestionStatistique->Location = System::Drawing::Point(0, 0);
 			this->btnGestionStatistique->Name = L"btnGestionStatistique";
-			this->btnGestionStatistique->Size = System::Drawing::Size(175, 49);
-			this->btnGestionStatistique->TabIndex = 5;
-			this->btnGestionStatistique->Text = L"Gestion Statistique";
-			this->btnGestionStatistique->UseVisualStyleBackColor = true;
-			this->btnGestionStatistique->Click += gcnew System::EventHandler(this, &statistique::btnGestionStatistique_Click);
-			// 
-			// panel1
-			// 
-			this->panel1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->panel1->AutoSize = true;
-			this->panel1->Controls->Add(this->btnGestionPersonnel);
-			this->panel1->Controls->Add(this->btnGestionstock);
-			this->panel1->Controls->Add(this->btnGestionClients);
-			this->panel1->Controls->Add(this->btnMonProfil);
-			this->panel1->Controls->Add(this->btnGEstionCommande);
-			this->panel1->Controls->Add(this->btnGestionStatistique);
-			this->panel1->Location = System::Drawing::Point(12, 12);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(1880, 114);
-			this->panel1->TabIndex = 8;
+			this->btnGestionStatistique->Size = System::Drawing::Size(75, 23);
+			this->btnGestionStatistique->TabIndex = 0;
 			// 
 			// chart_topPlusVendu
 			// 
 			chartArea1->AxisX->MajorGrid->Enabled = false;
-			chartArea1->Name = L"ChartArea1";
+			chartArea1->Name = L"ChartAreaTOP";
 			this->chart_topPlusVendu->ChartAreas->Add(chartArea1);
+			legend1->Enabled = false;
 			legend1->Name = L"Legend1";
 			this->chart_topPlusVendu->Legends->Add(legend1);
 			this->chart_topPlusVendu->Location = System::Drawing::Point(1315, 153);
 			this->chart_topPlusVendu->Name = L"chart_topPlusVendu";
-			series1->ChartArea = L"ChartArea1";
-			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Pie;
+			series1->ChartArea = L"ChartAreaTOP";
+			series1->IsVisibleInLegend = false;
 			series1->Legend = L"Legend1";
 			series1->Name = L"series1";
+			series1->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::BrightPastel;
 			series1->YValuesPerPoint = 4;
 			this->chart_topPlusVendu->Series->Add(series1);
 			this->chart_topPlusVendu->Size = System::Drawing::Size(558, 345);
@@ -315,6 +252,7 @@ namespace CodeProjet {
 			// 
 			chartArea2->Name = L"ChartArea1";
 			this->chart_topMoinsVendu->ChartAreas->Add(chartArea2);
+			legend2->Enabled = false;
 			legend2->Name = L"Legend1";
 			this->chart_topMoinsVendu->Legends->Add(legend2);
 			this->chart_topMoinsVendu->Location = System::Drawing::Point(1315, 530);
@@ -383,13 +321,14 @@ namespace CodeProjet {
 			// label_prix_chiffre_affaire
 			// 
 			this->label_prix_chiffre_affaire->AutoSize = true;
-			this->label_prix_chiffre_affaire->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label_prix_chiffre_affaire->Font = (gcnew System::Drawing::Font(L"Century", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->label_prix_chiffre_affaire->Location = System::Drawing::Point(233, 71);
 			this->label_prix_chiffre_affaire->Name = L"label_prix_chiffre_affaire";
-			this->label_prix_chiffre_affaire->Size = System::Drawing::Size(134, 37);
+			this->label_prix_chiffre_affaire->Size = System::Drawing::Size(134, 38);
 			this->label_prix_chiffre_affaire->TabIndex = 13;
 			this->label_prix_chiffre_affaire->Text = L"99999 €";
+			this->label_prix_chiffre_affaire->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			// 
 			// dataGridView1
 			// 
@@ -418,7 +357,7 @@ namespace CodeProjet {
 			// 
 			this->panel4->Controls->Add(this->label_prix_stock);
 			this->panel4->Controls->Add(this->label_valeur_stock_actuel);
-			this->panel4->Location = System::Drawing::Point(17, 181);
+			this->panel4->Location = System::Drawing::Point(373, 172);
 			this->panel4->Name = L"panel4";
 			this->panel4->Size = System::Drawing::Size(233, 85);
 			this->panel4->TabIndex = 15;
@@ -439,7 +378,7 @@ namespace CodeProjet {
 			this->label_valeur_stock_actuel->AutoSize = true;
 			this->label_valeur_stock_actuel->Font = (gcnew System::Drawing::Font(L"Century", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label_valeur_stock_actuel->Location = System::Drawing::Point(5, 12);
+			this->label_valeur_stock_actuel->Location = System::Drawing::Point(3, 12);
 			this->label_valeur_stock_actuel->Name = L"label_valeur_stock_actuel";
 			this->label_valeur_stock_actuel->Size = System::Drawing::Size(224, 40);
 			this->label_valeur_stock_actuel->TabIndex = 13;
@@ -506,9 +445,9 @@ namespace CodeProjet {
 			// 
 			this->panel8->Controls->Add(this->label1);
 			this->panel8->Controls->Add(this->label_valeur_stock_precedent);
-			this->panel8->Location = System::Drawing::Point(351, 181);
+			this->panel8->Location = System::Drawing::Point(14, 172);
 			this->panel8->Name = L"panel8";
-			this->panel8->Size = System::Drawing::Size(245, 85);
+			this->panel8->Size = System::Drawing::Size(257, 85);
 			this->panel8->TabIndex = 16;
 			// 
 			// label1
@@ -527,11 +466,11 @@ namespace CodeProjet {
 			this->label_valeur_stock_precedent->AutoSize = true;
 			this->label_valeur_stock_precedent->Font = (gcnew System::Drawing::Font(L"Century", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label_valeur_stock_precedent->Location = System::Drawing::Point(21, 12);
+			this->label_valeur_stock_precedent->Location = System::Drawing::Point(8, 12);
 			this->label_valeur_stock_precedent->Name = L"label_valeur_stock_precedent";
 			this->label_valeur_stock_precedent->Size = System::Drawing::Size(220, 40);
 			this->label_valeur_stock_precedent->TabIndex = 13;
-			this->label_valeur_stock_precedent->Text = L"Valeur commerciale du stock\r\n actuel";
+			this->label_valeur_stock_precedent->Text = L"Valeur commerciale du stock\r\n précédent";
 			// 
 			// comboBox2
 			// 
@@ -625,21 +564,8 @@ namespace CodeProjet {
 			this->chart_chiffreAffaire->Legends->Add(legend3);
 			this->chart_chiffreAffaire->Location = System::Drawing::Point(12, 25);
 			this->chart_chiffreAffaire->Name = L"chart_chiffreAffaire";
-			series3->ChartArea = L"ChartArea1";
-			series3->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
-			series3->CustomProperties = L"IsXAxisQuantitative=True, EmptyPointValue=Zero";
-			series3->EmptyPointStyle->AxisLabel = L"mois";
-			series3->IsXValueIndexed = true;
-			series3->Legend = L"Legend1";
-			series3->LegendText = L"2010";
-			series3->Name = L"Series1";
-			dataPoint1->AxisLabel = L"";
-			series3->Points->Add(dataPoint1);
-			series3->Points->Add(dataPoint2);
-			series3->XValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::String;
-			this->chart_chiffreAffaire->Series->Add(series3);
 			this->chart_chiffreAffaire->Size = System::Drawing::Size(842, 464);
-			this->chart_chiffreAffaire->TabIndex = 19;
+			this->chart_chiffreAffaire->TabIndex = 100;
 			this->chart_chiffreAffaire->Tag = L"Graphique du chiifre d\'affaire";
 			this->chart_chiffreAffaire->Text = L"Graphique du chiifre d\'affaire";
 			title1->Name = L"Chiffre d\'affaire";
@@ -668,12 +594,9 @@ namespace CodeProjet {
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->chart_topMoinsVendu);
 			this->Controls->Add(this->chart_topPlusVendu);
-			this->Controls->Add(this->panel1);
 			this->Name = L"statistique";
 			this->Text = L"statistique";
 			this->Load += gcnew System::EventHandler(this, &statistique::statistique_Load);
-			this->panel1->ResumeLayout(false);
-			this->panel1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart_topPlusVendu))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart_topMoinsVendu))->EndInit();
 			this->panel2->ResumeLayout(false);
@@ -693,34 +616,21 @@ namespace CodeProjet {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart_chiffreAffaire))->EndInit();
 			this->panel9->ResumeLayout(false);
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion
 
 private: System::Void statistique_Load(System::Object^ sender, System::EventArgs^ e) 
 {
+
 	moncontroleur1 = gcnew Controleur;
 	moncontroleur1->afficher_datagridView(dataGridView1);
 	moncontroleur1->afficher_top(chart_topPlusVendu, "select TOP 10 nom_article,quantite from Composer inner join Article on Composer.id_article = Article.id_article order by quantite desc");
 	moncontroleur1->afficher_top(chart_topMoinsVendu, "select TOP 10 nom_article,quantite from Composer inner join Article on Composer.id_article = Article.id_article order by quantite ASC");
-}
+	moncontroleur1->afficher_chiffre_affaireMois(chart_chiffreAffaire,"2019");
+	moncontroleur1->afficher_chiffre_affaireMois(chart_chiffreAffaire, "2020");
+	moncontroleur1->afficher_label_sql(label_prix_chiffre_affaire, "select SUM(quantite * prix_HT) as total from Payment inner join Composer on Payment.id_commande = Composer.id_commande inner join Article on Composer.id_article=Article.id_article where month(date_payment) = 3 group by month(date_payment)");
 
-private: System::Void btnGestionStatistique_Click(System::Object^ sender, System::EventArgs^ e) 
-{
-	
 }
-private: System::Void btnGestionPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void btnGestionClients_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void btnGEstionCommande_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void btnGestionstock_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void btnMonProfil_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-
-
 };
 }
