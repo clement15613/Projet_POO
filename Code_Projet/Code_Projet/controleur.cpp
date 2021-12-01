@@ -8,6 +8,21 @@
 #include "statistique.h"
 #include<sstream>
 
+Controleur::Controleur()
+{
+	mAdresse = gcnew MapAdresse;
+	mArticle = gcnew MapArticle;
+	mClient = gcnew MapClient;
+	mCommande = gcnew MapCommande;
+	mComposer = gcnew MapComposer;
+	mCorrespond = gcnew MapCorrespond;
+	mFacturer = gcnew MapFacturer;
+	mLivrer = gcnew MapLivrer;
+	mPayment = gcnew MapPayment;
+	mPersonnel = gcnew MapPersonnel;
+	mVille = gcnew MapVille;
+	maCNX = gcnew Connexion;
+}
 
 void Controleur::mdp(TextBox^ text) {
 	this->state = !state;
@@ -320,3 +335,36 @@ void Controleur::afficher_form(String^ of)
 
 
 	}
+
+
+	void Controleur::ajouterPersonnel(TextBox^ nom, TextBox^ prenom, DateTimePicker^ dateEmbauche, TextBox^ user, 
+									  TextBox^ MDP, TextBox^ numRue, TextBox^ nomRue, TextBox^ complement, ComboBox^ ville, TextBox^ superieur)
+	{
+		int idVille;
+		int idAdresse;
+		int idSuperieur;
+		mPersonnel->setNom(nom->Text);
+		mPersonnel->setPrenom(prenom->Text);
+		mPersonnel->setDateEmbauche(dateEmbauche->Value);
+		mPersonnel->setNomUtilisateur(user->Text);
+		mPersonnel->setMotDePasse(MDP->Text);
+		mAdresse->setnumero(Convert::ToInt32(numRue->Text));
+		mAdresse->setcomplement(complement->Text);
+		mVille->setVille(ville->Text);
+		mVille->setCodePostal("00000");
+		mPersonnel->setid_superieur(1);
+		idVille = maCNX->actionRowsID(mVille->INSERT());
+		mCorrespond->setIdVille(idVille);
+		idAdresse = maCNX->actionRowsID(mAdresse->INSERT());
+		mCorrespond->SetIdAdresse(idAdresse);
+		mPersonnel->setid_adresse(idAdresse);
+		maCNX->actionRows(mCorrespond->INSERT());
+		maCNX->actionRows(mPersonnel->INSERT());
+	}
+
+	void Controleur::supprimerPersonnel(TextBox^ nomPrenom)
+	{
+
+	}
+
+

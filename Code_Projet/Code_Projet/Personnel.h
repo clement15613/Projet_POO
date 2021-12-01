@@ -345,6 +345,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->BtnAjouterPersonnel->TabIndex = 21;
 			this->BtnAjouterPersonnel->Text = L"Ajouter";
 			this->BtnAjouterPersonnel->UseVisualStyleBackColor = true;
+			this->BtnAjouterPersonnel->Click += gcnew System::EventHandler(this, &Personnel::BtnAjouterPersonnel_Click);
 			// 
 			// LVilleAjouter
 			// 
@@ -759,7 +760,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			});
 			this->menuStrip1->Location = System::Drawing::Point(185, 9);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(1029, 45);
+			this->menuStrip1->Size = System::Drawing::Size(909, 45);
 			this->menuStrip1->TabIndex = 5;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -1136,10 +1137,10 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->Controls->Add(this->BtnLabelRechercherPersonnel);
 			this->Controls->Add(this->BtnLabelAjouterPersonnel);
 			this->Controls->Add(this->menuStrip1);
+			this->Controls->Add(this->PanelAjouterPersonnel);
 			this->Controls->Add(this->PanelAfficherPersonnel);
 			this->Controls->Add(this->PanelSupprimerPersonnel);
 			this->Controls->Add(this->PanelModifierPersonnel);
-			this->Controls->Add(this->PanelAjouterPersonnel);
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"Personnel";
 			this->Text = L"Personnel";
@@ -1165,30 +1166,38 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 
 		monControleur->gestion_panel(PanelAjouterPersonnel, PanelModifierPersonnel, PanelAfficherPersonnel, PanelSupprimerPersonnel, false);
 
-		monControleur->CnxComboBox_BDD(ComboBoxNomAfficher, "Select (nom_Personnel) from Personnel");
-		monControleur->CnxComboBox_BDD(comboBoxPrenomAfficher, "select (prenom_Personnel) from Personnel");
-		monControleur->CnxComboBox_BDD(comboBoxSupAfficher, "select nom_Personnel, prenom_Personnel from Personnel where id_Personnel = id_Personnel_Superieur");
-		monControleur->CnxComboBox_BDD(comboBoxVilleAfficher, "select ville from Ville");
-		monControleur->CnxComboBox_BDD(comboBoxNomPrenomSupprimer, "select nom_Personnel, prenom_Personnel from Personnel");
-		monControleur->CnxComboBox_BDD(BoxVilleModifier, "select ville from Ville");
-		monControleur->CnxComboBox_BDD(BoxVilleAjouter, "select ville from Ville");
+		
+		
+		
+		
 
 		this->personnelToolStripMenuItem->BackColor = System::Drawing::SystemColors::ControlLight;
 	}
 	
 private: System::Void BtnLabelAjouterPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
 	monControleur->gestion_panel(PanelAjouterPersonnel, PanelAfficherPersonnel, PanelModifierPersonnel, PanelSupprimerPersonnel, true);
+	monControleur->CnxComboBox_BDD(BoxVilleAjouter, "select ville from Ville");
 }
 private: System::Void BtnLabelRechercherPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
 	monControleur->gestion_panel(PanelAfficherPersonnel, PanelAjouterPersonnel, PanelModifierPersonnel, PanelSupprimerPersonnel, true);
+	monControleur->CnxComboBox_BDD(ComboBoxNomAfficher, "Select (nom_Personnel) from Personnel");
+	monControleur->CnxComboBox_BDD(comboBoxPrenomAfficher, "select (prenom_Personnel) from Personnel");
+	monControleur->CnxComboBox_BDD(comboBoxSupAfficher, "select nom_Personnel, prenom_Personnel from Personnel where id_Personnel = id_Personnel_Superieur");
+	monControleur->CnxComboBox_BDD(comboBoxVilleAfficher, "select ville from Ville");
 }
 private: System::Void BtnLabelModifierPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
 	monControleur->gestion_panel(PanelModifierPersonnel, PanelAjouterPersonnel, PanelAfficherPersonnel, PanelSupprimerPersonnel, true);
+	monControleur->CnxComboBox_BDD(BoxVilleModifier, "select ville from Ville");
 }
 private: System::Void BtnLabelSupprimerPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
 	monControleur->gestion_panel(PanelSupprimerPersonnel, PanelAjouterPersonnel, PanelModifierPersonnel, PanelAfficherPersonnel, true);
+	monControleur->CnxComboBox_BDD(comboBoxNomPrenomSupprimer, "select nom_Personnel, prenom_Personnel from Personnel");
 }
 
 
+private: System::Void BtnAjouterPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
+	monControleur->ajouterPersonnel(TBNomAjouter, TBPrenomAjouter, dateTimePickerEmbaucheAjouter, TBUserAjouter,
+		TBMdpAjouter, TBNumRueAjouter, TBNumRueAjouter, TBComplementAjouter, BoxVilleAjouter, TBSuperieurAjouter);
+}
 };
 }

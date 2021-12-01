@@ -30,3 +30,7 @@ void MapVille::setCodePostal(String^ CodePostal)
     Code_Postal = CodePostal;
 }
 
+String^ MapVille::INSERT()
+{
+    return "insert into ville values ('" + getVille() + "','" + getCodePostal() + "');SELECT @@IDENTITY;";
+}

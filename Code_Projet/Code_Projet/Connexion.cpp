@@ -30,7 +30,16 @@ void Connexion::actionRows(String^ rqSql)
 		this->connect->Close();
 }
 
-int Connexion::actionRowsID(String^ rqSql) { return 0; }
+int Connexion::actionRowsID(String^ rqSql) 
+{ 
+	int id = 0;
+	setSQL(rqSql);
+	this->cmd->CommandText = this->rqSql;
+	connect->Open();
+	id = Convert::ToInt32(cmd->ExecuteScalar());
+	connect->Close();
+	return id;
+}
 
 DataSet^ Connexion::getRows(String^ rqSql, String^ dataTableName)
 {

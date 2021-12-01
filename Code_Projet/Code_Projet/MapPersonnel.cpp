@@ -32,6 +32,17 @@ void MapPersonnel::setDateEmbauche(DateTime^ NewdateEmbauche)
 {
 	dateEmbauche = NewdateEmbauche;
 }
+
+String^ MapPersonnel::getNomUtilisateur()
+{
+	return nomUtilisateur;
+}
+
+void MapPersonnel::setNomUtilisateur(String^ newuser)
+{
+	nomUtilisateur = newuser;
+}
+
 String^ MapPersonnel::getMotDePasse()
 {
 	return MotDePasse;
@@ -55,4 +66,9 @@ int MapPersonnel::getid_adresse()
 void MapPersonnel::setid_adresse(int NewIdAdresse)
 {
 	id_addresse = NewIdAdresse;
+}
+
+String^ MapPersonnel::INSERT()
+{
+	return "insert into personnel values('" + getNom() + "','" + getPrenom() + "','" + getDateEmbauche() + "','" + getNomUtilisateur() + "','" + getMotDePasse() + "'," + getid_adresse() + "," + getid_superieur() + ")";
 }

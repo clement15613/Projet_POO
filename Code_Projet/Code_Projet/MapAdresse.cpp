@@ -32,3 +32,8 @@ String^ MapAdresse::setcomplement(String^ Newcomplement)
 {
 	return complement = Newcomplement;
 }
+
+String^ MapAdresse::INSERT()
+{
+	return "insert into adresse values(" + getnumero() + ",'" + getrue() + "','" + getcomplement() + "');SELECT @@IDENTITY;";
+}
