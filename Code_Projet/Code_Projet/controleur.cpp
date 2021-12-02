@@ -1,6 +1,11 @@
-#include "Controleur.h"
+#include "controleur.h"
 #include "pch.h"
 #include "Connexion.h"
+#include "Accueil.h"
+#include "Commande.h"
+#include "MyForm.h"
+#include "Personnel.h"
+#include "statistique.h"
 #include<sstream>
 
 
@@ -68,24 +73,56 @@ void Controleur::afficher_top(Chart^ chart, String^ query)
 		SqlDataReader^ read;
 		read = co.dataReader(sql);
 
-		
-		
-		
-
-			if (read->HasRows)
+		if(read->HasRows)
+		{
+			while (read->Read())
 			{
-				while (read->Read())
-				{
-					String^ txt = read[0]->ToString();
-					label->Text = txt->Format("{0:n}", read[0]) + " €";
-				}
+				String^ txt = read[0]->ToString();
+				//txt->Format("{0:n}", 1234);
+				label->Text = txt->Format("{0:n}", read[0]) + " €";
 			}
-			if (label->Text == " €")
-			{
-				label->Text = "0 €";
-			}
-		
+		}
 	}
+
+	void Controleur::gestion_panel(Panel^ panel1, Panel^ panel2, Panel^ panel3, Panel^ panel4, bool statut) 
+	{
+		if (statut == false)
+		{
+			panel1->Visible = false;
+			panel2->Visible = false;
+			panel3->Visible = false;
+			panel4->Visible = false;
+		}
+
+		else if (statut == true)
+		{
+			panel1->Visible = true;
+			panel2->Visible = false;
+			panel3->Visible = false;
+			panel4->Visible = false;
+		}
+	}
+
+void Controleur::afficher_form(String^ of)
+{
+	//throw gcnew System::NotImplementedException();
+	if (of == "Accueil")
+	{
+		CodeProjet::Accueil^ Acc = gcnew CodeProjet::Accueil();
+		Acc->Show();
+	}
+	else if (of == "statistique")
+	{
+		CodeProjet::statistique^ stat = gcnew CodeProjet::statistique();
+		stat->Show();
+	}
+	else if (of == "personnel")
+	{
+		CodeProjet::Personnel^ pers = gcnew CodeProjet::Personnel();
+		pers->Show();
+	}
+}
+			
 
 	void Controleur::affichage_text_box(ComboBox^ ComboB, TextBox^ textB)
 	{

@@ -190,6 +190,8 @@ private: System::Windows::Forms::Label^ LQuestionAfficher;
 private: System::Windows::Forms::DataGridView^ dataGridView1;
 private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 
+	   Controleur^ monControleur;
+
 
 	private:
 		/// <summary>
@@ -210,6 +212,22 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->BoxVilleAjouter = (gcnew System::Windows::Forms::ComboBox());
 			this->LNomRueAjouter = (gcnew System::Windows::Forms::Label());
 			this->LNumVoieAjouter = (gcnew System::Windows::Forms::Label());
+			this->LComplementAjouter = (gcnew System::Windows::Forms::Label());
+			this->LSuperieurAjouter = (gcnew System::Windows::Forms::Label());
+			this->LMdpAjouter = (gcnew System::Windows::Forms::Label());
+			this->LPrenomAjouter = (gcnew System::Windows::Forms::Label());
+			this->LUserAjouter = (gcnew System::Windows::Forms::Label());
+			this->LDateEmbauhceAjouter = (gcnew System::Windows::Forms::Label());
+			this->LNomAjouter = (gcnew System::Windows::Forms::Label());
+			this->TBSuperieurAjouter = (gcnew System::Windows::Forms::TextBox());
+			this->TBComplementAjouter = (gcnew System::Windows::Forms::TextBox());
+			this->TBRueAjouter = (gcnew System::Windows::Forms::TextBox());
+			this->TBNumRueAjouter = (gcnew System::Windows::Forms::TextBox());
+			this->dateTimePickerEmbaucheAjouter = (gcnew System::Windows::Forms::DateTimePicker());
+			this->TBUserAjouter = (gcnew System::Windows::Forms::TextBox());
+			this->TBMdpAjouter = (gcnew System::Windows::Forms::TextBox());
+			this->TBPrenomAjouter = (gcnew System::Windows::Forms::TextBox());
+			this->TBNomAjouter = (gcnew System::Windows::Forms::TextBox());
 			this->PanelModifierPersonnel = (gcnew System::Windows::Forms::Panel());
 			this->BtnModifierPersonnel = (gcnew System::Windows::Forms::Button());
 			this->LVilleModifier = (gcnew System::Windows::Forms::Label());
@@ -232,22 +250,6 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->TBMdpModifier = (gcnew System::Windows::Forms::TextBox());
 			this->TBPrenomModifier = (gcnew System::Windows::Forms::TextBox());
 			this->TBNomModifier = (gcnew System::Windows::Forms::TextBox());
-			this->LComplementAjouter = (gcnew System::Windows::Forms::Label());
-			this->LSuperieurAjouter = (gcnew System::Windows::Forms::Label());
-			this->LMdpAjouter = (gcnew System::Windows::Forms::Label());
-			this->LPrenomAjouter = (gcnew System::Windows::Forms::Label());
-			this->LUserAjouter = (gcnew System::Windows::Forms::Label());
-			this->LDateEmbauhceAjouter = (gcnew System::Windows::Forms::Label());
-			this->LNomAjouter = (gcnew System::Windows::Forms::Label());
-			this->TBSuperieurAjouter = (gcnew System::Windows::Forms::TextBox());
-			this->TBComplementAjouter = (gcnew System::Windows::Forms::TextBox());
-			this->TBRueAjouter = (gcnew System::Windows::Forms::TextBox());
-			this->TBNumRueAjouter = (gcnew System::Windows::Forms::TextBox());
-			this->dateTimePickerEmbaucheAjouter = (gcnew System::Windows::Forms::DateTimePicker());
-			this->TBUserAjouter = (gcnew System::Windows::Forms::TextBox());
-			this->TBMdpAjouter = (gcnew System::Windows::Forms::TextBox());
-			this->TBPrenomAjouter = (gcnew System::Windows::Forms::TextBox());
-			this->TBNomAjouter = (gcnew System::Windows::Forms::TextBox());
 			this->BtnLabelAjouterPersonnel = (gcnew System::Windows::Forms::Button());
 			this->BtnLabelRechercherPersonnel = (gcnew System::Windows::Forms::Button());
 			this->BtnLabelModifierPersonnel = (gcnew System::Windows::Forms::Button());
@@ -281,6 +283,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->LQuestionSupprimer = (gcnew System::Windows::Forms::Label());
 			this->BtnSupprimerPersonnel = (gcnew System::Windows::Forms::Button());
 			this->PanelAfficherPersonnel = (gcnew System::Windows::Forms::Panel());
+			this->BtnRechercherPersonnel = (gcnew System::Windows::Forms::Button());
 			this->LSuperieurAffcher = (gcnew System::Windows::Forms::Label());
 			this->LVilleAfficher = (gcnew System::Windows::Forms::Label());
 			this->LPrenomAfficher = (gcnew System::Windows::Forms::Label());
@@ -293,7 +296,6 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->dateTimePickerDateEmbaucheAfficher = (gcnew System::Windows::Forms::DateTimePicker());
 			this->LQuestionAfficher = (gcnew System::Windows::Forms::Label());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->BtnRechercherPersonnel = (gcnew System::Windows::Forms::Button());
 			this->PanelAjouterPersonnel->SuspendLayout();
 			this->PanelModifierPersonnel->SuspendLayout();
 			this->menuStrip1->SuspendLayout();
@@ -329,7 +331,6 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->PanelAjouterPersonnel->Name = L"PanelAjouterPersonnel";
 			this->PanelAjouterPersonnel->Size = System::Drawing::Size(523, 446);
 			this->PanelAjouterPersonnel->TabIndex = 0;
-			this->PanelAjouterPersonnel->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Personnel::PanelAjouterPersonnel_Paint);
 			// 
 			// BtnAjouterPersonnel
 			// 
@@ -374,6 +375,132 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->LNumVoieAjouter->Size = System::Drawing::Size(82, 13);
 			this->LNumVoieAjouter->TabIndex = 17;
 			this->LNumVoieAjouter->Text = L"Numéro de voie";
+			// 
+			// LComplementAjouter
+			// 
+			this->LComplementAjouter->AutoSize = true;
+			this->LComplementAjouter->Location = System::Drawing::Point(330, 187);
+			this->LComplementAjouter->Name = L"LComplementAjouter";
+			this->LComplementAjouter->Size = System::Drawing::Size(113, 13);
+			this->LComplementAjouter->TabIndex = 16;
+			this->LComplementAjouter->Text = L"Complément d\'adresse";
+			// 
+			// LSuperieurAjouter
+			// 
+			this->LSuperieurAjouter->AutoSize = true;
+			this->LSuperieurAjouter->Location = System::Drawing::Point(330, 323);
+			this->LSuperieurAjouter->Name = L"LSuperieurAjouter";
+			this->LSuperieurAjouter->Size = System::Drawing::Size(52, 13);
+			this->LSuperieurAjouter->TabIndex = 15;
+			this->LSuperieurAjouter->Text = L"Supérieur";
+			// 
+			// LMdpAjouter
+			// 
+			this->LMdpAjouter->AutoSize = true;
+			this->LMdpAjouter->Location = System::Drawing::Point(17, 323);
+			this->LMdpAjouter->Name = L"LMdpAjouter";
+			this->LMdpAjouter->Size = System::Drawing::Size(71, 13);
+			this->LMdpAjouter->TabIndex = 14;
+			this->LMdpAjouter->Text = L"Mot de passe";
+			// 
+			// LPrenomAjouter
+			// 
+			this->LPrenomAjouter->AutoSize = true;
+			this->LPrenomAjouter->Location = System::Drawing::Point(17, 100);
+			this->LPrenomAjouter->Name = L"LPrenomAjouter";
+			this->LPrenomAjouter->Size = System::Drawing::Size(43, 13);
+			this->LPrenomAjouter->TabIndex = 13;
+			this->LPrenomAjouter->Text = L"Prénom";
+			// 
+			// LUserAjouter
+			// 
+			this->LUserAjouter->AutoSize = true;
+			this->LUserAjouter->Location = System::Drawing::Point(17, 258);
+			this->LUserAjouter->Name = L"LUserAjouter";
+			this->LUserAjouter->Size = System::Drawing::Size(84, 13);
+			this->LUserAjouter->TabIndex = 12;
+			this->LUserAjouter->Text = L"Nom d\'utilisateur";
+			// 
+			// LDateEmbauhceAjouter
+			// 
+			this->LDateEmbauhceAjouter->AutoSize = true;
+			this->LDateEmbauhceAjouter->Location = System::Drawing::Point(17, 187);
+			this->LDateEmbauhceAjouter->Name = L"LDateEmbauhceAjouter";
+			this->LDateEmbauhceAjouter->Size = System::Drawing::Size(91, 13);
+			this->LDateEmbauhceAjouter->TabIndex = 11;
+			this->LDateEmbauhceAjouter->Text = L"Date d\'embauche";
+			// 
+			// LNomAjouter
+			// 
+			this->LNomAjouter->AutoSize = true;
+			this->LNomAjouter->Location = System::Drawing::Point(17, 18);
+			this->LNomAjouter->Name = L"LNomAjouter";
+			this->LNomAjouter->Size = System::Drawing::Size(29, 13);
+			this->LNomAjouter->TabIndex = 10;
+			this->LNomAjouter->Text = L"Nom";
+			// 
+			// TBSuperieurAjouter
+			// 
+			this->TBSuperieurAjouter->Location = System::Drawing::Point(333, 339);
+			this->TBSuperieurAjouter->Name = L"TBSuperieurAjouter";
+			this->TBSuperieurAjouter->Size = System::Drawing::Size(144, 20);
+			this->TBSuperieurAjouter->TabIndex = 9;
+			// 
+			// TBComplementAjouter
+			// 
+			this->TBComplementAjouter->Location = System::Drawing::Point(333, 203);
+			this->TBComplementAjouter->Name = L"TBComplementAjouter";
+			this->TBComplementAjouter->Size = System::Drawing::Size(66, 20);
+			this->TBComplementAjouter->TabIndex = 8;
+			// 
+			// TBRueAjouter
+			// 
+			this->TBRueAjouter->Location = System::Drawing::Point(333, 116);
+			this->TBRueAjouter->Name = L"TBRueAjouter";
+			this->TBRueAjouter->Size = System::Drawing::Size(100, 20);
+			this->TBRueAjouter->TabIndex = 7;
+			// 
+			// TBNumRueAjouter
+			// 
+			this->TBNumRueAjouter->Location = System::Drawing::Point(333, 34);
+			this->TBNumRueAjouter->Name = L"TBNumRueAjouter";
+			this->TBNumRueAjouter->Size = System::Drawing::Size(100, 20);
+			this->TBNumRueAjouter->TabIndex = 6;
+			// 
+			// dateTimePickerEmbaucheAjouter
+			// 
+			this->dateTimePickerEmbaucheAjouter->Location = System::Drawing::Point(20, 203);
+			this->dateTimePickerEmbaucheAjouter->Name = L"dateTimePickerEmbaucheAjouter";
+			this->dateTimePickerEmbaucheAjouter->Size = System::Drawing::Size(186, 20);
+			this->dateTimePickerEmbaucheAjouter->TabIndex = 4;
+			// 
+			// TBUserAjouter
+			// 
+			this->TBUserAjouter->Location = System::Drawing::Point(20, 274);
+			this->TBUserAjouter->Name = L"TBUserAjouter";
+			this->TBUserAjouter->Size = System::Drawing::Size(100, 20);
+			this->TBUserAjouter->TabIndex = 3;
+			// 
+			// TBMdpAjouter
+			// 
+			this->TBMdpAjouter->Location = System::Drawing::Point(20, 339);
+			this->TBMdpAjouter->Name = L"TBMdpAjouter";
+			this->TBMdpAjouter->Size = System::Drawing::Size(100, 20);
+			this->TBMdpAjouter->TabIndex = 2;
+			// 
+			// TBPrenomAjouter
+			// 
+			this->TBPrenomAjouter->Location = System::Drawing::Point(20, 116);
+			this->TBPrenomAjouter->Name = L"TBPrenomAjouter";
+			this->TBPrenomAjouter->Size = System::Drawing::Size(100, 20);
+			this->TBPrenomAjouter->TabIndex = 1;
+			// 
+			// TBNomAjouter
+			// 
+			this->TBNomAjouter->Location = System::Drawing::Point(20, 34);
+			this->TBNomAjouter->Name = L"TBNomAjouter";
+			this->TBNomAjouter->Size = System::Drawing::Size(100, 20);
+			this->TBNomAjouter->TabIndex = 0;
 			// 
 			// PanelModifierPersonnel
 			// 
@@ -572,134 +699,6 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->TBNomModifier->Name = L"TBNomModifier";
 			this->TBNomModifier->Size = System::Drawing::Size(100, 20);
 			this->TBNomModifier->TabIndex = 0;
-			// 
-			// LComplementAjouter
-			// 
-			this->LComplementAjouter->AutoSize = true;
-			this->LComplementAjouter->Location = System::Drawing::Point(330, 187);
-			this->LComplementAjouter->Name = L"LComplementAjouter";
-			this->LComplementAjouter->Size = System::Drawing::Size(113, 13);
-			this->LComplementAjouter->TabIndex = 16;
-			this->LComplementAjouter->Text = L"Complément d\'adresse";
-			// 
-			// LSuperieurAjouter
-			// 
-			this->LSuperieurAjouter->AutoSize = true;
-			this->LSuperieurAjouter->Location = System::Drawing::Point(330, 323);
-			this->LSuperieurAjouter->Name = L"LSuperieurAjouter";
-			this->LSuperieurAjouter->Size = System::Drawing::Size(52, 13);
-			this->LSuperieurAjouter->TabIndex = 15;
-			this->LSuperieurAjouter->Text = L"Supérieur";
-			// 
-			// LMdpAjouter
-			// 
-			this->LMdpAjouter->AutoSize = true;
-			this->LMdpAjouter->Location = System::Drawing::Point(17, 323);
-			this->LMdpAjouter->Name = L"LMdpAjouter";
-			this->LMdpAjouter->Size = System::Drawing::Size(71, 13);
-			this->LMdpAjouter->TabIndex = 14;
-			this->LMdpAjouter->Text = L"Mot de passe";
-			// 
-			// LPrenomAjouter
-			// 
-			this->LPrenomAjouter->AutoSize = true;
-			this->LPrenomAjouter->Location = System::Drawing::Point(17, 100);
-			this->LPrenomAjouter->Name = L"LPrenomAjouter";
-			this->LPrenomAjouter->Size = System::Drawing::Size(43, 13);
-			this->LPrenomAjouter->TabIndex = 13;
-			this->LPrenomAjouter->Text = L"Prénom";
-			this->LPrenomAjouter->Click += gcnew System::EventHandler(this, &Personnel::LPrenom_Click);
-			// 
-			// LUserAjouter
-			// 
-			this->LUserAjouter->AutoSize = true;
-			this->LUserAjouter->Location = System::Drawing::Point(17, 258);
-			this->LUserAjouter->Name = L"LUserAjouter";
-			this->LUserAjouter->Size = System::Drawing::Size(84, 13);
-			this->LUserAjouter->TabIndex = 12;
-			this->LUserAjouter->Text = L"Nom d\'utilisateur";
-			// 
-			// LDateEmbauhceAjouter
-			// 
-			this->LDateEmbauhceAjouter->AutoSize = true;
-			this->LDateEmbauhceAjouter->Location = System::Drawing::Point(17, 187);
-			this->LDateEmbauhceAjouter->Name = L"LDateEmbauhceAjouter";
-			this->LDateEmbauhceAjouter->Size = System::Drawing::Size(91, 13);
-			this->LDateEmbauhceAjouter->TabIndex = 11;
-			this->LDateEmbauhceAjouter->Text = L"Date d\'embauche";
-			// 
-			// LNomAjouter
-			// 
-			this->LNomAjouter->AutoSize = true;
-			this->LNomAjouter->Location = System::Drawing::Point(17, 18);
-			this->LNomAjouter->Name = L"LNomAjouter";
-			this->LNomAjouter->Size = System::Drawing::Size(29, 13);
-			this->LNomAjouter->TabIndex = 10;
-			this->LNomAjouter->Text = L"Nom";
-			this->LNomAjouter->Click += gcnew System::EventHandler(this, &Personnel::LNom_Click);
-			// 
-			// TBSuperieurAjouter
-			// 
-			this->TBSuperieurAjouter->Location = System::Drawing::Point(333, 339);
-			this->TBSuperieurAjouter->Name = L"TBSuperieurAjouter";
-			this->TBSuperieurAjouter->Size = System::Drawing::Size(144, 20);
-			this->TBSuperieurAjouter->TabIndex = 9;
-			// 
-			// TBComplementAjouter
-			// 
-			this->TBComplementAjouter->Location = System::Drawing::Point(333, 203);
-			this->TBComplementAjouter->Name = L"TBComplementAjouter";
-			this->TBComplementAjouter->Size = System::Drawing::Size(66, 20);
-			this->TBComplementAjouter->TabIndex = 8;
-			// 
-			// TBRueAjouter
-			// 
-			this->TBRueAjouter->Location = System::Drawing::Point(333, 116);
-			this->TBRueAjouter->Name = L"TBRueAjouter";
-			this->TBRueAjouter->Size = System::Drawing::Size(100, 20);
-			this->TBRueAjouter->TabIndex = 7;
-			// 
-			// TBNumRueAjouter
-			// 
-			this->TBNumRueAjouter->Location = System::Drawing::Point(333, 34);
-			this->TBNumRueAjouter->Name = L"TBNumRueAjouter";
-			this->TBNumRueAjouter->Size = System::Drawing::Size(100, 20);
-			this->TBNumRueAjouter->TabIndex = 6;
-			// 
-			// dateTimePickerEmbaucheAjouter
-			// 
-			this->dateTimePickerEmbaucheAjouter->Location = System::Drawing::Point(20, 203);
-			this->dateTimePickerEmbaucheAjouter->Name = L"dateTimePickerEmbaucheAjouter";
-			this->dateTimePickerEmbaucheAjouter->Size = System::Drawing::Size(186, 20);
-			this->dateTimePickerEmbaucheAjouter->TabIndex = 4;
-			// 
-			// TBUserAjouter
-			// 
-			this->TBUserAjouter->Location = System::Drawing::Point(20, 274);
-			this->TBUserAjouter->Name = L"TBUserAjouter";
-			this->TBUserAjouter->Size = System::Drawing::Size(100, 20);
-			this->TBUserAjouter->TabIndex = 3;
-			// 
-			// TBMdpAjouter
-			// 
-			this->TBMdpAjouter->Location = System::Drawing::Point(20, 339);
-			this->TBMdpAjouter->Name = L"TBMdpAjouter";
-			this->TBMdpAjouter->Size = System::Drawing::Size(100, 20);
-			this->TBMdpAjouter->TabIndex = 2;
-			// 
-			// TBPrenomAjouter
-			// 
-			this->TBPrenomAjouter->Location = System::Drawing::Point(20, 116);
-			this->TBPrenomAjouter->Name = L"TBPrenomAjouter";
-			this->TBPrenomAjouter->Size = System::Drawing::Size(100, 20);
-			this->TBPrenomAjouter->TabIndex = 1;
-			// 
-			// TBNomAjouter
-			// 
-			this->TBNomAjouter->Location = System::Drawing::Point(20, 34);
-			this->TBNomAjouter->Name = L"TBNomAjouter";
-			this->TBNomAjouter->Size = System::Drawing::Size(100, 20);
-			this->TBNomAjouter->TabIndex = 0;
 			// 
 			// BtnLabelAjouterPersonnel
 			// 
@@ -947,7 +946,6 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->PanelSupprimerPersonnel->Name = L"PanelSupprimerPersonnel";
 			this->PanelSupprimerPersonnel->Size = System::Drawing::Size(523, 446);
 			this->PanelSupprimerPersonnel->TabIndex = 23;
-			this->PanelSupprimerPersonnel->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Personnel::PanelSupprimerPersonnel_Paint);
 			// 
 			// LNomPrenomSupprimer
 			// 
@@ -1001,9 +999,17 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->PanelAfficherPersonnel->Controls->Add(this->dataGridView1);
 			this->PanelAfficherPersonnel->Location = System::Drawing::Point(471, 162);
 			this->PanelAfficherPersonnel->Name = L"PanelAfficherPersonnel";
-			this->PanelAfficherPersonnel->Size = System::Drawing::Size(676, 479);
+			this->PanelAfficherPersonnel->Size = System::Drawing::Size(676, 456);
 			this->PanelAfficherPersonnel->TabIndex = 25;
-			this->PanelAfficherPersonnel->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Personnel::panel1_Paint);
+			// 
+			// BtnRechercherPersonnel
+			// 
+			this->BtnRechercherPersonnel->Location = System::Drawing::Point(519, 86);
+			this->BtnRechercherPersonnel->Name = L"BtnRechercherPersonnel";
+			this->BtnRechercherPersonnel->Size = System::Drawing::Size(151, 38);
+			this->BtnRechercherPersonnel->TabIndex = 12;
+			this->BtnRechercherPersonnel->Text = L"Rechercher";
+			this->BtnRechercherPersonnel->UseVisualStyleBackColor = true;
 			// 
 			// LSuperieurAffcher
 			// 
@@ -1040,7 +1046,6 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->LNomAfficher->Size = System::Drawing::Size(29, 13);
 			this->LNomAfficher->TabIndex = 8;
 			this->LNomAfficher->Text = L"Nom";
-			this->LNomAfficher->Click += gcnew System::EventHandler(this, &Personnel::label3_Click);
 			// 
 			// LDateEmbaucheAfficher
 			// 
@@ -1104,31 +1109,22 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Location = System::Drawing::Point(6, 132);
 			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(664, 343);
+			this->dataGridView1->Size = System::Drawing::Size(664, 314);
 			this->dataGridView1->TabIndex = 0;
-			// 
-			// BtnRechercherPersonnel
-			// 
-			this->BtnRechercherPersonnel->Location = System::Drawing::Point(519, 86);
-			this->BtnRechercherPersonnel->Name = L"BtnRechercherPersonnel";
-			this->BtnRechercherPersonnel->Size = System::Drawing::Size(151, 38);
-			this->BtnRechercherPersonnel->TabIndex = 12;
-			this->BtnRechercherPersonnel->Text = L"Rechercher";
-			this->BtnRechercherPersonnel->UseVisualStyleBackColor = true;
 			// 
 			// Personnel
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1301, 620);
-			this->Controls->Add(this->PanelAfficherPersonnel);
-			this->Controls->Add(this->PanelSupprimerPersonnel);
+			this->ClientSize = System::Drawing::Size(1301, 628);
 			this->Controls->Add(this->BtnLabelSupprimerPersonnel);
 			this->Controls->Add(this->BtnLabelModifierPersonnel);
 			this->Controls->Add(this->BtnLabelRechercherPersonnel);
-			this->Controls->Add(this->PanelModifierPersonnel);
 			this->Controls->Add(this->BtnLabelAjouterPersonnel);
 			this->Controls->Add(this->menuStrip1);
+			this->Controls->Add(this->PanelAfficherPersonnel);
+			this->Controls->Add(this->PanelSupprimerPersonnel);
+			this->Controls->Add(this->PanelModifierPersonnel);
 			this->Controls->Add(this->PanelAjouterPersonnel);
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"Personnel";
@@ -1151,48 +1147,22 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 		}
 #pragma endregion
 	private: System::Void Personnel_Load(System::Object^ sender, System::EventArgs^ e) {
-		PanelAjouterPersonnel->Visible = false;
-		PanelModifierPersonnel->Visible = false;
-		PanelSupprimerPersonnel->Visible = false;
-		PanelAfficherPersonnel->Visible = false;
+		monControleur = gcnew Controleur;
+		monControleur->gestion_panel(PanelAjouterPersonnel, PanelModifierPersonnel, PanelAfficherPersonnel, PanelSupprimerPersonnel, false);
 	}
-	private: System::Void TBId_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void LNom_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void LPrenom_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void PanelAjouterPersonnel_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-}
-private: System::Void PanelSupprimerPersonnel_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-}
-private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-}
-private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
-}
+	
 private: System::Void BtnLabelAjouterPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
-	PanelAjouterPersonnel->Visible = true;
-	PanelModifierPersonnel->Visible = false;
-	PanelSupprimerPersonnel->Visible = false;
-	PanelAfficherPersonnel->Visible = false;
+	monControleur->gestion_panel(PanelAjouterPersonnel, PanelAfficherPersonnel, PanelModifierPersonnel, PanelSupprimerPersonnel, true);
 }
 private: System::Void BtnLabelRechercherPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
-	PanelAjouterPersonnel->Visible = false;
-	PanelModifierPersonnel->Visible = false;
-	PanelSupprimerPersonnel->Visible = false;
-	PanelAfficherPersonnel->Visible = true;
+	monControleur->gestion_panel(PanelAfficherPersonnel, PanelAjouterPersonnel, PanelModifierPersonnel, PanelSupprimerPersonnel, true);
 }
 private: System::Void BtnLabelModifierPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
-	PanelAjouterPersonnel->Visible = false;
-	PanelModifierPersonnel->Visible = true;
-	PanelSupprimerPersonnel->Visible = false;
-	PanelAfficherPersonnel->Visible = false;
+	monControleur->gestion_panel(PanelModifierPersonnel, PanelAjouterPersonnel, PanelAfficherPersonnel, PanelSupprimerPersonnel, true);
 }
 private: System::Void BtnLabelSupprimerPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
-	PanelAjouterPersonnel->Visible = false;
-	PanelModifierPersonnel->Visible = false;
-	PanelSupprimerPersonnel->Visible = true;
-	PanelAfficherPersonnel->Visible = false;
+	monControleur->gestion_panel(PanelSupprimerPersonnel, PanelAjouterPersonnel, PanelModifierPersonnel, PanelAfficherPersonnel, true);
 }
+
 };
 }

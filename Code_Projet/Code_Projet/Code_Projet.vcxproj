@@ -125,10 +125,21 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Accueil.cpp" />
+    <ClCompile Include="Article.cpp" />
+    <ClCompile Include="Client.cpp" />
+    <ClCompile Include="Commande.cpp" />
     <ClCompile Include="Connexion.cpp" />
     <ClCompile Include="Controleur.cpp" />
-    <ClCompile Include="g_personnel.cpp" />
+    <ClCompile Include="MapAdresse.cpp" />
+    <ClCompile Include="MapArticle.cpp" />
+    <ClCompile Include="MapClient.cpp" />
+    <ClCompile Include="MapCommande.cpp" />
+    <ClCompile Include="MapComposer.cpp" />
+    <ClCompile Include="MapFacturer.cpp" />
+    <ClCompile Include="MapLivrer.cpp" />
+    <ClCompile Include="MapPayment.cpp" />
     <ClCompile Include="MapPersonnel.cpp" />
+    <ClCompile Include="MapVille.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Personnel.cpp" />
     <ClCompile Include="statistique.cpp" />
@@ -137,12 +148,27 @@
     <ClInclude Include="Accueil.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Connexion.h" />
-    <ClInclude Include="Controleur.h" />
-    <ClInclude Include="g_personnel.h">
+    <ClInclude Include="Article.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Client.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MapAdresse.h" />
+    <ClInclude Include="MapArticle.h" />
+    <ClInclude Include="MapClient.h" />
+    <ClInclude Include="MapCommande.h" />
+    <ClInclude Include="MapComposer.h" />
+    <ClInclude Include="MapFacturer.h" />
+    <ClInclude Include="MapLivrer.h" />
+    <ClInclude Include="MapPayment.h" />
+    <ClInclude Include="Commande.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Connexion.h" />
+    <ClInclude Include="Controleur.h" />
     <ClInclude Include="MapPersonnel.h" />
+    <ClInclude Include="MapVille.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -158,8 +184,14 @@
     <EmbeddedResource Include="Accueil.resx">
       <DependentUpon>Accueil.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="g_personnel.resx">
-      <DependentUpon>g_personnel.h</DependentUpon>
+    <EmbeddedResource Include="Article.resx">
+      <DependentUpon>Article.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client.resx">
+      <DependentUpon>Client.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Commande.resx">
+      <DependentUpon>Commande.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Personnel.resx">
       <DependentUpon>Personnel.h</DependentUpon>
