@@ -1,5 +1,9 @@
 #pragma once
 #include "controleur.h"
+#include "statistique.h"
+#include "Accueil.h"
+#include "g_personnel.h"
+#include "Personnel.h"
 
 namespace CodeProjet {
 
@@ -172,15 +176,15 @@ private: System::Windows::Forms::Button^ buttonAfficherValeurStock;
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea7 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^ legend7 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series5 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea8 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^ legend8 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series6 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea9 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^ legend9 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Title^ title3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Title());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^ legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^ legend2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea3 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^ legend3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Title^ title1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Title());
 			this->btnGestionClients = (gcnew System::Windows::Forms::Button());
 			this->btnGEstionCommande = (gcnew System::Windows::Forms::Button());
 			this->btnGestionPersonnel = (gcnew System::Windows::Forms::Button());
@@ -208,6 +212,7 @@ private: System::Windows::Forms::Button^ buttonAfficherValeurStock;
 			this->label_ValeurAchat = (gcnew System::Windows::Forms::Label());
 			this->panel6 = (gcnew System::Windows::Forms::Panel());
 			this->panel7 = (gcnew System::Windows::Forms::Panel());
+			this->buttonAfficherValeurStock = (gcnew System::Windows::Forms::Button());
 			this->textBoxDemarque = (gcnew System::Windows::Forms::TextBox());
 			this->textBoxMarge = (gcnew System::Windows::Forms::TextBox());
 			this->textBoxRemise = (gcnew System::Windows::Forms::TextBox());
@@ -249,7 +254,6 @@ private: System::Windows::Forms::Button^ buttonAfficherValeurStock;
 			this->supprimerUnArticleToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->statistiqueToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->monCompteToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->buttonAfficherValeurStock = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart_topPlusVendu))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart_topMoinsVendu))->BeginInit();
 			this->panel2->SuspendLayout();
@@ -308,39 +312,39 @@ private: System::Windows::Forms::Button^ buttonAfficherValeurStock;
 			// 
 			// chart_topPlusVendu
 			// 
-			chartArea7->AxisX->MajorGrid->Enabled = false;
-			chartArea7->Name = L"ChartAreaTOP";
-			this->chart_topPlusVendu->ChartAreas->Add(chartArea7);
-			legend7->Enabled = false;
-			legend7->Name = L"Legend1";
-			this->chart_topPlusVendu->Legends->Add(legend7);
+			chartArea1->AxisX->MajorGrid->Enabled = false;
+			chartArea1->Name = L"ChartAreaTOP";
+			this->chart_topPlusVendu->ChartAreas->Add(chartArea1);
+			legend1->Enabled = false;
+			legend1->Name = L"Legend1";
+			this->chart_topPlusVendu->Legends->Add(legend1);
 			this->chart_topPlusVendu->Location = System::Drawing::Point(1315, 153);
 			this->chart_topPlusVendu->Name = L"chart_topPlusVendu";
-			series5->ChartArea = L"ChartAreaTOP";
-			series5->IsVisibleInLegend = false;
-			series5->Legend = L"Legend1";
-			series5->Name = L"series1";
-			series5->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::BrightPastel;
-			series5->YValuesPerPoint = 4;
-			this->chart_topPlusVendu->Series->Add(series5);
+			series1->ChartArea = L"ChartAreaTOP";
+			series1->IsVisibleInLegend = false;
+			series1->Legend = L"Legend1";
+			series1->Name = L"series1";
+			series1->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::BrightPastel;
+			series1->YValuesPerPoint = 4;
+			this->chart_topPlusVendu->Series->Add(series1);
 			this->chart_topPlusVendu->Size = System::Drawing::Size(558, 345);
 			this->chart_topPlusVendu->TabIndex = 10;
 			this->chart_topPlusVendu->Text = L"chart_topPlusVendu";
 			// 
 			// chart_topMoinsVendu
 			// 
-			chartArea8->Name = L"ChartArea1";
-			this->chart_topMoinsVendu->ChartAreas->Add(chartArea8);
-			legend8->Enabled = false;
-			legend8->Name = L"Legend1";
-			this->chart_topMoinsVendu->Legends->Add(legend8);
+			chartArea2->Name = L"ChartArea1";
+			this->chart_topMoinsVendu->ChartAreas->Add(chartArea2);
+			legend2->Enabled = false;
+			legend2->Name = L"Legend1";
+			this->chart_topMoinsVendu->Legends->Add(legend2);
 			this->chart_topMoinsVendu->Location = System::Drawing::Point(1315, 530);
 			this->chart_topMoinsVendu->Name = L"chart_topMoinsVendu";
-			this->chart_topMoinsVendu->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::Excel;
-			series6->ChartArea = L"ChartArea1";
-			series6->Legend = L"Legend1";
-			series6->Name = L"series1";
-			this->chart_topMoinsVendu->Series->Add(series6);
+			series2->ChartArea = L"ChartArea1";
+			series2->Legend = L"Legend1";
+			series2->Name = L"series1";
+			series2->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::BrightPastel;
+			this->chart_topMoinsVendu->Series->Add(series2);
 			this->chart_topMoinsVendu->Size = System::Drawing::Size(558, 345);
 			this->chart_topMoinsVendu->TabIndex = 10;
 			this->chart_topMoinsVendu->Text = L"chart_topMoinsVendu";
@@ -424,8 +428,8 @@ private: System::Windows::Forms::Button^ buttonAfficherValeurStock;
 			this->comboBoxMoisChiffreAffaire->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->comboBoxMoisChiffreAffaire->FormattingEnabled = true;
 			this->comboBoxMoisChiffreAffaire->Items->AddRange(gcnew cli::array< System::Object^  >(12) {
-				L"Janvier ", L"Février", L"Mars",
-					L"Avril ", L"Mai", L"Juin ", L"Juillet", L"Août", L"Septembre ", L"Octobre", L"Novembre", L"Décembre"
+				L"Janvier", L"Février", L"Mars",
+					L"Avril", L"Mai", L"Juin", L"Juillet", L"Août", L"Septembre", L"Octobre", L"Novembre", L"Décembre"
 			});
 			this->comboBoxMoisChiffreAffaire->Location = System::Drawing::Point(375, 20);
 			this->comboBoxMoisChiffreAffaire->Name = L"comboBoxMoisChiffreAffaire";
@@ -472,7 +476,7 @@ private: System::Windows::Forms::Button^ buttonAfficherValeurStock;
 			// 
 			this->panel4->Controls->Add(this->label_prix_stock_actuel);
 			this->panel4->Controls->Add(this->label_valeur_stock_actuel);
-			this->panel4->Location = System::Drawing::Point(373, 172);
+			this->panel4->Location = System::Drawing::Point(336, 172);
 			this->panel4->Name = L"panel4";
 			this->panel4->Size = System::Drawing::Size(233, 85);
 			this->panel4->TabIndex = 15;
@@ -482,11 +486,11 @@ private: System::Windows::Forms::Button^ buttonAfficherValeurStock;
 			this->label_prix_stock_actuel->AutoSize = true;
 			this->label_prix_stock_actuel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label_prix_stock_actuel->Location = System::Drawing::Point(101, 52);
+			this->label_prix_stock_actuel->Location = System::Drawing::Point(44, 43);
 			this->label_prix_stock_actuel->Name = L"label_prix_stock_actuel";
-			this->label_prix_stock_actuel->Size = System::Drawing::Size(90, 25);
+			this->label_prix_stock_actuel->Size = System::Drawing::Size(42, 25);
 			this->label_prix_stock_actuel->TabIndex = 13;
-			this->label_prix_stock_actuel->Text = L"99999 €";
+			this->label_prix_stock_actuel->Text = L"0 €";
 			// 
 			// label_valeur_stock_actuel
 			// 
@@ -513,7 +517,7 @@ private: System::Windows::Forms::Button^ buttonAfficherValeurStock;
 			this->label_valeur_achat_stock->AutoSize = true;
 			this->label_valeur_achat_stock->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label_valeur_achat_stock->Location = System::Drawing::Point(74, 55);
+			this->label_valeur_achat_stock->Location = System::Drawing::Point(51, 54);
 			this->label_valeur_achat_stock->Name = L"label_valeur_achat_stock";
 			this->label_valeur_achat_stock->Size = System::Drawing::Size(90, 25);
 			this->label_valeur_achat_stock->TabIndex = 13;
@@ -564,20 +568,29 @@ private: System::Windows::Forms::Button^ buttonAfficherValeurStock;
 			this->panel7->Size = System::Drawing::Size(658, 269);
 			this->panel7->TabIndex = 18;
 			// 
+			// buttonAfficherValeurStock
+			// 
+			this->buttonAfficherValeurStock->Location = System::Drawing::Point(38, 197);
+			this->buttonAfficherValeurStock->Name = L"buttonAfficherValeurStock";
+			this->buttonAfficherValeurStock->Size = System::Drawing::Size(241, 50);
+			this->buttonAfficherValeurStock->TabIndex = 25;
+			this->buttonAfficherValeurStock->Text = L"Calculer";
+			this->buttonAfficherValeurStock->UseVisualStyleBackColor = true;
+			this->buttonAfficherValeurStock->Click += gcnew System::EventHandler(this, &statistique::buttonAfficherValeurStock_Click);
+			// 
 			// textBoxDemarque
 			// 
 			this->textBoxDemarque->Enabled = false;
 			this->textBoxDemarque->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->textBoxDemarque->ForeColor = System::Drawing::Color::Gray;
-			this->textBoxDemarque->Location = System::Drawing::Point(393, 140);
+			this->textBoxDemarque->Location = System::Drawing::Point(356, 140);
 			this->textBoxDemarque->Multiline = true;
 			this->textBoxDemarque->Name = L"textBoxDemarque";
 			this->textBoxDemarque->Size = System::Drawing::Size(162, 23);
 			this->textBoxDemarque->TabIndex = 24;
 			this->textBoxDemarque->Text = L"valeur..";
 			this->textBoxDemarque->Visible = false;
-			this->textBoxDemarque->TextChanged += gcnew System::EventHandler(this, &statistique::textBoxDemarque_TextChanged);
 			// 
 			// textBoxMarge
 			// 
@@ -599,14 +612,13 @@ private: System::Windows::Forms::Button^ buttonAfficherValeurStock;
 			this->textBoxRemise->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->textBoxRemise->ForeColor = System::Drawing::Color::Gray;
-			this->textBoxRemise->Location = System::Drawing::Point(393, 54);
+			this->textBoxRemise->Location = System::Drawing::Point(356, 54);
 			this->textBoxRemise->Multiline = true;
 			this->textBoxRemise->Name = L"textBoxRemise";
 			this->textBoxRemise->Size = System::Drawing::Size(162, 23);
 			this->textBoxRemise->TabIndex = 22;
 			this->textBoxRemise->Text = L"valeur..";
 			this->textBoxRemise->Visible = false;
-			this->textBoxRemise->TextChanged += gcnew System::EventHandler(this, &statistique::textBoxRemise_TextChanged);
 			// 
 			// textBoxTVA
 			// 
@@ -621,24 +633,27 @@ private: System::Windows::Forms::Button^ buttonAfficherValeurStock;
 			this->textBoxTVA->TabIndex = 21;
 			this->textBoxTVA->Text = L"valeur..";
 			this->textBoxTVA->Visible = false;
+			this->textBoxTVA->MouseClick += gcnew System::Windows::Forms::MouseEventHandler(this, &statistique::textBoxTVA_MouseClick);
 			// 
 			// checkBoxRemise
 			// 
-			this->checkBoxRemise->Location = System::Drawing::Point(561, 53);
+			this->checkBoxRemise->Location = System::Drawing::Point(524, 53);
 			this->checkBoxRemise->Name = L"checkBoxRemise";
 			this->checkBoxRemise->Size = System::Drawing::Size(98, 25);
 			this->checkBoxRemise->TabIndex = 20;
 			this->checkBoxRemise->Text = L"Autre valeur";
 			this->checkBoxRemise->UseVisualStyleBackColor = true;
+			this->checkBoxRemise->CheckedChanged += gcnew System::EventHandler(this, &statistique::checkBoxRemise_CheckedChanged);
 			// 
 			// checkBoxDemarque
 			// 
-			this->checkBoxDemarque->Location = System::Drawing::Point(561, 142);
+			this->checkBoxDemarque->Location = System::Drawing::Point(524, 142);
 			this->checkBoxDemarque->Name = L"checkBoxDemarque";
 			this->checkBoxDemarque->Size = System::Drawing::Size(98, 25);
 			this->checkBoxDemarque->TabIndex = 19;
 			this->checkBoxDemarque->Text = L"Autre valeur";
 			this->checkBoxDemarque->UseVisualStyleBackColor = true;
+			this->checkBoxDemarque->CheckedChanged += gcnew System::EventHandler(this, &statistique::checkBoxDemarque_CheckedChanged);
 			// 
 			// checkBoxMarge
 			// 
@@ -664,7 +679,7 @@ private: System::Windows::Forms::Button^ buttonAfficherValeurStock;
 			// 
 			this->comboBoxDemarque->FormattingEnabled = true;
 			this->comboBoxDemarque->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"Aucun", L"2%", L"3%", L"5%" });
-			this->comboBoxDemarque->Location = System::Drawing::Point(393, 142);
+			this->comboBoxDemarque->Location = System::Drawing::Point(356, 142);
 			this->comboBoxDemarque->Name = L"comboBoxDemarque";
 			this->comboBoxDemarque->Size = System::Drawing::Size(162, 21);
 			this->comboBoxDemarque->TabIndex = 7;
@@ -675,7 +690,7 @@ private: System::Windows::Forms::Button^ buttonAfficherValeurStock;
 			this->label_demarqueInconnu->AutoSize = true;
 			this->label_demarqueInconnu->Font = (gcnew System::Drawing::Font(L"Century", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label_demarqueInconnu->Location = System::Drawing::Point(369, 97);
+			this->label_demarqueInconnu->Location = System::Drawing::Point(332, 97);
 			this->label_demarqueInconnu->Name = L"label_demarqueInconnu";
 			this->label_demarqueInconnu->Size = System::Drawing::Size(284, 20);
 			this->label_demarqueInconnu->TabIndex = 6;
@@ -685,7 +700,7 @@ private: System::Windows::Forms::Button^ buttonAfficherValeurStock;
 			// 
 			this->comboBoxRemise->FormattingEnabled = true;
 			this->comboBoxRemise->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Aucun", L"5%", L"6%" });
-			this->comboBoxRemise->Location = System::Drawing::Point(393, 54);
+			this->comboBoxRemise->Location = System::Drawing::Point(356, 54);
 			this->comboBoxRemise->Name = L"comboBoxRemise";
 			this->comboBoxRemise->Size = System::Drawing::Size(162, 21);
 			this->comboBoxRemise->TabIndex = 5;
@@ -696,7 +711,7 @@ private: System::Windows::Forms::Button^ buttonAfficherValeurStock;
 			this->label_remiseCommerciale->AutoSize = true;
 			this->label_remiseCommerciale->Font = (gcnew System::Drawing::Font(L"Century", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label_remiseCommerciale->Location = System::Drawing::Point(365, 16);
+			this->label_remiseCommerciale->Location = System::Drawing::Point(328, 16);
 			this->label_remiseCommerciale->Name = L"label_remiseCommerciale";
 			this->label_remiseCommerciale->Size = System::Drawing::Size(293, 20);
 			this->label_remiseCommerciale->TabIndex = 4;
@@ -746,19 +761,19 @@ private: System::Windows::Forms::Button^ buttonAfficherValeurStock;
 			// 
 			// chart_chiffreAffaire
 			// 
-			chartArea9->Name = L"ChartArea1";
-			this->chart_chiffreAffaire->ChartAreas->Add(chartArea9);
-			legend9->Name = L"Legend1";
-			this->chart_chiffreAffaire->Legends->Add(legend9);
+			chartArea3->Name = L"ChartArea1";
+			this->chart_chiffreAffaire->ChartAreas->Add(chartArea3);
+			legend3->Name = L"Legend1";
+			this->chart_chiffreAffaire->Legends->Add(legend3);
 			this->chart_chiffreAffaire->Location = System::Drawing::Point(12, 25);
 			this->chart_chiffreAffaire->Name = L"chart_chiffreAffaire";
 			this->chart_chiffreAffaire->Size = System::Drawing::Size(842, 464);
 			this->chart_chiffreAffaire->TabIndex = 100;
 			this->chart_chiffreAffaire->Tag = L"Graphique du chiifre d\'affaire";
 			this->chart_chiffreAffaire->Text = L"Graphique du chiifre d\'affaire";
-			title3->Name = L"Chiffre d\'affaire";
-			title3->Text = L"Graphique de l\'evolution du chiffre d\'affaire";
-			this->chart_chiffreAffaire->Titles->Add(title3);
+			title1->Name = L"Chiffre d\'affaire";
+			title1->Text = L"Graphique de l\'evolution du chiffre d\'affaire";
+			this->chart_chiffreAffaire->Titles->Add(title1);
 			// 
 			// panel9
 			// 
@@ -780,7 +795,7 @@ private: System::Windows::Forms::Button^ buttonAfficherValeurStock;
 			});
 			this->menuStrip1->Location = System::Drawing::Point(484, 27);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(909, 45);
+			this->menuStrip1->Size = System::Drawing::Size(1029, 45);
 			this->menuStrip1->TabIndex = 21;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -801,6 +816,7 @@ private: System::Windows::Forms::Button^ buttonAfficherValeurStock;
 			this->afficherUnPersonnelToolStripMenuItem->Name = L"afficherUnPersonnelToolStripMenuItem";
 			this->afficherUnPersonnelToolStripMenuItem->Size = System::Drawing::Size(256, 26);
 			this->afficherUnPersonnelToolStripMenuItem->Text = L"Afficher le personnel";
+			this->afficherUnPersonnelToolStripMenuItem->Click += gcnew System::EventHandler(this, &statistique::afficherUnPersonnelToolStripMenuItem_Click);
 			// 
 			// ajouterUnPersonnelToolStripMenuItem
 			// 
@@ -964,16 +980,6 @@ private: System::Windows::Forms::Button^ buttonAfficherValeurStock;
 			this->monCompteToolStripMenuItem->Size = System::Drawing::Size(200, 41);
 			this->monCompteToolStripMenuItem->Text = L"Mon compte ";
 			// 
-			// buttonAfficherValeurStock
-			// 
-			this->buttonAfficherValeurStock->Location = System::Drawing::Point(38, 197);
-			this->buttonAfficherValeurStock->Name = L"buttonAfficherValeurStock";
-			this->buttonAfficherValeurStock->Size = System::Drawing::Size(241, 50);
-			this->buttonAfficherValeurStock->TabIndex = 25;
-			this->buttonAfficherValeurStock->Text = L"Calculer";
-			this->buttonAfficherValeurStock->UseVisualStyleBackColor = true;
-			this->buttonAfficherValeurStock->Click += gcnew System::EventHandler(this, &statistique::buttonAfficherValeurStock_Click);
-			// 
 			// statistique
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1028,6 +1034,9 @@ private: System::Void statistique_Load(System::Object^ sender, System::EventArgs
 	moncontroleur1->afficher_label_sql(label_prix_chiffre_affaire, "select SUM(quantite * prix_HT) as total from Payment inner join Composer on Payment.id_commande = Composer.id_commande inner join Article on Composer.id_article=Article.id_article where month(date_payment) = 3 group by month(date_payment)");
 	moncontroleur1->afficher_label_sql(label_prix_panier_moyen, "select AVG(quantite * prix_HT) as prix from Article inner join Composer on Article.id_article = Composer.id_article");
 	moncontroleur1->afficher_label_sql(label_valeur_achat_stock, "select SUM(prix_HT*stock) as prix_stock from Article");
+
+
+
 }
 
 
@@ -1045,22 +1054,34 @@ private: System::Void checkBoxMarge_CheckedChanged(System::Object^ sender, Syste
 {
 	moncontroleur1->affichage_text_box(comboBox_margeCommerciale, textBoxMarge);
 }
-private: System::Void textBoxRemise_TextChanged(System::Object^ sender, System::EventArgs^ e) 
-{
-	moncontroleur1->affichage_text_box(comboBoxRemise, textBoxRemise);
-}
-private: System::Void textBoxDemarque_TextChanged(System::Object^ sender, System::EventArgs^ e) 
-{
-	moncontroleur1->affichage_text_box(comboBoxDemarque, textBoxDemarque);
-}
+
 private: System::Void checkBoxTVA_CheckedChanged(System::Object^ sender, System::EventArgs^ e)
 {
 	moncontroleur1->affichage_text_box(comboBoxTVA, textBoxTVA);
 }
-
+private: System::Void checkBoxRemise_CheckedChanged(System::Object^ sender, System::EventArgs^ e) 
+{
+	moncontroleur1->affichage_text_box(comboBoxRemise, textBoxRemise);
+}
+private: System::Void checkBoxDemarque_CheckedChanged(System::Object^ sender, System::EventArgs^ e) 
+{
+	moncontroleur1->affichage_text_box(comboBoxDemarque, textBoxDemarque);
+}
 private: System::Void buttonAfficherValeurStock_Click(System::Object^ sender, System::EventArgs^ e) 
 {
-	moncontroleur1->CalculAndrecupereValeurCommercialeStock(textBoxTVA, textBoxRemise, textBoxMarge, textBoxDemarque, comboBoxTVA, comboBoxRemise, comboBox_margeCommerciale, comboBoxDemarque, checkBoxTVA, checkBoxRemise, checkBoxMarge, checkBoxDemarque,label_valeur_stock_actuel);
+	moncontroleur1->CalculAndrecupereValeurCommercialeStock(textBoxTVA, textBoxRemise, textBoxMarge, textBoxDemarque, comboBoxTVA, comboBoxRemise, comboBox_margeCommerciale, comboBoxDemarque, checkBoxTVA, checkBoxRemise, checkBoxMarge, checkBoxDemarque,label_prix_stock_actuel);
+}
+
+private: System::Void textBoxTVA_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) 
+{
+		textBoxTVA->Clear();
+}
+private: System::Void afficherUnPersonnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	Personnel^ form = gcnew Personnel;
+	form->Show();
+	this->Hide();
+	
 }
 };
 }

@@ -68,6 +68,10 @@ void Controleur::afficher_top(Chart^ chart, String^ query)
 		SqlDataReader^ read;
 		read = co.dataReader(sql);
 
+		
+		
+		
+
 			if (read->HasRows)
 			{
 				while (read->Read())
@@ -80,11 +84,13 @@ void Controleur::afficher_top(Chart^ chart, String^ query)
 			{
 				label->Text = "0 €";
 			}
-			
+		
 	}
 
 	void Controleur::affichage_text_box(ComboBox^ ComboB, TextBox^ textB)
 	{
+		textB->Text = "valeur...";
+		textB->ForeColor.Black;
 		if (ComboB->Enabled == true)
 		{
 			ComboB->Enabled = false;
@@ -184,61 +190,124 @@ void Controleur::afficher_top(Chart^ chart, String^ query)
 
 	void Controleur::CalculAndrecupereValeurCommercialeStock(TextBox^ TVATB, TextBox^ RemiseTB, TextBox^ MargeTB, TextBox^  DemarqueTB, ComboBox^ TVACB, ComboBox^ RemiseCB, ComboBox^ MargeCB, ComboBox^ DemarqueCB,CheckBox^ TVACHECK, CheckBox^ RemiseCHECK, CheckBox^ MARGECHECk, CheckBox^ DemarqueCHECK,Label^ lab)
 	{
-		String^ valeurTVA;
-		String^ ValeurRemise;
-		String^ ValeurMarge;
-		String^ ValeurDemarque;
 
+
+/// valeur TVA ///
 	if(TVACHECK->Checked == true)
 	{
-		valeurTVA = TVATB->Text;
+		valeurTVA = ((Convert::ToDouble(TVATB->Text) / 100)+1).ToString()->Replace(",",".");
+		
 	}
 	else
 	{
 		if(TVACB->Text == "Aucun")
 		{
-			valeurTVA = "0";
+			valeurTVA = "1";
 		}
 		if (TVACB->Text == "10%")
 		{
-			valeurTVA = "1";
+			valeurTVA = "1.1";
 		}
 		if (TVACB->Text == "20%")
 		{
-			valeurTVA = "2";
+			valeurTVA = "1.2";
 		}
 		if (TVACB->Text == "30%")
 		{
-			valeurTVA = "3";
+			valeurTVA = "1.3";
 		}
 	}
 	
+	/// // Remise commerciale ////////
+
 	if (RemiseCHECK->Checked == true)
 	{
-		valeurTVA = TVATB->Text;
+		ValeurRemise = (1-(Convert::ToDouble(RemiseTB->Text) / 100)).ToString()->Replace(",", ".");
 	}
 	else
 	{
-		if (TVACB->Text == "Aucun")
+		if (RemiseCB->Text == "Aucun")
 		{
-			valeurTVA = "0";
+			ValeurRemise = "1";
 		}
-		if (TVACB->Text == "10%")
+		if (RemiseCB->Text == "5%")
 		{
-			valeurTVA = "1";
+			ValeurRemise = "0.95";
 		}
-		if (TVACB->Text == "20%")
+		if (RemiseCB->Text == "6%")
 		{
-			valeurTVA = "2";
+			ValeurRemise = "0.94";
 		}
-		if (TVACB->Text == "30%")
+
+	}
+
+	/// marge commerciale ///
+	if (MARGECHECk->Checked == true)
+	{
+		ValeurMarge = ((Convert::ToDouble(MargeTB->Text) / 100) + 1).ToString()->Replace(",", ".");
+	}
+	else
+	{
+		if (MargeCB->Text == "Aucun")
 		{
-			valeurTVA = "3";
+			ValeurMarge = "1";
+		}
+		if (MargeCB->Text == "5%")
+		{
+			ValeurMarge = "1.05";
+		}
+		if (MargeCB->Text == "10%")
+		{
+			ValeurMarge = "1.10";
+		}
+		if(MargeCB->Text == "15%")
+		{
+			ValeurMarge = "1.15";
+		}
+
+	}
+
+
+	/// demarque Inconnue ///
+
+	if(DemarqueCHECK->Checked == true)
+	{
+		ValeurDemarque = (1 - (Convert::ToDouble(RemiseTB->Text) / 100)).ToString()->Replace(",", ".");;
+	}
+	else
+	{
+		if (DemarqueCB->Text == "Aucun")
+		{
+			ValeurDemarque = "1";
+		}
+		if (DemarqueCB->Text == "2%")
+		{
+			ValeurDemarque = "0.98";
+		}
+		if (DemarqueCB->Text == "3%")
+		{
+			ValeurDemarque = "0.97";
+		}
+		if (DemarqueCB->Text == "5%")
+		{
+			ValeurDemarque = "0.95";
 		}
 	}
+	afficher_label_sql(lab,"select SUM(prix_HT * stock *" + valeurTVA + " * " + ValeurRemise + "*" + ValeurMarge + "*"+ValeurDemarque+") from Article");
 
 
 	{
 
 	}
 	}
+
+	void Controleur::afficher_formPersonnel(String^ nomForm)
+	{
+		if (nomForm == "Personnel")
+		{
+
+		};
+	}
+
+
+
