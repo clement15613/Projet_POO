@@ -1,4 +1,4 @@
-#include "controleur.h"
+#include "Controleur.h"
 #include "pch.h"
 #include "Connexion.h"
 #include "Accueil.h"
@@ -377,6 +377,7 @@ void Controleur::afficher_form(String^ of)
 	void Controleur::supprimerPersonnel(ComboBox^ nomPrenom)
 	{
 		int idAdresse;
+		maCNX->connect->Close();
 		String^ result = nomPrenom->Text;
 		array<String^>^ stringarray = result->Split(' ');
 		
@@ -486,6 +487,7 @@ void Controleur::afficher_form(String^ of)
 		mPersonnel->setMotDePasse(MDP->Text);
 		mPersonnel->setid_superieur(1);
 
+		mAdresse->setid_adresse(mPersonnel->getid_adresse());
 		mAdresse->setnumero(Convert::ToInt32(numRue->Text));
 		mAdresse->setrue(nomRue->Text);
 		mAdresse->setcomplement(complement->Text);
@@ -507,14 +509,19 @@ void Controleur::afficher_form(String^ of)
 		maCNX->actionRows(mPersonnel->UPDATE());
 	}
 
-	void Controleur::afficherPersonnel(DataGridView^ myGrid)
+	void Controleur::afficherPersonnel(DataGridView^ myGrid, ComboBox^ cb1, ComboBox^ cb2, ComboBox^ cb3, ComboBox^ cb4, DateTimePicker^ date)
 	{
-		reader = maCNX->dataReader("select * from personnel");
+		String^ result = cb3->Text;
+		array<String^>^ stringarray = result->Split(' ');
+		maCNX->connect->Close();
+		reader = maCNX->dataReader("select personnel1.nom_Personnel as nom ,personnel1.prenom_Personnel as prenom ,personnel1.date_embauche_Personnel as 'date embauche', numero, rue, complement, ville, Personnel.nom_Personnel as nom_sup, personnel.prenom_personnel as prenom_sup from Personnel as personnel1  inner join Personnel as personnel on personnel1.id_Personnel_Superieur = Personnel.id_Personnel inner join ( select ville.ville, ville.id_ville, Correspond.id_adresse as idAdresse, Correspond.id_ville as idVille, Adresse.id_adresse, numero, rue, complement from Adresse inner join Correspond on correspond.id_adresse = Adresse.id_adresse inner join ville on Ville.id_ville = Correspond.id_ville) as adresseComplete on personnel1.id_adresse = adresseComplete.id_adresse where personnel1.nom_Personnel = '" + cb1->Text + "' or personnel1.prenom_Personnel = '" + cb2->Text + "' or personnel.nom_Personnel = '" + stringarray[0] + "' or ville = '" + cb4->Text + "' or personnel1.date_embauche_Personnel > '" + date->Value + "'");
 		if (reader->HasRows)
 		{
 			DataTable^ madata = gcnew DataTable();
 			madata->Load(reader);
-			madata->Columns["nom_Personnel"]->ColumnName = "Nom";
+			madata->Columns["nom_sup"]->ColumnName = "Nom superieur";
+			madata->Columns["prenom_sup"]->ColumnName = "Prenom superieur";
 			myGrid->DataSource = madata;
+			maCNX->connect->Close();
 		}
 	}

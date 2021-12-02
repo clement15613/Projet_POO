@@ -53,6 +53,6 @@ public :
 	void afficherModifierPersonnel(ComboBox^, TextBox^, TextBox^, DateTimePicker^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, ComboBox^, TextBox^);
 	void getIdPersonnelModifier(ComboBox^);
 	void modifierPersonnel(TextBox^, TextBox^, DateTimePicker^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, ComboBox^, TextBox^);
-	void afficherPersonnel(DataGridView^);
+	void afficherPersonnel(DataGridView^, ComboBox^, ComboBox^, ComboBox^, ComboBox^, DateTimePicker^);
 };
 
