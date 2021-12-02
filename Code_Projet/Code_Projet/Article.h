@@ -1,5 +1,5 @@
 #pragma once
-#include "controleur.h"
+#include "Controleur.h"
 
 namespace CodeProjet {
 
@@ -125,7 +125,7 @@ private: System::Windows::Forms::ComboBox^ comboBoxNomArticleSupprimer;
 
 private: System::Windows::Forms::Button^ BtnSupprimer;
 private: System::Windows::Forms::Label^ LQuestionSupprimer;
-	   Controleur^ moncontroleur;
+	   Controleur^ monControleur;
 
 	private:
 		/// <summary>
@@ -961,102 +961,102 @@ private: System::Windows::Forms::Label^ LQuestionSupprimer;
 	}
 private: System::Void Article_Load(System::Object^ sender, System::EventArgs^ e) 
 {
-	moncontroleur = gcnew Controleur;
+	monControleur = gcnew Controleur;
 
-	moncontroleur->gestion_panel(PanelAjouterArticle, PanelAfficherArticle, PanelModifier, PanelSupprimerArticle, false);
+	monControleur->gestion_panel(PanelAjouterArticle, PanelAfficherArticle, PanelModifier, PanelSupprimerArticle, false);
 
-	moncontroleur->CnxComboBox_BDD(comboBoxCouleurAfficher, "select couleur from article");
-	moncontroleur->CnxComboBox_BDD(comboBoxNatureArticleAfficher, "select nature from article");
-	moncontroleur->CnxComboBox_BDD(comboBoxNomArticleAfficher, "select nom_article from article");
-	moncontroleur->CnxComboBox_BDD(comboBoxNomArticleSupprimer, "select nom_article from article");
+	monControleur->CnxComboBox_BDD(comboBoxCouleurAfficher, "select couleur from article");
+	monControleur->CnxComboBox_BDD(comboBoxNatureArticleAfficher, "select nature from article");
+	monControleur->CnxComboBox_BDD(comboBoxNomArticleAfficher, "select nom_article from article");
+	monControleur->CnxComboBox_BDD(comboBoxNomArticleSupprimer, "select nom_article from article");
 	
 }
 private: void Form_FormsClose(Object^ sender, FormClosedEventArgs^ e) {
 	Application::Exit();
 }
 private: System::Void BtnLabelAjouterArticle_Click(System::Object^ sender, System::EventArgs^ e) {
-	moncontroleur->gestion_panel(PanelAjouterArticle, PanelAfficherArticle, PanelModifier, PanelSupprimerArticle, true);
+	monControleur->gestion_panel(PanelAjouterArticle, PanelAfficherArticle, PanelModifier, PanelSupprimerArticle, true);
 }
 private: System::Void BtnLabelRechercherArticle_Click(System::Object^ sender, System::EventArgs^ e) {
-	moncontroleur->gestion_panel(PanelAfficherArticle, PanelAjouterArticle, PanelModifier, PanelSupprimerArticle, true);
+	monControleur->gestion_panel(PanelAfficherArticle, PanelAjouterArticle, PanelModifier, PanelSupprimerArticle, true);
 }
 private: System::Void BtnLabelModifierArticle_Click(System::Object^ sender, System::EventArgs^ e) {
-	moncontroleur->gestion_panel(PanelModifier, PanelAfficherArticle, PanelAjouterArticle, PanelSupprimerArticle, true);
+	monControleur->gestion_panel(PanelModifier, PanelAfficherArticle, PanelAjouterArticle, PanelSupprimerArticle, true);
 }
 private: System::Void BtnLabelSupprimerArticle_Click(System::Object^ sender, System::EventArgs^ e) {
-	moncontroleur->gestion_panel(PanelSupprimerArticle, PanelAjouterArticle, PanelModifier, PanelAfficherArticle, true);
+	monControleur->gestion_panel(PanelSupprimerArticle, PanelAjouterArticle, PanelModifier, PanelAfficherArticle, true);
 }
 
 public: void setPanelAff(int);
 
 private: System::Void afficherUnPersonnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("personnel", 2);
+	monControleur->afficher_form("personnel", 2);
 }
 private: System::Void ajouterUnPersonnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("personnel", 1);
+	monControleur->afficher_form("personnel", 1);
 }
 private: System::Void modifierUnPersonnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("personnel", 3);
+	monControleur->afficher_form("personnel", 3);
 }
 private: System::Void supprimerUnPersonnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("personnel", 4);
+	monControleur->afficher_form("personnel", 4);
 }
 
 
 private: System::Void afficherUnClientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("client", 2);
+	monControleur->afficher_form("client", 2);
 }
 private: System::Void ajouterUnClientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("client", 1);
+	monControleur->afficher_form("client", 1);
 }
 private: System::Void modifierUnClientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("client", 3);
+	monControleur->afficher_form("client", 3);
 }
 private: System::Void supprimerUnClientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("client", 4);
+	monControleur->afficher_form("client", 4);
 }
 
 private: System::Void afficherLesCommandesToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("commande", 2);
+	monControleur->afficher_form("commande", 2);
 }
 private: System::Void ajouterUneCommandeToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("commande", 1);
+	monControleur->afficher_form("commande", 1);
 }
 private: System::Void modifierUneCommandeToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("commande", 3);
+	monControleur->afficher_form("commande", 3);
 }
 private: System::Void supprimeruneCommandeToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("commande", 4);
+	monControleur->afficher_form("commande", 4);
 }
 
 private: System::Void afficherLeStockToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-	moncontroleur->gestion_panel(PanelAfficherArticle, PanelAjouterArticle, PanelModifier, PanelSupprimerArticle, true);
+	monControleur->gestion_panel(PanelAfficherArticle, PanelAjouterArticle, PanelModifier, PanelSupprimerArticle, true);
 }
 private: System::Void ajouterUnArticleToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-	moncontroleur->gestion_panel(PanelAjouterArticle, PanelAfficherArticle, PanelModifier, PanelSupprimerArticle, true);
+	monControleur->gestion_panel(PanelAjouterArticle, PanelAfficherArticle, PanelModifier, PanelSupprimerArticle, true);
 }
 private: System::Void modifierUnArticleToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-	moncontroleur->gestion_panel(PanelModifier, PanelAfficherArticle, PanelAjouterArticle, PanelSupprimerArticle, true);
+	monControleur->gestion_panel(PanelModifier, PanelAfficherArticle, PanelAjouterArticle, PanelSupprimerArticle, true);
 }
 private: System::Void supprimerUnArticleToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-	moncontroleur->gestion_panel(PanelSupprimerArticle, PanelAjouterArticle, PanelModifier, PanelAfficherArticle, true);
+	monControleur->gestion_panel(PanelSupprimerArticle, PanelAjouterArticle, PanelModifier, PanelAfficherArticle, true);
 }
 
 private: System::Void statistiqueToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("stats", 0);
+	monControleur->afficher_form("stats", 0);
 }
 
 private: System::Void monCompteToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {

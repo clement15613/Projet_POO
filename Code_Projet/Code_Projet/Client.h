@@ -1,5 +1,5 @@
 #pragma once
-#include "controleur.h"
+#include "Controleur.h"
 
 
 namespace CodeProjet {
@@ -1019,16 +1019,16 @@ namespace CodeProjet {
 		}
 #pragma endregion
 	private: System::Void Client_Load(System::Object^ sender, System::EventArgs^ e) {
-		monControleur = gcnew Controleur;
+		moncontroleur = gcnew Controleur;
 
-		monControleur->gestion_panel(PanelAjouterClient, PanelModifierClient, PanelAfficherClient, PanelSupprimerClient, false);
+		moncontroleur->gestion_panel(PanelAjouterClient, PanelModifierClient, PanelAfficherClient, PanelSupprimerClient, false);
 
-		monControleur->CnxComboBox_BDD(comboBoxPrenomAfficher, "select prenom from client");
-		monControleur->CnxComboBox_BDD(comboBoxVilleAfficher, "select ville from ville");
-		monControleur->CnxComboBox_BDD(BoxNomAfficher, "select nom_client from client");
-		monControleur->CnxComboBox_BDD(comboBoxVilleAjouter, "select ville from ville");
-		monControleur->CnxComboBox_BDD(BoxVilleModifier, "select ville from ville");
-		monControleur->CnxComboBox_BDD(comboBox1NomPrenomSupprimer, "select nom_client,prenom from client");
+		moncontroleur->CnxComboBox_BDD(comboBoxPrenomAfficher, "select prenom from client");
+		moncontroleur->CnxComboBox_BDD(comboBoxVilleAfficher, "select ville from ville");
+		moncontroleur->CnxComboBox_BDD(BoxNomAfficher, "select nom_client from client");
+		moncontroleur->CnxComboBox_BDD(comboBoxVilleAjouter, "select ville from ville");
+		moncontroleur->CnxComboBox_BDD(BoxVilleModifier, "select ville from ville");
+		moncontroleur->CnxComboBox_BDD(comboBox1NomPrenomSupprimer, "select nom_client,prenom from client");
 
 	}
 private: System::Void BtnLabelAjouterPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
