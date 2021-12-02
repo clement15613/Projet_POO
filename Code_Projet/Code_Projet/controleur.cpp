@@ -542,18 +542,17 @@ void Controleur::changeFore(TextBox^ box)
 			nomPrenom += reader[1];
 		}
 		maCNX->connect->Close();
-
+		
 		superieur->Text = nomPrenom;
 	}
-		
 
 	void Controleur::afficher_label_moncompte(Label^ nom, Label^ prenom, Label^ nomUtilisateur, Label^ mdp, Label^ numeordevoie, Label^ complement, Label^ nomdevoie, Label^ ville)
 	{
 		Connexion maCNX;
 		SqlDataReader^ reader;
 		reader = maCNX.dataReader("select nom_Personnel, prenom_Personnel, nom_utilisateur_Personnel, mdp_Personnel, numero, complement, rue from Personnel inner join Adresse on Personnel.id_adresse = Adresse.id_adresse where id_Personnel = 1");
-		while(reader->Read())
-		{ 
+		while (reader->Read())
+		{
 			nom->Text = reader[0]->ToString();
 			prenom->Text = reader[1]->ToString();
 			nomUtilisateur->Text = reader[2]->ToString();
