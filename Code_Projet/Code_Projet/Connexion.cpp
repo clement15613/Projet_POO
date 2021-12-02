@@ -14,6 +14,7 @@ Connexion::Connexion()
 
 SqlDataReader^ Connexion::dataReader(String^ rqSql) 
 {
+	SqlDataReader^ oui;
 	setSQL(rqSql);
 	this->cmd->CommandText = this->rqSql;
 	connect->Open();

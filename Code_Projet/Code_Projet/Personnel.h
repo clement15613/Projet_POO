@@ -237,6 +237,7 @@ private: System::Windows::Forms::Button^ BtnValider;
 			this->TBPrenomAjouter = (gcnew System::Windows::Forms::TextBox());
 			this->TBNomAjouter = (gcnew System::Windows::Forms::TextBox());
 			this->PanelModifierPersonnel = (gcnew System::Windows::Forms::Panel());
+			this->BtnValider = (gcnew System::Windows::Forms::Button());
 			this->LNomPrenomModifier = (gcnew System::Windows::Forms::Label());
 			this->comboBoxNomPrenomModifer = (gcnew System::Windows::Forms::ComboBox());
 			this->BtnModifierPersonnel = (gcnew System::Windows::Forms::Button());
@@ -306,7 +307,6 @@ private: System::Windows::Forms::Button^ BtnValider;
 			this->dateTimePickerDateEmbaucheAfficher = (gcnew System::Windows::Forms::DateTimePicker());
 			this->LQuestionAfficher = (gcnew System::Windows::Forms::Label());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->BtnValider = (gcnew System::Windows::Forms::Button());
 			this->PanelAjouterPersonnel->SuspendLayout();
 			this->PanelModifierPersonnel->SuspendLayout();
 			this->menuStrip1->SuspendLayout();
@@ -546,6 +546,16 @@ private: System::Windows::Forms::Button^ BtnValider;
 			this->PanelModifierPersonnel->Size = System::Drawing::Size(523, 512);
 			this->PanelModifierPersonnel->TabIndex = 22;
 			// 
+			// BtnValider
+			// 
+			this->BtnValider->Location = System::Drawing::Point(358, 12);
+			this->BtnValider->Name = L"BtnValider";
+			this->BtnValider->Size = System::Drawing::Size(75, 23);
+			this->BtnValider->TabIndex = 24;
+			this->BtnValider->Text = L"Valider";
+			this->BtnValider->UseVisualStyleBackColor = true;
+			this->BtnValider->Click += gcnew System::EventHandler(this, &Personnel::BtnValider_Click);
+			// 
 			// LNomPrenomModifier
 			// 
 			this->LNomPrenomModifier->AutoSize = true;
@@ -571,6 +581,7 @@ private: System::Windows::Forms::Button^ BtnValider;
 			this->BtnModifierPersonnel->TabIndex = 21;
 			this->BtnModifierPersonnel->Text = L"Modifier";
 			this->BtnModifierPersonnel->UseVisualStyleBackColor = true;
+			this->BtnModifierPersonnel->Click += gcnew System::EventHandler(this, &Personnel::BtnModifierPersonnel_Click);
 			// 
 			// LVilleModifier
 			// 
@@ -705,6 +716,8 @@ private: System::Windows::Forms::Button^ BtnValider;
 			this->dateTimePickerEmbaucheModifier->Name = L"dateTimePickerEmbaucheModifier";
 			this->dateTimePickerEmbaucheModifier->Size = System::Drawing::Size(186, 20);
 			this->dateTimePickerEmbaucheModifier->TabIndex = 4;
+			//this->dateTimePickerEmbaucheModifier->Format = dateTimePickerEmbaucheModifier.cuust
+			//this->dateTimePickerEmbaucheModifier->CustomFormat = "aaaa-MM-jj";
 			// 
 			// TBUserModifier
 			// 
@@ -1154,29 +1167,20 @@ private: System::Windows::Forms::Button^ BtnValider;
 			this->dataGridView1->Size = System::Drawing::Size(664, 314);
 			this->dataGridView1->TabIndex = 0;
 			// 
-			// BtnValider
-			// 
-			this->BtnValider->Location = System::Drawing::Point(358, 12);
-			this->BtnValider->Name = L"BtnValider";
-			this->BtnValider->Size = System::Drawing::Size(75, 23);
-			this->BtnValider->TabIndex = 24;
-			this->BtnValider->Text = L"Valider";
-			this->BtnValider->UseVisualStyleBackColor = true;
-			// 
 			// Personnel
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1301, 628);
+			this->Controls->Add(this->PanelModifierPersonnel);
 			this->Controls->Add(this->BtnLabelSupprimerPersonnel);
 			this->Controls->Add(this->BtnLabelModifierPersonnel);
 			this->Controls->Add(this->BtnLabelRechercherPersonnel);
 			this->Controls->Add(this->BtnLabelAjouterPersonnel);
 			this->Controls->Add(this->menuStrip1);
-			this->Controls->Add(this->PanelModifierPersonnel);
-			this->Controls->Add(this->PanelAjouterPersonnel);
 			this->Controls->Add(this->PanelAfficherPersonnel);
 			this->Controls->Add(this->PanelSupprimerPersonnel);
+			this->Controls->Add(this->PanelAjouterPersonnel);
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"Personnel";
 			this->Text = L"Personnel";
@@ -1237,7 +1241,7 @@ private: System::Void BtnLabelSupprimerPersonnel_Click(System::Object^ sender, S
 private: System::Void BtnAjouterPersonnel_Click(System::Object^ sender, System::EventArgs^ e) 
 {
 	monControleur->ajouterPersonnel(TBNomAjouter, TBPrenomAjouter, dateTimePickerEmbaucheAjouter, TBUserAjouter,
-		TBMdpAjouter, TBNumRueAjouter, TBNumRueAjouter, TBComplementAjouter, BoxVilleAjouter, TBSuperieurAjouter);
+		TBMdpAjouter, TBNumRueAjouter, TBRueAjouter, TBComplementAjouter, BoxVilleAjouter, TBSuperieurAjouter);
 }
 private: System::Void BtnSupprimerPersonnel_Click(System::Object^ sender, System::EventArgs^ e) 
 {
@@ -1246,5 +1250,19 @@ private: System::Void BtnSupprimerPersonnel_Click(System::Object^ sender, System
 	
 
 }
+private: System::Void BtnValider_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	monControleur->afficherModifierPersonnel(comboBoxNomPrenomModifer, TBNomModifier, TBPrenomModifier, dateTimePickerEmbaucheModifier, TBUserModifier,
+		TBMdpModifier, TBNumRueModifier, TBNomRueModifier, TBComplementModifier, BoxVilleModifier, TBSuperieurModifier);
+}
+
+
+private: System::Void BtnModifierPersonnel_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	monControleur->modifierPersonnel(TBNomModifier, TBPrenomModifier, dateTimePickerEmbaucheModifier, TBUserModifier,
+		TBMdpModifier, TBNumRueModifier, TBNomRueModifier, TBComplementModifier, BoxVilleModifier, TBSuperieurModifier);
+}
+
+
 };
 }

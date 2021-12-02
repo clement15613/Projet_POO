@@ -22,7 +22,7 @@ Controleur::Controleur()
 	mPersonnel = gcnew MapPersonnel;
 	mVille = gcnew MapVille;
 	maCNX = gcnew Connexion;
-	reader = gcnew SqlDataReader;
+	//reader = gcnew SqlDataReader;
 }
 
 void Controleur::mdp(TextBox^ text) {
@@ -404,30 +404,107 @@ void Controleur::afficher_form(String^ of)
 		mPersonnel->setid_personnel(id);
 	}
 
-	void Controleur::modifierPersonnel(ComboBox^ cbNomPrenom, TextBox^ nom, TextBox^ prenom, DateTimePicker^ dateEmbauche, TextBox^ user,
+	void Controleur::afficherModifierPersonnel(ComboBox^ cbNomPrenom, TextBox^ nom, TextBox^ prenom, DateTimePicker^ dateEmbauche, TextBox^ user,
 		TextBox^ MDP, TextBox^ numRue, TextBox^ nomRue, TextBox^ complement, ComboBox^ ville, TextBox^ superieur)
 	{
 		DateTime^ valeur;
+		String^ nomPrenom = "";
+		String^ oui;
 
 		this->getIdPersonnelModifier(cbNomPrenom);
 		reader = maCNX->dataReader("select * from personnel where id_personnel = " + mPersonnel->getid_personnel());
-		mPersonnel->setNom(reader[0]->ToString());
-		mPersonnel->setPrenom(reader[1]->ToString());
-		mPersonnel->setDateEmbauche(Convert::ToDateTime(reader[2]));
-		mPersonnel->setNomUtilisateur(reader[3]->ToString());
-		mPersonnel->setMotDePasse(reader[4]->ToString());
-		mPersonnel->setid_adresse(Convert::ToInt32(reader[5]));
-		mPersonnel->setid_superieur(Convert::ToInt32(reader[6]));
+		while (reader->Read())
+		{
+			mPersonnel->setNom(reader[1]->ToString());
+			mPersonnel->setPrenom(reader[2]->ToString());
+			mPersonnel->setDateEmbauche(Convert::ToDateTime(reader[3]));
+			mPersonnel->setNomUtilisateur(reader[4]->ToString());
+			mPersonnel->setMotDePasse(reader[5]->ToString());
+			mPersonnel->setid_adresse(Convert::ToInt32(reader[6]));
+			mPersonnel->setid_superieur(Convert::ToInt32(reader[7]));
+		}		
+		maCNX->connect->Close();
 
+		reader = maCNX->dataReader("select * from adresse where id_adresse = " + mPersonnel->getid_adresse());
+		while (reader->Read())
+		{
+			mAdresse->setnumero(Convert::ToInt32(reader[1]));
+			mAdresse->setrue(reader[2]->ToString());
+			mAdresse->setcomplement(reader[3]->ToString());
+		}
+		
+		maCNX->connect->Close();
+		reader = maCNX->dataReader("select * from correspond where id_adresse = " + mPersonnel->getid_adresse());
+		while (reader->Read())
+		{
+			mVille->setIdVille(Convert::ToInt32(reader[0]));
+		}
+		
+		maCNX->connect->Close();
+		reader = maCNX->dataReader("select * from ville where id_ville = " + mVille->getIdVille());
+		while (reader->Read())
+		{
+			mVille->setVille(reader[1]->ToString());
+			mVille->setCodePostal(reader[2]->ToString());
+		}
+		
 		
 		nom->Text = mPersonnel->getNom();
 		prenom->Text = mPersonnel->getPrenom();
 		dateEmbauche->Text = mPersonnel->getDateEmbauche()->ToString();
 		user->Text = mPersonnel->getNomUtilisateur();
 		MDP->Text = mPersonnel->getMotDePasse();
+		numRue->Text = mAdresse->getnumero().ToString();
+		nomRue->Text = mAdresse->getrue();
+		complement->Text = mAdresse->getcomplement();
+		ville->Text = mVille->getVille();
+
+		maCNX->connect->Close();
+		reader = maCNX->dataReader("select nom_personnel,prenom_personnel from personnel where id_personnel =" + mPersonnel->getid_superieur());
+		while (reader->Read())
+		{
+			nomPrenom += reader[0] + " ";
+			nomPrenom += reader[1];
+		}
+		maCNX->connect->Close();
 		
 
-
-
+		superieur->Text = nomPrenom;
 	}
 
+	void Controleur::modifierPersonnel(TextBox^ nom, TextBox^ prenom, DateTimePicker^ dateEmbauche, TextBox^ user, TextBox^ MDP, 
+		TextBox^ numRue, TextBox^ nomRue, TextBox^ complement, ComboBox^ ville, TextBox^ superieur)
+	{
+		int idVille;
+		int idAdresse;
+		int idSuperieur;
+
+		mPersonnel->setNom(nom->Text);
+		mPersonnel->setPrenom(prenom->Text);
+		mPersonnel->setDateEmbauche(dateEmbauche->Value);
+		mPersonnel->setNomUtilisateur(user->Text);
+		mPersonnel->setMotDePasse(MDP->Text);
+		mPersonnel->setid_superieur(1);
+
+		mAdresse->setnumero(Convert::ToInt32(numRue->Text));
+		mAdresse->setrue(nomRue->Text);
+		mAdresse->setcomplement(complement->Text);
+
+		mVille->setVille(ville->Text);
+		mVille->setCodePostal("00000");
+
+
+		maCNX->actionRows(mVille->UPDATE());
+
+		maCNX->actionRows(mAdresse->UPDATE());
+
+		/*mCorrespond->setIdVille(idVille);
+		mCorrespond->SetIdAdresse(idAdresse);
+
+		mPersonnel->setid_adresse(idAdresse);*/
+
+		maCNX->actionRows(mCorrespond->UPDATE());
+		maCNX->actionRows(mPersonnel->UPDATE());
+	}
+
+	
