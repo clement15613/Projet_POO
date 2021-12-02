@@ -25,5 +25,7 @@ public:
     int getIdclient();
     void setIdclient(int idclient);
 
+    String^ INSERTX();
+
 };
 

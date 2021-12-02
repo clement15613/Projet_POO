@@ -479,7 +479,7 @@ void Controleur::afficher_form(String^ of)
 		int idVille;
 		int idAdresse;
 		int idSuperieur;
-
+		maCNX->connect->Close();
 		mPersonnel->setNom(nom->Text);
 		mPersonnel->setPrenom(prenom->Text);
 		mPersonnel->setDateEmbauche(dateEmbauche->Value);
@@ -524,4 +524,49 @@ void Controleur::afficher_form(String^ of)
 			myGrid->DataSource = madata;
 			maCNX->connect->Close();
 		}
+	}
+
+	void Controleur::gridArticleAjouterCmd(DataGridView^ myGrid,String^ query)
+	{
+		maCNX->connect->Close();
+		reader = maCNX->dataReader(query);
+		if (reader->HasRows)
+		{
+			DataTable^ madata = gcnew DataTable();
+			madata->Load(reader);
+			myGrid->DataSource = madata;
+			maCNX->connect->Close();
+		}
+	}
+
+
+	void Controleur::ajouterCommande(DateTimePicker^ dateCommande, DateTimePicker^ dateEnvoi, DateTimePicker^ dateLivraison, DateTimePicker^ datePaiement, ComboBox^ nomClient, ComboBox^ moyenPaiement, bool state)
+	{
+		int idCMD;
+		int idPayment;
+		if (state == false)
+		{
+			idCMD = maCNX->actionRowsID(mCommande->INSERTX());
+			idPayment = maCNX->actionRowsID(mPayment->INSERTX());
+			mCommande->setIdcommande(idCMD);
+			mPayment->setIdpayment(idPayment);
+			mPayment->setIdcommande(idCMD);
+		}
+	}
+
+	void Controleur::ajouterArticleCommande(DataGridView^ mygrid, NumericUpDown^ qte)
+	{
+		int idArticle;
+		int stock;
+		String^ valeur;
+		valeur = mygrid->SelectedCells[0]->Value->ToString();
+		mComposer->setQuantite(Convert::ToInt32(qte->Text));
+		idArticle = maCNX->actionRowsID("select id_article from article where nom_article = '" + valeur->ToString() + "'");
+		mComposer->setIdarticle(idArticle);
+		mComposer->setIdcommande(mCommande->getIdcommande());
+		maCNX->actionRows(mComposer->INSERT());
+		//suppression du stock des articles ajoutés
+		stock = maCNX->actionRowsID("select stock from article where id_article = " + idArticle);
+		stock = stock - Convert::ToInt32(qte->Text);
+		maCNX->actionRows("update article set stock = " + stock + " where id_article = " + idArticle);
 	}

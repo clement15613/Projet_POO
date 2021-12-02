@@ -54,5 +54,9 @@ public :
 	void getIdPersonnelModifier(ComboBox^);
 	void modifierPersonnel(TextBox^, TextBox^, DateTimePicker^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, ComboBox^, TextBox^);
 	void afficherPersonnel(DataGridView^, ComboBox^, ComboBox^, ComboBox^, ComboBox^, DateTimePicker^);
+
+	void gridArticleAjouterCmd(DataGridView^,String^);
+	void ajouterCommande(DateTimePicker^, DateTimePicker^, DateTimePicker^, DateTimePicker^, ComboBox^, ComboBox^, bool);
+	void ajouterArticleCommande(DataGridView^,NumericUpDown^);
 };
 

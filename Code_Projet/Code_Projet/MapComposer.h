@@ -17,5 +17,6 @@ public:
     int getQuantite();
     void setQuantite(int quantite);
 
+    String^ INSERT();
 };
 

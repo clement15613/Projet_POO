@@ -21,4 +21,6 @@ public:
     int getIdcommande();
     void setIdcommande(int idcommande);
 
+    String^ INSERTX();
+    
 };

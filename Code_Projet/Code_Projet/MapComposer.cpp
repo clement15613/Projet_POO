@@ -30,3 +30,7 @@ void MapComposer::setQuantite(int quantite)
     this->quantite = quantite;
 }
 
+String^ MapComposer::INSERT()
+{
+    return "insert into composer values (" + getIdcommande() + "," + getIdarticle() + ","+getQuantite()+")";
+}

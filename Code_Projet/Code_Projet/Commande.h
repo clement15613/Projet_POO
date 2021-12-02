@@ -156,6 +156,11 @@ private: System::Windows::Forms::ComboBox^ comboBoxRefSupprimer;
 private: System::Windows::Forms::ComboBox^ comboBoxArticleAjouter;
 private: System::Windows::Forms::ComboBox^ comboBoxArtcileModifier;
 private: System::Windows::Forms::ComboBox^ comboBoxRefModifier;
+private: System::Windows::Forms::Button^ BtncreerCommande;
+private: System::Windows::Forms::Panel^ panel1;
+private: System::Windows::Forms::PictureBox^ pictureBox1;
+private: System::Windows::Forms::Button^ BtnValider;
+
 
 
 
@@ -173,6 +178,7 @@ private: System::Windows::Forms::ComboBox^ comboBoxRefModifier;
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Commande::typeid));
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->personnelToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->afficherUnPersonnelToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -201,6 +207,7 @@ private: System::Windows::Forms::ComboBox^ comboBoxRefModifier;
 			this->BtnLabelRechercherCommande = (gcnew System::Windows::Forms::Button());
 			this->BtnLabelAjouterCommande = (gcnew System::Windows::Forms::Button());
 			this->PanelAjouterCommande = (gcnew System::Windows::Forms::Panel());
+			this->BtncreerCommande = (gcnew System::Windows::Forms::Button());
 			this->comboBoxArticleAjouter = (gcnew System::Windows::Forms::ComboBox());
 			this->BtnAjouterCommande = (gcnew System::Windows::Forms::Button());
 			this->comboBoxMoyenPaimentAjouter = (gcnew System::Windows::Forms::ComboBox());
@@ -267,6 +274,9 @@ private: System::Windows::Forms::ComboBox^ comboBoxRefModifier;
 			this->comboBoxRefSupprimer = (gcnew System::Windows::Forms::ComboBox());
 			this->BtnSupprimer = (gcnew System::Windows::Forms::Button());
 			this->LInfoSupprimer = (gcnew System::Windows::Forms::Label());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->BtnValider = (gcnew System::Windows::Forms::Button());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->menuStrip1->SuspendLayout();
 			this->PanelAjouterCommande->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownQuantitéAjouter))->BeginInit();
@@ -279,6 +289,8 @@ private: System::Windows::Forms::ComboBox^ comboBoxRefModifier;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownNbrArticleAfficher))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewRechercherCommande))->BeginInit();
 			this->PanelSupprimerCommande->SuspendLayout();
+			this->panel1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// menuStrip1
@@ -519,42 +531,33 @@ private: System::Windows::Forms::ComboBox^ comboBoxRefModifier;
 			// 
 			// PanelAjouterCommande
 			// 
-			this->PanelAjouterCommande->Controls->Add(this->comboBoxArticleAjouter);
-			this->PanelAjouterCommande->Controls->Add(this->BtnAjouterCommande);
-			this->PanelAjouterCommande->Controls->Add(this->comboBoxMoyenPaimentAjouter);
-			this->PanelAjouterCommande->Controls->Add(this->LMoyenPaiementAjouter);
-			this->PanelAjouterCommande->Controls->Add(this->LDatePaiement);
-			this->PanelAjouterCommande->Controls->Add(this->dateTimePickerPaimentAjouter);
-			this->PanelAjouterCommande->Controls->Add(this->LNomClientAjouter);
-			this->PanelAjouterCommande->Controls->Add(this->comboBoxNomClientAjouter);
-			this->PanelAjouterCommande->Controls->Add(this->LDateEnvoiAjouter);
-			this->PanelAjouterCommande->Controls->Add(this->LDateCommandeAjouter);
-			this->PanelAjouterCommande->Controls->Add(this->LDateLivraisonAjouter);
-			this->PanelAjouterCommande->Controls->Add(this->BtnAjouterArticleAjouter);
-			this->PanelAjouterCommande->Controls->Add(this->LQuantiteAjouter);
-			this->PanelAjouterCommande->Controls->Add(this->numericUpDownQuantitéAjouter);
-			this->PanelAjouterCommande->Controls->Add(this->LRechercherCommandeAjouter);
-			this->PanelAjouterCommande->Controls->Add(this->dataGridViewArticleCommandeAjouter);
-			this->PanelAjouterCommande->Controls->Add(this->dateTimePickerCommandeAjouter);
-			this->PanelAjouterCommande->Controls->Add(this->dateTimePickerEmmisionAjouter);
-			this->PanelAjouterCommande->Controls->Add(this->dateTimePickerLivraisonAjouter);
-			this->PanelAjouterCommande->Controls->Add(this->TBRefAjouter);
+			this->PanelAjouterCommande->Controls->Add(this->BtncreerCommande);
 			this->PanelAjouterCommande->Location = System::Drawing::Point(486, 124);
 			this->PanelAjouterCommande->Name = L"PanelAjouterCommande";
 			this->PanelAjouterCommande->Size = System::Drawing::Size(764, 488);
 			this->PanelAjouterCommande->TabIndex = 11;
 			// 
+			// BtncreerCommande
+			// 
+			this->BtncreerCommande->Location = System::Drawing::Point(231, 157);
+			this->BtncreerCommande->Name = L"BtncreerCommande";
+			this->BtncreerCommande->Size = System::Drawing::Size(355, 166);
+			this->BtncreerCommande->TabIndex = 0;
+			this->BtncreerCommande->Text = L"Pour créer une commande,\r\ncliquez ici";
+			this->BtncreerCommande->UseVisualStyleBackColor = true;
+			this->BtncreerCommande->Click += gcnew System::EventHandler(this, &Commande::BtncreerCommande_Click);
+			// 
 			// comboBoxArticleAjouter
 			// 
 			this->comboBoxArticleAjouter->FormattingEnabled = true;
-			this->comboBoxArticleAjouter->Location = System::Drawing::Point(76, 6);
+			this->comboBoxArticleAjouter->Location = System::Drawing::Point(76, 15);
 			this->comboBoxArticleAjouter->Name = L"comboBoxArticleAjouter";
-			this->comboBoxArticleAjouter->Size = System::Drawing::Size(367, 21);
+			this->comboBoxArticleAjouter->Size = System::Drawing::Size(249, 21);
 			this->comboBoxArticleAjouter->TabIndex = 27;
 			// 
 			// BtnAjouterCommande
 			// 
-			this->BtnAjouterCommande->Location = System::Drawing::Point(412, 396);
+			this->BtnAjouterCommande->Location = System::Drawing::Point(412, 405);
 			this->BtnAjouterCommande->Name = L"BtnAjouterCommande";
 			this->BtnAjouterCommande->Size = System::Drawing::Size(252, 44);
 			this->BtnAjouterCommande->TabIndex = 26;
@@ -568,7 +571,7 @@ private: System::Windows::Forms::ComboBox^ comboBoxRefModifier;
 				L"Carte bancaire", L"Paypal",
 					L"Chèque", L"Bitcoin"
 			});
-			this->comboBoxMoyenPaimentAjouter->Location = System::Drawing::Point(374, 285);
+			this->comboBoxMoyenPaimentAjouter->Location = System::Drawing::Point(374, 294);
 			this->comboBoxMoyenPaimentAjouter->Name = L"comboBoxMoyenPaimentAjouter";
 			this->comboBoxMoyenPaimentAjouter->Size = System::Drawing::Size(121, 21);
 			this->comboBoxMoyenPaimentAjouter->TabIndex = 25;
@@ -576,7 +579,7 @@ private: System::Windows::Forms::ComboBox^ comboBoxRefModifier;
 			// LMoyenPaiementAjouter
 			// 
 			this->LMoyenPaiementAjouter->AutoSize = true;
-			this->LMoyenPaiementAjouter->Location = System::Drawing::Point(371, 269);
+			this->LMoyenPaiementAjouter->Location = System::Drawing::Point(371, 278);
 			this->LMoyenPaiementAjouter->Name = L"LMoyenPaiementAjouter";
 			this->LMoyenPaiementAjouter->Size = System::Drawing::Size(100, 13);
 			this->LMoyenPaiementAjouter->TabIndex = 24;
@@ -585,7 +588,7 @@ private: System::Windows::Forms::ComboBox^ comboBoxRefModifier;
 			// LDatePaiement
 			// 
 			this->LDatePaiement->AutoSize = true;
-			this->LDatePaiement->Location = System::Drawing::Point(371, 218);
+			this->LDatePaiement->Location = System::Drawing::Point(371, 227);
 			this->LDatePaiement->Name = L"LDatePaiement";
 			this->LDatePaiement->Size = System::Drawing::Size(91, 13);
 			this->LDatePaiement->TabIndex = 23;
@@ -593,7 +596,7 @@ private: System::Windows::Forms::ComboBox^ comboBoxRefModifier;
 			// 
 			// dateTimePickerPaimentAjouter
 			// 
-			this->dateTimePickerPaimentAjouter->Location = System::Drawing::Point(374, 234);
+			this->dateTimePickerPaimentAjouter->Location = System::Drawing::Point(374, 243);
 			this->dateTimePickerPaimentAjouter->Name = L"dateTimePickerPaimentAjouter";
 			this->dateTimePickerPaimentAjouter->Size = System::Drawing::Size(200, 20);
 			this->dateTimePickerPaimentAjouter->TabIndex = 22;
@@ -601,7 +604,7 @@ private: System::Windows::Forms::ComboBox^ comboBoxRefModifier;
 			// LNomClientAjouter
 			// 
 			this->LNomClientAjouter->AutoSize = true;
-			this->LNomClientAjouter->Location = System::Drawing::Point(371, 164);
+			this->LNomClientAjouter->Location = System::Drawing::Point(371, 173);
 			this->LNomClientAjouter->Name = L"LNomClientAjouter";
 			this->LNomClientAjouter->Size = System::Drawing::Size(57, 13);
 			this->LNomClientAjouter->TabIndex = 21;
@@ -610,7 +613,7 @@ private: System::Windows::Forms::ComboBox^ comboBoxRefModifier;
 			// comboBoxNomClientAjouter
 			// 
 			this->comboBoxNomClientAjouter->FormattingEnabled = true;
-			this->comboBoxNomClientAjouter->Location = System::Drawing::Point(374, 180);
+			this->comboBoxNomClientAjouter->Location = System::Drawing::Point(374, 189);
 			this->comboBoxNomClientAjouter->Name = L"comboBoxNomClientAjouter";
 			this->comboBoxNomClientAjouter->Size = System::Drawing::Size(118, 21);
 			this->comboBoxNomClientAjouter->TabIndex = 20;
@@ -618,7 +621,7 @@ private: System::Windows::Forms::ComboBox^ comboBoxRefModifier;
 			// LDateEnvoiAjouter
 			// 
 			this->LDateEnvoiAjouter->AutoSize = true;
-			this->LDateEnvoiAjouter->Location = System::Drawing::Point(3, 218);
+			this->LDateEnvoiAjouter->Location = System::Drawing::Point(3, 227);
 			this->LDateEnvoiAjouter->Name = L"LDateEnvoiAjouter";
 			this->LDateEnvoiAjouter->Size = System::Drawing::Size(67, 13);
 			this->LDateEnvoiAjouter->TabIndex = 19;
@@ -627,7 +630,7 @@ private: System::Windows::Forms::ComboBox^ comboBoxRefModifier;
 			// LDateCommandeAjouter
 			// 
 			this->LDateCommandeAjouter->AutoSize = true;
-			this->LDateCommandeAjouter->Location = System::Drawing::Point(3, 164);
+			this->LDateCommandeAjouter->Location = System::Drawing::Point(3, 173);
 			this->LDateCommandeAjouter->Name = L"LDateCommandeAjouter";
 			this->LDateCommandeAjouter->Size = System::Drawing::Size(111, 13);
 			this->LDateCommandeAjouter->TabIndex = 18;
@@ -636,7 +639,7 @@ private: System::Windows::Forms::ComboBox^ comboBoxRefModifier;
 			// LDateLivraisonAjouter
 			// 
 			this->LDateLivraisonAjouter->AutoSize = true;
-			this->LDateLivraisonAjouter->Location = System::Drawing::Point(3, 269);
+			this->LDateLivraisonAjouter->Location = System::Drawing::Point(3, 278);
 			this->LDateLivraisonAjouter->Name = L"LDateLivraisonAjouter";
 			this->LDateLivraisonAjouter->Size = System::Drawing::Size(92, 13);
 			this->LDateLivraisonAjouter->TabIndex = 17;
@@ -644,17 +647,18 @@ private: System::Windows::Forms::ComboBox^ comboBoxRefModifier;
 			// 
 			// BtnAjouterArticleAjouter
 			// 
-			this->BtnAjouterArticleAjouter->Location = System::Drawing::Point(449, 71);
+			this->BtnAjouterArticleAjouter->Location = System::Drawing::Point(561, 105);
 			this->BtnAjouterArticleAjouter->Name = L"BtnAjouterArticleAjouter";
 			this->BtnAjouterArticleAjouter->Size = System::Drawing::Size(103, 65);
 			this->BtnAjouterArticleAjouter->TabIndex = 16;
 			this->BtnAjouterArticleAjouter->Text = L"Ajouter\r\nl\'article";
 			this->BtnAjouterArticleAjouter->UseVisualStyleBackColor = true;
+			this->BtnAjouterArticleAjouter->Click += gcnew System::EventHandler(this, &Commande::BtnAjouterArticleAjouter_Click);
 			// 
 			// LQuantiteAjouter
 			// 
 			this->LQuantiteAjouter->AutoSize = true;
-			this->LQuantiteAjouter->Location = System::Drawing::Point(455, 32);
+			this->LQuantiteAjouter->Location = System::Drawing::Point(558, 56);
 			this->LQuantiteAjouter->Name = L"LQuantiteAjouter";
 			this->LQuantiteAjouter->Size = System::Drawing::Size(53, 13);
 			this->LQuantiteAjouter->TabIndex = 15;
@@ -662,15 +666,16 @@ private: System::Windows::Forms::ComboBox^ comboBoxRefModifier;
 			// 
 			// numericUpDownQuantitéAjouter
 			// 
-			this->numericUpDownQuantitéAjouter->Location = System::Drawing::Point(514, 30);
+			this->numericUpDownQuantitéAjouter->Location = System::Drawing::Point(617, 54);
 			this->numericUpDownQuantitéAjouter->Name = L"numericUpDownQuantitéAjouter";
 			this->numericUpDownQuantitéAjouter->Size = System::Drawing::Size(38, 20);
 			this->numericUpDownQuantitéAjouter->TabIndex = 14;
+			this->numericUpDownQuantitéAjouter->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			// 
 			// LRechercherCommandeAjouter
 			// 
 			this->LRechercherCommandeAjouter->AutoSize = true;
-			this->LRechercherCommandeAjouter->Location = System::Drawing::Point(3, 9);
+			this->LRechercherCommandeAjouter->Location = System::Drawing::Point(3, 18);
 			this->LRechercherCommandeAjouter->Name = L"LRechercherCommandeAjouter";
 			this->LRechercherCommandeAjouter->Size = System::Drawing::Size(72, 13);
 			this->LRechercherCommandeAjouter->TabIndex = 12;
@@ -679,28 +684,28 @@ private: System::Windows::Forms::ComboBox^ comboBoxRefModifier;
 			// dataGridViewArticleCommandeAjouter
 			// 
 			this->dataGridViewArticleCommandeAjouter->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridViewArticleCommandeAjouter->Location = System::Drawing::Point(6, 32);
+			this->dataGridViewArticleCommandeAjouter->Location = System::Drawing::Point(6, 41);
 			this->dataGridViewArticleCommandeAjouter->Name = L"dataGridViewArticleCommandeAjouter";
-			this->dataGridViewArticleCommandeAjouter->Size = System::Drawing::Size(437, 104);
+			this->dataGridViewArticleCommandeAjouter->Size = System::Drawing::Size(537, 129);
 			this->dataGridViewArticleCommandeAjouter->TabIndex = 11;
 			// 
 			// dateTimePickerCommandeAjouter
 			// 
-			this->dateTimePickerCommandeAjouter->Location = System::Drawing::Point(6, 180);
+			this->dateTimePickerCommandeAjouter->Location = System::Drawing::Point(6, 189);
 			this->dateTimePickerCommandeAjouter->Name = L"dateTimePickerCommandeAjouter";
 			this->dateTimePickerCommandeAjouter->Size = System::Drawing::Size(200, 20);
 			this->dateTimePickerCommandeAjouter->TabIndex = 10;
 			// 
 			// dateTimePickerEmmisionAjouter
 			// 
-			this->dateTimePickerEmmisionAjouter->Location = System::Drawing::Point(6, 234);
+			this->dateTimePickerEmmisionAjouter->Location = System::Drawing::Point(6, 243);
 			this->dateTimePickerEmmisionAjouter->Name = L"dateTimePickerEmmisionAjouter";
 			this->dateTimePickerEmmisionAjouter->Size = System::Drawing::Size(200, 20);
 			this->dateTimePickerEmmisionAjouter->TabIndex = 9;
 			// 
 			// dateTimePickerLivraisonAjouter
 			// 
-			this->dateTimePickerLivraisonAjouter->Location = System::Drawing::Point(6, 285);
+			this->dateTimePickerLivraisonAjouter->Location = System::Drawing::Point(6, 294);
 			this->dateTimePickerLivraisonAjouter->Name = L"dateTimePickerLivraisonAjouter";
 			this->dateTimePickerLivraisonAjouter->Size = System::Drawing::Size(200, 20);
 			this->dateTimePickerLivraisonAjouter->TabIndex = 8;
@@ -709,7 +714,7 @@ private: System::Windows::Forms::ComboBox^ comboBoxRefModifier;
 			// 
 			this->TBRefAjouter->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 21.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->TBRefAjouter->Location = System::Drawing::Point(162, 397);
+			this->TBRefAjouter->Location = System::Drawing::Point(162, 406);
 			this->TBRefAjouter->Name = L"TBRefAjouter";
 			this->TBRefAjouter->ReadOnly = true;
 			this->TBRefAjouter->Size = System::Drawing::Size(193, 40);
@@ -1155,27 +1160,79 @@ private: System::Windows::Forms::ComboBox^ comboBoxRefModifier;
 			this->LInfoSupprimer->TabIndex = 0;
 			this->LInfoSupprimer->Text = L"Quelle est la commande à supprimer \?";
 			// 
+			// panel1
+			// 
+			this->panel1->Controls->Add(this->BtnValider);
+			this->panel1->Controls->Add(this->pictureBox1);
+			this->panel1->Controls->Add(this->comboBoxArticleAjouter);
+			this->panel1->Controls->Add(this->dataGridViewArticleCommandeAjouter);
+			this->panel1->Controls->Add(this->BtnAjouterCommande);
+			this->panel1->Controls->Add(this->TBRefAjouter);
+			this->panel1->Controls->Add(this->comboBoxMoyenPaimentAjouter);
+			this->panel1->Controls->Add(this->dateTimePickerLivraisonAjouter);
+			this->panel1->Controls->Add(this->LMoyenPaiementAjouter);
+			this->panel1->Controls->Add(this->dateTimePickerEmmisionAjouter);
+			this->panel1->Controls->Add(this->LDatePaiement);
+			this->panel1->Controls->Add(this->dateTimePickerCommandeAjouter);
+			this->panel1->Controls->Add(this->dateTimePickerPaimentAjouter);
+			this->panel1->Controls->Add(this->LRechercherCommandeAjouter);
+			this->panel1->Controls->Add(this->LNomClientAjouter);
+			this->panel1->Controls->Add(this->numericUpDownQuantitéAjouter);
+			this->panel1->Controls->Add(this->comboBoxNomClientAjouter);
+			this->panel1->Controls->Add(this->LQuantiteAjouter);
+			this->panel1->Controls->Add(this->LDateEnvoiAjouter);
+			this->panel1->Controls->Add(this->BtnAjouterArticleAjouter);
+			this->panel1->Controls->Add(this->LDateCommandeAjouter);
+			this->panel1->Controls->Add(this->LDateLivraisonAjouter);
+			this->panel1->Location = System::Drawing::Point(486, 124);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(764, 488);
+			this->panel1->TabIndex = 29;
+			this->panel1->Visible = false;
+			// 
+			// BtnValider
+			// 
+			this->BtnValider->Location = System::Drawing::Point(376, 15);
+			this->BtnValider->Name = L"BtnValider";
+			this->BtnValider->Size = System::Drawing::Size(144, 21);
+			this->BtnValider->TabIndex = 29;
+			this->BtnValider->Text = L"Valider";
+			this->BtnValider->UseVisualStyleBackColor = true;
+			this->BtnValider->Click += gcnew System::EventHandler(this, &Commande::BtnValider_Click);
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::White;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(739, 5);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(22, 17);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox1->TabIndex = 28;
+			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &Commande::pictureBox1_Click);
+			// 
 			// Commande
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1278, 629);
+			this->ClientSize = System::Drawing::Size(1291, 629);
+			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->BtnLabelSupprimerCommande);
 			this->Controls->Add(this->BtnLabelModifierCommande);
 			this->Controls->Add(this->BtnLabelRechercherCommande);
 			this->Controls->Add(this->BtnLabelAjouterCommande);
 			this->Controls->Add(this->menuStrip1);
+			this->Controls->Add(this->PanelModifierCommande);
 			this->Controls->Add(this->PanelAfficherCommande);
 			this->Controls->Add(this->PanelSupprimerCommande);
 			this->Controls->Add(this->PanelAjouterCommande);
-			this->Controls->Add(this->PanelModifierCommande);
 			this->Name = L"Commande";
 			this->Text = L"Commande";
 			this->Load += gcnew System::EventHandler(this, &Commande::Commande_Load);
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
 			this->PanelAjouterCommande->ResumeLayout(false);
-			this->PanelAjouterCommande->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownQuantitéAjouter))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewArticleCommandeAjouter))->EndInit();
 			this->PanelModifierCommande->ResumeLayout(false);
@@ -1190,6 +1247,9 @@ private: System::Windows::Forms::ComboBox^ comboBoxRefModifier;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewRechercherCommande))->EndInit();
 			this->PanelSupprimerCommande->ResumeLayout(false);
 			this->PanelSupprimerCommande->PerformLayout();
+			this->panel1->ResumeLayout(false);
+			this->panel1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -1229,6 +1289,27 @@ private: System::Void BtnLabelModifierCommande_Click(System::Object^ sender, Sys
 }
 private: System::Void BtnLabelSupprimerCommande_Click(System::Object^ sender, System::EventArgs^ e) {
 	monControleur->gestion_panel(PanelSupprimerCommande, PanelAjouterCommande, PanelModifierCommande, PanelAfficherCommande, true);
+}
+private: System::Void BtncreerCommande_Click(System::Object^ sender, System::EventArgs^ e) {
+	PanelAjouterCommande->Visible = false;
+	panel1->Visible = true;
+	monControleur->ajouterCommande(dateTimePickerCommandeAjouter, dateTimePickerEmmisionAjouter, dateTimePickerLivraisonAjouter, dateTimePickerPaimentAjouter, comboBoxNomClientAjouter, comboBoxMoyenPaimentAjouter, false);
+	monControleur->gridArticleAjouterCmd(dataGridViewArticleCommandeAjouter, "select nom_article,nature,couleur,prix_HT,stock from article");
+}
+
+private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	PanelAjouterCommande->Visible = true;
+	panel1->Visible = false;
+}
+private: System::Void BtnValider_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	monControleur->gridArticleAjouterCmd(dataGridViewArticleCommandeAjouter, "select nom_article,nature,couleur,prix_HT,stock from article where nom_article = '" + comboBoxArticleAjouter->Text + "'");
+}
+
+private: System::Void BtnAjouterArticleAjouter_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	monControleur->ajouterArticleCommande(dataGridViewArticleCommandeAjouter,numericUpDownQuantitéAjouter);
 }
 };
 }

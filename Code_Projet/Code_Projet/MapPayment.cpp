@@ -40,3 +40,8 @@ void MapPayment::setIdcommande(int idcommande)
     id_commande = idcommande;
 }
 
+
+String^ MapPayment::INSERTX() 
+{
+    return "insert into Payment values ('2000-01-01','xxx','1'); select @@IDENTITY";
+}

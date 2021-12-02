@@ -50,3 +50,7 @@ void MapCommande::setIdclient(int idclient)
     id_client = idclient;
 }
 
+String^ MapCommande::INSERTX()
+{
+    return "insert into commande values ('xxx','2000-01-01','2000-01-01','2000-01-01',1);select @@IDENTITY";
+}
