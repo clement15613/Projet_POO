@@ -507,4 +507,14 @@ void Controleur::afficher_form(String^ of)
 		maCNX->actionRows(mPersonnel->UPDATE());
 	}
 
-	
+	void Controleur::afficherPersonnel(DataGridView^ myGrid)
+	{
+		reader = maCNX->dataReader("select * from personnel");
+		if (reader->HasRows)
+		{
+			DataTable^ madata = gcnew DataTable();
+			madata->Load(reader);
+			madata->Columns["nom_Personnel"]->ColumnName = "Nom";
+			myGrid->DataSource = madata;
+		}
+	}

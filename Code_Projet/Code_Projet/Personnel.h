@@ -716,8 +716,6 @@ private: System::Windows::Forms::Button^ BtnValider;
 			this->dateTimePickerEmbaucheModifier->Name = L"dateTimePickerEmbaucheModifier";
 			this->dateTimePickerEmbaucheModifier->Size = System::Drawing::Size(186, 20);
 			this->dateTimePickerEmbaucheModifier->TabIndex = 4;
-			//this->dateTimePickerEmbaucheModifier->Format = dateTimePickerEmbaucheModifier.cuust
-			//this->dateTimePickerEmbaucheModifier->CustomFormat = "aaaa-MM-jj";
 			// 
 			// TBUserModifier
 			// 
@@ -1060,6 +1058,7 @@ private: System::Windows::Forms::Button^ BtnValider;
 			this->BtnRechercherPersonnel->TabIndex = 12;
 			this->BtnRechercherPersonnel->Text = L"Rechercher";
 			this->BtnRechercherPersonnel->UseVisualStyleBackColor = true;
+			this->BtnRechercherPersonnel->Click += gcnew System::EventHandler(this, &Personnel::BtnRechercherPersonnel_Click);
 			// 
 			// LSuperieurAffcher
 			// 
@@ -1172,7 +1171,6 @@ private: System::Windows::Forms::Button^ BtnValider;
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1301, 628);
-			this->Controls->Add(this->PanelModifierPersonnel);
 			this->Controls->Add(this->BtnLabelSupprimerPersonnel);
 			this->Controls->Add(this->BtnLabelModifierPersonnel);
 			this->Controls->Add(this->BtnLabelRechercherPersonnel);
@@ -1181,6 +1179,7 @@ private: System::Windows::Forms::Button^ BtnValider;
 			this->Controls->Add(this->PanelAfficherPersonnel);
 			this->Controls->Add(this->PanelSupprimerPersonnel);
 			this->Controls->Add(this->PanelAjouterPersonnel);
+			this->Controls->Add(this->PanelModifierPersonnel);
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"Personnel";
 			this->Text = L"Personnel";
@@ -1264,5 +1263,9 @@ private: System::Void BtnModifierPersonnel_Click(System::Object^ sender, System:
 }
 
 
+private: System::Void BtnRechercherPersonnel_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	monControleur->afficherPersonnel(dataGridView1);
+}
 };
 }
