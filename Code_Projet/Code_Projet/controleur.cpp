@@ -2,7 +2,9 @@
 #include "pch.h"
 #include "Connexion.h"
 #include "Accueil.h"
+#include "Article.h"
 #include "Commande.h"
+#include "Client.h"
 #include "MyForm.h"
 #include "Personnel.h"
 #include "statistique.h"
@@ -135,7 +137,7 @@ void Controleur::afficher_top(Chart^ chart, String^ query)
 		}
 	}
 
-void Controleur::afficher_form(String^ of)
+void Controleur::afficher_form(String^ of, int pan)
 {
 	//throw gcnew System::NotImplementedException();
 	if (of == "Accueil")
@@ -143,15 +145,39 @@ void Controleur::afficher_form(String^ of)
 		CodeProjet::Accueil^ Acc = gcnew CodeProjet::Accueil();
 		Acc->Show();
 	}
-	else if (of == "statistique")
+
+	else if (of == "client")
 	{
-		CodeProjet::statistique^ stat = gcnew CodeProjet::statistique();
+		CodeProjet::Client^ stat = gcnew CodeProjet::Client();
 		stat->Show();
+		stat->setPanelAff(pan);
 	}
+
 	else if (of == "personnel")
 	{
 		CodeProjet::Personnel^ pers = gcnew CodeProjet::Personnel();
 		pers->Show();
+		pers->setPanelAff(pan);
+	}
+
+	else if (of == "article")
+	{
+		CodeProjet::Article^ article = gcnew CodeProjet::Article();
+		article->Show();
+		article->setPanelAff(pan);
+	}
+
+	else if (of == "commande")
+	{
+		CodeProjet::Commande^ Commande = gcnew CodeProjet::Commande();
+		Commande->Show();
+		Commande->setPanelAff(pan);
+	}
+	
+	else if (of == "stats" && pan == 0)
+	{
+		CodeProjet::statistique^ stat = gcnew CodeProjet::statistique();
+		stat->Show();
 	}
 
 			

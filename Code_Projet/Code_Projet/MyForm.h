@@ -46,10 +46,14 @@ namespace CodeProjet {
 	private: System::Windows::Forms::Label^ label3;
 
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
-		   Controleur^ monControleur;
+		   Controleur^ moncontroleur;
 	private: System::Windows::Forms::Button^ btConnexion;
 		   Controleur^ aff_acc;
 	private: System::Windows::Forms::Label^ label5;
+
+
+
+
 
 
 
@@ -193,7 +197,7 @@ namespace CodeProjet {
 		}
 #pragma endregion
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-		monControleur = gcnew Controleur;
+		moncontroleur = gcnew Controleur;
 		aff_acc = gcnew Controleur;
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -209,14 +213,24 @@ namespace CodeProjet {
 private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
-	monControleur->mdp(textBox_MDP);
+	moncontroleur->mdp(textBox_MDP);
 }
 private: System::Void btConnextion_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	this->Hide();
-	aff_acc->afficher_form("Accueil");
+	//SqlCommand^ MaCommande = gcnew SqlCommand();
+	//MaCommande->Connection;
+	//MaCommande->CommandText = "Select * FROM [projet_POO].[dbo].[Personnel] where nom_utilisateur_Personnel = '"+"text" + "'";
+	if (textBox_user->Text == "admin" && textBox_MDP->Text == "password")
+	{
+		this->Hide();
+		aff_acc->afficher_form("Accueil", 0);
+	}
+	else MessageBox::Show("nom d'utilisateur ou mot de passe incorrect");
 }
 private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
 	MessageBox::Show("Merci de contacté votre administrateur réseau");
+}
+public: void FormsClose() {
+	MyForm::Close();
 }
 };
 }

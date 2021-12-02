@@ -48,6 +48,8 @@ public :
 	void CalculAndrecupereValeurCommercialeStock(TextBox^, TextBox^, TextBox^, TextBox^, ComboBox^, ComboBox^, ComboBox^, ComboBox^, CheckBox^, CheckBox^, CheckBox^, CheckBox^,Label^);
 	void CnxComboBox_BDD(ComboBox^, String^);
 
+	void afficher_form(String^, int pan);
+
 	void ajouterPersonnel(TextBox^,TextBox^,DateTimePicker^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^,ComboBox^, TextBox^);
 	void supprimerPersonnel(ComboBox^);
 	void afficherModifierPersonnel(ComboBox^, TextBox^, TextBox^, DateTimePicker^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, ComboBox^, TextBox^);
