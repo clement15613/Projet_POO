@@ -3,7 +3,8 @@
 
 Connexion::Connexion()
 {
-	this->connexionLink = "Data Source=DESKTOP-PDDBHRE\\MSSQL_THEO;Initial Catalog=projet_POO;Integrated Security=True";
+	this->connexionLink = "Data Source=database-poo.cdw6dp5shcve.eu-west-3.rds.amazonaws.com;Initial Catalog"
+		L"=projet_POO;Persist Security Info=True;User ID=admin;Password=123456789";
 	this->rqSql = "RIEN";
 	this->connect = gcnew SqlConnection(this->connexionLink);
 	this->cmd = gcnew SqlCommand(this->rqSql, this->connect);

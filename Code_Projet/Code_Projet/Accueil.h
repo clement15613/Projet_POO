@@ -543,19 +543,19 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void esp_pers_a_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("personnel", 4);
+	moncontroleur->afficher_form("personnel", 2);
 }
 private: System::Void esp_pers_m_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("personnel",1);
+	moncontroleur->afficher_form("personnel",3);
 }
 private: System::Void esp_pers_s_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("personnel",2);
+	moncontroleur->afficher_form("personnel",4);
 }
 private: System::Void esp_pers_r_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("personnel",3);
+	moncontroleur->afficher_form("personnel",1);
 }
 
 private: System::Void btn_es_client_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -564,19 +564,19 @@ private: System::Void btn_es_client_Click(System::Object^ sender, System::EventA
 }
 private: System::Void btn_es_client_a_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("client", 4);
+	moncontroleur->afficher_form("client", 2);
 }
 private: System::Void btn_es_client_m_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("client", 1);
+	moncontroleur->afficher_form("client",3);
 }
 private: System::Void btn_es_client_s_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("client", 2);
+	moncontroleur->afficher_form("client", 4);
 }
 private: System::Void btn_es_client_r_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("client", 3);
+	moncontroleur->afficher_form("client", 1);
 }
 
 private: System::Void btn_es_commande_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -585,19 +585,19 @@ private: System::Void btn_es_commande_Click(System::Object^ sender, System::Even
 }
 private: System::Void btn_es_commande_a_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("commande", 4);
+	moncontroleur->afficher_form("commande", 2);
 }
 private: System::Void btn_es_commande_m_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("commande", 1);
+	moncontroleur->afficher_form("commande", 3);
 }
 private: System::Void btn_es_commande_s_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("commande", 2);
+	moncontroleur->afficher_form("commande", 4);
 }
 private: System::Void btn_es_commande_r_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("commande", 3);
+	moncontroleur->afficher_form("commande", 1);
 }
 
 private: System::Void btn_es_stock_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -606,19 +606,19 @@ private: System::Void btn_es_stock_Click(System::Object^ sender, System::EventAr
 }
 private: System::Void btn_es_stock_a_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("article", 4);
+	moncontroleur->afficher_form("article", 2);
 }
 private: System::Void btn_es_stock_m_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("article", 1);
+	moncontroleur->afficher_form("article", 3);
 }
 private: System::Void btn_es_stock_s_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("article", 2);
+	moncontroleur->afficher_form("article", 4);
 }
 private: System::Void btn_es_stock_r_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("article", 3);
+	moncontroleur->afficher_form("article", 1);
 }
 
 private: System::Void btn_mon_compte_Click(System::Object^ sender, System::EventArgs^ e) {

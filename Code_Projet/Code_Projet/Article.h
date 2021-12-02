@@ -236,7 +236,7 @@ private: System::Windows::Forms::Label^ LQuestionSupprimer;
 			});
 			this->menuStrip1->Location = System::Drawing::Point(136, 9);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(1029, 45);
+			this->menuStrip1->Size = System::Drawing::Size(909, 45);
 			this->menuStrip1->TabIndex = 7;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -962,6 +962,9 @@ private: System::Void Article_Load(System::Object^ sender, System::EventArgs^ e)
 {
 	moncontroleur = gcnew Controleur;
 	moncontroleur->gestion_panel(PanelAjouterArticle, PanelAfficherArticle, PanelModifier, PanelSupprimerArticle, false);
+}
+private: void Form_FormsClose(Object^ sender, FormClosedEventArgs^ e) {
+	Application::Exit();
 }
 private: System::Void BtnLabelAjouterArticle_Click(System::Object^ sender, System::EventArgs^ e) {
 	moncontroleur->gestion_panel(PanelAjouterArticle, PanelAfficherArticle, PanelModifier, PanelSupprimerArticle, true);

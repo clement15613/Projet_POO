@@ -1,6 +1,6 @@
 #pragma once
 #include "controleur.h"
-
+#include "MyForm.h"
 
 namespace CodeProjet {
 
@@ -1171,6 +1171,9 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 	}
 	
 public: void setPanelAff(int);
+
+	  void Form1_FormClosed(Object^ sender, FormClosedEventArgs^ e) {
+	  }
 
 private: System::Void BtnLabelAjouterPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
 	moncontroleur->gestion_panel(PanelAjouterPersonnel, PanelAfficherPersonnel, PanelModifierPersonnel, PanelSupprimerPersonnel, true);

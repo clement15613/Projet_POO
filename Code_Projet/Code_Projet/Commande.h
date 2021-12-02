@@ -1298,5 +1298,11 @@ private: System::Void statistiqueToolStripMenuItem_Click(System::Object^ sender,
 
 private: System::Void monCompteToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 }
+
+
+
+//private: void From_FormsClose(Object^ sender, FormClosedEventArgs^ e) {
+	//Application::Exit();
+//}
 };
 }
