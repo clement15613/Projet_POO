@@ -53,14 +53,20 @@ public :
 	void changeFore(TextBox^);
 	void afficher_label_moncompte(Label^,Label^,Label^,Label^,Label^,Label^,Label^,Label^);
 	void UpdateMonCompte(Label^, Label^, Label^, Label^, Label^, Label^, Label^, Label^,TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^);
-
 	void CnxComboBox_BDD(ComboBox^, String^);
-
 	void ajouterPersonnel(TextBox^,TextBox^,DateTimePicker^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^,ComboBox^, TextBox^);
 	void supprimerPersonnel(ComboBox^);
 	void afficherModifierPersonnel(ComboBox^, TextBox^, TextBox^, DateTimePicker^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, ComboBox^, TextBox^);
 	void getIdPersonnelModifier(ComboBox^);
 	void modifierPersonnel(TextBox^, TextBox^, DateTimePicker^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, ComboBox^, TextBox^);
 	void afficherPersonnel(DataGridView^);
+	void ajouterArticle(TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^);
+	void AfficherArticle(ComboBox^, ComboBox^, ComboBox^,DataGridView^, NumericUpDown^);
+	void afficher_datagridView_commande(DataGridView^);
+	void modifierArticle(TextBox^,TextBox^, TextBox^, TextBox^, TextBox^,TextBox^,TextBox^, ComboBox^);
+	void afficherModifierArticle(TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^,ComboBox^);
+	void supprimerArticle(ComboBox^);
+
+	
 };
 

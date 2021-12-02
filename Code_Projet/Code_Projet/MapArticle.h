@@ -37,6 +37,8 @@ public:
 
     String^ getCouleur();
     void setCouleur(String^ couleur);
-
+    String^ INSERT();
+    String^ UPDATE();
+    String^ DELETE();
 };
 

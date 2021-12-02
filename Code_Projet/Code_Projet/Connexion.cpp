@@ -3,7 +3,7 @@
 
 Connexion::Connexion()
 {
-	this->connexionLink = "Data Source=MSI-62QD\\MSSQL_CLEMENT;Initial Catalog=projet_POO;User ID=CNX_PROJET;Password=projet";
+	this->connexionLink = "Data Source=DESKTOP-PDDBHRE\\MSSQL_THEO;Initial Catalog=projet_POO;Integrated Security=True";
 	this->rqSql = "RIEN";
 	this->connect = gcnew SqlConnection(this->connexionLink);
 	this->cmd = gcnew SqlCommand(this->rqSql, this->connect);

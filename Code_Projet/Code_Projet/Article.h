@@ -1,5 +1,5 @@
 #pragma once
-#include "controleur.h"
+#include "Controleur.h"
 
 namespace CodeProjet {
 
@@ -125,7 +125,13 @@ private: System::Windows::Forms::ComboBox^ comboBoxNomArticleSupprimer;
 
 private: System::Windows::Forms::Button^ BtnSupprimer;
 private: System::Windows::Forms::Label^ LQuestionSupprimer;
-	   Controleur^ moncontroleur;
+	   Controleur^ monControleur;
+private: System::Windows::Forms::Button^ buttonValiderModif;
+
+private: System::Windows::Forms::Label^ label1;
+private: System::Windows::Forms::ComboBox^ comboBoxvalidermodifier;
+
+
 
 	private:
 		/// <summary>
@@ -184,6 +190,9 @@ private: System::Windows::Forms::Label^ LQuestionSupprimer;
 			this->TBPrixHTAjouter = (gcnew System::Windows::Forms::TextBox());
 			this->TBNomArticleAjouter = (gcnew System::Windows::Forms::TextBox());
 			this->PanelModifier = (gcnew System::Windows::Forms::Panel());
+			this->comboBoxvalidermodifier = (gcnew System::Windows::Forms::ComboBox());
+			this->buttonValiderModif = (gcnew System::Windows::Forms::Button());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->BtnModifier = (gcnew System::Windows::Forms::Button());
 			this->LQuantiteModifier = (gcnew System::Windows::Forms::Label());
 			this->LSeuilModifier = (gcnew System::Windows::Forms::Label());
@@ -491,6 +500,7 @@ private: System::Windows::Forms::Label^ LQuestionSupprimer;
 			this->BtnAjouter->TabIndex = 14;
 			this->BtnAjouter->Text = L"Ajouter";
 			this->BtnAjouter->UseVisualStyleBackColor = true;
+			this->BtnAjouter->Click += gcnew System::EventHandler(this, &Article::BtnAjouter_Click);
 			// 
 			// LQuantiteStockAjouter
 			// 
@@ -607,6 +617,9 @@ private: System::Windows::Forms::Label^ LQuestionSupprimer;
 			// 
 			// PanelModifier
 			// 
+			this->PanelModifier->Controls->Add(this->comboBoxvalidermodifier);
+			this->PanelModifier->Controls->Add(this->buttonValiderModif);
+			this->PanelModifier->Controls->Add(this->label1);
 			this->PanelModifier->Controls->Add(this->BtnModifier);
 			this->PanelModifier->Controls->Add(this->LQuantiteModifier);
 			this->PanelModifier->Controls->Add(this->LSeuilModifier);
@@ -627,6 +640,33 @@ private: System::Windows::Forms::Label^ LQuestionSupprimer;
 			this->PanelModifier->Size = System::Drawing::Size(781, 540);
 			this->PanelModifier->TabIndex = 16;
 			// 
+			// comboBoxvalidermodifier
+			// 
+			this->comboBoxvalidermodifier->FormattingEnabled = true;
+			this->comboBoxvalidermodifier->Location = System::Drawing::Point(252, 68);
+			this->comboBoxvalidermodifier->Name = L"comboBoxvalidermodifier";
+			this->comboBoxvalidermodifier->Size = System::Drawing::Size(171, 21);
+			this->comboBoxvalidermodifier->TabIndex = 18;
+			// 
+			// buttonValiderModif
+			// 
+			this->buttonValiderModif->Location = System::Drawing::Point(429, 67);
+			this->buttonValiderModif->Name = L"buttonValiderModif";
+			this->buttonValiderModif->Size = System::Drawing::Size(116, 23);
+			this->buttonValiderModif->TabIndex = 17;
+			this->buttonValiderModif->Text = L"Valider";
+			this->buttonValiderModif->UseVisualStyleBackColor = true;
+			this->buttonValiderModif->Click += gcnew System::EventHandler(this, &Article::buttonValiderModif_Click);
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(294, 41);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(79, 13);
+			this->label1->TabIndex = 16;
+			this->label1->Text = L"Nom de l\'article";
+			// 
 			// BtnModifier
 			// 
 			this->BtnModifier->Location = System::Drawing::Point(471, 403);
@@ -635,6 +675,7 @@ private: System::Windows::Forms::Label^ LQuestionSupprimer;
 			this->BtnModifier->TabIndex = 14;
 			this->BtnModifier->Text = L"Modifier";
 			this->BtnModifier->UseVisualStyleBackColor = true;
+			this->BtnModifier->Click += gcnew System::EventHandler(this, &Article::BtnModifier_Click);
 			// 
 			// LQuantiteModifier
 			// 
@@ -776,6 +817,7 @@ private: System::Windows::Forms::Label^ LQuestionSupprimer;
 			this->button1->TabIndex = 19;
 			this->button1->Text = L"Article sous le seuil\r\nde réapprovisionnement";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &Article::button1_Click);
 			// 
 			// LCouleurAfficher
 			// 
@@ -835,6 +877,7 @@ private: System::Windows::Forms::Label^ LQuestionSupprimer;
 			this->BtnRechercherCommande->TabIndex = 12;
 			this->BtnRechercherCommande->Text = L"Rechercher";
 			this->BtnRechercherCommande->UseVisualStyleBackColor = true;
+			this->BtnRechercherCommande->Click += gcnew System::EventHandler(this, &Article::BtnRechercherCommande_Click);
 			// 
 			// LNatureArticleAfficher
 			// 
@@ -896,6 +939,7 @@ private: System::Windows::Forms::Label^ LQuestionSupprimer;
 			this->BtnSupprimer->TabIndex = 2;
 			this->BtnSupprimer->Text = L"Supprimer";
 			this->BtnSupprimer->UseVisualStyleBackColor = true;
+			this->BtnSupprimer->Click += gcnew System::EventHandler(this, &Article::BtnSupprimer_Click);
 			// 
 			// LQuestionSupprimer
 			// 
@@ -916,10 +960,10 @@ private: System::Windows::Forms::Label^ LQuestionSupprimer;
 			this->Controls->Add(this->BtnLabelRechercherArticle);
 			this->Controls->Add(this->BtnLabelAjouterArticle);
 			this->Controls->Add(this->menuStrip1);
-			this->Controls->Add(this->PanelAfficherArticle);
 			this->Controls->Add(this->PanelSupprimerArticle);
 			this->Controls->Add(this->PanelModifier);
 			this->Controls->Add(this->PanelAjouterArticle);
+			this->Controls->Add(this->PanelAfficherArticle);
 			this->Name = L"Article";
 			this->Text = L"Article";
 			this->Load += gcnew System::EventHandler(this, &Article::Article_Load);
@@ -944,40 +988,76 @@ private: System::Windows::Forms::Label^ LQuestionSupprimer;
 	}
 private: System::Void Article_Load(System::Object^ sender, System::EventArgs^ e) 
 {
-	moncontroleur = gcnew Controleur;
+	monControleur = gcnew Controleur;
 
-	moncontroleur->gestion_panel(PanelAjouterArticle, PanelAfficherArticle, PanelModifier, PanelSupprimerArticle, false);
+	monControleur->gestion_panel(PanelAjouterArticle, PanelAfficherArticle, PanelModifier, PanelSupprimerArticle, false);
 
-	moncontroleur->CnxComboBox_BDD(comboBoxCouleurAfficher, "select couleur from article");
-	moncontroleur->CnxComboBox_BDD(comboBoxNatureArticleAfficher, "select nature from article");
-	moncontroleur->CnxComboBox_BDD(comboBoxNomArticleAfficher, "select nom_article from article");
-	moncontroleur->CnxComboBox_BDD(comboBoxNomArticleSupprimer, "select nom_article from article");
+	monControleur->CnxComboBox_BDD(comboBoxCouleurAfficher, "select couleur from article");
+	monControleur->CnxComboBox_BDD(comboBoxNatureArticleAfficher, "select nature from article");
+	monControleur->CnxComboBox_BDD(comboBoxNomArticleAfficher, "select nom_article from article");
+	monControleur->CnxComboBox_BDD(comboBoxNomArticleSupprimer, "select nom_article from article");
+	
 	
 }
 
 
 private: System::Void BtnLabelAjouterArticle_Click(System::Object^ sender, System::EventArgs^ e) 
 {
-	moncontroleur->gestion_panel(PanelAjouterArticle, PanelAfficherArticle, PanelModifier, PanelSupprimerArticle, true);
+	monControleur->gestion_panel(PanelAjouterArticle, PanelAfficherArticle, PanelModifier, PanelSupprimerArticle, true);
+	monControleur->CnxComboBox_BDD(comboBoxCouleurAfficher, "select couleur from article");
+	monControleur->CnxComboBox_BDD(comboBoxNatureArticleAfficher, "select nature from article");
+	monControleur->CnxComboBox_BDD(comboBoxNomArticleAfficher, "select nom_article from article");
+	monControleur->CnxComboBox_BDD(comboBoxNomArticleSupprimer, "select nom_article from article");
 }
 
 
 private: System::Void BtnLabelRechercherArticle_Click(System::Object^ sender, System::EventArgs^ e) 
 {
-	moncontroleur->gestion_panel(PanelAfficherArticle, PanelAjouterArticle, PanelModifier, PanelSupprimerArticle, true);
+	monControleur->gestion_panel(PanelAfficherArticle, PanelAjouterArticle, PanelModifier, PanelSupprimerArticle, true);
+	monControleur->CnxComboBox_BDD(comboBoxCouleurAfficher, "select couleur from article");
+	monControleur->CnxComboBox_BDD(comboBoxNatureArticleAfficher, "select nature from article");
+	monControleur->CnxComboBox_BDD(comboBoxNomArticleAfficher, "select nom_article from article");
+	monControleur->CnxComboBox_BDD(comboBoxNomArticleSupprimer, "select nom_article from article");
 }
 
 
 private: System::Void BtnLabelModifierArticle_Click(System::Object^ sender, System::EventArgs^ e) 
 {
-	moncontroleur->gestion_panel(PanelModifier, PanelAfficherArticle, PanelAjouterArticle, PanelSupprimerArticle, true);
+	monControleur->gestion_panel(PanelModifier, PanelAfficherArticle, PanelAjouterArticle, PanelSupprimerArticle, true);
+	monControleur->CnxComboBox_BDD(comboBoxvalidermodifier, "select nom_article from Article");
 }
 
 
 private: System::Void BtnLabelSupprimerArticle_Click(System::Object^ sender, System::EventArgs^ e) {
-	moncontroleur->gestion_panel(PanelSupprimerArticle, PanelAjouterArticle, PanelModifier, PanelAfficherArticle, true);
+	monControleur->gestion_panel(PanelSupprimerArticle, PanelAjouterArticle, PanelModifier, PanelAfficherArticle, true);
 }
 private: System::Void PanelAfficherArticle_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+}
+private: System::Void BtnAjouter_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	monControleur->ajouterArticle(TBNomArticleAjouter, TBPrixHTAjouter, TBNatureAjouter, TBPrixHTAjouter, TBCouleurAjouter, textBox5, TBStockAjouter);
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	monControleur->afficher_datagridView_commande(dataGridViewRechercherCommande);
+}
+private: System::Void BtnRechercherCommande_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	monControleur->AfficherArticle(comboBoxNomArticleAfficher, comboBoxNatureArticleAfficher, comboBoxCouleurAfficher,dataGridViewRechercherCommande, numericUpDownStockAfficher);
+}
+
+
+private: System::Void buttonValiderModif_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	monControleur->afficherModifierArticle(TBNomArticleModifier, TBNatureModifier, TBCouleurModifier, TBPrixHTModifier, TBTauxTvaModifier, TBSeuilModifier, TBQuantiteModifier, comboBoxvalidermodifier);
+}
+private: System::Void BtnModifier_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	monControleur->modifierArticle(TBNomArticleModifier, TBNatureModifier, TBCouleurModifier, TBPrixHTModifier, TBTauxTvaModifier, TBSeuilModifier, TBQuantiteModifier,comboBoxvalidermodifier);
+}
+private: System::Void BtnSupprimer_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	monControleur->supprimerArticle(comboBoxNomArticleSupprimer);
 }
 };
 }

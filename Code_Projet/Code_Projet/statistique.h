@@ -169,6 +169,7 @@ private: System::Windows::Forms::TextBox^ textBoxMarge;
 
 
 
+
 	private:
 		/// <summary>
 		/// Variable nécessaire au concepteur.
@@ -774,9 +775,9 @@ private: System::Windows::Forms::TextBox^ textBoxMarge;
 			this->chart_chiffreAffaire->ChartAreas->Add(chartArea3);
 			legend3->Name = L"Legend1";
 			this->chart_chiffreAffaire->Legends->Add(legend3);
-			this->chart_chiffreAffaire->Location = System::Drawing::Point(12, 25);
+			this->chart_chiffreAffaire->Location = System::Drawing::Point(16, 53);
 			this->chart_chiffreAffaire->Name = L"chart_chiffreAffaire";
-			this->chart_chiffreAffaire->Size = System::Drawing::Size(842, 464);
+			this->chart_chiffreAffaire->Size = System::Drawing::Size(842, 491);
 			this->chart_chiffreAffaire->TabIndex = 100;
 			this->chart_chiffreAffaire->Tag = L"Graphique du chiifre d\'affaire";
 			this->chart_chiffreAffaire->Text = L"Graphique du chiifre d\'affaire";
@@ -789,7 +790,7 @@ private: System::Windows::Forms::TextBox^ textBoxMarge;
 			this->panel9->Controls->Add(this->chart_chiffreAffaire);
 			this->panel9->Location = System::Drawing::Point(415, 428);
 			this->panel9->Name = L"panel9";
-			this->panel9->Size = System::Drawing::Size(857, 492);
+			this->panel9->Size = System::Drawing::Size(894, 591);
 			this->panel9->TabIndex = 20;
 			// 
 			// menuStrip1
@@ -804,7 +805,7 @@ private: System::Windows::Forms::TextBox^ textBoxMarge;
 			});
 			this->menuStrip1->Location = System::Drawing::Point(484, 27);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(1029, 45);
+			this->menuStrip1->Size = System::Drawing::Size(909, 45);
 			this->menuStrip1->TabIndex = 21;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -1037,14 +1038,11 @@ private: System::Void statistique_Load(System::Object^ sender, System::EventArgs
 	moncontroleur1->afficher_datagridView(dataGridView1);
 	moncontroleur1->afficher_top(chart_topPlusVendu, "select TOP 10 nom_article,quantite from Composer inner join Article on Composer.id_article = Article.id_article order by quantite desc");
 	moncontroleur1->afficher_top(chart_topMoinsVendu, "select TOP 10 nom_article,quantite from Composer inner join Article on Composer.id_article = Article.id_article order by quantite ASC");
-	moncontroleur1->afficher_chiffre_affaireMois(chart_chiffreAffaire,"2019");
+	//moncontroleur1->afficher_chiffre_affaireMois(chart_chiffreAffaire,"2019");
 	moncontroleur1->afficher_chiffre_affaireMois(chart_chiffreAffaire, "2020");
 	moncontroleur1->afficher_label_sql(label_prix_chiffre_affaire, "select SUM(quantite * prix_HT) as total from Payment inner join Composer on Payment.id_commande = Composer.id_commande inner join Article on Composer.id_article=Article.id_article where month(date_payment) = 3 group by month(date_payment)");
 	moncontroleur1->afficher_label_sql(label_prix_panier_moyen, "select AVG(quantite * prix_HT) as prix from Article inner join Composer on Article.id_article = Composer.id_article");
 	moncontroleur1->afficher_label_sql(label_valeur_achat_stock, "select SUM(prix_HT*stock) as prix_stock from Article");
-
-
-
 }
 
 
