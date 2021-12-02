@@ -3,7 +3,7 @@
 
 Connexion::Connexion()
 {
-	this->connexionLink = "Data Source=DESKTOP-PDDBHRE\\MSSQL_THEO;Initial Catalog=projet_POO;Integrated Security=True";
+	this->connexionLink = "Data Source=MSI-62QD\\MSSQL_CLEMENT;Initial Catalog=projet_POO;User ID=CNX_PROJET;Password=projet";
 	this->rqSql = "RIEN";
 	this->connect = gcnew SqlConnection(this->connexionLink);
 	this->cmd = gcnew SqlCommand(this->rqSql, this->connect);
@@ -14,6 +14,7 @@ Connexion::Connexion()
 
 SqlDataReader^ Connexion::dataReader(String^ rqSql) 
 {
+	SqlDataReader^ oui;
 	setSQL(rqSql);
 	this->cmd->CommandText = this->rqSql;
 	connect->Open();
@@ -30,7 +31,16 @@ void Connexion::actionRows(String^ rqSql)
 		this->connect->Close();
 }
 
-int Connexion::actionRowsID(String^ rqSql) { return 0; }
+int Connexion::actionRowsID(String^ rqSql) 
+{ 
+	int id = 0;
+	setSQL(rqSql);
+	this->cmd->CommandText = this->rqSql;
+	connect->Open();
+	id = Convert::ToInt32(cmd->ExecuteScalar());
+	connect->Close();
+	return id;
+}
 
 DataSet^ Connexion::getRows(String^ rqSql, String^ dataTableName)
 {
@@ -46,4 +56,5 @@ void Connexion::setSQL(String^ rqSql)
 {
 	this->rqSql = rqSql;
 }
+
 

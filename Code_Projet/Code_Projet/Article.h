@@ -121,7 +121,8 @@ namespace CodeProjet {
 	private: System::Windows::Forms::Label^ LQuestionAfficher;
 	private: System::Windows::Forms::DataGridView^ dataGridViewRechercherCommande;
 private: System::Windows::Forms::Panel^ PanelSupprimerArticle;
-private: System::Windows::Forms::ComboBox^ comboBox1;
+private: System::Windows::Forms::ComboBox^ comboBoxNomArticleSupprimer;
+
 private: System::Windows::Forms::Button^ BtnSupprimer;
 private: System::Windows::Forms::Label^ LQuestionSupprimer;
 	   Controleur^ moncontroleur;
@@ -212,7 +213,7 @@ private: System::Windows::Forms::Label^ LQuestionSupprimer;
 			this->LQuestionAfficher = (gcnew System::Windows::Forms::Label());
 			this->dataGridViewRechercherCommande = (gcnew System::Windows::Forms::DataGridView());
 			this->PanelSupprimerArticle = (gcnew System::Windows::Forms::Panel());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->comboBoxNomArticleSupprimer = (gcnew System::Windows::Forms::ComboBox());
 			this->BtnSupprimer = (gcnew System::Windows::Forms::Button());
 			this->LQuestionSupprimer = (gcnew System::Windows::Forms::Label());
 			this->menuStrip1->SuspendLayout();
@@ -871,7 +872,7 @@ private: System::Windows::Forms::Label^ LQuestionSupprimer;
 			// 
 			// PanelSupprimerArticle
 			// 
-			this->PanelSupprimerArticle->Controls->Add(this->comboBox1);
+			this->PanelSupprimerArticle->Controls->Add(this->comboBoxNomArticleSupprimer);
 			this->PanelSupprimerArticle->Controls->Add(this->BtnSupprimer);
 			this->PanelSupprimerArticle->Controls->Add(this->LQuestionSupprimer);
 			this->PanelSupprimerArticle->Location = System::Drawing::Point(418, 98);
@@ -879,13 +880,13 @@ private: System::Windows::Forms::Label^ LQuestionSupprimer;
 			this->PanelSupprimerArticle->Size = System::Drawing::Size(781, 540);
 			this->PanelSupprimerArticle->TabIndex = 16;
 			// 
-			// comboBox1
+			// comboBoxNomArticleSupprimer
 			// 
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(386, 199);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(148, 21);
-			this->comboBox1->TabIndex = 3;
+			this->comboBoxNomArticleSupprimer->FormattingEnabled = true;
+			this->comboBoxNomArticleSupprimer->Location = System::Drawing::Point(386, 199);
+			this->comboBoxNomArticleSupprimer->Name = L"comboBoxNomArticleSupprimer";
+			this->comboBoxNomArticleSupprimer->Size = System::Drawing::Size(148, 21);
+			this->comboBoxNomArticleSupprimer->TabIndex = 3;
 			// 
 			// BtnSupprimer
 			// 
@@ -910,15 +911,15 @@ private: System::Windows::Forms::Label^ LQuestionSupprimer;
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1262, 650);
-			this->Controls->Add(this->PanelAfficherArticle);
-			this->Controls->Add(this->PanelSupprimerArticle);
-			this->Controls->Add(this->PanelModifier);
-			this->Controls->Add(this->PanelAjouterArticle);
 			this->Controls->Add(this->BtnLabelSupprimerArticle);
 			this->Controls->Add(this->BtnLabelModifierArticle);
 			this->Controls->Add(this->BtnLabelRechercherArticle);
 			this->Controls->Add(this->BtnLabelAjouterArticle);
 			this->Controls->Add(this->menuStrip1);
+			this->Controls->Add(this->PanelAfficherArticle);
+			this->Controls->Add(this->PanelSupprimerArticle);
+			this->Controls->Add(this->PanelModifier);
+			this->Controls->Add(this->PanelAjouterArticle);
 			this->Name = L"Article";
 			this->Text = L"Article";
 			this->Load += gcnew System::EventHandler(this, &Article::Article_Load);
@@ -944,7 +945,14 @@ private: System::Windows::Forms::Label^ LQuestionSupprimer;
 private: System::Void Article_Load(System::Object^ sender, System::EventArgs^ e) 
 {
 	moncontroleur = gcnew Controleur;
+
 	moncontroleur->gestion_panel(PanelAjouterArticle, PanelAfficherArticle, PanelModifier, PanelSupprimerArticle, false);
+
+	moncontroleur->CnxComboBox_BDD(comboBoxCouleurAfficher, "select couleur from article");
+	moncontroleur->CnxComboBox_BDD(comboBoxNatureArticleAfficher, "select nature from article");
+	moncontroleur->CnxComboBox_BDD(comboBoxNomArticleAfficher, "select nom_article from article");
+	moncontroleur->CnxComboBox_BDD(comboBoxNomArticleSupprimer, "select nom_article from article");
+	
 }
 
 

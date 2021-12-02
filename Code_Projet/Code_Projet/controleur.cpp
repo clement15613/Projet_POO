@@ -8,6 +8,22 @@
 #include "statistique.h"
 #include<sstream>
 
+Controleur::Controleur()
+{
+	mAdresse = gcnew MapAdresse;
+	mArticle = gcnew MapArticle;
+	mClient = gcnew MapClient;
+	mCommande = gcnew MapCommande;
+	mComposer = gcnew MapComposer;
+	mCorrespond = gcnew MapCorrespond;
+	mFacturer = gcnew MapFacturer;
+	mLivrer = gcnew MapLivrer;
+	mPayment = gcnew MapPayment;
+	mPersonnel = gcnew MapPersonnel;
+	mVille = gcnew MapVille;
+	maCNX = gcnew Connexion;
+	//reader = gcnew SqlDataReader;
+}
 
 void Controleur::mdp(TextBox^ text) {
 	this->state = !state;
@@ -31,6 +47,8 @@ void Controleur::afficher_datagridView(DataGridView^ grid)
 	}
 
 }
+
+
 void Controleur::afficher_top(Chart^ chart, String^ query)
 {
 	Connexion co;
@@ -69,9 +87,9 @@ void Controleur::afficher_top(Chart^ chart, String^ query)
 
 	void Controleur::afficher_label_sql(Label^ label, String^ sql)
 	{
-		Connexion co;
+		Connexion^ co;
 		SqlDataReader^ read;
-		read = co.dataReader(sql);
+		read = co->dataReader(sql);
 
 		if(read->HasRows)
 		{
@@ -82,6 +100,12 @@ void Controleur::afficher_top(Chart^ chart, String^ query)
 				label->Text = txt->Format("{0:n}", read[0]) + " €";
 			}
 		}
+		
+		if (label->Text == " €")
+		{
+			label->Text = "0 €";
+		}
+
 	}
 
 	void Controleur::gestion_panel(Panel^ panel1, Panel^ panel2, Panel^ panel3, Panel^ panel4, bool statut) 
@@ -89,17 +113,25 @@ void Controleur::afficher_top(Chart^ chart, String^ query)
 		if (statut == false)
 		{
 			panel1->Visible = false;
+			panel1->Enabled = false;
 			panel2->Visible = false;
+			panel2->Enabled = false;
 			panel3->Visible = false;
+			panel3->Enabled = false;
 			panel4->Visible = false;
+			panel4->Enabled = false;
 		}
 
 		else if (statut == true)
 		{
 			panel1->Visible = true;
+			panel1->Enabled = true;
 			panel2->Visible = false;
+			panel2->Enabled = false;
 			panel3->Visible = false;
+			panel3->Enabled = false;
 			panel4->Visible = false;
+			panel4->Enabled = false;
 		}
 	}
 
@@ -121,8 +153,9 @@ void Controleur::afficher_form(String^ of)
 		CodeProjet::Personnel^ pers = gcnew CodeProjet::Personnel();
 		pers->Show();
 	}
-}
+
 			
+	}
 
 	void Controleur::affichage_text_box(ComboBox^ ComboB, TextBox^ textB)
 	{
@@ -277,9 +310,211 @@ void Controleur::afficher_form(String^ of)
 			valeurTVA = "3";
 		}
 	}
+}
 
 
+	void Controleur::CnxComboBox_BDD(ComboBox^ CB1, String^ query)
 	{
+		CB1->Items->Clear();
+		Connexion^ cnx = gcnew Connexion;
+		SqlDataReader^ retour;
+		retour = cnx->dataReader(query);
+		String^ valeur;
+
+		while (retour->Read())
+		{
+			//int coucou = sizeof(retour);
+			if(retour->FieldCount>1)
+			{
+				valeur = retour[0]->ToString() + " " + retour[1]->ToString();
+			}
+			else
+			{
+				valeur = retour[0]->ToString();
+			}
+			CB1->Items->Add(valeur);
+		}
+
 
 	}
+
+
+	void Controleur::ajouterPersonnel(TextBox^ nom, TextBox^ prenom, DateTimePicker^ dateEmbauche, TextBox^ user, 
+									  TextBox^ MDP, TextBox^ numRue, TextBox^ nomRue, TextBox^ complement, ComboBox^ ville, TextBox^ superieur)
+	{
+		int idVille;
+		int idAdresse;
+		int idSuperieur;
+
+		mPersonnel->setNom(nom->Text);
+		mPersonnel->setPrenom(prenom->Text);
+		mPersonnel->setDateEmbauche(dateEmbauche->Value);
+		mPersonnel->setNomUtilisateur(user->Text);
+		mPersonnel->setMotDePasse(MDP->Text);
+		mPersonnel->setid_superieur(1);
+
+		mAdresse->setnumero(Convert::ToInt32(numRue->Text));
+		mAdresse->setrue(nomRue->Text);
+		mAdresse->setcomplement(complement->Text);
+
+		mVille->setVille(ville->Text);
+		mVille->setCodePostal("00000");
+
+		
+		idVille = maCNX->actionRowsID(mVille->INSERT());
+
+		idAdresse = maCNX->actionRowsID(mAdresse->INSERT());
+
+		mCorrespond->setIdVille(idVille);
+		mCorrespond->SetIdAdresse(idAdresse);
+
+		mPersonnel->setid_adresse(idAdresse);
+
+		maCNX->actionRows(mCorrespond->INSERT());
+		maCNX->actionRows(mPersonnel->INSERT());
+	}
+
+	void Controleur::supprimerPersonnel(ComboBox^ nomPrenom)
+	{
+		int idAdresse;
+		String^ result = nomPrenom->Text;
+		array<String^>^ stringarray = result->Split(' ');
+		
+		mPersonnel->setNom(stringarray[0]);
+		mPersonnel->setPrenom(stringarray[1]);
+
+		idAdresse = maCNX->actionRowsID("select id_adresse from personnel where nom_personnel = '" + mPersonnel->getNom() + "' and prenom_personnel = '" + mPersonnel->getPrenom() + "'");
+
+		maCNX->actionRows(mPersonnel->DELETE());
+
+		mCorrespond->SetIdAdresse(idAdresse);
+		maCNX->actionRows(mCorrespond->DELETE());
+
+		mAdresse->setid_adresse(idAdresse);
+		maCNX->actionRows(mAdresse->DELETE());
+
+	}
+
+	void Controleur::getIdPersonnelModifier(ComboBox^ monCB)
+	{
+		int id;
+		String^ result = monCB->Text;
+		array<String^>^ stringarray = result->Split(' ');
+		id = maCNX->actionRowsID("select id_personnel from personnel where nom_personnel = '" + stringarray[0] + "' and prenom_personnel = '" + stringarray[1] + "'");
+		mPersonnel->setid_personnel(id);
+	}
+
+	void Controleur::afficherModifierPersonnel(ComboBox^ cbNomPrenom, TextBox^ nom, TextBox^ prenom, DateTimePicker^ dateEmbauche, TextBox^ user,
+		TextBox^ MDP, TextBox^ numRue, TextBox^ nomRue, TextBox^ complement, ComboBox^ ville, TextBox^ superieur)
+	{
+		DateTime^ valeur;
+		String^ nomPrenom = "";
+		String^ oui;
+
+		this->getIdPersonnelModifier(cbNomPrenom);
+		reader = maCNX->dataReader("select * from personnel where id_personnel = " + mPersonnel->getid_personnel());
+		while (reader->Read())
+		{
+			mPersonnel->setNom(reader[1]->ToString());
+			mPersonnel->setPrenom(reader[2]->ToString());
+			mPersonnel->setDateEmbauche(Convert::ToDateTime(reader[3]));
+			mPersonnel->setNomUtilisateur(reader[4]->ToString());
+			mPersonnel->setMotDePasse(reader[5]->ToString());
+			mPersonnel->setid_adresse(Convert::ToInt32(reader[6]));
+			mPersonnel->setid_superieur(Convert::ToInt32(reader[7]));
+		}		
+		maCNX->connect->Close();
+
+		reader = maCNX->dataReader("select * from adresse where id_adresse = " + mPersonnel->getid_adresse());
+		while (reader->Read())
+		{
+			mAdresse->setnumero(Convert::ToInt32(reader[1]));
+			mAdresse->setrue(reader[2]->ToString());
+			mAdresse->setcomplement(reader[3]->ToString());
+		}
+		
+		maCNX->connect->Close();
+		reader = maCNX->dataReader("select * from correspond where id_adresse = " + mPersonnel->getid_adresse());
+		while (reader->Read())
+		{
+			mVille->setIdVille(Convert::ToInt32(reader[0]));
+		}
+		
+		maCNX->connect->Close();
+		reader = maCNX->dataReader("select * from ville where id_ville = " + mVille->getIdVille());
+		while (reader->Read())
+		{
+			mVille->setVille(reader[1]->ToString());
+			mVille->setCodePostal(reader[2]->ToString());
+		}
+		
+		
+		nom->Text = mPersonnel->getNom();
+		prenom->Text = mPersonnel->getPrenom();
+		dateEmbauche->Text = mPersonnel->getDateEmbauche()->ToString();
+		user->Text = mPersonnel->getNomUtilisateur();
+		MDP->Text = mPersonnel->getMotDePasse();
+		numRue->Text = mAdresse->getnumero().ToString();
+		nomRue->Text = mAdresse->getrue();
+		complement->Text = mAdresse->getcomplement();
+		ville->Text = mVille->getVille();
+
+		maCNX->connect->Close();
+		reader = maCNX->dataReader("select nom_personnel,prenom_personnel from personnel where id_personnel =" + mPersonnel->getid_superieur());
+		while (reader->Read())
+		{
+			nomPrenom += reader[0] + " ";
+			nomPrenom += reader[1];
+		}
+		maCNX->connect->Close();
+		
+
+		superieur->Text = nomPrenom;
+	}
+
+	void Controleur::modifierPersonnel(TextBox^ nom, TextBox^ prenom, DateTimePicker^ dateEmbauche, TextBox^ user, TextBox^ MDP, 
+		TextBox^ numRue, TextBox^ nomRue, TextBox^ complement, ComboBox^ ville, TextBox^ superieur)
+	{
+		int idVille;
+		int idAdresse;
+		int idSuperieur;
+
+		mPersonnel->setNom(nom->Text);
+		mPersonnel->setPrenom(prenom->Text);
+		mPersonnel->setDateEmbauche(dateEmbauche->Value);
+		mPersonnel->setNomUtilisateur(user->Text);
+		mPersonnel->setMotDePasse(MDP->Text);
+		mPersonnel->setid_superieur(1);
+
+		mAdresse->setnumero(Convert::ToInt32(numRue->Text));
+		mAdresse->setrue(nomRue->Text);
+		mAdresse->setcomplement(complement->Text);
+
+		mVille->setVille(ville->Text);
+		mVille->setCodePostal("00000");
+
+
+		maCNX->actionRows(mVille->UPDATE());
+
+		maCNX->actionRows(mAdresse->UPDATE());
+
+		/*mCorrespond->setIdVille(idVille);
+		mCorrespond->SetIdAdresse(idAdresse);
+
+		mPersonnel->setid_adresse(idAdresse);*/
+
+		maCNX->actionRows(mCorrespond->UPDATE());
+		maCNX->actionRows(mPersonnel->UPDATE());
+	}
+
+	void Controleur::afficherPersonnel(DataGridView^ myGrid)
+	{
+		reader = maCNX->dataReader("select * from personnel");
+		if (reader->HasRows)
+		{
+			DataTable^ madata = gcnew DataTable();
+			madata->Load(reader);
+			madata->Columns["nom_Personnel"]->ColumnName = "Nom";
+			myGrid->DataSource = madata;
+		}
 	}

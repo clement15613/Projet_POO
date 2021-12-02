@@ -20,5 +20,8 @@ public:
     String^ getCodePostal();
     void setCodePostal(String^ CodePostal);
 
+    String^ INSERT();
+    String^ UPDATE();
+
 };
 

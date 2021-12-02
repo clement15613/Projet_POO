@@ -24,7 +24,9 @@ void Main(array<String^>^ args)
     CodeProjet::Commande cmd;
     CodeProjet::Article article;
     CodeProjet::Client client;
-   // Application::Run(% form);
-    Application::Run(% stat);
+    Application::Run(% perso);
+    /*Application::Run(% article);
+    Application::Run(% client);
+    Application::Run(% cmd);*/
 }
 
