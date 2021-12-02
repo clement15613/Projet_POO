@@ -1265,7 +1265,7 @@ private: System::Void BtnModifierPersonnel_Click(System::Object^ sender, System:
 
 private: System::Void BtnRechercherPersonnel_Click(System::Object^ sender, System::EventArgs^ e) 
 {
-	monControleur->afficherPersonnel(dataGridView1);
+	monControleur->afficherPersonnel(dataGridView1, ComboBoxNomAfficher, comboBoxPrenomAfficher, comboBoxSupAfficher, comboBoxVilleAfficher,dateTimePickerDateEmbaucheAfficher);
 }
 };
 }

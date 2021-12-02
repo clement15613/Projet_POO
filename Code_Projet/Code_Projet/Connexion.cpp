@@ -18,6 +18,8 @@ SqlDataReader^ Connexion::dataReader(String^ rqSql)
 	setSQL(rqSql);
 	this->cmd->CommandText = this->rqSql;
 	connect->Open();
+	//oui = cmd->ExecuteReader();
+	//connect->Close();
 	return cmd->ExecuteReader();
 };
 
