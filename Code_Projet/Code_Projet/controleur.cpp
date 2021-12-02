@@ -22,6 +22,7 @@ Controleur::Controleur()
 	mPersonnel = gcnew MapPersonnel;
 	mVille = gcnew MapVille;
 	maCNX = gcnew Connexion;
+	reader = gcnew SqlDataReader;
 }
 
 void Controleur::mdp(TextBox^ text) {
@@ -394,4 +395,39 @@ void Controleur::afficher_form(String^ of)
 
 	}
 
+	void Controleur::getIdPersonnelModifier(ComboBox^ monCB)
+	{
+		int id;
+		String^ result = monCB->Text;
+		array<String^>^ stringarray = result->Split(' ');
+		id = maCNX->actionRowsID("select id_personnel from personnel where nom_personnel = '" + stringarray[0] + "' and prenom_personnel = '" + stringarray[1] + "'");
+		mPersonnel->setid_personnel(id);
+	}
+
+	void Controleur::modifierPersonnel(ComboBox^ cbNomPrenom, TextBox^ nom, TextBox^ prenom, DateTimePicker^ dateEmbauche, TextBox^ user,
+		TextBox^ MDP, TextBox^ numRue, TextBox^ nomRue, TextBox^ complement, ComboBox^ ville, TextBox^ superieur)
+	{
+		DateTime^ valeur;
+
+		this->getIdPersonnelModifier(cbNomPrenom);
+		reader = maCNX->dataReader("select * from personnel where id_personnel = " + mPersonnel->getid_personnel());
+		mPersonnel->setNom(reader[0]->ToString());
+		mPersonnel->setPrenom(reader[1]->ToString());
+		mPersonnel->setDateEmbauche(Convert::ToDateTime(reader[2]));
+		mPersonnel->setNomUtilisateur(reader[3]->ToString());
+		mPersonnel->setMotDePasse(reader[4]->ToString());
+		mPersonnel->setid_adresse(Convert::ToInt32(reader[5]));
+		mPersonnel->setid_superieur(Convert::ToInt32(reader[6]));
+
+		
+		nom->Text = mPersonnel->getNom();
+		prenom->Text = mPersonnel->getPrenom();
+		dateEmbauche->Text = mPersonnel->getDateEmbauche()->ToString();
+		user->Text = mPersonnel->getNomUtilisateur();
+		MDP->Text = mPersonnel->getMotDePasse();
+		
+
+
+
+	}
 

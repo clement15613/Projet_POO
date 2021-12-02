@@ -30,6 +30,7 @@ private:
 	MapVille^ mVille;
 
 	Connexion^ maCNX;
+	SqlDataReader^ reader;
 	
 
 public : 
@@ -49,5 +50,7 @@ public :
 
 	void ajouterPersonnel(TextBox^,TextBox^,DateTimePicker^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^,ComboBox^, TextBox^);
 	void supprimerPersonnel(ComboBox^);
+	void modifierPersonnel(ComboBox^, TextBox^, TextBox^, DateTimePicker^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, ComboBox^, TextBox^);
+	void getIdPersonnelModifier(ComboBox^);
 };
 

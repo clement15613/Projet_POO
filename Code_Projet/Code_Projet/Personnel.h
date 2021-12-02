@@ -198,6 +198,7 @@ private: System::Windows::Forms::Button^ BtnRechercherPersonnel;
 	   Controleur^ monControleur;
 private: System::Windows::Forms::Label^ LNomPrenomModifier;
 private: System::Windows::Forms::ComboBox^ comboBoxNomPrenomModifer;
+private: System::Windows::Forms::Button^ BtnValider;
 
 
 	private:
@@ -236,6 +237,8 @@ private: System::Windows::Forms::ComboBox^ comboBoxNomPrenomModifer;
 			this->TBPrenomAjouter = (gcnew System::Windows::Forms::TextBox());
 			this->TBNomAjouter = (gcnew System::Windows::Forms::TextBox());
 			this->PanelModifierPersonnel = (gcnew System::Windows::Forms::Panel());
+			this->LNomPrenomModifier = (gcnew System::Windows::Forms::Label());
+			this->comboBoxNomPrenomModifer = (gcnew System::Windows::Forms::ComboBox());
 			this->BtnModifierPersonnel = (gcnew System::Windows::Forms::Button());
 			this->LVilleModifier = (gcnew System::Windows::Forms::Label());
 			this->BoxVilleModifier = (gcnew System::Windows::Forms::ComboBox());
@@ -303,8 +306,7 @@ private: System::Windows::Forms::ComboBox^ comboBoxNomPrenomModifer;
 			this->dateTimePickerDateEmbaucheAfficher = (gcnew System::Windows::Forms::DateTimePicker());
 			this->LQuestionAfficher = (gcnew System::Windows::Forms::Label());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->comboBoxNomPrenomModifer = (gcnew System::Windows::Forms::ComboBox());
-			this->LNomPrenomModifier = (gcnew System::Windows::Forms::Label());
+			this->BtnValider = (gcnew System::Windows::Forms::Button());
 			this->PanelAjouterPersonnel->SuspendLayout();
 			this->PanelModifierPersonnel->SuspendLayout();
 			this->menuStrip1->SuspendLayout();
@@ -515,6 +517,7 @@ private: System::Windows::Forms::ComboBox^ comboBoxNomPrenomModifer;
 			// 
 			// PanelModifierPersonnel
 			// 
+			this->PanelModifierPersonnel->Controls->Add(this->BtnValider);
 			this->PanelModifierPersonnel->Controls->Add(this->LNomPrenomModifier);
 			this->PanelModifierPersonnel->Controls->Add(this->comboBoxNomPrenomModifer);
 			this->PanelModifierPersonnel->Controls->Add(this->BtnModifierPersonnel);
@@ -542,6 +545,23 @@ private: System::Windows::Forms::ComboBox^ comboBoxNomPrenomModifer;
 			this->PanelModifierPersonnel->Name = L"PanelModifierPersonnel";
 			this->PanelModifierPersonnel->Size = System::Drawing::Size(523, 512);
 			this->PanelModifierPersonnel->TabIndex = 22;
+			// 
+			// LNomPrenomModifier
+			// 
+			this->LNomPrenomModifier->AutoSize = true;
+			this->LNomPrenomModifier->Location = System::Drawing::Point(75, 17);
+			this->LNomPrenomModifier->Name = L"LNomPrenomModifier";
+			this->LNomPrenomModifier->Size = System::Drawing::Size(76, 13);
+			this->LNomPrenomModifier->TabIndex = 23;
+			this->LNomPrenomModifier->Text = L"Nom, prénom :";
+			// 
+			// comboBoxNomPrenomModifer
+			// 
+			this->comboBoxNomPrenomModifer->FormattingEnabled = true;
+			this->comboBoxNomPrenomModifer->Location = System::Drawing::Point(153, 14);
+			this->comboBoxNomPrenomModifer->Name = L"comboBoxNomPrenomModifer";
+			this->comboBoxNomPrenomModifer->Size = System::Drawing::Size(171, 21);
+			this->comboBoxNomPrenomModifer->TabIndex = 22;
 			// 
 			// BtnModifierPersonnel
 			// 
@@ -1134,22 +1154,14 @@ private: System::Windows::Forms::ComboBox^ comboBoxNomPrenomModifer;
 			this->dataGridView1->Size = System::Drawing::Size(664, 314);
 			this->dataGridView1->TabIndex = 0;
 			// 
-			// comboBoxNomPrenomModifer
+			// BtnValider
 			// 
-			this->comboBoxNomPrenomModifer->FormattingEnabled = true;
-			this->comboBoxNomPrenomModifer->Location = System::Drawing::Point(202, 14);
-			this->comboBoxNomPrenomModifer->Name = L"comboBoxNomPrenomModifer";
-			this->comboBoxNomPrenomModifer->Size = System::Drawing::Size(171, 21);
-			this->comboBoxNomPrenomModifer->TabIndex = 22;
-			// 
-			// LNomPrenomModifier
-			// 
-			this->LNomPrenomModifier->AutoSize = true;
-			this->LNomPrenomModifier->Location = System::Drawing::Point(124, 17);
-			this->LNomPrenomModifier->Name = L"LNomPrenomModifier";
-			this->LNomPrenomModifier->Size = System::Drawing::Size(76, 13);
-			this->LNomPrenomModifier->TabIndex = 23;
-			this->LNomPrenomModifier->Text = L"Nom, prénom :";
+			this->BtnValider->Location = System::Drawing::Point(358, 12);
+			this->BtnValider->Name = L"BtnValider";
+			this->BtnValider->Size = System::Drawing::Size(75, 23);
+			this->BtnValider->TabIndex = 24;
+			this->BtnValider->Text = L"Valider";
+			this->BtnValider->UseVisualStyleBackColor = true;
 			// 
 			// Personnel
 			// 
