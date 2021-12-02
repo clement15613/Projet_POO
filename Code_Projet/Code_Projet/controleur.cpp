@@ -543,14 +543,16 @@ void Controleur::afficher_form(String^ of)
 		}
 		maCNX->connect->Close();
 		
+		superieur->Text = nomPrenom;
+	}
 
 	void Controleur::afficher_label_moncompte(Label^ nom, Label^ prenom, Label^ nomUtilisateur, Label^ mdp, Label^ numeordevoie, Label^ complement, Label^ nomdevoie, Label^ ville)
 	{
 		Connexion maCNX;
 		SqlDataReader^ reader;
 		reader = maCNX.dataReader("select nom_Personnel, prenom_Personnel, nom_utilisateur_Personnel, mdp_Personnel, numero, complement, rue from Personnel inner join Adresse on Personnel.id_adresse = Adresse.id_adresse where id_Personnel = 1");
-		while(reader->Read())
-		{ 
+		while (reader->Read())
+		{
 			nom->Text = reader[0]->ToString();
 			prenom->Text = reader[1]->ToString();
 			nomUtilisateur->Text = reader[2]->ToString();
@@ -559,8 +561,11 @@ void Controleur::afficher_form(String^ of)
 			complement->Text = reader[5]->ToString();
 			nomdevoie->Text = reader[6]->ToString();
 		}
-		maCNX.connect->Close();
-		superieur->Text = nomPrenom;
+		reader = maCNX.dataReader("select ville from ville where id_ville = 1");
+		while (reader->Read())
+		{
+			ville->Text = reader[0]->ToString();
+		}
 	}
 
 	void Controleur::modifierPersonnel(TextBox^ nom, TextBox^ prenom, DateTimePicker^ dateEmbauche, TextBox^ user, TextBox^ MDP, 
@@ -609,10 +614,6 @@ void Controleur::afficher_form(String^ of)
 			myGrid->DataSource = madata;
 		}
 	}
-		reader = maCNX.dataReader("select ville from ville where id_ville = 1");
-			while (reader->Read())
-			{
-				ville->Text = reader[0]->ToString();
-			}
+		
 		
 			
