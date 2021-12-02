@@ -6,8 +6,9 @@ ref class MapCommande
 {
 	int id_commande;
 	String^ reference;
-	String^ dateLivraison;
-	String^ dateEmission;
+    DateTime^ dateLivraison;
+    DateTime^ dateEmission;
+    DateTime^ dateCommande;
 	int id_client;
 public:
     int getIdcommande();
@@ -16,16 +17,20 @@ public:
     String^ getReference();
     void setReference(String^ reference);
 
-    String^ getDateLivraison();
-    void setDateLivraison(String^ dateLivraison);
+    DateTime^ getDateLivraison();
+    void setDateLivraison(DateTime^ dateLivraison);
 
-    String^ getDateEmission();
-    void setDateEmission(String^ dateEmission);
+    DateTime^ getDateEmission();
+    void setDateEmission(DateTime^ dateEmission);
+
+    DateTime^ getDateCommande();
+    void setDateCommande(DateTime^ dateCommande);
 
     int getIdclient();
     void setIdclient(int idclient);
 
     String^ INSERTX();
+    String^ INSERT();
 
 };
 

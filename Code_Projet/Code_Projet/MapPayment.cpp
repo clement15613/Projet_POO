@@ -10,12 +10,12 @@ void MapPayment::setIdpayment(int idpayment)
     id_payment = idpayment;
 }
 
-String^ MapPayment::getDatePayment()
+DateTime^ MapPayment::getDatePayment()
 {
     return datePayment;
 }
 
-void MapPayment::setDatePayment(String^ datePayment)
+void MapPayment::setDatePayment(DateTime^ datePayment)
 {
     this->datePayment = datePayment;
 }
@@ -44,4 +44,9 @@ void MapPayment::setIdcommande(int idcommande)
 String^ MapPayment::INSERTX() 
 {
     return "insert into Payment values ('2000-01-01','xxx','1'); select @@IDENTITY";
+}
+
+String^ MapPayment::INSERT()
+{
+    return "update payment set date_payment = '" + getDatePayment() + "', moyen_payment = '" + getMoyenPayment() + "', id_commande = " + getIdcommande() + "where id_payment = " + getIdpayment();
 }

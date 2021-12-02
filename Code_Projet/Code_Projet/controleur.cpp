@@ -544,6 +544,10 @@ void Controleur::afficher_form(String^ of)
 	{
 		int idCMD;
 		int idPayment;
+		int idClient;
+		String^ result = nomClient->Text;
+		array<String^>^ stringarray = result->Split(' ');
+
 		if (state == false)
 		{
 			idCMD = maCNX->actionRowsID(mCommande->INSERTX());
@@ -551,6 +555,22 @@ void Controleur::afficher_form(String^ of)
 			mCommande->setIdcommande(idCMD);
 			mPayment->setIdpayment(idPayment);
 			mPayment->setIdcommande(idCMD);
+		}
+
+		if (state == true)
+		{
+			idClient = maCNX->actionRowsID("select id_client from client where nom_client = '" + stringarray[0] + "'");
+			mCommande->setDateCommande(dateCommande->Value);
+			mCommande->setDateEmission(dateEnvoi->Value);
+			mCommande->setDateLivraison(dateLivraison->Value);
+			mCommande->setIdclient(idClient);
+
+			mPayment->setDatePayment(datePaiement->Value);
+			mPayment->setMoyenPayment(moyenPaiement->Text);
+
+			maCNX->actionRows(mCommande->INSERT());
+			maCNX->actionRows(mPayment->INSERT());
+
 		}
 	}
 

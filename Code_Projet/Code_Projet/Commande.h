@@ -563,6 +563,7 @@ private: System::Windows::Forms::Button^ BtnValider;
 			this->BtnAjouterCommande->TabIndex = 26;
 			this->BtnAjouterCommande->Text = L"Ajouter";
 			this->BtnAjouterCommande->UseVisualStyleBackColor = true;
+			this->BtnAjouterCommande->Click += gcnew System::EventHandler(this, &Commande::BtnAjouterCommande_Click);
 			// 
 			// comboBoxMoyenPaimentAjouter
 			// 
@@ -616,6 +617,7 @@ private: System::Windows::Forms::Button^ BtnValider;
 			this->comboBoxNomClientAjouter->Location = System::Drawing::Point(374, 189);
 			this->comboBoxNomClientAjouter->Name = L"comboBoxNomClientAjouter";
 			this->comboBoxNomClientAjouter->Size = System::Drawing::Size(118, 21);
+			this->comboBoxNomClientAjouter->Sorted = true;
 			this->comboBoxNomClientAjouter->TabIndex = 20;
 			// 
 			// LDateEnvoiAjouter
@@ -1310,6 +1312,10 @@ private: System::Void BtnValider_Click(System::Object^ sender, System::EventArgs
 private: System::Void BtnAjouterArticleAjouter_Click(System::Object^ sender, System::EventArgs^ e) 
 {
 	monControleur->ajouterArticleCommande(dataGridViewArticleCommandeAjouter,numericUpDownQuantitéAjouter);
+}
+private: System::Void BtnAjouterCommande_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	monControleur->ajouterCommande(dateTimePickerCommandeAjouter, dateTimePickerEmmisionAjouter, dateTimePickerLivraisonAjouter, dateTimePickerPaimentAjouter, comboBoxNomClientAjouter, comboBoxMoyenPaimentAjouter, true);
 }
 };
 }

@@ -20,22 +20,32 @@ void MapCommande::setReference(String^ reference)
     this->reference = reference;
 }
 
-String^ MapCommande::getDateLivraison()
+DateTime^ MapCommande::getDateLivraison()
 {
     return dateLivraison;
 }
 
-void MapCommande::setDateLivraison(String^ dateLivraison)
+void MapCommande::setDateLivraison(DateTime^ dateLivraison)
 {
     this->dateLivraison = dateLivraison;
 }
 
-String^ MapCommande::getDateEmission()
+DateTime^ MapCommande::getDateCommande()
+{
+    return dateCommande;
+}
+
+void MapCommande::setDateCommande(DateTime^ dateCommande)
+{
+    this->dateCommande = dateCommande;
+}
+
+DateTime^ MapCommande::getDateEmission()
 {
     return dateEmission;
 }
 
-void MapCommande::setDateEmission(String^ dateEmission)
+void MapCommande::setDateEmission(DateTime^ dateEmission)
 {
     this->dateEmission = dateEmission;
 }
@@ -53,4 +63,9 @@ void MapCommande::setIdclient(int idclient)
 String^ MapCommande::INSERTX()
 {
     return "insert into commande values ('xxx','2000-01-01','2000-01-01','2000-01-01',1);select @@IDENTITY";
+}
+
+String^ MapCommande::INSERT()
+{
+    return "update commande set date_livraison = '" + getDateLivraison() + "', date_emission ='" + getDateEmission() + "', date_commande ='" + getDateCommande() + "',id_client = " + getIdclient() + " where id_commande = " + getIdcommande();
 }
