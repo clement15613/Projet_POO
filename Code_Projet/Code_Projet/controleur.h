@@ -24,7 +24,7 @@ public :
 	void afficher_label_sql(Label^, String^);
 	void gestion_panel(Panel^, Panel^, Panel^, Panel^, bool);
 	void afficher_form(String^);
-};
+
 	void affichage_text_box(ComboBox^, TextBox^);
 	void btnafficher_chiffre_affaire(ComboBox^, Button^, MaskedTextBox^ , Label^);
 	void CalculAndrecupereValeurCommercialeStock(TextBox^, TextBox^, TextBox^, TextBox^, ComboBox^, ComboBox^, ComboBox^, ComboBox^, CheckBox^, CheckBox^, CheckBox^, CheckBox^,Label^);
