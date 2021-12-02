@@ -2,7 +2,6 @@
 #include "controleur.h"
 #include "statistique.h"
 #include "Accueil.h"
-#include "g_personnel.h"
 #include "Personnel.h"
 
 namespace CodeProjet {
@@ -145,8 +144,15 @@ private: System::Windows::Forms::Button^ btnAfficher_Affaire;
 private: System::Windows::Forms::MaskedTextBox^ maskedTextBoxAnnee;
 private: System::Windows::Forms::TextBox^ textBoxRemise;
 private: System::Windows::Forms::TextBox^ textBoxDemarque;
-private: System::Windows::Forms::TextBox^ textBoxMarge;
+
 private: System::Windows::Forms::Button^ buttonAfficherValeurStock;
+private: System::Windows::Forms::TextBox^ textBoxMarge;
+
+
+
+
+
+
 
 
 
@@ -212,9 +218,9 @@ private: System::Windows::Forms::Button^ buttonAfficherValeurStock;
 			this->label_ValeurAchat = (gcnew System::Windows::Forms::Label());
 			this->panel6 = (gcnew System::Windows::Forms::Panel());
 			this->panel7 = (gcnew System::Windows::Forms::Panel());
+			this->textBoxMarge = (gcnew System::Windows::Forms::TextBox());
 			this->buttonAfficherValeurStock = (gcnew System::Windows::Forms::Button());
 			this->textBoxDemarque = (gcnew System::Windows::Forms::TextBox());
-			this->textBoxMarge = (gcnew System::Windows::Forms::TextBox());
 			this->textBoxRemise = (gcnew System::Windows::Forms::TextBox());
 			this->textBoxTVA = (gcnew System::Windows::Forms::TextBox());
 			this->checkBoxRemise = (gcnew System::Windows::Forms::CheckBox());
@@ -545,9 +551,9 @@ private: System::Windows::Forms::Button^ buttonAfficherValeurStock;
 			// 
 			// panel7
 			// 
+			this->panel7->Controls->Add(this->textBoxMarge);
 			this->panel7->Controls->Add(this->buttonAfficherValeurStock);
 			this->panel7->Controls->Add(this->textBoxDemarque);
-			this->panel7->Controls->Add(this->textBoxMarge);
 			this->panel7->Controls->Add(this->textBoxRemise);
 			this->panel7->Controls->Add(this->textBoxTVA);
 			this->panel7->Controls->Add(this->checkBoxRemise);
@@ -567,6 +573,20 @@ private: System::Windows::Forms::Button^ buttonAfficherValeurStock;
 			this->panel7->Name = L"panel7";
 			this->panel7->Size = System::Drawing::Size(658, 269);
 			this->panel7->TabIndex = 18;
+			// 
+			// textBoxMarge
+			// 
+			this->textBoxMarge->Enabled = false;
+			this->textBoxMarge->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBoxMarge->ForeColor = System::Drawing::Color::Gray;
+			this->textBoxMarge->Location = System::Drawing::Point(46, 142);
+			this->textBoxMarge->Multiline = true;
+			this->textBoxMarge->Name = L"textBoxMarge";
+			this->textBoxMarge->Size = System::Drawing::Size(162, 21);
+			this->textBoxMarge->TabIndex = 26;
+			this->textBoxMarge->Text = L"valeur...";
+			this->textBoxMarge->Visible = false;
 			// 
 			// buttonAfficherValeurStock
 			// 
@@ -592,20 +612,6 @@ private: System::Windows::Forms::Button^ buttonAfficherValeurStock;
 			this->textBoxDemarque->Text = L"valeur..";
 			this->textBoxDemarque->Visible = false;
 			// 
-			// textBoxMarge
-			// 
-			this->textBoxMarge->Enabled = false;
-			this->textBoxMarge->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->textBoxMarge->ForeColor = System::Drawing::Color::Gray;
-			this->textBoxMarge->Location = System::Drawing::Point(46, 140);
-			this->textBoxMarge->Multiline = true;
-			this->textBoxMarge->Name = L"textBoxMarge";
-			this->textBoxMarge->Size = System::Drawing::Size(162, 23);
-			this->textBoxMarge->TabIndex = 23;
-			this->textBoxMarge->Text = L"valeur..";
-			this->textBoxMarge->Visible = false;
-			// 
 			// textBoxRemise
 			// 
 			this->textBoxRemise->Enabled = false;
@@ -626,12 +632,12 @@ private: System::Windows::Forms::Button^ buttonAfficherValeurStock;
 			this->textBoxTVA->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->textBoxTVA->ForeColor = System::Drawing::Color::Gray;
-			this->textBoxTVA->Location = System::Drawing::Point(46, 55);
+			this->textBoxTVA->Location = System::Drawing::Point(46, 54);
 			this->textBoxTVA->Multiline = true;
 			this->textBoxTVA->Name = L"textBoxTVA";
 			this->textBoxTVA->Size = System::Drawing::Size(162, 21);
 			this->textBoxTVA->TabIndex = 21;
-			this->textBoxTVA->Text = L"valeur..";
+			this->textBoxTVA->Text = L"valeur...";
 			this->textBoxTVA->Visible = false;
 			this->textBoxTVA->MouseClick += gcnew System::Windows::Forms::MouseEventHandler(this, &statistique::textBoxTVA_MouseClick);
 			// 
@@ -644,6 +650,7 @@ private: System::Windows::Forms::Button^ buttonAfficherValeurStock;
 			this->checkBoxRemise->Text = L"Autre valeur";
 			this->checkBoxRemise->UseVisualStyleBackColor = true;
 			this->checkBoxRemise->CheckedChanged += gcnew System::EventHandler(this, &statistique::checkBoxRemise_CheckedChanged);
+			this->checkBoxRemise->MouseClick += gcnew System::Windows::Forms::MouseEventHandler(this, &statistique::checkBoxRemise_MouseClick);
 			// 
 			// checkBoxDemarque
 			// 
@@ -654,6 +661,7 @@ private: System::Windows::Forms::Button^ buttonAfficherValeurStock;
 			this->checkBoxDemarque->Text = L"Autre valeur";
 			this->checkBoxDemarque->UseVisualStyleBackColor = true;
 			this->checkBoxDemarque->CheckedChanged += gcnew System::EventHandler(this, &statistique::checkBoxDemarque_CheckedChanged);
+			this->checkBoxDemarque->MouseClick += gcnew System::Windows::Forms::MouseEventHandler(this, &statistique::checkBoxDemarque_MouseClick);
 			// 
 			// checkBoxMarge
 			// 
@@ -664,6 +672,7 @@ private: System::Windows::Forms::Button^ buttonAfficherValeurStock;
 			this->checkBoxMarge->Text = L"Autre valeur";
 			this->checkBoxMarge->UseVisualStyleBackColor = true;
 			this->checkBoxMarge->CheckedChanged += gcnew System::EventHandler(this, &statistique::checkBoxMarge_CheckedChanged);
+			this->checkBoxMarge->MouseClick += gcnew System::Windows::Forms::MouseEventHandler(this, &statistique::checkBoxMarge_MouseClick);
 			// 
 			// checkBoxTVA
 			// 
@@ -816,7 +825,6 @@ private: System::Windows::Forms::Button^ buttonAfficherValeurStock;
 			this->afficherUnPersonnelToolStripMenuItem->Name = L"afficherUnPersonnelToolStripMenuItem";
 			this->afficherUnPersonnelToolStripMenuItem->Size = System::Drawing::Size(256, 26);
 			this->afficherUnPersonnelToolStripMenuItem->Text = L"Afficher le personnel";
-			this->afficherUnPersonnelToolStripMenuItem->Click += gcnew System::EventHandler(this, &statistique::afficherUnPersonnelToolStripMenuItem_Click);
 			// 
 			// ajouterUnPersonnelToolStripMenuItem
 			// 
@@ -1074,14 +1082,19 @@ private: System::Void buttonAfficherValeurStock_Click(System::Object^ sender, Sy
 
 private: System::Void textBoxTVA_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) 
 {
-		textBoxTVA->Clear();
+	moncontroleur1->changeFore(textBoxTVA);		
 }
-private: System::Void afficherUnPersonnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
+private: System::Void checkBoxMarge_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) 
 {
-	Personnel^ form = gcnew Personnel;
-	form->Show();
-	this->Hide();
-	
+	moncontroleur1->changeFore(textBoxMarge);
+}
+private: System::Void checkBoxRemise_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) 
+{
+	moncontroleur1->changeFore(textBoxRemise);
+}
+private: System::Void checkBoxDemarque_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e)
+{
+	moncontroleur1->changeFore(textBoxDemarque);
 }
 };
 }

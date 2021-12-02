@@ -7,7 +7,7 @@
 #include "Commande.h"
 #include "Article.h"
 #include "Client.h"
-
+#include "MonCompte.h"
 using namespace System;
 using namespace System::Windows::Forms;
 
@@ -24,7 +24,8 @@ void Main(array<String^>^ args)
     CodeProjet::Commande cmd;
     CodeProjet::Article article;
     CodeProjet::Client client;
+    CodeProjet::MonCompte Compte;
    // Application::Run(% form);
-    Application::Run(% stat);
+    Application::Run(% Compte);
 }
 

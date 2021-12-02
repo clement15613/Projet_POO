@@ -16,8 +16,13 @@ private:
 	bool state = true;
 	bool Visible = true;
 	bool Invisible = false;
+	String^ valeurTVA;
+	String^ ValeurRemise;
+	String^ ValeurMarge;
+	String^ ValeurDemarque;
 public : 
 	void mdp(TextBox^);
+	void mdp_label(Label^,Label^);
 	void afficher_datagridView(DataGridView^);
 	void afficher_top(Chart^,String^);
 	void afficher_chiffre_affaireMois(Chart^,String^);
@@ -27,5 +32,9 @@ public :
 	void affichage_text_box(ComboBox^, TextBox^);
 	void btnafficher_chiffre_affaire(ComboBox^, Button^, MaskedTextBox^ , Label^);
 	void CalculAndrecupereValeurCommercialeStock(TextBox^, TextBox^, TextBox^, TextBox^, ComboBox^, ComboBox^, ComboBox^, ComboBox^, CheckBox^, CheckBox^, CheckBox^, CheckBox^,Label^);
+	void changeFore(TextBox^);
+	void afficher_label_moncompte(Label^,Label^,Label^,Label^,Label^,Label^,Label^,Label^);
+	void UpdateMonCompte(Label^, Label^, Label^, Label^, Label^, Label^, Label^, Label^,TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^);
+
 };
 

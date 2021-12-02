@@ -14,6 +14,22 @@ void Controleur::mdp(TextBox^ text) {
 	text->UseSystemPasswordChar = this -> state;
 }
 
+void Controleur::mdp_label(Label^ text,Label^ textpass)
+{
+	this->state = !state;
+	if(state==true)
+	{
+		text->Visible = true;
+		textpass->Visible = false;
+	}
+	else
+	{
+		text->Visible = false;
+		textpass->Visible = true;
+	}
+
+}
+
 void Controleur::afficher_datagridView(DataGridView^ grid)
 {
 	Connexion co;
@@ -126,8 +142,8 @@ void Controleur::afficher_form(String^ of)
 
 	void Controleur::affichage_text_box(ComboBox^ ComboB, TextBox^ textB)
 	{
-		textB->Text = "valeur...";
-		textB->ForeColor.Black;
+		
+		
 		if (ComboB->Enabled == true)
 		{
 			ComboB->Enabled = false;
@@ -165,7 +181,13 @@ void Controleur::afficher_form(String^ of)
 		{
 			textB->Visible = true;
 		}
-
+	textB->ForeColor = textB->ForeColor.Gray;
+		textB->Text = "valeur...";
+		textB->Text = "valeur...";
+		textB->Text = "valeur...";
+		textB->Text = "valeur...";
+		textB->Text = "valeur...";
+		textB->Text = "valeur...";
 	}
 
 	void Controleur::btnafficher_chiffre_affaire(ComboBox^ ComboB, Button^ btn, MaskedTextBox^ textB,Label^ lab)
@@ -331,20 +353,52 @@ void Controleur::afficher_form(String^ of)
 		}
 	}
 	afficher_label_sql(lab,"select SUM(prix_HT * stock *" + valeurTVA + " * " + ValeurRemise + "*" + ValeurMarge + "*"+ValeurDemarque+") from Article");
+	}
 
-
+	void Controleur::changeFore(TextBox^ box)
 	{
-
+			box->Clear();
+			box->ForeColor = box->ForeColor.Black;
 	}
-	}
 
-	void Controleur::afficher_formPersonnel(String^ nomForm)
+	void Controleur::afficher_label_moncompte(Label^ nom, Label^ prenom, Label^ nomUtilisateur, Label^ mdp, Label^ numeordevoie, Label^ complement, Label^ nomdevoie, Label^ ville)
 	{
-		if (nomForm == "Personnel")
-		{
+		Connexion maCNX;
+		SqlDataReader^ reader;
+		reader = maCNX.dataReader("select nom_Personnel, prenom_Personnel, nom_utilisateur_Personnel, mdp_Personnel, numero, complement, rue from Personnel inner join Adresse on Personnel.id_adresse = Adresse.id_adresse where id_Personnel = 1");
+		while(reader->Read())
+		{ 
+			nom->Text = reader[0]->ToString();
+			prenom->Text = reader[1]->ToString();
+			nomUtilisateur->Text = reader[2]->ToString();
+			mdp->Text = reader[3]->ToString();
+			numeordevoie->Text = reader[4]->ToString();
+			complement->Text = reader[5]->ToString();
+			nomdevoie->Text = reader[6]->ToString();
+		}
+		maCNX.connect->Close();
 
-		};
+		reader = maCNX.dataReader("select ville from ville where id_ville = 1");
+			while (reader->Read())
+			{
+				ville->Text = reader[0]->ToString();
+			}
+		
+			
 	}
+	void Controleur::UpdateMonCompte(Label^ nom, Label^ prenom, Label^ nomUtilisateur, Label^ mdp, Label^ numeordevoie, Label^ complement, Label^ nomdevoie, Label^ ville, TextBox^ nomBox , TextBox^ prenomBox, TextBox^ nomutilibox, TextBox^ mdpbox, TextBox^ numeroVoiebox, TextBox^ complementbox, TextBox^ nomdevoiebox, TextBox^ villebox)
+	{
+		Connexion CNX;
+		CNX.actionRows("Update Personnel set nom_Personnel = " + "'" + nomBox->Text + "' where id_personnel = 1");
+		CNX.actionRows("Update Personnel set prenom_personnel = " + "'" + prenomBox->Text + "' where id_personnel = 1");
+		CNX.actionRows("Update Personnel set nom_utilisateur_Personnel = " + "'" + nomutilibox->Text + "' where id_personnel = 1");
+		CNX.actionRows("Update Personnel set mdp_Personnel = " + "'" + mdpbox->Text + "' where id_personnel = 1");
+		CNX.actionRows("Update Adresse set numero = " + "'" + numeroVoiebox->Text + "' where id_adresse = 1");
+
+		
+	}
+	;
+
 
 
 

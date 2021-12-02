@@ -140,6 +140,7 @@
     <ClCompile Include="MapPayment.cpp" />
     <ClCompile Include="MapPersonnel.cpp" />
     <ClCompile Include="MapVille.cpp" />
+    <ClCompile Include="MonCompte.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Personnel.cpp" />
     <ClCompile Include="statistique.cpp" />
@@ -169,6 +170,9 @@
     <ClInclude Include="Controleur.h" />
     <ClInclude Include="MapPersonnel.h" />
     <ClInclude Include="MapVille.h" />
+    <ClInclude Include="MonCompte.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -192,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Commande.resx">
       <DependentUpon>Commande.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonCompte.resx">
+      <DependentUpon>MonCompte.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Personnel.resx">
       <DependentUpon>Personnel.h</DependentUpon>

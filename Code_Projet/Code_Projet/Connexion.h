@@ -10,12 +10,13 @@ ref class Connexion
 		int actionRowsID(String^);
 		DataSet^ getRows(String^, String^);
 		SqlDataReader^ dataReader(String^);
+		SqlConnection^ connect;
 	private:
 		void setSQL(String^);
 		
 		String^ connexionLink;
 		String^ rqSql;
-		SqlConnection^ connect;
+		
 		SqlCommand^ cmd;
 		SqlDataAdapter^ dataAdapter;
 		DataSet^ dtSet;
