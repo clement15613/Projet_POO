@@ -122,20 +122,7 @@ void Controleur::afficher_form(String^ of)
 		pers->Show();
 	}
 }
-			if (read->HasRows)
-			{
-				while (read->Read())
-				{
-					String^ txt = read[0]->ToString();
-					label->Text = txt->Format("{0:n}", read[0]) + " €";
-				}
-			}
-			if (label->Text == " €")
-			{
-				label->Text = "0 €";
-			}
 			
-	}
 
 	void Controleur::affichage_text_box(ComboBox^ ComboB, TextBox^ textB)
 	{
