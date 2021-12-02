@@ -19,5 +19,9 @@ public:
 	String^ setrue(String^ Newrue);
 	String^ getcomplement();
 	String^ setcomplement(String^ Newcomplement);
+
+	String^ INSERT();
+	String^ DELETE();
+	String^ UPDATE();
 };
 

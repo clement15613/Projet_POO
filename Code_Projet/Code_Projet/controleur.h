@@ -1,5 +1,5 @@
 #pragma once
-
+#include "pch.h"
 
 using namespace System;
 using namespace System::ComponentModel;
@@ -16,11 +16,29 @@ private:
 	bool state = true;
 	bool Visible = true;
 	bool Invisible = false;
+	
+	MapAdresse^ mAdresse;
+	MapArticle^ mArticle;
+	MapClient^ mClient;
+	MapCommande^ mCommande;
+	MapComposer^ mComposer;
+	MapCorrespond^ mCorrespond;
+	MapFacturer^ mFacturer;
+	MapLivrer^ mLivrer;
+	MapPayment^ mPayment;
+	MapPersonnel^ mPersonnel;
+	MapVille^ mVille;
+
+	Connexion^ maCNX;
+	SqlDataReader^ reader;
+	
+
 	String^ valeurTVA;
 	String^ ValeurRemise;
 	String^ ValeurMarge;
 	String^ ValeurDemarque;
 public : 
+	Controleur();
 	void mdp(TextBox^);
 	void mdp_label(Label^,Label^);
 	void afficher_datagridView(DataGridView^);
@@ -36,5 +54,13 @@ public :
 	void afficher_label_moncompte(Label^,Label^,Label^,Label^,Label^,Label^,Label^,Label^);
 	void UpdateMonCompte(Label^, Label^, Label^, Label^, Label^, Label^, Label^, Label^,TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^);
 
+	void CnxComboBox_BDD(ComboBox^, String^);
+
+	void ajouterPersonnel(TextBox^,TextBox^,DateTimePicker^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^,ComboBox^, TextBox^);
+	void supprimerPersonnel(ComboBox^);
+	void afficherModifierPersonnel(ComboBox^, TextBox^, TextBox^, DateTimePicker^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, ComboBox^, TextBox^);
+	void getIdPersonnelModifier(ComboBox^);
+	void modifierPersonnel(TextBox^, TextBox^, DateTimePicker^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, ComboBox^, TextBox^);
+	void afficherPersonnel(DataGridView^);
 };
 

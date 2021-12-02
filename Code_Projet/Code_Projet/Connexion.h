@@ -1,5 +1,11 @@
 #pragma once
-#include "pch.h"
+using namespace System::Data;
+using namespace System::Data::SqlClient;
+using namespace System::Xml;
+using namespace System;
+using namespace System::Windows::Forms::DataVisualization::Charting;
+using namespace System::Drawing;
+using namespace System::Collections;
 
 ref class Connexion
 {
@@ -11,6 +17,7 @@ ref class Connexion
 		DataSet^ getRows(String^, String^);
 		SqlDataReader^ dataReader(String^);
 		SqlConnection^ connect;
+
 	private:
 		void setSQL(String^);
 		

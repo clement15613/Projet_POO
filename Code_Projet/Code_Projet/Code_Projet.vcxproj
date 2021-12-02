@@ -135,6 +135,7 @@
     <ClCompile Include="MapClient.cpp" />
     <ClCompile Include="MapCommande.cpp" />
     <ClCompile Include="MapComposer.cpp" />
+    <ClCompile Include="MapCorrespond.cpp" />
     <ClCompile Include="MapFacturer.cpp" />
     <ClCompile Include="MapLivrer.cpp" />
     <ClCompile Include="MapPayment.cpp" />
@@ -160,6 +161,7 @@
     <ClInclude Include="MapClient.h" />
     <ClInclude Include="MapCommande.h" />
     <ClInclude Include="MapComposer.h" />
+    <ClInclude Include="MapCorrespond.h" />
     <ClInclude Include="MapFacturer.h" />
     <ClInclude Include="MapLivrer.h" />
     <ClInclude Include="MapPayment.h" />

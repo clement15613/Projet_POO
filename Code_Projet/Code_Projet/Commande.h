@@ -79,7 +79,7 @@ namespace CodeProjet {
 	private: System::Windows::Forms::Button^ BtnAjouterArticleAjouter;
 	private: System::Windows::Forms::Label^ LQuantiteAjouter;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDownQuantitéAjouter;
-	private: System::Windows::Forms::TextBox^ TBRechercherArticleAjouter;
+
 	private: System::Windows::Forms::Label^ LRechercherCommandeAjouter;
 	private: System::Windows::Forms::Label^ LNomClientAjouter;
 	private: System::Windows::Forms::ComboBox^ comboBoxNomClientAjouter;
@@ -107,7 +107,7 @@ namespace CodeProjet {
 	private: System::Windows::Forms::Button^ BtnAjouterArticleModifier;
 	private: System::Windows::Forms::Label^ LQuantiteModifier;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDownModifier;
-	private: System::Windows::Forms::TextBox^ TBRechercherModifier;
+
 	private: System::Windows::Forms::Label^ LrechercherModifier;
 	private: System::Windows::Forms::DataGridView^ dataGridViewModifier;
 	private: System::Windows::Forms::DateTimePicker^ dateTimePickerCommandeModifier;
@@ -140,7 +140,7 @@ private: System::Windows::Forms::Button^ BtnAjouterCommande;
 private: System::Windows::Forms::Button^ BtnModifierCommande;
 private: System::Windows::Forms::Button^ BtnValiderModifier;
 private: System::Windows::Forms::Label^ LReferenceArticleModifier;
-private: System::Windows::Forms::TextBox^ TBRefCommande;
+
 private: System::Windows::Forms::Button^ BtnAffficherArticleCommande;
 private: System::Windows::Forms::Button^ BtnModifierArticleModifier;
 private: System::Windows::Forms::Button^ BtnSupprimerArticleModifier;
@@ -148,10 +148,14 @@ private: System::Windows::Forms::GroupBox^ groupBoxPourArticle;
 private: System::Windows::Forms::Panel^ PanelSupprimerCommande;
 
 private: System::Windows::Forms::Button^ BtnSupprimer;
-private: System::Windows::Forms::TextBox^ TBReferenceSupprimer;
+
 private: System::Windows::Forms::Label^ LInfoSupprimer;
 
 	   Controleur^ monControleur;
+private: System::Windows::Forms::ComboBox^ comboBoxRefSupprimer;
+private: System::Windows::Forms::ComboBox^ comboBoxArticleAjouter;
+private: System::Windows::Forms::ComboBox^ comboBoxArtcileModifier;
+private: System::Windows::Forms::ComboBox^ comboBoxRefModifier;
 
 
 
@@ -197,6 +201,7 @@ private: System::Windows::Forms::Label^ LInfoSupprimer;
 			this->BtnLabelRechercherCommande = (gcnew System::Windows::Forms::Button());
 			this->BtnLabelAjouterCommande = (gcnew System::Windows::Forms::Button());
 			this->PanelAjouterCommande = (gcnew System::Windows::Forms::Panel());
+			this->comboBoxArticleAjouter = (gcnew System::Windows::Forms::ComboBox());
 			this->BtnAjouterCommande = (gcnew System::Windows::Forms::Button());
 			this->comboBoxMoyenPaimentAjouter = (gcnew System::Windows::Forms::ComboBox());
 			this->LMoyenPaiementAjouter = (gcnew System::Windows::Forms::Label());
@@ -210,7 +215,6 @@ private: System::Windows::Forms::Label^ LInfoSupprimer;
 			this->BtnAjouterArticleAjouter = (gcnew System::Windows::Forms::Button());
 			this->LQuantiteAjouter = (gcnew System::Windows::Forms::Label());
 			this->numericUpDownQuantitéAjouter = (gcnew System::Windows::Forms::NumericUpDown());
-			this->TBRechercherArticleAjouter = (gcnew System::Windows::Forms::TextBox());
 			this->LRechercherCommandeAjouter = (gcnew System::Windows::Forms::Label());
 			this->dataGridViewArticleCommandeAjouter = (gcnew System::Windows::Forms::DataGridView());
 			this->dateTimePickerCommandeAjouter = (gcnew System::Windows::Forms::DateTimePicker());
@@ -218,10 +222,11 @@ private: System::Windows::Forms::Label^ LInfoSupprimer;
 			this->dateTimePickerLivraisonAjouter = (gcnew System::Windows::Forms::DateTimePicker());
 			this->TBRefAjouter = (gcnew System::Windows::Forms::TextBox());
 			this->PanelModifierCommande = (gcnew System::Windows::Forms::Panel());
+			this->comboBoxRefModifier = (gcnew System::Windows::Forms::ComboBox());
 			this->groupBoxPourArticle = (gcnew System::Windows::Forms::GroupBox());
+			this->comboBoxArtcileModifier = (gcnew System::Windows::Forms::ComboBox());
 			this->dataGridViewModifier = (gcnew System::Windows::Forms::DataGridView());
 			this->LrechercherModifier = (gcnew System::Windows::Forms::Label());
-			this->TBRechercherModifier = (gcnew System::Windows::Forms::TextBox());
 			this->BtnSupprimerArticleModifier = (gcnew System::Windows::Forms::Button());
 			this->BtnModifierArticleModifier = (gcnew System::Windows::Forms::Button());
 			this->BtnAffficherArticleCommande = (gcnew System::Windows::Forms::Button());
@@ -230,7 +235,6 @@ private: System::Windows::Forms::Label^ LInfoSupprimer;
 			this->BtnAjouterArticleModifier = (gcnew System::Windows::Forms::Button());
 			this->BtnValiderModifier = (gcnew System::Windows::Forms::Button());
 			this->LReferenceArticleModifier = (gcnew System::Windows::Forms::Label());
-			this->TBRefCommande = (gcnew System::Windows::Forms::TextBox());
 			this->BtnModifierCommande = (gcnew System::Windows::Forms::Button());
 			this->comboBoxMoyenPaiementModifier = (gcnew System::Windows::Forms::ComboBox());
 			this->LMoyenPaiementModifier = (gcnew System::Windows::Forms::Label());
@@ -260,8 +264,8 @@ private: System::Windows::Forms::Label^ LInfoSupprimer;
 			this->LQuestionAfficher = (gcnew System::Windows::Forms::Label());
 			this->dataGridViewRechercherCommande = (gcnew System::Windows::Forms::DataGridView());
 			this->PanelSupprimerCommande = (gcnew System::Windows::Forms::Panel());
+			this->comboBoxRefSupprimer = (gcnew System::Windows::Forms::ComboBox());
 			this->BtnSupprimer = (gcnew System::Windows::Forms::Button());
-			this->TBReferenceSupprimer = (gcnew System::Windows::Forms::TextBox());
 			this->LInfoSupprimer = (gcnew System::Windows::Forms::Label());
 			this->menuStrip1->SuspendLayout();
 			this->PanelAjouterCommande->SuspendLayout();
@@ -515,6 +519,7 @@ private: System::Windows::Forms::Label^ LInfoSupprimer;
 			// 
 			// PanelAjouterCommande
 			// 
+			this->PanelAjouterCommande->Controls->Add(this->comboBoxArticleAjouter);
 			this->PanelAjouterCommande->Controls->Add(this->BtnAjouterCommande);
 			this->PanelAjouterCommande->Controls->Add(this->comboBoxMoyenPaimentAjouter);
 			this->PanelAjouterCommande->Controls->Add(this->LMoyenPaiementAjouter);
@@ -528,7 +533,6 @@ private: System::Windows::Forms::Label^ LInfoSupprimer;
 			this->PanelAjouterCommande->Controls->Add(this->BtnAjouterArticleAjouter);
 			this->PanelAjouterCommande->Controls->Add(this->LQuantiteAjouter);
 			this->PanelAjouterCommande->Controls->Add(this->numericUpDownQuantitéAjouter);
-			this->PanelAjouterCommande->Controls->Add(this->TBRechercherArticleAjouter);
 			this->PanelAjouterCommande->Controls->Add(this->LRechercherCommandeAjouter);
 			this->PanelAjouterCommande->Controls->Add(this->dataGridViewArticleCommandeAjouter);
 			this->PanelAjouterCommande->Controls->Add(this->dateTimePickerCommandeAjouter);
@@ -539,6 +543,14 @@ private: System::Windows::Forms::Label^ LInfoSupprimer;
 			this->PanelAjouterCommande->Name = L"PanelAjouterCommande";
 			this->PanelAjouterCommande->Size = System::Drawing::Size(764, 488);
 			this->PanelAjouterCommande->TabIndex = 11;
+			// 
+			// comboBoxArticleAjouter
+			// 
+			this->comboBoxArticleAjouter->FormattingEnabled = true;
+			this->comboBoxArticleAjouter->Location = System::Drawing::Point(76, 6);
+			this->comboBoxArticleAjouter->Name = L"comboBoxArticleAjouter";
+			this->comboBoxArticleAjouter->Size = System::Drawing::Size(367, 21);
+			this->comboBoxArticleAjouter->TabIndex = 27;
 			// 
 			// BtnAjouterCommande
 			// 
@@ -655,13 +667,6 @@ private: System::Windows::Forms::Label^ LInfoSupprimer;
 			this->numericUpDownQuantitéAjouter->Size = System::Drawing::Size(38, 20);
 			this->numericUpDownQuantitéAjouter->TabIndex = 14;
 			// 
-			// TBRechercherArticleAjouter
-			// 
-			this->TBRechercherArticleAjouter->Location = System::Drawing::Point(76, 6);
-			this->TBRechercherArticleAjouter->Name = L"TBRechercherArticleAjouter";
-			this->TBRechercherArticleAjouter->Size = System::Drawing::Size(367, 20);
-			this->TBRechercherArticleAjouter->TabIndex = 13;
-			// 
 			// LRechercherCommandeAjouter
 			// 
 			this->LRechercherCommandeAjouter->AutoSize = true;
@@ -713,10 +718,10 @@ private: System::Windows::Forms::Label^ LInfoSupprimer;
 			// 
 			// PanelModifierCommande
 			// 
+			this->PanelModifierCommande->Controls->Add(this->comboBoxRefModifier);
 			this->PanelModifierCommande->Controls->Add(this->groupBoxPourArticle);
 			this->PanelModifierCommande->Controls->Add(this->BtnValiderModifier);
 			this->PanelModifierCommande->Controls->Add(this->LReferenceArticleModifier);
-			this->PanelModifierCommande->Controls->Add(this->TBRefCommande);
 			this->PanelModifierCommande->Controls->Add(this->BtnModifierCommande);
 			this->PanelModifierCommande->Controls->Add(this->comboBoxMoyenPaiementModifier);
 			this->PanelModifierCommande->Controls->Add(this->LMoyenPaiementModifier);
@@ -736,12 +741,20 @@ private: System::Windows::Forms::Label^ LInfoSupprimer;
 			this->PanelModifierCommande->Size = System::Drawing::Size(780, 555);
 			this->PanelModifierCommande->TabIndex = 26;
 			// 
+			// comboBoxRefModifier
+			// 
+			this->comboBoxRefModifier->FormattingEnabled = true;
+			this->comboBoxRefModifier->Location = System::Drawing::Point(231, 54);
+			this->comboBoxRefModifier->Name = L"comboBoxRefModifier";
+			this->comboBoxRefModifier->Size = System::Drawing::Size(212, 21);
+			this->comboBoxRefModifier->TabIndex = 33;
+			// 
 			// groupBoxPourArticle
 			// 
 			this->groupBoxPourArticle->BackColor = System::Drawing::SystemColors::Control;
+			this->groupBoxPourArticle->Controls->Add(this->comboBoxArtcileModifier);
 			this->groupBoxPourArticle->Controls->Add(this->dataGridViewModifier);
 			this->groupBoxPourArticle->Controls->Add(this->LrechercherModifier);
-			this->groupBoxPourArticle->Controls->Add(this->TBRechercherModifier);
 			this->groupBoxPourArticle->Controls->Add(this->BtnSupprimerArticleModifier);
 			this->groupBoxPourArticle->Controls->Add(this->BtnModifierArticleModifier);
 			this->groupBoxPourArticle->Controls->Add(this->BtnAffficherArticleCommande);
@@ -755,6 +768,14 @@ private: System::Windows::Forms::Label^ LInfoSupprimer;
 			this->groupBoxPourArticle->TabIndex = 28;
 			this->groupBoxPourArticle->TabStop = false;
 			this->groupBoxPourArticle->Text = L"Article";
+			// 
+			// comboBoxArtcileModifier
+			// 
+			this->comboBoxArtcileModifier->FormattingEnabled = true;
+			this->comboBoxArtcileModifier->Location = System::Drawing::Point(79, 38);
+			this->comboBoxArtcileModifier->Name = L"comboBoxArtcileModifier";
+			this->comboBoxArtcileModifier->Size = System::Drawing::Size(164, 21);
+			this->comboBoxArtcileModifier->TabIndex = 30;
 			// 
 			// dataGridViewModifier
 			// 
@@ -772,13 +793,6 @@ private: System::Windows::Forms::Label^ LInfoSupprimer;
 			this->LrechercherModifier->Size = System::Drawing::Size(72, 13);
 			this->LrechercherModifier->TabIndex = 12;
 			this->LrechercherModifier->Text = L"Rechercher : ";
-			// 
-			// TBRechercherModifier
-			// 
-			this->TBRechercherModifier->Location = System::Drawing::Point(76, 38);
-			this->TBRechercherModifier->Name = L"TBRechercherModifier";
-			this->TBRechercherModifier->Size = System::Drawing::Size(150, 20);
-			this->TBRechercherModifier->TabIndex = 13;
 			// 
 			// BtnSupprimerArticleModifier
 			// 
@@ -849,13 +863,6 @@ private: System::Windows::Forms::Label^ LInfoSupprimer;
 			this->LReferenceArticleModifier->Size = System::Drawing::Size(66, 13);
 			this->LReferenceArticleModifier->TabIndex = 31;
 			this->LReferenceArticleModifier->Text = L"Référence : ";
-			// 
-			// TBRefCommande
-			// 
-			this->TBRefCommande->Location = System::Drawing::Point(231, 54);
-			this->TBRefCommande->Name = L"TBRefCommande";
-			this->TBRefCommande->Size = System::Drawing::Size(168, 20);
-			this->TBRefCommande->TabIndex = 30;
 			// 
 			// BtnModifierCommande
 			// 
@@ -1114,13 +1121,21 @@ private: System::Windows::Forms::Label^ LInfoSupprimer;
 			// 
 			// PanelSupprimerCommande
 			// 
+			this->PanelSupprimerCommande->Controls->Add(this->comboBoxRefSupprimer);
 			this->PanelSupprimerCommande->Controls->Add(this->BtnSupprimer);
-			this->PanelSupprimerCommande->Controls->Add(this->TBReferenceSupprimer);
 			this->PanelSupprimerCommande->Controls->Add(this->LInfoSupprimer);
 			this->PanelSupprimerCommande->Location = System::Drawing::Point(486, 124);
 			this->PanelSupprimerCommande->Name = L"PanelSupprimerCommande";
 			this->PanelSupprimerCommande->Size = System::Drawing::Size(777, 488);
 			this->PanelSupprimerCommande->TabIndex = 28;
+			// 
+			// comboBoxRefSupprimer
+			// 
+			this->comboBoxRefSupprimer->FormattingEnabled = true;
+			this->comboBoxRefSupprimer->Location = System::Drawing::Point(436, 197);
+			this->comboBoxRefSupprimer->Name = L"comboBoxRefSupprimer";
+			this->comboBoxRefSupprimer->Size = System::Drawing::Size(166, 21);
+			this->comboBoxRefSupprimer->TabIndex = 3;
 			// 
 			// BtnSupprimer
 			// 
@@ -1130,13 +1145,6 @@ private: System::Windows::Forms::Label^ LInfoSupprimer;
 			this->BtnSupprimer->TabIndex = 2;
 			this->BtnSupprimer->Text = L"Supprimer";
 			this->BtnSupprimer->UseVisualStyleBackColor = true;
-			// 
-			// TBReferenceSupprimer
-			// 
-			this->TBReferenceSupprimer->Location = System::Drawing::Point(436, 199);
-			this->TBReferenceSupprimer->Name = L"TBReferenceSupprimer";
-			this->TBReferenceSupprimer->Size = System::Drawing::Size(125, 20);
-			this->TBReferenceSupprimer->TabIndex = 1;
 			// 
 			// LInfoSupprimer
 			// 
@@ -1157,10 +1165,10 @@ private: System::Windows::Forms::Label^ LInfoSupprimer;
 			this->Controls->Add(this->BtnLabelRechercherCommande);
 			this->Controls->Add(this->BtnLabelAjouterCommande);
 			this->Controls->Add(this->menuStrip1);
+			this->Controls->Add(this->PanelAfficherCommande);
 			this->Controls->Add(this->PanelSupprimerCommande);
 			this->Controls->Add(this->PanelAjouterCommande);
 			this->Controls->Add(this->PanelModifierCommande);
-			this->Controls->Add(this->PanelAfficherCommande);
 			this->Name = L"Commande";
 			this->Text = L"Commande";
 			this->Load += gcnew System::EventHandler(this, &Commande::Commande_Load);
@@ -1190,12 +1198,24 @@ private: System::Windows::Forms::Label^ LInfoSupprimer;
 	
 private: System::Void Commande_Load(System::Object^ sender, System::EventArgs^ e) {
 	monControleur = gcnew Controleur;
+
+	this->commandeToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
+
 	monControleur->gestion_panel(PanelAjouterCommande, PanelModifierCommande, PanelAfficherCommande, PanelSupprimerCommande, false);
 
+	monControleur->CnxComboBox_BDD(comboBoxRefSupprimer, "select ref from Commande");
+	monControleur->CnxComboBox_BDD(comboBoxArticleAjouter, "select nom_article from article");
+	monControleur->CnxComboBox_BDD(comboBoxNomClientAjouter, "select nom_client,prenom from client");
+	monControleur->CnxComboBox_BDD(comboBoxArtcileModifier, "select nom_article from article");
+	monControleur->CnxComboBox_BDD(comboBoxNomClientModifier, "select nom_client,prenom from client");
+	monControleur->CnxComboBox_BDD(comboBoxRefModifier, "select ref from commande");
+	monControleur->CnxComboBox_BDD(BoxReferenceAfficher, "select ref from commande");
+	monControleur->CnxComboBox_BDD(comboBoxNatureArticleAfficher, "select nature from article");
+	
 }
 
 
-
+	   
 private: System::Void BtnLabelAjouterCommande_Click(System::Object^ sender, System::EventArgs^ e) {
 	monControleur->gestion_panel(PanelAjouterCommande, PanelModifierCommande, PanelAfficherCommande, PanelSupprimerCommande, true);
 }
