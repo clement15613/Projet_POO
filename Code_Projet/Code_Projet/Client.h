@@ -1059,9 +1059,9 @@ private: System::Windows::Forms::Button^ buttonValider;
 		}
 #pragma endregion
 	private: System::Void Client_Load(System::Object^ sender, System::EventArgs^ e) {
-		moncontroleur = gcnew Controleur;
+		monControleur = gcnew Controleur;
 
-		moncontroleur->gestion_panel(PanelAjouterClient, PanelModifierClient, PanelAfficherClient, PanelSupprimerClient, false);
+		monControleur->gestion_panel(PanelAjouterClient, PanelModifierClient, PanelAfficherClient, PanelSupprimerClient, false);
 
 		monControleur->CnxComboBox_BDD(comboBoxPrenomAfficher, "select prenom from client");
 		monControleur->CnxComboBox_BDD(comboBoxVilleAfficher, "select ville from ville");
@@ -1073,95 +1073,97 @@ private: System::Windows::Forms::Button^ buttonValider;
 
 	}
 private: System::Void BtnLabelAjouterPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
-	moncontroleur->gestion_panel(PanelAjouterClient, PanelAfficherClient, PanelModifierClient, PanelSupprimerClient, true);
+	monControleur->gestion_panel(PanelAjouterClient, PanelAfficherClient, PanelModifierClient, PanelSupprimerClient, true);
 }
 private: System::Void BtnLabelRechercherPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
-	moncontroleur->gestion_panel(PanelAfficherClient, PanelAjouterClient, PanelModifierClient, PanelSupprimerClient, true);
+	monControleur->gestion_panel(PanelAfficherClient, PanelAjouterClient, PanelModifierClient, PanelSupprimerClient, true);
 }
 private: System::Void BtnLabelModifierPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
-	moncontroleur->gestion_panel(PanelModifierClient, PanelAjouterClient, PanelAfficherClient, PanelSupprimerClient, true);
+	monControleur->gestion_panel(PanelModifierClient, PanelAjouterClient, PanelAfficherClient, PanelSupprimerClient, true);
 }
 private: System::Void BtnLabelSupprimerPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
-	moncontroleur->gestion_panel(PanelSupprimerClient, PanelAjouterClient, PanelModifierClient, PanelAfficherClient, true);
+	monControleur->gestion_panel(PanelSupprimerClient, PanelAjouterClient, PanelModifierClient, PanelAfficherClient, true);
 }
 
 public: void setPanelAff(int);
 
 private: System::Void afficherUnPersonnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("personnel", 2);
+	monControleur->afficher_form("personnel", 2);
 }
 private: System::Void ajouterUnPersonnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("personnel", 1);
+	monControleur->afficher_form("personnel", 1);
 }
 private: System::Void modifierUnPersonnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("personnel", 3);
+	monControleur->afficher_form("personnel", 3);
 }
 private: System::Void supprimerUnPersonnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("personnel", 4);
+	monControleur->afficher_form("personnel", 4);
 }
 
 
 private: System::Void afficherUnClientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-	moncontroleur->gestion_panel(PanelAfficherClient, PanelAjouterClient, PanelModifierClient, PanelSupprimerClient, true);
+	monControleur->gestion_panel(PanelAfficherClient, PanelAjouterClient, PanelModifierClient, PanelSupprimerClient, true);
 }
 private: System::Void ajouterUnClientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-	moncontroleur->gestion_panel(PanelAjouterClient, PanelAfficherClient, PanelModifierClient, PanelSupprimerClient, true);
+	monControleur->gestion_panel(PanelAjouterClient, PanelAfficherClient, PanelModifierClient, PanelSupprimerClient, true);
 }
 private: System::Void modifierUnClientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-	moncontroleur->gestion_panel(PanelModifierClient, PanelAjouterClient, PanelAfficherClient, PanelSupprimerClient, true);
+	monControleur->gestion_panel(PanelModifierClient, PanelAjouterClient, PanelAfficherClient, PanelSupprimerClient, true);
 }
 private: System::Void supprimerUnClientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-	moncontroleur->gestion_panel(PanelSupprimerClient, PanelAjouterClient, PanelModifierClient, PanelAfficherClient, true);
+	monControleur->gestion_panel(PanelSupprimerClient, PanelAjouterClient, PanelModifierClient, PanelAfficherClient, true);
 }
 
 private: System::Void afficherLesCommandesToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("commande", 2);
+	monControleur->afficher_form("commande", 2);
 }
 private: System::Void ajouterUneCommandeToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("commande", 1);
+	monControleur->afficher_form("commande", 1);
 }
 private: System::Void modifierUneCommandeToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("commande", 3);
+	monControleur->afficher_form("commande", 3);
 }
 private: System::Void supprimeruneCommandeToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("commande", 4);
+	monControleur->afficher_form("commande", 4);
 }
 
 private: System::Void afficherLeStockToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("article", 2);
+	monControleur->afficher_form("article", 2);
 }
 private: System::Void ajouterUnArticleToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("article", 1);
+	monControleur->afficher_form("article", 1);
 }
 private: System::Void modifierUnArticleToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("article", 3);
+	monControleur->afficher_form("article", 3);
 }
 private: System::Void supprimerUnArticleToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("article", 4);
+	monControleur->afficher_form("article", 4);
 }
 
 private: System::Void statistiqueToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	moncontroleur->afficher_form("stats", 0);
+	monControleur->afficher_form("stats", 0);
 }
 
 private: System::Void monCompteToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	monControleur->afficher_form("monCompte", 0);
 }
 private: System::Void BtnSupprimerClient_Click(System::Object^ sender, System::EventArgs^ e) 
 {
-	moncontroleur->supprimerClient(comboBox1NomPrenomSupprimer);
+	monControleur->supprimerClient(comboBox1NomPrenomSupprimer);
 }
 private: System::Void BtnAjouter_Click(System::Object^ sender, System::EventArgs^ e) {
 	monControleur->ajouterClient(TBNomAjouter, TBPrenomAjouter, TBNumVoieAjouter, TBNomRueAjouter, TBComplementAjouter, comboBoxVilleAjouter, dateTimePickerNaissanceAjouter, dateTimePickerPremierAchatAjouter);

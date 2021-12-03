@@ -8,6 +8,7 @@
 #include "MyForm.h"
 #include "Personnel.h"
 #include "statistique.h"
+#include "MonCompte.h"
 #include<sstream>
 
 Controleur::Controleur()
@@ -193,6 +194,11 @@ void Controleur::afficher_form(String^ of, int pan)
 	{
 		CodeProjet::statistique^ stat = gcnew CodeProjet::statistique();
 		stat->Show();
+	}
+	else if (of == "monCompte" && pan == 0)
+	{
+		CodeProjet::MonCompte^ MC = gcnew CodeProjet::MonCompte();
+		MC->Show();
 	}
 
 			

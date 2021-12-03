@@ -1335,6 +1335,8 @@ private: System::Void statistiqueToolStripMenuItem_Click(System::Object^ sender,
 }
 
 private: System::Void monCompteToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	monControleur->afficher_form("monCompte", 0);
 }
 private: System::Void BtnLabelSupprimerPersonnel_Click(System::Object^ sender, System::EventArgs^ e) 
 {

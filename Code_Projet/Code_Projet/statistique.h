@@ -450,9 +450,9 @@ private: System::Windows::Forms::TextBox^ textBoxMarge;
 				static_cast<System::Byte>(0)));
 			this->label_prix_chiffre_affaire->Location = System::Drawing::Point(79, 75);
 			this->label_prix_chiffre_affaire->Name = L"label_prix_chiffre_affaire";
-			this->label_prix_chiffre_affaire->Size = System::Drawing::Size(134, 38);
+			this->label_prix_chiffre_affaire->Size = System::Drawing::Size(107, 38);
 			this->label_prix_chiffre_affaire->TabIndex = 13;
-			this->label_prix_chiffre_affaire->Text = L"99999 €";
+			this->label_prix_chiffre_affaire->Text = L"0 ,00€";
 			this->label_prix_chiffre_affaire->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			// 
 			// dataGridView1
@@ -784,6 +784,7 @@ private: System::Windows::Forms::TextBox^ textBoxMarge;
 			title1->Name = L"Chiffre d\'affaire";
 			title1->Text = L"Graphique de l\'evolution du chiffre d\'affaire";
 			this->chart_chiffreAffaire->Titles->Add(title1);
+			this->chart_chiffreAffaire->Click += gcnew System::EventHandler(this, &statistique::chart_chiffreAffaire_Click);
 			// 
 			// panel9
 			// 
@@ -805,7 +806,7 @@ private: System::Windows::Forms::TextBox^ textBoxMarge;
 			});
 			this->menuStrip1->Location = System::Drawing::Point(484, 27);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(909, 45);
+			this->menuStrip1->Size = System::Drawing::Size(1029, 45);
 			this->menuStrip1->TabIndex = 21;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -818,6 +819,7 @@ private: System::Windows::Forms::TextBox^ textBoxMarge;
 			this->personnelToolStripMenuItem->Name = L"personnelToolStripMenuItem";
 			this->personnelToolStripMenuItem->Size = System::Drawing::Size(155, 41);
 			this->personnelToolStripMenuItem->Text = L"Personnel";
+			this->personnelToolStripMenuItem->Click += gcnew System::EventHandler(this, &statistique::personnelToolStripMenuItem_Click);
 			// 
 			// afficherUnPersonnelToolStripMenuItem
 			// 
@@ -826,6 +828,7 @@ private: System::Windows::Forms::TextBox^ textBoxMarge;
 			this->afficherUnPersonnelToolStripMenuItem->Name = L"afficherUnPersonnelToolStripMenuItem";
 			this->afficherUnPersonnelToolStripMenuItem->Size = System::Drawing::Size(256, 26);
 			this->afficherUnPersonnelToolStripMenuItem->Text = L"Afficher le personnel";
+			this->afficherUnPersonnelToolStripMenuItem->Click += gcnew System::EventHandler(this, &statistique::afficherUnPersonnelToolStripMenuItem_Click);
 			// 
 			// ajouterUnPersonnelToolStripMenuItem
 			// 
@@ -834,6 +837,7 @@ private: System::Windows::Forms::TextBox^ textBoxMarge;
 			this->ajouterUnPersonnelToolStripMenuItem->Name = L"ajouterUnPersonnelToolStripMenuItem";
 			this->ajouterUnPersonnelToolStripMenuItem->Size = System::Drawing::Size(256, 26);
 			this->ajouterUnPersonnelToolStripMenuItem->Text = L"Ajouter un personnel";
+			this->ajouterUnPersonnelToolStripMenuItem->Click += gcnew System::EventHandler(this, &statistique::ajouterUnPersonnelToolStripMenuItem_Click);
 			// 
 			// modifierUnPersonnelToolStripMenuItem
 			// 
@@ -842,6 +846,7 @@ private: System::Windows::Forms::TextBox^ textBoxMarge;
 			this->modifierUnPersonnelToolStripMenuItem->Name = L"modifierUnPersonnelToolStripMenuItem";
 			this->modifierUnPersonnelToolStripMenuItem->Size = System::Drawing::Size(256, 26);
 			this->modifierUnPersonnelToolStripMenuItem->Text = L"Modifier un personnel";
+			this->modifierUnPersonnelToolStripMenuItem->Click += gcnew System::EventHandler(this, &statistique::modifierUnPersonnelToolStripMenuItem_Click);
 			// 
 			// supprimerUnPersonnelToolStripMenuItem
 			// 
@@ -850,6 +855,7 @@ private: System::Windows::Forms::TextBox^ textBoxMarge;
 			this->supprimerUnPersonnelToolStripMenuItem->Name = L"supprimerUnPersonnelToolStripMenuItem";
 			this->supprimerUnPersonnelToolStripMenuItem->Size = System::Drawing::Size(256, 26);
 			this->supprimerUnPersonnelToolStripMenuItem->Text = L"Supprimer un personnel";
+			this->supprimerUnPersonnelToolStripMenuItem->Click += gcnew System::EventHandler(this, &statistique::supprimerUnPersonnelToolStripMenuItem_Click);
 			// 
 			// clientToolStripMenuItem
 			// 
@@ -868,6 +874,7 @@ private: System::Windows::Forms::TextBox^ textBoxMarge;
 			this->afficherUnClientToolStripMenuItem->Name = L"afficherUnClientToolStripMenuItem";
 			this->afficherUnClientToolStripMenuItem->Size = System::Drawing::Size(228, 26);
 			this->afficherUnClientToolStripMenuItem->Text = L"Afficher les clients";
+			this->afficherUnClientToolStripMenuItem->Click += gcnew System::EventHandler(this, &statistique::afficherUnClientToolStripMenuItem_Click);
 			// 
 			// ajouterUnClientToolStripMenuItem
 			// 
@@ -876,6 +883,7 @@ private: System::Windows::Forms::TextBox^ textBoxMarge;
 			this->ajouterUnClientToolStripMenuItem->Name = L"ajouterUnClientToolStripMenuItem";
 			this->ajouterUnClientToolStripMenuItem->Size = System::Drawing::Size(228, 26);
 			this->ajouterUnClientToolStripMenuItem->Text = L"Ajouter un client ";
+			this->ajouterUnClientToolStripMenuItem->Click += gcnew System::EventHandler(this, &statistique::ajouterUnClientToolStripMenuItem_Click);
 			// 
 			// modifierUnClientToolStripMenuItem
 			// 
@@ -884,6 +892,7 @@ private: System::Windows::Forms::TextBox^ textBoxMarge;
 			this->modifierUnClientToolStripMenuItem->Name = L"modifierUnClientToolStripMenuItem";
 			this->modifierUnClientToolStripMenuItem->Size = System::Drawing::Size(228, 26);
 			this->modifierUnClientToolStripMenuItem->Text = L"Modifier un client ";
+			this->modifierUnClientToolStripMenuItem->Click += gcnew System::EventHandler(this, &statistique::modifierUnClientToolStripMenuItem_Click);
 			// 
 			// supprimerUnClientToolStripMenuItem
 			// 
@@ -892,6 +901,7 @@ private: System::Windows::Forms::TextBox^ textBoxMarge;
 			this->supprimerUnClientToolStripMenuItem->Name = L"supprimerUnClientToolStripMenuItem";
 			this->supprimerUnClientToolStripMenuItem->Size = System::Drawing::Size(228, 26);
 			this->supprimerUnClientToolStripMenuItem->Text = L"Supprimer un client ";
+			this->supprimerUnClientToolStripMenuItem->Click += gcnew System::EventHandler(this, &statistique::supprimerUnClientToolStripMenuItem_Click);
 			// 
 			// commandeToolStripMenuItem
 			// 
@@ -910,6 +920,7 @@ private: System::Windows::Forms::TextBox^ textBoxMarge;
 			this->afficherLesCommandesToolStripMenuItem->Name = L"afficherLesCommandesToolStripMenuItem";
 			this->afficherLesCommandesToolStripMenuItem->Size = System::Drawing::Size(273, 26);
 			this->afficherLesCommandesToolStripMenuItem->Text = L"Afficher les commandes";
+			this->afficherLesCommandesToolStripMenuItem->Click += gcnew System::EventHandler(this, &statistique::afficherLesCommandesToolStripMenuItem_Click);
 			// 
 			// ajouterUneCommandeToolStripMenuItem
 			// 
@@ -918,6 +929,7 @@ private: System::Windows::Forms::TextBox^ textBoxMarge;
 			this->ajouterUneCommandeToolStripMenuItem->Name = L"ajouterUneCommandeToolStripMenuItem";
 			this->ajouterUneCommandeToolStripMenuItem->Size = System::Drawing::Size(273, 26);
 			this->ajouterUneCommandeToolStripMenuItem->Text = L"Ajouter une commande";
+			this->ajouterUneCommandeToolStripMenuItem->Click += gcnew System::EventHandler(this, &statistique::ajouterUneCommandeToolStripMenuItem_Click);
 			// 
 			// modifierUneCommandeToolStripMenuItem
 			// 
@@ -926,6 +938,7 @@ private: System::Windows::Forms::TextBox^ textBoxMarge;
 			this->modifierUneCommandeToolStripMenuItem->Name = L"modifierUneCommandeToolStripMenuItem";
 			this->modifierUneCommandeToolStripMenuItem->Size = System::Drawing::Size(273, 26);
 			this->modifierUneCommandeToolStripMenuItem->Text = L"Modifier une commande";
+			this->modifierUneCommandeToolStripMenuItem->Click += gcnew System::EventHandler(this, &statistique::modifierUneCommandeToolStripMenuItem_Click);
 			// 
 			// supprimeruneCommandeToolStripMenuItem
 			// 
@@ -934,6 +947,7 @@ private: System::Windows::Forms::TextBox^ textBoxMarge;
 			this->supprimeruneCommandeToolStripMenuItem->Name = L"supprimeruneCommandeToolStripMenuItem";
 			this->supprimeruneCommandeToolStripMenuItem->Size = System::Drawing::Size(273, 26);
 			this->supprimeruneCommandeToolStripMenuItem->Text = L"Supprimer une commande";
+			this->supprimeruneCommandeToolStripMenuItem->Click += gcnew System::EventHandler(this, &statistique::supprimeruneCommandeToolStripMenuItem_Click);
 			// 
 			// stockToolStripMenuItem
 			// 
@@ -952,6 +966,7 @@ private: System::Windows::Forms::TextBox^ textBoxMarge;
 			this->afficherLeStockToolStripMenuItem->Name = L"afficherLeStockToolStripMenuItem";
 			this->afficherLeStockToolStripMenuItem->Size = System::Drawing::Size(229, 26);
 			this->afficherLeStockToolStripMenuItem->Text = L"Afficher le stock";
+			this->afficherLeStockToolStripMenuItem->Click += gcnew System::EventHandler(this, &statistique::afficherLeStockToolStripMenuItem_Click);
 			// 
 			// ajouterUnArticleToolStripMenuItem
 			// 
@@ -960,6 +975,7 @@ private: System::Windows::Forms::TextBox^ textBoxMarge;
 			this->ajouterUnArticleToolStripMenuItem->Name = L"ajouterUnArticleToolStripMenuItem";
 			this->ajouterUnArticleToolStripMenuItem->Size = System::Drawing::Size(229, 26);
 			this->ajouterUnArticleToolStripMenuItem->Text = L"Ajouter un article";
+			this->ajouterUnArticleToolStripMenuItem->Click += gcnew System::EventHandler(this, &statistique::ajouterUnArticleToolStripMenuItem_Click);
 			// 
 			// modifierUnArticleToolStripMenuItem
 			// 
@@ -968,6 +984,7 @@ private: System::Windows::Forms::TextBox^ textBoxMarge;
 			this->modifierUnArticleToolStripMenuItem->Name = L"modifierUnArticleToolStripMenuItem";
 			this->modifierUnArticleToolStripMenuItem->Size = System::Drawing::Size(229, 26);
 			this->modifierUnArticleToolStripMenuItem->Text = L"Modifier un article";
+			this->modifierUnArticleToolStripMenuItem->Click += gcnew System::EventHandler(this, &statistique::modifierUnArticleToolStripMenuItem_Click);
 			// 
 			// supprimerUnArticleToolStripMenuItem
 			// 
@@ -976,6 +993,7 @@ private: System::Windows::Forms::TextBox^ textBoxMarge;
 			this->supprimerUnArticleToolStripMenuItem->Name = L"supprimerUnArticleToolStripMenuItem";
 			this->supprimerUnArticleToolStripMenuItem->Size = System::Drawing::Size(229, 26);
 			this->supprimerUnArticleToolStripMenuItem->Text = L"Supprimer un article";
+			this->supprimerUnArticleToolStripMenuItem->Click += gcnew System::EventHandler(this, &statistique::supprimerUnArticleToolStripMenuItem_Click);
 			// 
 			// statistiqueToolStripMenuItem
 			// 
@@ -988,6 +1006,7 @@ private: System::Windows::Forms::TextBox^ textBoxMarge;
 			this->monCompteToolStripMenuItem->Name = L"monCompteToolStripMenuItem";
 			this->monCompteToolStripMenuItem->Size = System::Drawing::Size(200, 41);
 			this->monCompteToolStripMenuItem->Text = L"Mon compte ";
+			this->monCompteToolStripMenuItem->Click += gcnew System::EventHandler(this, &statistique::monCompteToolStripMenuItem_Click);
 			// 
 			// statistique
 			// 
@@ -1039,7 +1058,7 @@ private: System::Void statistique_Load(System::Object^ sender, System::EventArgs
 	moncontroleur1->afficher_top(chart_topPlusVendu, "select TOP 10 nom_article,quantite from Composer inner join Article on Composer.id_article = Article.id_article order by quantite desc");
 	moncontroleur1->afficher_top(chart_topMoinsVendu, "select TOP 10 nom_article,quantite from Composer inner join Article on Composer.id_article = Article.id_article order by quantite ASC");
 	//moncontroleur1->afficher_chiffre_affaireMois(chart_chiffreAffaire,"2019");
-	moncontroleur1->afficher_chiffre_affaireMois(chart_chiffreAffaire, "2020");
+	moncontroleur1->afficher_chiffre_affaireMois(chart_chiffreAffaire, "2021");
 	moncontroleur1->afficher_label_sql(label_prix_chiffre_affaire, "select SUM(quantite * prix_HT) as total from Payment inner join Composer on Payment.id_commande = Composer.id_commande inner join Article on Composer.id_article=Article.id_article where month(date_payment) = 3 group by month(date_payment)");
 	moncontroleur1->afficher_label_sql(label_prix_panier_moyen, "select AVG(quantite * prix_HT) as prix from Article inner join Composer on Article.id_article = Composer.id_article");
 	moncontroleur1->afficher_label_sql(label_valeur_achat_stock, "select SUM(prix_HT*stock) as prix_stock from Article");
@@ -1093,6 +1112,81 @@ private: System::Void checkBoxRemise_MouseClick(System::Object^ sender, System::
 private: System::Void checkBoxDemarque_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e)
 {
 	moncontroleur1->changeFore(textBoxDemarque);
+}
+private: System::Void chart_chiffreAffaire_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+	   
+private: System::Void personnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	
+}
+private: System::Void afficherUnPersonnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	moncontroleur1->afficher_form("personnel", 2);
+}
+private: System::Void ajouterUnPersonnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	moncontroleur1->afficher_form("personnel", 1);
+}
+private: System::Void modifierUnPersonnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	moncontroleur1->afficher_form("personnel", 3);
+}
+private: System::Void supprimerUnPersonnelToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	moncontroleur1->afficher_form("personnel", 4);
+}
+
+private: System::Void afficherUnClientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	moncontroleur1->afficher_form("client", 2);
+}
+private: System::Void ajouterUnClientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	moncontroleur1->afficher_form("client", 1);
+}
+private: System::Void modifierUnClientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	moncontroleur1->afficher_form("client", 3);
+}
+private: System::Void supprimerUnClientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	moncontroleur1->afficher_form("client", 4);
+}
+private: System::Void afficherLesCommandesToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	moncontroleur1->afficher_form("commande", 2);
+}
+private: System::Void ajouterUneCommandeToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	moncontroleur1->afficher_form("commande", 1);
+}
+private: System::Void modifierUneCommandeToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	moncontroleur1->afficher_form("commande", 3);
+}
+private: System::Void supprimeruneCommandeToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	moncontroleur1->afficher_form("commande", 4);
+}
+private: System::Void afficherLeStockToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	moncontroleur1->afficher_form("article", 2);
+}
+private: System::Void ajouterUnArticleToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	moncontroleur1->afficher_form("article", 1);
+}
+private: System::Void modifierUnArticleToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	moncontroleur1->afficher_form("article", 3);
+}
+private: System::Void supprimerUnArticleToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	moncontroleur1->afficher_form("article", 4);
+}
+private: System::Void monCompteToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	moncontroleur1->afficher_form("monCompte", 0);
 }
 };
 }

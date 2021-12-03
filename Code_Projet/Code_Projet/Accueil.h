@@ -396,6 +396,7 @@ namespace CodeProjet {
 			this->btn_mon_compte->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->btn_mon_compte->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
 			this->btn_mon_compte->UseVisualStyleBackColor = false;
+			this->btn_mon_compte->Click += gcnew System::EventHandler(this, &Accueil::btn_mon_compte_Click_1);
 			// 
 			// btn_es_client_r
 			// 
@@ -634,6 +635,11 @@ namespace CodeProjet {
 		monControleur->afficher_form("stats", 0);
 	}
 		   //private void btn
-	};
+	private: System::Void btn_mon_compte_Click_1(System::Object^ sender, System::EventArgs^ e) 
+	{
+		this->Hide();
+		monControleur->afficher_form("monCompte",0);
+	}
+};
 }
 

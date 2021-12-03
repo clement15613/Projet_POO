@@ -506,7 +506,7 @@ private: System::Windows::Forms::Button^ button1;
 			this->monCompteToolStripMenuItem->Name = L"monCompteToolStripMenuItem";
 			this->monCompteToolStripMenuItem->Size = System::Drawing::Size(200, 41);
 			this->monCompteToolStripMenuItem->Text = L"Mon compte ";
-			//this->monCompteToolStripMenuItem->Click += gcnew System::EventHandler(this, &Commande::monCompteToolStripMenuItem_Click);
+			this->monCompteToolStripMenuItem->Click += gcnew System::EventHandler(this, &Commande::monCompteToolStripMenuItem_Click);
 			// 
 			// BtnLabelSupprimerCommande
 			// 
@@ -1491,5 +1491,9 @@ private: System::Void BtnModifierCommande_Click(System::Object^ sender, System::
 	   //private: void From_FormsClose(Object^ sender, FormClosedEventArgs^ e) {
 		   //Application::Exit();
 	   //}
+private: System::Void monCompteToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	monControleur->afficher_form("monCompte", 0);
+}
 };
 }
