@@ -50,3 +50,8 @@ void MapClient::setDatefirstachat(String^ datefirstachat)
     date_first_achat = datefirstachat;
 }
 
+String^ MapClient::DELETE()
+{
+    return "delete from client where id_client = " + getIdclient();
+}
+

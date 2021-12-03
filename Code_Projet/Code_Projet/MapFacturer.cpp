@@ -20,3 +20,7 @@ void MapFacturer::setIdadresse(int idadresse)
     id_adresse = idadresse;
 }
 
+String^ MapFacturer::DELETE()
+{
+    return "delete from facturer where id_client = " + getIdclient();
+}

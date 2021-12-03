@@ -531,6 +531,7 @@ namespace CodeProjet {
 			this->BtnSupprimerClient->TabIndex = 21;
 			this->BtnSupprimerClient->Text = L"Supprimer";
 			this->BtnSupprimerClient->UseVisualStyleBackColor = true;
+			this->BtnSupprimerClient->Click += gcnew System::EventHandler(this, &Client::BtnSupprimerClient_Click);
 			// 
 			// PanelModifierClient
 			// 
@@ -1117,6 +1118,10 @@ private: System::Void statistiqueToolStripMenuItem_Click(System::Object^ sender,
 }
 
 private: System::Void monCompteToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void BtnSupprimerClient_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	monControleur->supprimerClient(comboBox1NomPrenomSupprimer);
 }
 };
 }

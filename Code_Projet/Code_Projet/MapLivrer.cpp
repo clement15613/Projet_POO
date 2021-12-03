@@ -20,3 +20,8 @@ void MapLivrer::setIdadresse(int idadresse)
     id_adresse = idadresse;
 }
 
+String^ MapLivrer::DELETE()
+{
+    return "delete from livrer where id_client = " + getIdclient();
+}
+
