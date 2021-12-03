@@ -540,11 +540,12 @@ void Controleur::afficher_form(String^ of)
 	}
 
 
-	void Controleur::ajouterCommande(DateTimePicker^ dateCommande, DateTimePicker^ dateEnvoi, DateTimePicker^ dateLivraison, DateTimePicker^ datePaiement, ComboBox^ nomClient, ComboBox^ moyenPaiement, bool state)
+	void Controleur::ajouterCommande(DateTimePicker^ dateCommande, DateTimePicker^ dateEnvoi, DateTimePicker^ dateLivraison, DateTimePicker^ datePaiement, ComboBox^ nomClient, ComboBox^ moyenPaiement,TextBox^ tb, bool state)
 	{
 		int idCMD;
 		int idPayment;
 		int idClient;
+		String^ str;
 		String^ result = nomClient->Text;
 		array<String^>^ stringarray = result->Split(' ');
 
@@ -571,6 +572,21 @@ void Controleur::afficher_form(String^ of)
 			maCNX->actionRows(mCommande->INSERT());
 			maCNX->actionRows(mPayment->INSERT());
 
+			//reference
+			str += stringarray[1]->Substring(0, 3);
+			str += stringarray[0]->Substring(0, 3);
+			str += dateCommande->Value.Year.ToString();
+			maCNX->connect->Close();
+			reader = maCNX->dataReader("select left(Vville,3) from (select Vville,client from (select Client.id_client as client,Livrer.id_client as Lclient,Livrer.id_adresse as Ladresse,Adresse.id_adresse as Aadresse,Correspond.id_adresse as Cadresse,Correspond.id_ville as Cville,Ville.ville as Vville from Client inner join Livrer on Livrer.id_client = Client.id_client inner join Adresse on Livrer.id_adresse = Adresse.id_adresse inner join Correspond on Correspond.id_adresse = Adresse.id_adresse inner  join Ville on ville.id_ville = Correspond.id_ville) as coucou where client = " + idClient + ") as coucou2");
+			while (reader->Read())
+			{
+				str += reader[0]->ToString();
+			}
+			maCNX->connect->Close();
+			str += num.ToString();
+			tb->Text = str;
+			num = num + 1;
+			maCNX->actionRows("update commande set ref = '" + str + "' where id_commande = " + mCommande->getIdcommande());
 		}
 	}
 
@@ -589,4 +605,23 @@ void Controleur::afficher_form(String^ of)
 		stock = maCNX->actionRowsID("select stock from article where id_article = " + idArticle);
 		stock = stock - Convert::ToInt32(qte->Text);
 		maCNX->actionRows("update article set stock = " + stock + " where id_article = " + idArticle);
+	}
+
+	void Controleur::afficherCommande(DataGridView^ mygrid, ComboBox^ cbRef, ComboBox^ cbNature, ComboBox^ moyenPayment, DateTimePicker^ dateCommande, NumericUpDown^ nbrArticle)
+	{
+		maCNX->connect->Close();
+		reader = maCNX->dataReader("select commande.id_commande,ref,date_commande,date_emission,date_livraison,date_Payment,moyen_payment,nom_article,nature,quantite from commande inner join Payment on Commande.id_commande = Payment.id_commande inner join Composer on commande.id_commande = Composer.id_commande inner join article on Article.id_article = Composer.id_article where date_commande >'" + dateCommande->Value + "'or ref ='" + cbRef->Text + "' or nature = '" + cbNature->Text + "' or quantite =" + nbrArticle->Text + " or moyen_payment = '" + moyenPayment->Text + "' order by id_commande");
+		if (reader->HasRows)
+		{
+			DataTable^ madata = gcnew DataTable();
+			madata->Load(reader);
+			mygrid->DataSource = madata;
+			maCNX->connect->Close();
+		}
+	}
+
+
+	void Controleur::supprimerCommande(ComboBox^ cbref)
+	{
+
 	}

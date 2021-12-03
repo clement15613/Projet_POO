@@ -16,6 +16,7 @@ private:
 	bool state = true;
 	bool Visible = true;
 	bool Invisible = false;
+	int num = 0;
 	
 	MapAdresse^ mAdresse;
 	MapArticle^ mArticle;
@@ -56,7 +57,9 @@ public :
 	void afficherPersonnel(DataGridView^, ComboBox^, ComboBox^, ComboBox^, ComboBox^, DateTimePicker^);
 
 	void gridArticleAjouterCmd(DataGridView^,String^);
-	void ajouterCommande(DateTimePicker^, DateTimePicker^, DateTimePicker^, DateTimePicker^, ComboBox^, ComboBox^, bool);
+	void ajouterCommande(DateTimePicker^, DateTimePicker^, DateTimePicker^, DateTimePicker^, ComboBox^, ComboBox^,TextBox^, bool);
 	void ajouterArticleCommande(DataGridView^,NumericUpDown^);
+	void afficherCommande(DataGridView^, ComboBox^, ComboBox^, ComboBox^, DateTimePicker^, NumericUpDown^);
+	void supprimerCommande(ComboBox^);
 };
 

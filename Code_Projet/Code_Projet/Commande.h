@@ -716,10 +716,10 @@ private: System::Windows::Forms::Button^ BtnValider;
 			// 
 			this->TBRefAjouter->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 21.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->TBRefAjouter->Location = System::Drawing::Point(162, 406);
+			this->TBRefAjouter->Location = System::Drawing::Point(85, 406);
 			this->TBRefAjouter->Name = L"TBRefAjouter";
 			this->TBRefAjouter->ReadOnly = true;
-			this->TBRefAjouter->Size = System::Drawing::Size(193, 40);
+			this->TBRefAjouter->Size = System::Drawing::Size(270, 40);
 			this->TBRefAjouter->TabIndex = 3;
 			this->TBRefAjouter->Text = L"REFERENCE";
 			// 
@@ -1028,6 +1028,7 @@ private: System::Windows::Forms::Button^ BtnValider;
 			this->BtnRechercherCommande->TabIndex = 12;
 			this->BtnRechercherCommande->Text = L"Rechercher";
 			this->BtnRechercherCommande->UseVisualStyleBackColor = true;
+			this->BtnRechercherCommande->Click += gcnew System::EventHandler(this, &Commande::BtnRechercherCommande_Click);
 			// 
 			// LMoyenPaiementAffcher
 			// 
@@ -1219,16 +1220,16 @@ private: System::Windows::Forms::Button^ BtnValider;
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1291, 629);
-			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->BtnLabelSupprimerCommande);
 			this->Controls->Add(this->BtnLabelModifierCommande);
 			this->Controls->Add(this->BtnLabelRechercherCommande);
 			this->Controls->Add(this->BtnLabelAjouterCommande);
 			this->Controls->Add(this->menuStrip1);
-			this->Controls->Add(this->PanelModifierCommande);
-			this->Controls->Add(this->PanelAfficherCommande);
 			this->Controls->Add(this->PanelSupprimerCommande);
 			this->Controls->Add(this->PanelAjouterCommande);
+			this->Controls->Add(this->panel1);
+			this->Controls->Add(this->PanelModifierCommande);
+			this->Controls->Add(this->PanelAfficherCommande);
 			this->Name = L"Commande";
 			this->Text = L"Commande";
 			this->Load += gcnew System::EventHandler(this, &Commande::Commande_Load);
@@ -1264,15 +1265,6 @@ private: System::Void Commande_Load(System::Object^ sender, System::EventArgs^ e
 	this->commandeToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
 
 	monControleur->gestion_panel(PanelAjouterCommande, PanelModifierCommande, PanelAfficherCommande, PanelSupprimerCommande, false);
-
-	monControleur->CnxComboBox_BDD(comboBoxRefSupprimer, "select ref from Commande");
-	monControleur->CnxComboBox_BDD(comboBoxArticleAjouter, "select nom_article from article");
-	monControleur->CnxComboBox_BDD(comboBoxNomClientAjouter, "select nom_client,prenom from client");
-	monControleur->CnxComboBox_BDD(comboBoxArtcileModifier, "select nom_article from article");
-	monControleur->CnxComboBox_BDD(comboBoxNomClientModifier, "select nom_client,prenom from client");
-	monControleur->CnxComboBox_BDD(comboBoxRefModifier, "select ref from commande");
-	monControleur->CnxComboBox_BDD(BoxReferenceAfficher, "select ref from commande");
-	monControleur->CnxComboBox_BDD(comboBoxNatureArticleAfficher, "select nature from article");
 	
 }
 
@@ -1280,42 +1272,78 @@ private: System::Void Commande_Load(System::Object^ sender, System::EventArgs^ e
 	   
 private: System::Void BtnLabelAjouterCommande_Click(System::Object^ sender, System::EventArgs^ e) {
 	monControleur->gestion_panel(PanelAjouterCommande, PanelModifierCommande, PanelAfficherCommande, PanelSupprimerCommande, true);
+	monControleur->CnxComboBox_BDD(comboBoxArticleAjouter, "select nom_article from article");
+	monControleur->CnxComboBox_BDD(comboBoxNomClientAjouter, "select nom_client,prenom from client");
 }
+
+
 
 
 private: System::Void BtnLabelRechercherCommande_Click(System::Object^ sender, System::EventArgs^ e) {
 	monControleur->gestion_panel(PanelAfficherCommande, PanelAjouterCommande, PanelModifierCommande, PanelSupprimerCommande, true);
+	monControleur->CnxComboBox_BDD(BoxReferenceAfficher, "select ref from commande");
+	monControleur->CnxComboBox_BDD(comboBoxNatureArticleAfficher, "select nature from article");
 }
+
+
 private: System::Void BtnLabelModifierCommande_Click(System::Object^ sender, System::EventArgs^ e) {
 	monControleur->gestion_panel(PanelModifierCommande, PanelAjouterCommande, PanelSupprimerCommande, PanelAfficherCommande, true);
+	monControleur->CnxComboBox_BDD(comboBoxArtcileModifier, "select nom_article from article");
+	monControleur->CnxComboBox_BDD(comboBoxNomClientModifier, "select nom_client,prenom from client");
+	monControleur->CnxComboBox_BDD(comboBoxRefModifier, "select ref from commande");
 }
+
+
 private: System::Void BtnLabelSupprimerCommande_Click(System::Object^ sender, System::EventArgs^ e) {
 	monControleur->gestion_panel(PanelSupprimerCommande, PanelAjouterCommande, PanelModifierCommande, PanelAfficherCommande, true);
+	monControleur->CnxComboBox_BDD(comboBoxRefSupprimer, "select ref from Commande");
 }
+
+
 private: System::Void BtncreerCommande_Click(System::Object^ sender, System::EventArgs^ e) {
 	PanelAjouterCommande->Visible = false;
 	panel1->Visible = true;
-	monControleur->ajouterCommande(dateTimePickerCommandeAjouter, dateTimePickerEmmisionAjouter, dateTimePickerLivraisonAjouter, dateTimePickerPaimentAjouter, comboBoxNomClientAjouter, comboBoxMoyenPaimentAjouter, false);
+	monControleur->ajouterCommande(dateTimePickerCommandeAjouter, dateTimePickerEmmisionAjouter, dateTimePickerLivraisonAjouter, dateTimePickerPaimentAjouter, comboBoxNomClientAjouter, comboBoxMoyenPaimentAjouter,TBRefAjouter, false);
 	monControleur->gridArticleAjouterCmd(dataGridViewArticleCommandeAjouter, "select nom_article,nature,couleur,prix_HT,stock from article");
 }
+
+
 
 private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) 
 {
 	PanelAjouterCommande->Visible = true;
 	panel1->Visible = false;
 }
+
+
 private: System::Void BtnValider_Click(System::Object^ sender, System::EventArgs^ e) 
 {
 	monControleur->gridArticleAjouterCmd(dataGridViewArticleCommandeAjouter, "select nom_article,nature,couleur,prix_HT,stock from article where nom_article = '" + comboBoxArticleAjouter->Text + "'");
 }
 
+
 private: System::Void BtnAjouterArticleAjouter_Click(System::Object^ sender, System::EventArgs^ e) 
 {
 	monControleur->ajouterArticleCommande(dataGridViewArticleCommandeAjouter,numericUpDownQuantitéAjouter);
 }
+
+
+
 private: System::Void BtnAjouterCommande_Click(System::Object^ sender, System::EventArgs^ e) 
 {
-	monControleur->ajouterCommande(dateTimePickerCommandeAjouter, dateTimePickerEmmisionAjouter, dateTimePickerLivraisonAjouter, dateTimePickerPaimentAjouter, comboBoxNomClientAjouter, comboBoxMoyenPaimentAjouter, true);
+	monControleur->ajouterCommande(dateTimePickerCommandeAjouter, dateTimePickerEmmisionAjouter, dateTimePickerLivraisonAjouter, dateTimePickerPaimentAjouter, comboBoxNomClientAjouter, comboBoxMoyenPaimentAjouter,TBRefAjouter, true);
 }
+
+
+
+
+private: System::Void BtnRechercherCommande_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	monControleur->afficherCommande(dataGridViewRechercherCommande, BoxReferenceAfficher, comboBoxNatureArticleAfficher, comboBoxMoyenPaiementAfficher, dateTimePickerDateCommandeAfficher, numericUpDownNbrArticleAfficher);
+}
+
+
+
+
 };
 }
