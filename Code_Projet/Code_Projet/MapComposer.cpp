@@ -34,3 +34,8 @@ String^ MapComposer::INSERT()
 {
     return "insert into composer values (" + getIdcommande() + "," + getIdarticle() + ","+getQuantite()+")";
 }
+
+String^ MapComposer::DELETE()
+{
+    return "delete from composer where id_commande = " + getIdcommande();
+}

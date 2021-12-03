@@ -142,7 +142,7 @@ private: System::Windows::Forms::Button^ BtnValiderModifier;
 private: System::Windows::Forms::Label^ LReferenceArticleModifier;
 
 private: System::Windows::Forms::Button^ BtnAffficherArticleCommande;
-private: System::Windows::Forms::Button^ BtnModifierArticleModifier;
+
 private: System::Windows::Forms::Button^ BtnSupprimerArticleModifier;
 private: System::Windows::Forms::GroupBox^ groupBoxPourArticle;
 private: System::Windows::Forms::Panel^ PanelSupprimerCommande;
@@ -160,6 +160,7 @@ private: System::Windows::Forms::Button^ BtncreerCommande;
 private: System::Windows::Forms::Panel^ panel1;
 private: System::Windows::Forms::PictureBox^ pictureBox1;
 private: System::Windows::Forms::Button^ BtnValider;
+private: System::Windows::Forms::Button^ button1;
 
 
 
@@ -231,11 +232,11 @@ private: System::Windows::Forms::Button^ BtnValider;
 			this->PanelModifierCommande = (gcnew System::Windows::Forms::Panel());
 			this->comboBoxRefModifier = (gcnew System::Windows::Forms::ComboBox());
 			this->groupBoxPourArticle = (gcnew System::Windows::Forms::GroupBox());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->comboBoxArtcileModifier = (gcnew System::Windows::Forms::ComboBox());
 			this->dataGridViewModifier = (gcnew System::Windows::Forms::DataGridView());
 			this->LrechercherModifier = (gcnew System::Windows::Forms::Label());
 			this->BtnSupprimerArticleModifier = (gcnew System::Windows::Forms::Button());
-			this->BtnModifierArticleModifier = (gcnew System::Windows::Forms::Button());
 			this->BtnAffficherArticleCommande = (gcnew System::Windows::Forms::Button());
 			this->LQuantiteModifier = (gcnew System::Windows::Forms::Label());
 			this->numericUpDownModifier = (gcnew System::Windows::Forms::NumericUpDown());
@@ -759,11 +760,11 @@ private: System::Windows::Forms::Button^ BtnValider;
 			// groupBoxPourArticle
 			// 
 			this->groupBoxPourArticle->BackColor = System::Drawing::SystemColors::Control;
+			this->groupBoxPourArticle->Controls->Add(this->button1);
 			this->groupBoxPourArticle->Controls->Add(this->comboBoxArtcileModifier);
 			this->groupBoxPourArticle->Controls->Add(this->dataGridViewModifier);
 			this->groupBoxPourArticle->Controls->Add(this->LrechercherModifier);
 			this->groupBoxPourArticle->Controls->Add(this->BtnSupprimerArticleModifier);
-			this->groupBoxPourArticle->Controls->Add(this->BtnModifierArticleModifier);
 			this->groupBoxPourArticle->Controls->Add(this->BtnAffficherArticleCommande);
 			this->groupBoxPourArticle->Controls->Add(this->LQuantiteModifier);
 			this->groupBoxPourArticle->Controls->Add(this->numericUpDownModifier);
@@ -771,15 +772,25 @@ private: System::Windows::Forms::Button^ BtnValider;
 			this->groupBoxPourArticle->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->groupBoxPourArticle->Location = System::Drawing::Point(6, 117);
 			this->groupBoxPourArticle->Name = L"groupBoxPourArticle";
-			this->groupBoxPourArticle->Size = System::Drawing::Size(743, 178);
+			this->groupBoxPourArticle->Size = System::Drawing::Size(658, 178);
 			this->groupBoxPourArticle->TabIndex = 28;
 			this->groupBoxPourArticle->TabStop = false;
 			this->groupBoxPourArticle->Text = L"Article";
 			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(249, 19);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(82, 39);
+			this->button1->TabIndex = 31;
+			this->button1->Text = L"Afficher les\r\narticles";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &Commande::button1_Click);
+			// 
 			// comboBoxArtcileModifier
 			// 
 			this->comboBoxArtcileModifier->FormattingEnabled = true;
-			this->comboBoxArtcileModifier->Location = System::Drawing::Point(79, 38);
+			this->comboBoxArtcileModifier->Location = System::Drawing::Point(70, 29);
 			this->comboBoxArtcileModifier->Name = L"comboBoxArtcileModifier";
 			this->comboBoxArtcileModifier->Size = System::Drawing::Size(164, 21);
 			this->comboBoxArtcileModifier->TabIndex = 30;
@@ -795,7 +806,7 @@ private: System::Windows::Forms::Button^ BtnValider;
 			// LrechercherModifier
 			// 
 			this->LrechercherModifier->AutoSize = true;
-			this->LrechercherModifier->Location = System::Drawing::Point(3, 41);
+			this->LrechercherModifier->Location = System::Drawing::Point(3, 32);
 			this->LrechercherModifier->Name = L"LrechercherModifier";
 			this->LrechercherModifier->Size = System::Drawing::Size(72, 13);
 			this->LrechercherModifier->TabIndex = 12;
@@ -803,30 +814,23 @@ private: System::Windows::Forms::Button^ BtnValider;
 			// 
 			// BtnSupprimerArticleModifier
 			// 
-			this->BtnSupprimerArticleModifier->Location = System::Drawing::Point(648, 100);
+			this->BtnSupprimerArticleModifier->Location = System::Drawing::Point(552, 101);
 			this->BtnSupprimerArticleModifier->Name = L"BtnSupprimerArticleModifier";
 			this->BtnSupprimerArticleModifier->Size = System::Drawing::Size(90, 65);
 			this->BtnSupprimerArticleModifier->TabIndex = 27;
 			this->BtnSupprimerArticleModifier->Text = L"Supprimer\r\nl\'article";
 			this->BtnSupprimerArticleModifier->UseVisualStyleBackColor = true;
-			// 
-			// BtnModifierArticleModifier
-			// 
-			this->BtnModifierArticleModifier->Location = System::Drawing::Point(552, 100);
-			this->BtnModifierArticleModifier->Name = L"BtnModifierArticleModifier";
-			this->BtnModifierArticleModifier->Size = System::Drawing::Size(90, 65);
-			this->BtnModifierArticleModifier->TabIndex = 28;
-			this->BtnModifierArticleModifier->Text = L"Modifier\r\nl\'article";
-			this->BtnModifierArticleModifier->UseVisualStyleBackColor = true;
+			this->BtnSupprimerArticleModifier->Click += gcnew System::EventHandler(this, &Commande::BtnSupprimerArticleModifier_Click);
 			// 
 			// BtnAffficherArticleCommande
 			// 
-			this->BtnAffficherArticleCommande->Location = System::Drawing::Point(249, 38);
+			this->BtnAffficherArticleCommande->Location = System::Drawing::Point(337, 19);
 			this->BtnAffficherArticleCommande->Name = L"BtnAffficherArticleCommande";
-			this->BtnAffficherArticleCommande->Size = System::Drawing::Size(194, 20);
+			this->BtnAffficherArticleCommande->Size = System::Drawing::Size(106, 39);
 			this->BtnAffficherArticleCommande->TabIndex = 29;
 			this->BtnAffficherArticleCommande->Text = L"Afficher les articles de la commande";
 			this->BtnAffficherArticleCommande->UseVisualStyleBackColor = true;
+			this->BtnAffficherArticleCommande->Click += gcnew System::EventHandler(this, &Commande::BtnAffficherArticleCommande_Click);
 			// 
 			// LQuantiteModifier
 			// 
@@ -843,6 +847,7 @@ private: System::Windows::Forms::Button^ BtnValider;
 			this->numericUpDownModifier->Name = L"numericUpDownModifier";
 			this->numericUpDownModifier->Size = System::Drawing::Size(38, 20);
 			this->numericUpDownModifier->TabIndex = 14;
+			this->numericUpDownModifier->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			// 
 			// BtnAjouterArticleModifier
 			// 
@@ -852,6 +857,7 @@ private: System::Windows::Forms::Button^ BtnValider;
 			this->BtnAjouterArticleModifier->TabIndex = 16;
 			this->BtnAjouterArticleModifier->Text = L"Ajouter\r\nl\'article";
 			this->BtnAjouterArticleModifier->UseVisualStyleBackColor = true;
+			this->BtnAjouterArticleModifier->Click += gcnew System::EventHandler(this, &Commande::BtnAjouterArticleModifier_Click);
 			// 
 			// BtnValiderModifier
 			// 
@@ -861,6 +867,7 @@ private: System::Windows::Forms::Button^ BtnValider;
 			this->BtnValiderModifier->TabIndex = 32;
 			this->BtnValiderModifier->Text = L"Valider";
 			this->BtnValiderModifier->UseVisualStyleBackColor = true;
+			this->BtnValiderModifier->Click += gcnew System::EventHandler(this, &Commande::BtnValiderModifier_Click);
 			// 
 			// LReferenceArticleModifier
 			// 
@@ -879,6 +886,7 @@ private: System::Windows::Forms::Button^ BtnValider;
 			this->BtnModifierCommande->TabIndex = 26;
 			this->BtnModifierCommande->Text = L"Modifier";
 			this->BtnModifierCommande->UseVisualStyleBackColor = true;
+			this->BtnModifierCommande->Click += gcnew System::EventHandler(this, &Commande::BtnModifierCommande_Click);
 			// 
 			// comboBoxMoyenPaiementModifier
 			// 
@@ -937,7 +945,7 @@ private: System::Windows::Forms::Button^ BtnValider;
 			// LDateEnvoiModifier
 			// 
 			this->LDateEnvoiModifier->AutoSize = true;
-			this->LDateEnvoiModifier->Location = System::Drawing::Point(3, 342);
+			this->LDateEnvoiModifier->Location = System::Drawing::Point(3, 355);
 			this->LDateEnvoiModifier->Name = L"LDateEnvoiModifier";
 			this->LDateEnvoiModifier->Size = System::Drawing::Size(67, 13);
 			this->LDateEnvoiModifier->TabIndex = 19;
@@ -955,7 +963,7 @@ private: System::Windows::Forms::Button^ BtnValider;
 			// LDateLivraisonModifier
 			// 
 			this->LDateLivraisonModifier->AutoSize = true;
-			this->LDateLivraisonModifier->Location = System::Drawing::Point(3, 393);
+			this->LDateLivraisonModifier->Location = System::Drawing::Point(3, 406);
 			this->LDateLivraisonModifier->Name = L"LDateLivraisonModifier";
 			this->LDateLivraisonModifier->Size = System::Drawing::Size(92, 13);
 			this->LDateLivraisonModifier->TabIndex = 17;
@@ -989,7 +997,7 @@ private: System::Windows::Forms::Button^ BtnValider;
 			this->TBRefModifier->Location = System::Drawing::Point(76, 475);
 			this->TBRefModifier->Name = L"TBRefModifier";
 			this->TBRefModifier->ReadOnly = true;
-			this->TBRefModifier->Size = System::Drawing::Size(193, 40);
+			this->TBRefModifier->Size = System::Drawing::Size(249, 40);
 			this->TBRefModifier->TabIndex = 3;
 			this->TBRefModifier->Text = L"REFERENCE";
 			// 
@@ -1153,6 +1161,7 @@ private: System::Windows::Forms::Button^ BtnValider;
 			this->BtnSupprimer->TabIndex = 2;
 			this->BtnSupprimer->Text = L"Supprimer";
 			this->BtnSupprimer->UseVisualStyleBackColor = true;
+			this->BtnSupprimer->Click += gcnew System::EventHandler(this, &Commande::BtnSupprimer_Click);
 			// 
 			// LInfoSupprimer
 			// 
@@ -1225,11 +1234,11 @@ private: System::Windows::Forms::Button^ BtnValider;
 			this->Controls->Add(this->BtnLabelRechercherCommande);
 			this->Controls->Add(this->BtnLabelAjouterCommande);
 			this->Controls->Add(this->menuStrip1);
+			this->Controls->Add(this->PanelModifierCommande);
+			this->Controls->Add(this->PanelAfficherCommande);
 			this->Controls->Add(this->PanelSupprimerCommande);
 			this->Controls->Add(this->PanelAjouterCommande);
 			this->Controls->Add(this->panel1);
-			this->Controls->Add(this->PanelModifierCommande);
-			this->Controls->Add(this->PanelAfficherCommande);
 			this->Name = L"Commande";
 			this->Text = L"Commande";
 			this->Load += gcnew System::EventHandler(this, &Commande::Commande_Load);
@@ -1345,5 +1354,41 @@ private: System::Void BtnRechercherCommande_Click(System::Object^ sender, System
 
 
 
+private: System::Void BtnSupprimer_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	monControleur->supprimerCommande(comboBoxRefSupprimer);
+}
+
+
+private: System::Void BtnValiderModifier_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	monControleur->afficherModifierCommande(comboBoxRefModifier, comboBoxArtcileModifier, comboBoxNomClientModifier, comboBoxMoyenPaiementModifier, TBRefModifier, dateTimePickerCommandeModifier, dateTimePickerEnvoiModifier, dateTimePickerLivraisonModifier, dateTimePickerPaiementModifier, numericUpDownModifier, dataGridViewModifier);
+}
+
+
+private: System::Void BtnAffficherArticleCommande_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	monControleur->racourci(dataGridViewModifier);
+
+}
+
+
+private: System::Void BtnSupprimerArticleModifier_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	monControleur->supprimerArticleCommande(dataGridViewModifier);
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	monControleur->afficherArticle(dataGridViewModifier, comboBoxArtcileModifier);
+
+}
+private: System::Void BtnAjouterArticleModifier_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	monControleur->ajouterArticleCommande(dataGridViewModifier, numericUpDownModifier);
+}
+private: System::Void BtnModifierCommande_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	monControleur->modifierCommande(dateTimePickerCommandeModifier, dateTimePickerEnvoiModifier, dateTimePickerLivraisonModifier, dateTimePickerPaiementModifier, comboBoxNomClientModifier, comboBoxMoyenPaiementModifier);
+}
 };
 }

@@ -61,5 +61,10 @@ public :
 	void ajouterArticleCommande(DataGridView^,NumericUpDown^);
 	void afficherCommande(DataGridView^, ComboBox^, ComboBox^, ComboBox^, DateTimePicker^, NumericUpDown^);
 	void supprimerCommande(ComboBox^);
+	void afficherModifierCommande(ComboBox^, ComboBox^, ComboBox^, ComboBox^, TextBox^, DateTimePicker^, DateTimePicker^, DateTimePicker^, DateTimePicker^, NumericUpDown^, DataGridView^);
+	void supprimerArticleCommande(DataGridView^);
+	void racourci(DataGridView^);
+	void afficherArticle(DataGridView^, ComboBox^);
+	void modifierCommande(DateTimePicker^, DateTimePicker^, DateTimePicker^, DateTimePicker^, ComboBox^, ComboBox^);
 };
 

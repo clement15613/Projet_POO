@@ -43,10 +43,15 @@ void MapPayment::setIdcommande(int idcommande)
 
 String^ MapPayment::INSERTX() 
 {
-    return "insert into Payment values ('2000-01-01','xxx','1'); select @@IDENTITY";
+    return "insert into Payment values ('2000-01-01','xxx',"+getIdcommande()+"); select @@IDENTITY";
 }
 
 String^ MapPayment::INSERT()
 {
-    return "update payment set date_payment = '" + getDatePayment() + "', moyen_payment = '" + getMoyenPayment() + "', id_commande = " + getIdcommande() + "where id_payment = " + getIdpayment();
+    return "update payment set date_payment = '" + getDatePayment() + "', moyen_payment = '" + getMoyenPayment() + "' where id_payment = " + getIdpayment();
+}
+
+String^ MapPayment::DELETE()
+{
+    return "delete from payment where id_commande = " + getIdcommande();
 }

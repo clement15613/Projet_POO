@@ -69,3 +69,8 @@ String^ MapCommande::INSERT()
 {
     return "update commande set date_livraison = '" + getDateLivraison() + "', date_emission ='" + getDateEmission() + "', date_commande ='" + getDateCommande() + "',id_client = " + getIdclient() + " where id_commande = " + getIdcommande();
 }
+
+String^ MapCommande::DELETE()
+{
+    return "delete from commande where id_commande = " + getIdcommande();
+}

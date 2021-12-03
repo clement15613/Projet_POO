@@ -31,6 +31,7 @@ public:
 
     String^ INSERTX();
     String^ INSERT();
+    String^ DELETE();
 
 };
 

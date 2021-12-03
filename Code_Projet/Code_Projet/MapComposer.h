@@ -18,5 +18,6 @@ public:
     void setQuantite(int quantite);
 
     String^ INSERT();
+    String^ DELETE();
 };
 

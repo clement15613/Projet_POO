@@ -552,10 +552,11 @@ void Controleur::afficher_form(String^ of)
 		if (state == false)
 		{
 			idCMD = maCNX->actionRowsID(mCommande->INSERTX());
+			mPayment->setIdcommande(idCMD);
 			idPayment = maCNX->actionRowsID(mPayment->INSERTX());
 			mCommande->setIdcommande(idCMD);
 			mPayment->setIdpayment(idPayment);
-			mPayment->setIdcommande(idCMD);
+			
 		}
 
 		if (state == true)
@@ -597,6 +598,7 @@ void Controleur::afficher_form(String^ of)
 		String^ valeur;
 		valeur = mygrid->SelectedCells[0]->Value->ToString();
 		mComposer->setQuantite(Convert::ToInt32(qte->Text));
+		maCNX->connect->Close();
 		idArticle = maCNX->actionRowsID("select id_article from article where nom_article = '" + valeur->ToString() + "'");
 		mComposer->setIdarticle(idArticle);
 		mComposer->setIdcommande(mCommande->getIdcommande());
@@ -623,5 +625,152 @@ void Controleur::afficher_form(String^ of)
 
 	void Controleur::supprimerCommande(ComboBox^ cbref)
 	{
+		int idCommande;
+		maCNX->connect->Close();
+		idCommande = maCNX->actionRowsID("select id_commande from commande where ref = '" + cbref->Text + "'");
+
+		mCommande->setIdcommande(idCommande);
+		mPayment->setIdcommande(idCommande);
+		mComposer->setIdcommande(idCommande);
+
+		maCNX->actionRows(mComposer->DELETE());
+		maCNX->actionRows(mPayment->DELETE());
+		maCNX->actionRows(mCommande->DELETE());
+	}
+
+
+	void Controleur::afficherModifierCommande(ComboBox^ refE, ComboBox^ recherche, ComboBox^ nomClient, ComboBox^ moyenPayment, TextBox^ refS, DateTimePicker^ dateCommande, DateTimePicker^ dateEnvoi, DateTimePicker^ dateLivraison, DateTimePicker^ datePayment, NumericUpDown^ qte, DataGridView^ myGrid)
+	{
+		int idCommande;
+		String^ nomPrenom;
+		maCNX->connect->Close();
+		idCommande = maCNX->actionRowsID("select id_commande from commande where ref = '" + refE->Text + "'");
+		mCommande->setIdcommande(idCommande);
+
+
+		maCNX->connect->Close();
+		reader = maCNX->dataReader("select * from commande where id_commande = " + mCommande->getIdcommande());
+		while (reader->Read())
+		{
+			mCommande->setReference(reader[1]->ToString());
+			mCommande->setDateLivraison(Convert::ToDateTime(reader[2]));
+			mCommande->setDateEmission(Convert::ToDateTime(reader[3]));
+			mCommande->setDateCommande(Convert::ToDateTime(reader[4]));
+			mCommande->setIdclient(Convert::ToInt32(reader[5]));
+		}
+		maCNX->connect->Close();
+
+		reader = maCNX->dataReader("select * from payment where id_commande = " + mCommande->getIdcommande());
+		while (reader->Read())
+		{
+			mPayment->setIdpayment(Convert::ToInt32(reader[0]));
+			mPayment->setDatePayment(Convert::ToDateTime(reader[1]));
+			mPayment->setMoyenPayment(reader[2]->ToString());
+			mPayment->setIdcommande(Convert::ToInt32(reader[3]));
+		}
+
+		maCNX->connect->Close();
+
+		reader = maCNX->dataReader("select * from composer where id_commande = " + mCommande->getIdcommande());
+		while (reader->Read())
+		{
+			mComposer->setIdcommande(Convert::ToInt32(reader[0]));
+			mComposer->setIdarticle(Convert::ToInt32(reader[1]));
+			mComposer->setQuantite(Convert::ToInt32(reader[2]));
+		}
+		maCNX->connect->Close();
+
+		moyenPayment->Text = mPayment->getMoyenPayment();
+		refS->Text = mCommande->getReference();
+		dateCommande->Text = mCommande->getDateCommande()->ToString();
+		dateEnvoi->Text = mCommande->getDateEmission()->ToString();
+		dateLivraison->Text = mCommande->getDateLivraison()->ToString();
+		datePayment->Text = mPayment->getDatePayment()->ToString();
+		
+
+		reader = maCNX->dataReader("select nom_client,prenom from client where id_client =" + mCommande->getIdclient());
+		while (reader->Read())
+		{
+			nomPrenom += reader[0] + " ";
+			nomPrenom += reader[1];
+		}
+		maCNX->connect->Close();
+
+
+		nomClient->Text = nomPrenom;
+
+
+		gridArticleAjouterCmd(myGrid, "select nom_article,nature,couleur,prix_HT from article inner join Composer on article.id_article=Composer.id_article inner join commande on commande.id_commande=Composer.id_commande where commande.id_commande =" + mCommande->getIdcommande());
+	}
+
+	void Controleur::supprimerArticleCommande(DataGridView^ mygrid)
+	{
+		int idArticle;
+		int stock;
+
+		String^ valeur;
+		valeur = mygrid->SelectedCells[0]->Value->ToString();
+
+		idArticle = maCNX->actionRowsID("select id_article from article where nom_article = '" + valeur->ToString() + "'");
+
+		maCNX->actionRows("delete from composer where id_article = " + idArticle + "and id_commande = " + mCommande->getIdcommande());
+		
+		
+	}
+
+	void Controleur::racourci(DataGridView^ myGrid)
+	{
+		gridArticleAjouterCmd(myGrid, "select nom_article,nature,couleur,prix_HT from article inner join Composer on article.id_article=Composer.id_article inner join commande on commande.id_commande=Composer.id_commande where commande.id_commande =" + mCommande->getIdcommande());
+	}
+
+
+	void Controleur::afficherArticle(DataGridView^ myGrid, ComboBox^ cb1)
+	{
+		maCNX->connect->Close();
+		if (cb1->Text != "")
+		{
+			reader = maCNX->dataReader("select nom_article,nature,couleur,prix_HT,stock from article where nom_article = '" + cb1->Text + "'");
+			if (reader->HasRows)
+			{
+				DataTable^ madata = gcnew DataTable();
+				madata->Load(reader);
+				myGrid->DataSource = madata;
+				maCNX->connect->Close();
+			}
+		}
+		else
+		{
+			reader = maCNX->dataReader("select nom_article,nature,couleur,prix_HT,stock from article");
+			if (reader->HasRows)
+			{
+				DataTable^ madata = gcnew DataTable();
+				madata->Load(reader);
+				myGrid->DataSource = madata;
+
+			}
+
+		}
+	}
+
+
+	void Controleur::modifierCommande(DateTimePicker^ datecommande, DateTimePicker^ dateenvoi, DateTimePicker^ datelivraison, DateTimePicker^ datepayment, ComboBox^ nomclient, ComboBox^ moyenpayment)
+	{
+		int idClient;
+		mCommande->setDateCommande(datecommande->Value);
+		mCommande->setDateEmission(dateenvoi->Value);
+		mCommande->setDateLivraison(datelivraison->Value);
+
+		String^ result = nomclient->Text;
+		array<String^>^ stringarray = result->Split(' ');
+		maCNX->connect->Close();
+		idClient = maCNX->actionRowsID("select id_client from client where nom_client = '" + stringarray[0] + "'");
+		mCommande->setIdclient(idClient);
+
+		mPayment->setDatePayment(datepayment->Value);
+		mPayment->setMoyenPayment(moyenpayment->Text);
+
+		maCNX->actionRows(mPayment->INSERT());
+		maCNX->actionRows(mCommande->INSERT());
+		
 
 	}
