@@ -32,6 +32,22 @@ void Controleur::mdp(TextBox^ text) {
 	text->UseSystemPasswordChar = this -> state;
 }
 
+void Controleur::mdp_label(Label^ text,Label^ textpass)
+{
+	this->state = !state;
+	if(state==true)
+	{
+		text->Visible = true;
+		textpass->Visible = false;
+	}
+	else
+	{
+		text->Visible = false;
+		textpass->Visible = true;
+	}
+
+}
+
 void Controleur::afficher_datagridView(DataGridView^ grid)
 {
 	Connexion co;
@@ -53,30 +69,29 @@ void Controleur::afficher_datagridView(DataGridView^ grid)
 
 void Controleur::afficher_top(Chart^ chart, String^ query)
 {
-	Connexion co;
-	SqlDataReader^ read;
-	read = co.dataReader(query);
-	if (read->HasRows)
+	
+	reader = maCNX->dataReader(query);
+	if (reader->HasRows)
 	{
 		chart->Visible = true;
 		DataTable^ table = gcnew DataTable();
-		table->Load(read);
+		table->Load(reader);
 		chart->DataSource = table;
 		chart->Series["series1"]->XValueMember = "nom_article";
 		chart->Series["series1"]->YValueMembers = "quantite";
 		chart->DataBind();
 	};
+	maCNX->connect->Close();
 }
 
 	void Controleur::afficher_chiffre_affaireMois(Chart^ chart,String^ year)
 	{
-		Connexion co;
-		SqlDataReader^ read;
-		read = co.dataReader("select month(date_payment) as mois, SUM(quantite * prix_HT) as total from Payment inner join Composer on Payment.id_commande = Composer.id_commande inner join Article on Composer.id_article=Article.id_article where year(date_payment) = " + year + " group by month(date_payment)");
-		if (read->HasRows)
+		
+		reader = maCNX->dataReader("select month(date_payment) as mois, SUM(quantite * prix_HT) as total from Payment inner join Composer on Payment.id_commande = Composer.id_commande inner join Article on Composer.id_article=Article.id_article where year(date_payment) = " + year + " group by month(date_payment)");
+		if (reader->HasRows)
 		{
 			DataTable^ table = gcnew DataTable();
-			table->Load(read);
+			table->Load(reader);
 			chart->DataSource = table;
 			chart->Series->Add(year);
 			chart->Series[year]->XValueMember = "mois";
@@ -84,25 +99,25 @@ void Controleur::afficher_top(Chart^ chart, String^ query)
 			chart->Series[year]->ChartTypeName = "spline";
 			chart->DataBind();
 		}
+		maCNX->connect->Close();
 	}
 
 
 	void Controleur::afficher_label_sql(Label^ label, String^ sql)
 	{
-		Connexion^ co;
-		SqlDataReader^ read;
-		read = co->dataReader(sql);
+		
+		reader = maCNX->dataReader(sql);
 
-		if(read->HasRows)
+		if(reader->HasRows)
 		{
-			while (read->Read())
+			while (reader->Read())
 			{
-				String^ txt = read[0]->ToString();
+				String^ txt = reader[0]->ToString();
 				//txt->Format("{0:n}", 1234);
-				label->Text = txt->Format("{0:n}", read[0]) + " €";
+				label->Text = txt->Format("{0:n}", reader[0]) + " €";
 			}
 		}
-		
+		maCNX->connect->Close();
 		if (label->Text == " €")
 		{
 			label->Text = "0 €";
@@ -185,6 +200,8 @@ void Controleur::afficher_form(String^ of, int pan)
 
 	void Controleur::affichage_text_box(ComboBox^ ComboB, TextBox^ textB)
 	{
+		
+		
 		if (ComboB->Enabled == true)
 		{
 			ComboB->Enabled = false;
@@ -222,6 +239,8 @@ void Controleur::afficher_form(String^ of, int pan)
 		{
 			textB->Visible = true;
 		}
+	textB->ForeColor = textB->ForeColor.Gray;
+		textB->Text = "valeur...";
 
 	}
 
@@ -284,58 +303,114 @@ void Controleur::afficher_form(String^ of, int pan)
 
 	void Controleur::CalculAndrecupereValeurCommercialeStock(TextBox^ TVATB, TextBox^ RemiseTB, TextBox^ MargeTB, TextBox^  DemarqueTB, ComboBox^ TVACB, ComboBox^ RemiseCB, ComboBox^ MargeCB, ComboBox^ DemarqueCB,CheckBox^ TVACHECK, CheckBox^ RemiseCHECK, CheckBox^ MARGECHECk, CheckBox^ DemarqueCHECK,Label^ lab)
 	{
-		String^ valeurTVA;
-		String^ ValeurRemise;
-		String^ ValeurMarge;
-		String^ ValeurDemarque;
 
+
+/// valeur TVA ///
 	if(TVACHECK->Checked == true)
 	{
-		valeurTVA = TVATB->Text;
+		valeurTVA = ((Convert::ToDouble(TVATB->Text) / 100)+1).ToString()->Replace(",",".");
+		
 	}
 	else
 	{
 		if(TVACB->Text == "Aucun")
 		{
-			valeurTVA = "0";
+			valeurTVA = "1";
 		}
 		if (TVACB->Text == "10%")
 		{
-			valeurTVA = "1";
+			valeurTVA = "1.1";
 		}
 		if (TVACB->Text == "20%")
 		{
-			valeurTVA = "2";
+			valeurTVA = "1.2";
 		}
 		if (TVACB->Text == "30%")
 		{
-			valeurTVA = "3";
+			valeurTVA = "1.3";
 		}
 	}
 	
+	/// // Remise commerciale ////////
+
 	if (RemiseCHECK->Checked == true)
 	{
-		valeurTVA = TVATB->Text;
+		ValeurRemise = (1-(Convert::ToDouble(RemiseTB->Text) / 100)).ToString()->Replace(",", ".");
 	}
 	else
 	{
-		if (TVACB->Text == "Aucun")
+		if (RemiseCB->Text == "Aucun")
 		{
-			valeurTVA = "0";
+			ValeurRemise = "1";
 		}
-		if (TVACB->Text == "10%")
+		if (RemiseCB->Text == "5%")
 		{
-			valeurTVA = "1";
+			ValeurRemise = "0.95";
 		}
-		if (TVACB->Text == "20%")
+		if (RemiseCB->Text == "6%")
 		{
-			valeurTVA = "2";
+			ValeurRemise = "0.94";
 		}
-		if (TVACB->Text == "30%")
+
+	}
+
+	/// marge commerciale ///
+	if (MARGECHECk->Checked == true)
+	{
+		ValeurMarge = ((Convert::ToDouble(MargeTB->Text) / 100) + 1).ToString()->Replace(",", ".");
+	}
+	else
+	{
+		if (MargeCB->Text == "Aucun")
 		{
-			valeurTVA = "3";
+			ValeurMarge = "1";
+		}
+		if (MargeCB->Text == "5%")
+		{
+			ValeurMarge = "1.05";
+		}
+		if (MargeCB->Text == "10%")
+		{
+			ValeurMarge = "1.10";
+		}
+		if(MargeCB->Text == "15%")
+		{
+			ValeurMarge = "1.15";
+		}
+
+	}
+
+
+	/// demarque Inconnue ///
+
+	if(DemarqueCHECK->Checked == true)
+	{
+		ValeurDemarque = (1 - (Convert::ToDouble(RemiseTB->Text) / 100)).ToString()->Replace(",", ".");;
+	}
+	else
+	{
+		if (DemarqueCB->Text == "Aucun")
+		{
+			ValeurDemarque = "1";
+		}
+		if (DemarqueCB->Text == "2%")
+		{
+			ValeurDemarque = "0.98";
+		}
+		if (DemarqueCB->Text == "3%")
+		{
+			ValeurDemarque = "0.97";
 		}
 	}
+	afficher_label_sql(lab, "select SUM(prix_HT * stock *" + valeurTVA + " * " + ValeurRemise + "*" + ValeurMarge + "*" + ValeurDemarque + ") from Article");
+
+
+}
+
+void Controleur::changeFore(TextBox^ box)
+{
+	box->Clear();
+	box->ForeColor = box->ForeColor.Black;
 }
 
 
@@ -387,9 +462,9 @@ void Controleur::afficher_form(String^ of, int pan)
 		mVille->setCodePostal("00000");
 
 		
-		idVille = maCNX->actionRowsID(mVille->INSERT());
+		idVille = maCNX->actionRowsID(mVille->INSERT_client());
 
-		idAdresse = maCNX->actionRowsID(mAdresse->INSERT());
+		idAdresse = maCNX->actionRowsID(mAdresse->INSERT_client());
 
 		mCorrespond->setIdVille(idVille);
 		mCorrespond->SetIdAdresse(idAdresse);
@@ -418,7 +493,7 @@ void Controleur::afficher_form(String^ of, int pan)
 		maCNX->actionRows(mCorrespond->DELETE());
 
 		mAdresse->setid_adresse(idAdresse);
-		maCNX->actionRows(mAdresse->DELETE());
+		maCNX->actionRows(mAdresse->DELETE_client());
 
 	}
 
@@ -449,7 +524,7 @@ void Controleur::afficher_form(String^ of, int pan)
 			mPersonnel->setMotDePasse(reader[5]->ToString());
 			mPersonnel->setid_adresse(Convert::ToInt32(reader[6]));
 			mPersonnel->setid_superieur(Convert::ToInt32(reader[7]));
-		}		
+		}
 		maCNX->connect->Close();
 
 		reader = maCNX->dataReader("select * from adresse where id_adresse = " + mPersonnel->getid_adresse());
@@ -459,14 +534,14 @@ void Controleur::afficher_form(String^ of, int pan)
 			mAdresse->setrue(reader[2]->ToString());
 			mAdresse->setcomplement(reader[3]->ToString());
 		}
-		
+
 		maCNX->connect->Close();
 		reader = maCNX->dataReader("select * from correspond where id_adresse = " + mPersonnel->getid_adresse());
 		while (reader->Read())
 		{
 			mVille->setIdVille(Convert::ToInt32(reader[0]));
 		}
-		
+
 		maCNX->connect->Close();
 		reader = maCNX->dataReader("select * from ville where id_ville = " + mVille->getIdVille());
 		while (reader->Read())
@@ -474,8 +549,8 @@ void Controleur::afficher_form(String^ of, int pan)
 			mVille->setVille(reader[1]->ToString());
 			mVille->setCodePostal(reader[2]->ToString());
 		}
-		
-		
+
+
 		nom->Text = mPersonnel->getNom();
 		prenom->Text = mPersonnel->getPrenom();
 		dateEmbauche->Text = mPersonnel->getDateEmbauche()->ToString();
@@ -495,9 +570,49 @@ void Controleur::afficher_form(String^ of, int pan)
 		}
 		maCNX->connect->Close();
 		
-
 		superieur->Text = nomPrenom;
 	}
+
+	void Controleur::afficher_label_moncompte(Label^ nom, Label^ prenom, Label^ nomUtilisateur, Label^ mdp, Label^ numeordevoie, Label^ complement, Label^ nomdevoie, Label^ ville)
+	{
+		Connexion maCNX;
+		SqlDataReader^ reader;
+		reader = maCNX.dataReader("select nom_Personnel, prenom_Personnel, nom_utilisateur_Personnel, mdp_Personnel, numero, complement, rue from Personnel inner join Adresse on Personnel.id_adresse = Adresse.id_adresse where id_Personnel = 1");
+		while (reader->Read())
+		{
+			nom->Text = reader[0]->ToString();
+			prenom->Text = reader[1]->ToString();
+			nomUtilisateur->Text = reader[2]->ToString();
+			mdp->Text = reader[3]->ToString();
+			numeordevoie->Text = reader[4]->ToString();
+			complement->Text = reader[5]->ToString();
+			nomdevoie->Text = reader[6]->ToString();
+		}
+		maCNX.connect->Close();
+		
+		reader = maCNX.dataReader("select ville from ville where id_ville = 1");
+		while (reader->Read())
+		{
+			ville->Text = reader[0]->ToString();
+		}
+	}
+
+	void Controleur::UpdateMonCompte(Label^ nom, Label^ prenom, Label^ nomUtilisateur, Label^ mdp, Label^ numeordevoie, Label^ complement, Label^ nomdevoie, Label^ ville, TextBox^ nomBox, TextBox^ prenomBox, TextBox^ nomutilibox, TextBox^ mdpbox, TextBox^ numeroVoiebox, TextBox^ complementbox, TextBox^ nomdevoiebox, TextBox^ villebox)
+	{
+		mPersonnel->setNom(nom->Text);
+		mPersonnel->setPrenom(prenom->Text);
+		mPersonnel->setNomUtilisateur(nomUtilisateur->Text);
+		mPersonnel->getid_personnel();
+		//maCNX->actionRows("Update Personnel set nom_Personnel = " + "'" + nomBox->Text + "' where id_personnel =");
+		//maCNX->actionRows("Update Personnel set prenom_personnel = " + "'" + prenomBox->Text + "' where id_personnel = 1");
+		//maCNX.actionRows("Update Personnel set nom_utilisateur_Personnel = " + "'" + nomutilibox->Text + "' where id_personnel = 1");
+		//maCNX.actionRows("Update Personnel set mdp_Personnel = " + "'" + mdpbox->Text + "' where id_personnel = 1");
+		//maCNX.actionRows("Update Adresse set numero = " + "'" + numeroVoiebox->Text + "' where id_adresse = 1");
+	}
+
+
+
+
 
 	void Controleur::modifierPersonnel(TextBox^ nom, TextBox^ prenom, DateTimePicker^ dateEmbauche, TextBox^ user, TextBox^ MDP, 
 		TextBox^ numRue, TextBox^ nomRue, TextBox^ complement, ComboBox^ ville, TextBox^ superieur)
@@ -522,9 +637,9 @@ void Controleur::afficher_form(String^ of, int pan)
 		mVille->setCodePostal("00000");
 
 
-		maCNX->actionRows(mVille->UPDATE());
+		maCNX->actionRows(mVille->UPDATE_client());
 
-		maCNX->actionRows(mAdresse->UPDATE());
+		maCNX->actionRows(mAdresse->UPDATE_client());
 
 		/*mCorrespond->setIdVille(idVille);
 		mCorrespond->SetIdAdresse(idAdresse);
@@ -617,6 +732,266 @@ void Controleur::afficher_form(String^ of, int pan)
 		}
 	}
 
+	void Controleur::afficherPersonnel(DataGridView^ myGrid)
+	{
+		reader = maCNX->dataReader("select * from personnel");
+		if (reader->HasRows)
+		{
+			DataTable^ madata = gcnew DataTable();
+			madata->Load(reader);
+			madata->Columns["nom_Personnel"]->ColumnName = "Nom";
+			myGrid->DataSource = madata;
+		}
+	}
+
+	void Controleur::ajouterArticle(TextBox^ nom, TextBox^ prix_ht, TextBox^ nature, TextBox^ tva, TextBox^ couleur, TextBox^ seuil, TextBox^ quantite)
+	{
+	
+
+		mArticle->setNom(nom->Text);
+		mArticle->setPrixHT(Convert::ToDouble(prix_ht->Text));
+		mArticle->setCouleur(couleur->Text);
+		mArticle->setNature(nature->Text);
+		mArticle->setTauxTVA(Convert::ToDouble(tva->Text));
+		mArticle->setSeuilReapprovisionnement(Convert::ToInt32(seuil->Text)); 
+		mArticle->setStock(Convert::ToInt32(quantite->Text));
+		maCNX->actionRows(mArticle->INSERT());
+		MessageBox::Show("Confirmé");
+
+	}
+
+	void Controleur::AfficherArticle(ComboBox^ nom, ComboBox^ nature, ComboBox^ couleur,DataGridView^ datagrid,NumericUpDown^ numeric)
+	{
+	
+				reader = maCNX->dataReader("select nom_article,nature,prix_HT,stock,seuil_approvisionnement,couleur from Article where nom_article = '" + nom->Text + "' or nature = '" + nature->Text + "' or couleur = '" + couleur->Text + "' or stock = '" + numeric->Text + "'");
+				if (reader->HasRows)
+				{
+					DataTable^ madata = gcnew DataTable();
+					madata->Load(reader);
+					madata->Columns["nom_article"]->ColumnName = "Nom article";
+					madata->Columns["nature"]->ColumnName = "Nature";
+					madata->Columns["prix_HT"]->ColumnName = "Prix hors taxe";
+					madata->Columns["stock"]->ColumnName = "Stock";
+					madata->Columns["seuil_approvisionnement"]->ColumnName = "Seuil approvisionnement";
+					madata->Columns["Couleur"]->ColumnName = "Couleur";
+					datagrid->DataSource = madata;
+					maCNX->connect->Close();
+					
+				}
+
+		
+		//reader = maCNX->dataReader()
+	}
+
+	void Controleur::afficher_datagridView_commande(DataGridView^ grid)
+	{
+		Connexion co;
+		SqlDataReader^ read;
+		read = co.dataReader("Select nom_article, nature, prix_HT, taux_TVA, stock, seuil_approvisionnement from Article where stock < seuil_approvisionnement");
+		if (read->HasRows)
+		{
+			grid->Visible = true;
+			DataTable^ data = gcnew DataTable();
+			data->Load(read);
+			data->Columns["nom_article"]->ColumnName = "Nom article";
+			data->Columns["seuil_approvisionnement"]->ColumnName = "Seuil d'approvisionnement";
+			grid->DataSource = data;
+			grid->Columns[5]->Width = grid->Width - grid->Columns[0]->Width - grid->Columns[1]->Width - grid->Columns[2]->Width - grid->Columns[3]->Width - grid->Columns[4]->Width - grid->Columns[5]->Width + 55;
+
+		}
+	}
+
+	void Controleur::modifierArticle(TextBox^ nom, TextBox^ nature, TextBox^ couleur, TextBox^ prix, TextBox^ tva, TextBox^ seuil, TextBox^ stock, ComboBox^ box)
+	{
+		maCNX->connect->Close();
+		mArticle->setNom(nom->Text);
+		mArticle->setNature(nature->Text);
+		mArticle->setCouleur(couleur->Text);
+		mArticle->setTauxTVA(Convert::ToDouble(tva->Text));
+		mArticle->setPrixHT(Convert::ToDouble(prix->Text));
+		mArticle->setStock(Convert::ToInt32(stock->Text));
+		mArticle->setSeuilReapprovisionnement(Convert::ToInt32(seuil->Text));
+		maCNX->actionRows(mArticle->UPDATE()+ " where nom_article = '" + box->Text + "'");
+
+
+
+
+	}
+
+	void Controleur::afficherModifierArticle(TextBox^ nom, TextBox^ nature, TextBox^ couleur, TextBox^ prix, TextBox^ tva, TextBox^ seuil, TextBox^ quantite,ComboBox^ combo)
+	{
+		/*mArticle->setNom(nom->Text);
+		mArticle->setNature(nature->Text);
+		mArticle->setCouleur(couleur->Text);
+		mArticle->setPrixHT(Convert::ToDouble(prix->Text));
+		mArticle->setTauxTVA(Convert::ToDouble(tva->Text));
+		mArticle->setSeuilReapprovisionnement(Convert::ToInt32(seuil->Text));
+		mArticle->setStock(Convert::ToInt32(quantite->Text));*/
+
+		maCNX->connect->Close();
+
+		reader = maCNX->dataReader("select nom_article,nature,couleur,prix_HT,taux_TVA,seuil_approvisionnement,stock from Article where nom_article = '" + combo->Text + "'");
+
+		while(reader->Read())
+		{
+			nom->Text = reader[0]->ToString();
+			nature->Text = reader[1]->ToString();
+			couleur->Text = reader[2]->ToString();
+			prix->Text = reader[3]->ToString();
+			tva->Text = reader[4]->ToString();
+			seuil->Text = reader[5]->ToString();
+			quantite->Text = reader[6]->ToString();
+		}
+
+
+	}
+
+	void Controleur::supprimerArticle(ComboBox^ box)
+	{
+		String^ sql;
+		reader = maCNX->dataReader("select id_article,nom_article from article where nom_article = '" + box->Text + "'");
+		while(reader->Read()) 
+		{
+			sql = "delete from Composer where id_article = " + reader[0]->ToString();
+		}
+		maCNX->connect->Close();
+		maCNX->actionRows(sql);
+		maCNX->connect->Close();
+		maCNX->actionRows(mArticle->DELETE() + "'"+box->Text+"'");
+	}
+
+	void Controleur::ajouterClient(TextBox^ nom, TextBox^ prenom, TextBox^ numerovoie, TextBox^ nomdevoie, TextBox^ complement, ComboBox^ ville, DateTimePicker^ naissance, DateTimePicker^ premierachat)
+	{	
+		int idVille;
+		int idAdresse;
+		int idClient;
+
+		mClient->setNom(nom->Text);
+		mClient->setPrenom(prenom->Text);
+		mClient->setDatenaissance(naissance->Value);
+		mClient->setDatefirstachat(premierachat->Value);
+		idClient = maCNX->actionRowsID(mClient->INSERT());
+
+
+		mAdresse->setcomplement(complement->Text);
+		mAdresse->setnumero(Convert::ToInt32(numerovoie->Text));
+		mAdresse->setrue(nomdevoie->Text);
+
+		mVille->setVille(ville->Text);
+		mVille->setCodePostal("00000");
+
+		idAdresse = maCNX->actionRowsID(mAdresse->INSERT_client());
+		idVille = maCNX->actionRowsID("select id_ville from ville where ville = '" + mVille->getVille()+"'");
+		maCNX->actionRows("insert into Correspond values(" + idVille + "," + idAdresse+")");
+
+		maCNX->actionRows("insert into Facturer values(" + idClient + "," + idAdresse + ")");
+		maCNX->actionRows("insert into Livrer values(" + idClient + "," + idAdresse + ")");
+
+		mLivrer->setIdadresse(idAdresse);
+		mLivrer->setIdclient(idClient);
+		//maCNX->actionRows(mLivrer->INSERT());
+		
+		
+		
+
+
+		
+	}
+
+	void Controleur::afficherClient(ComboBox^ nom, ComboBox^ prenom, ComboBox^ ville, DateTimePicker^ naissance, DateTimePicker^ firstachat, DataGridView^ datagrid)
+	{
+		String^ sql;
+		maCNX->connect->Close();
+		reader = maCNX->dataReader("select Cnom,Cprenom,Acomplement,Arue,Anumero,Vville,naissance,achat from (select Client.nom_client as Cnom,Client.date_naissance as naissance,Client.date_first_achat as achat, Client.prenom as Cprenom,Adresse.complement as Acomplement,Adresse.rue as Arue,Adresse.numero as Anumero,Ville.ville as Vville,Livrer.id_client as Lclient,Livrer.id_adresse as Ladresse,Adresse.id_adresse as Aadresse,Correspond.id_adresse as Cadresse,Correspond.id_ville as Cville from Client inner join Livrer on Livrer.id_client = Client.id_client inner join Adresse on Livrer.id_adresse = Adresse.id_adresse inner join Correspond on Correspond.id_adresse = Adresse.id_adresse inner  join Ville on ville.id_ville = Correspond.id_ville) as coucou where Cnom = '" + nom->Text + "' or Cprenom ='" + prenom->Text + "' or Vville = '" + ville->Text + "' or naissance = '" + naissance->Value + "' or achat = '" + firstachat->Value+"'");
+		if (reader->HasRows)
+		{
+			DataTable^ madata = gcnew DataTable();
+			madata->Load(reader);
+			/*madata->Columns["nom_client"]->ColumnName = "Nom client";
+			madata->Columns["prenom"]->ColumnName = "Prénom";
+			madata->Columns["numero"]->ColumnName = "Numéro de rue";
+			madata->Columns["rue"]->ColumnName = "Rue";
+			madata->Columns["complement"]->ColumnName = "Complement";
+			madata->Columns["date_naissance"]->ColumnName = "Date de naissance";
+			madata->Columns["date_first_achat"]->ColumnName = "Date premier achat";*/
+			datagrid->DataSource = madata;
+			maCNX->connect->Close();
+		}
+		
+	}
+
+	void Controleur::afficherModifierClient(TextBox^ nom , TextBox^ prenom, TextBox^ numerovoie, TextBox^ complement, TextBox^ nomdevoie, ComboBox^ ville , ComboBox^ liste, DateTimePicker^ naissance, DateTimePicker^ achat)
+	{
+		
+		String^ result = liste->Text;
+		array<String^>^ stringarray = result->Split(' ');
+
+		this->getIdClientModifier(liste);
+		reader = maCNX->dataReader("select Cnom,Cprenom,Acomplement,Arue,Anumero,Vville,naissance,achat from (select Client.nom_client as Cnom,Client.date_naissance as naissance,Client.date_first_achat as achat, Client.prenom as Cprenom,Adresse.complement as Acomplement,Adresse.rue as Arue,Adresse.numero as Anumero,Ville.ville as Vville,Livrer.id_client as Lclient,Livrer.id_adresse as Ladresse,Adresse.id_adresse as Aadresse,Correspond.id_adresse as Cadresse,Correspond.id_ville as Cville from Client inner join Livrer on Livrer.id_client = Client.id_client inner join Adresse on Livrer.id_adresse = Adresse.id_adresse inner join Correspond on Correspond.id_adresse = Adresse.id_adresse inner  join Ville on ville.id_ville = Correspond.id_ville) as coucou where  Cnom ='" + stringarray[0] + "' and Cprenom = '" + stringarray[1] + "'");
+		while (reader->Read())
+		{
+			nom->Text = reader[0]->ToString();
+			prenom->Text = reader[1]->ToString();
+			complement->Text = reader[2]->ToString();
+			nomdevoie->Text = reader[3]->ToString();
+			numerovoie->Text = reader[4]->ToString();
+			ville->Text = reader[5]->ToString();
+			naissance->Text = reader[6]->ToString();
+			achat->Text = reader[7]->ToString();
+			
+		}
+	
+
+	}
+
+
+	void Controleur::getIdClientModifier(ComboBox^ monCB)
+	{
+		int id;
+		String^ result = monCB->Text;
+		array<String^>^ stringarray = result->Split(' ');
+		id = maCNX->actionRowsID("select id_client from client where nom_client = '" + stringarray[0] + "' and prenom = '" + stringarray[1] + "'");
+		mClient->setIdclient(id);
+	}
+
+	void Controleur::UpdateModifierClient(ComboBox^ liste ,TextBox^ nom, TextBox^ prenom, TextBox^ numerovoie, TextBox^complement , TextBox^nomdevoie , ComboBox^ ville, DateTimePicker^ naissance, DateTimePicker^ achat)
+	{
+		int idadresse;
+		int idville;
+		String^ result = liste->Text;
+		array<String^>^ stringarray = result->Split(' ');
+		maCNX->connect->Close();
+
+		mClient->setNom(nom->Text);
+		mClient->setPrenom(prenom->Text);
+		mClient->setDatenaissance(naissance->Value);
+		mClient->setDatefirstachat(achat->Value);
+
+		maCNX->actionRows(mClient->UPDATE() + "where nom_client ='" + stringarray[0] + "' and prenom = '" + stringarray[1] + "'");
+
+		maCNX->connect->Close();
+
+		mAdresse->setcomplement(complement->Text);
+		mAdresse->setnumero(Convert::ToInt32(numerovoie->Text));
+		mAdresse->setrue(nomdevoie->Text);
+		
+		idadresse = maCNX->actionRowsID("select id_adresse from Livrer where id_client = " + mClient->getIdclient());
+		mAdresse->setid_adresse(idadresse);
+
+		maCNX->actionRows(mAdresse->UPDATE_client());
+		
+
+		mVille->setVille(ville->Text);
+		idville = maCNX->actionRowsID("select id_ville from Correspond where id_adresse = " + idadresse);
+		mVille->setIdVille(idville);
+
+		maCNX->actionRows(mVille->UPDATE_client());
+		
+
+	}
+
+
+			
 	void Controleur::ajouterArticleCommande(DataGridView^ mygrid, NumericUpDown^ qte)
 	{
 		int idArticle;

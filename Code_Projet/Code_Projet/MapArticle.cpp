@@ -80,3 +80,17 @@ void MapArticle::setCouleur(String^ couleur)
     this->couleur = couleur;
 }
 
+String^ MapArticle::INSERT()
+{
+    return "insert into Article values('" + getNom() + "','" + getNature() + "'," + getPrixHT().ToString()->Replace(",",".") + ",'" + getTauxTVA().ToString()->Replace(",", ".") + "','" + getStock() + "'," + getSeuilReapprovisionnement().ToString() + ",'" + getCouleur() + "')";
+}
+
+String^ MapArticle::DELETE()
+{
+    return "delete from Article where nom_article  = ";
+}
+
+String^ MapArticle::UPDATE()
+{
+    return "update Article set nom_article= '" + getNom() + "', nature = '" + getNature() + "', prix_HT = " + getPrixHT().ToString()->Replace(",", ".") + ", taux_TVA = " + getTauxTVA().ToString()->Replace(",", ".") + ", stock = " + getStock().ToString() + ", seuil_approvisionnement = " + getSeuilReapprovisionnement().ToString() + ", couleur = '" + getCouleur()+ "'";
+}

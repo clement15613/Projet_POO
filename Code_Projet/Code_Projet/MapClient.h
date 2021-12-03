@@ -7,8 +7,8 @@ ref class MapClient
 	int id_client;
 	String^ nom;
 	String^ prenom;
-	String^ date_naissance;
-	String^ date_first_achat;
+    DateTime^ date_naissance;
+	DateTime^ date_first_achat;
 public:
     int getIdclient();
     void setIdclient(int idclient);
@@ -19,12 +19,15 @@ public:
     String^ getPrenom();
     void setPrenom(String^ prenom);
 
-    String^ getDatenaissance();
-    void setDatenaissance(String^ datenaissance);
+    DateTime^ getDatenaissance();
+    void setDatenaissance(DateTime^ datenaissance);
 
-    String^ getDatefirstachat();
-    void setDatefirstachat(String^ datefirstachat);
+    DateTime^ getDatefirstachat();
+    void setDatefirstachat(DateTime^ datefirstachat);
 
     String^ DELETE();
+    String^ INSERT();
+    String^ UPDATE();
+    String^ Delete();
 };
 

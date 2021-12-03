@@ -34,9 +34,14 @@ private:
 	SqlDataReader^ reader;
 	
 
+	String^ valeurTVA;
+	String^ ValeurRemise;
+	String^ ValeurMarge;
+	String^ ValeurDemarque;
 public : 
 	Controleur();
 	void mdp(TextBox^);
+	void mdp_label(Label^,Label^);
 	void afficher_datagridView(DataGridView^);
 	void afficher_top(Chart^,String^);
 	void afficher_chiffre_affaireMois(Chart^,String^);
@@ -47,6 +52,9 @@ public :
 	void affichage_text_box(ComboBox^, TextBox^);
 	void btnafficher_chiffre_affaire(ComboBox^, Button^, MaskedTextBox^ , Label^);
 	void CalculAndrecupereValeurCommercialeStock(TextBox^, TextBox^, TextBox^, TextBox^, ComboBox^, ComboBox^, ComboBox^, ComboBox^, CheckBox^, CheckBox^, CheckBox^, CheckBox^,Label^);
+	void changeFore(TextBox^);
+	void afficher_label_moncompte(Label^,Label^,Label^,Label^,Label^,Label^,Label^,Label^);
+	void UpdateMonCompte(Label^, Label^, Label^, Label^, Label^, Label^, Label^, Label^,TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^);
 	void CnxComboBox_BDD(ComboBox^, String^);
 
 	void afficher_form(String^, int pan);
@@ -71,5 +79,17 @@ public :
 
 	void supprimerClient(ComboBox^);
 	void supprimerCommandeClient(int);
+	void afficherPersonnel(DataGridView^);
+	void ajouterArticle(TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^);
+	void AfficherArticle(ComboBox^, ComboBox^, ComboBox^,DataGridView^, NumericUpDown^);
+	void afficher_datagridView_commande(DataGridView^);
+	void modifierArticle(TextBox^,TextBox^, TextBox^, TextBox^, TextBox^,TextBox^,TextBox^, ComboBox^);
+	void afficherModifierArticle(TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^,ComboBox^);
+	void supprimerArticle(ComboBox^);
+	void ajouterClient(TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, ComboBox^,DateTimePicker^,DateTimePicker^);
+	void afficherClient(ComboBox^,ComboBox^,ComboBox^,DateTimePicker^,DateTimePicker^,DataGridView^);
+	void afficherModifierClient(TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, ComboBox^, ComboBox^, DateTimePicker^, DateTimePicker^);
+	void getIdClientModifier(ComboBox^ monCB);
+	void UpdateModifierClient(ComboBox^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, ComboBox^, DateTimePicker^, DateTimePicker^);
 };
 

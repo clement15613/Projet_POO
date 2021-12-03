@@ -25,3 +25,8 @@ String^ MapLivrer::DELETE()
     return "delete from livrer where id_client = " + getIdclient();
 }
 
+String^ MapLivrer::INSERT()
+{
+    return "insert into Livrer values(" + getIdclient() + "," + getIdadresse() + ")";
+}
+
