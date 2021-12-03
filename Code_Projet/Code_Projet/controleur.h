@@ -66,5 +66,8 @@ public :
 	void racourci(DataGridView^);
 	void afficherArticle(DataGridView^, ComboBox^);
 	void modifierCommande(DateTimePicker^, DateTimePicker^, DateTimePicker^, DateTimePicker^, ComboBox^, ComboBox^);
+
+	void supprimerClient(ComboBox^);
+	void supprimerCommandeClient(int);
 };
 

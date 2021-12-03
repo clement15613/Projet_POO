@@ -774,3 +774,36 @@ void Controleur::afficher_form(String^ of)
 		
 
 	}
+
+	void Controleur::supprimerClient(ComboBox^ cbNomPrenom)
+	{
+		int idClient;
+		String^ result = cbNomPrenom->Text;
+		array<String^>^ stringarray = result->Split(' ');
+		maCNX->connect->Close();
+		idClient = maCNX->actionRowsID("select id_client from client where nom_client = '" + stringarray[0] + "'");
+		supprimerCommandeClient(idClient);
+
+		mClient->setIdclient(idClient);
+		mFacturer->setIdclient(idClient);
+		mLivrer->setIdclient(idClient);
+
+		maCNX->actionRows(mLivrer->DELETE());
+		maCNX->actionRows(mFacturer->DELETE());
+		maCNX->actionRows(mClient->DELETE());
+	}
+
+	void Controleur::supprimerCommandeClient(int id)
+	{
+		int idCommande;
+		maCNX->connect->Close();
+		idCommande = maCNX->actionRowsID("select id_commande from commande where id_client = " + id);
+
+		mCommande->setIdcommande(idCommande);
+		mPayment->setIdcommande(idCommande);
+		mComposer->setIdcommande(idCommande);
+
+		maCNX->actionRows(mComposer->DELETE());
+		maCNX->actionRows(mPayment->DELETE());
+		maCNX->actionRows(mCommande->DELETE());
+	}

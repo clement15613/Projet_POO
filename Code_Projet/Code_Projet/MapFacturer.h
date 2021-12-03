@@ -13,5 +13,6 @@ public:
     int getIdadresse();
     void setIdadresse(int idadresse);
 
+    String^ DELETE();
 };
 

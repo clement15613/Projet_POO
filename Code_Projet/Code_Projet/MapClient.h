@@ -25,5 +25,6 @@ public:
     String^ getDatefirstachat();
     void setDatefirstachat(String^ datefirstachat);
 
+    String^ DELETE();
 };
 
