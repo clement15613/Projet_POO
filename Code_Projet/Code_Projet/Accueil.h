@@ -562,18 +562,22 @@ namespace CodeProjet {
 		this->Hide();
 		monControleur->afficher_form("client", 0);
 	}
+
 	private: System::Void btn_es_client_a_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide();
 		monControleur->afficher_form("client", 2);
 	}
+
 	private: System::Void btn_es_client_m_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide();
 		monControleur->afficher_form("client", 3);
 	}
+
 	private: System::Void btn_es_client_s_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide();
 		monControleur->afficher_form("client", 4);
 	}
+
 	private: System::Void btn_es_client_r_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide();
 		monControleur->afficher_form("client", 1);

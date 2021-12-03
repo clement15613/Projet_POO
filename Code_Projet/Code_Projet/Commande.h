@@ -506,7 +506,7 @@ private: System::Windows::Forms::Button^ button1;
 			this->monCompteToolStripMenuItem->Name = L"monCompteToolStripMenuItem";
 			this->monCompteToolStripMenuItem->Size = System::Drawing::Size(200, 41);
 			this->monCompteToolStripMenuItem->Text = L"Mon compte ";
-			this->monCompteToolStripMenuItem->Click += gcnew System::EventHandler(this, &Commande::monCompteToolStripMenuItem_Click);
+			//this->monCompteToolStripMenuItem->Click += gcnew System::EventHandler(this, &Commande::monCompteToolStripMenuItem_Click);
 			// 
 			// BtnLabelSupprimerCommande
 			// 
@@ -1292,17 +1292,23 @@ private: System::Void Commande_Load(System::Object^ sender, System::EventArgs^ e
 	this->commandeToolStripMenuItem->BackColor = System::Drawing::Color::LightGray;
 
 	monControleur->gestion_panel(PanelAjouterCommande, PanelModifierCommande, PanelAfficherCommande, PanelSupprimerCommande, false);
-	
+	monControleur->CnxComboBox_BDD(BoxReferenceAfficher, "select ref from commande");
+	monControleur->CnxComboBox_BDD(comboBoxNatureArticleAfficher, "select nature from article");
+	monControleur->CnxComboBox_BDD(comboBoxArticleAjouter, "select nom_article from article");
+	monControleur->CnxComboBox_BDD(comboBoxNomClientAjouter, "select nom_client,prenom from client");
+	monControleur->CnxComboBox_BDD(comboBoxArtcileModifier, "select nom_article from article");
+	monControleur->CnxComboBox_BDD(comboBoxNomClientModifier, "select nom_client,prenom from client");
+	monControleur->CnxComboBox_BDD(comboBoxRefModifier, "select ref from commande");
+	monControleur->CnxComboBox_BDD(comboBoxRefSupprimer, "select ref from Commande");
+
 }
 private: System::Void BtnLabelRechercherCommande_Click(System::Object ^ sender, System::EventArgs ^ e) {
 	monControleur->gestion_panel(PanelAfficherCommande, PanelAjouterCommande, PanelModifierCommande, PanelSupprimerCommande, true);
+	monControleur->CnxComboBox_BDD(BoxReferenceAfficher, "select ref from commande");
+	monControleur->CnxComboBox_BDD(comboBoxNatureArticleAfficher, "select nature from article");
 }
-private: System::Void BtnLabelModifierCommande_Click(System::Object ^ sender, System::EventArgs ^ e) {
-	monControleur->gestion_panel(PanelModifierCommande, PanelAjouterCommande, PanelSupprimerCommande, PanelAfficherCommande, true);
-}
-private: System::Void BtnLabelSupprimerCommande_Click(System::Object ^ sender, System::EventArgs ^ e) {
-	monControleur->gestion_panel(PanelSupprimerCommande, PanelAjouterCommande, PanelModifierCommande, PanelAfficherCommande, true);
-}
+
+
 
 private: System::Void afficherUnPersonnelToolStripMenuItem_Click(System::Object ^ sender, System::EventArgs ^ e) {
 	this->Hide();
@@ -1337,7 +1343,7 @@ private: System::Void modifierUnClientToolStripMenuItem_Click(System::Object ^ s
 private: System::Void supprimerUnClientToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
 	monControleur->afficher_form("client", 4);
-	   
+}
 private: System::Void BtnLabelAjouterCommande_Click(System::Object^ sender, System::EventArgs^ e) {
 	monControleur->gestion_panel(PanelAjouterCommande, PanelModifierCommande, PanelAfficherCommande, PanelSupprimerCommande, true);
 	monControleur->CnxComboBox_BDD(comboBoxArticleAjouter, "select nom_article from article");
@@ -1347,10 +1353,6 @@ private: System::Void BtnLabelAjouterCommande_Click(System::Object^ sender, Syst
 
 
 
-private: System::Void BtnLabelRechercherCommande_Click(System::Object^ sender, System::EventArgs^ e) {
-	monControleur->CnxComboBox_BDD(BoxReferenceAfficher, "select ref from commande");
-	monControleur->CnxComboBox_BDD(comboBoxNatureArticleAfficher, "select nature from article");
-}
 private: System::Void afficherLesCommandesToolStripMenuItem_Click(System::Object ^ sender, System::EventArgs ^ e) {
 	monControleur->gestion_panel(PanelAfficherCommande, PanelAjouterCommande, PanelModifierCommande, PanelSupprimerCommande, true);
 	
@@ -1382,16 +1384,17 @@ private: System::Void supprimerUnArticleToolStripMenuItem_Click(System::Object ^
 	monControleur->afficher_form("article", 4);
 }
 
-private: System::Void statistiqueToolStripMenuItem_Click(System::Object ^ sender, System::EventArgs ^ e) {
+private: System::Void statistiqueToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
 	monControleur->afficher_form("stats", 0);
-
+}
 
 private: System::Void BtnLabelModifierCommande_Click(System::Object^ sender, System::EventArgs^ e) {
 	monControleur->gestion_panel(PanelModifierCommande, PanelAjouterCommande, PanelSupprimerCommande, PanelAfficherCommande, true);
 	monControleur->CnxComboBox_BDD(comboBoxArtcileModifier, "select nom_article from article");
 	monControleur->CnxComboBox_BDD(comboBoxNomClientModifier, "select nom_client,prenom from client");
 	monControleur->CnxComboBox_BDD(comboBoxRefModifier, "select ref from commande");
+	
 }
 
 
@@ -1482,7 +1485,7 @@ private: System::Void BtnModifierCommande_Click(System::Object^ sender, System::
 {
 	monControleur->modifierCommande(dateTimePickerCommandeModifier, dateTimePickerEnvoiModifier, dateTimePickerLivraisonModifier, dateTimePickerPaiementModifier, comboBoxNomClientModifier, comboBoxMoyenPaiementModifier);
 }
-
+	   public: void setPanelAff(int);
 
 
 	   //private: void From_FormsClose(Object^ sender, FormClosedEventArgs^ e) {

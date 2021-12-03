@@ -1223,9 +1223,14 @@ private: System::Windows::Forms::Button^ BtnValider;
 		monControleur = gcnew Controleur;
 
 		monControleur->gestion_panel(PanelAjouterPersonnel, PanelModifierPersonnel, PanelAfficherPersonnel, PanelSupprimerPersonnel, false);
-
-		
-		
+		monControleur->CnxComboBox_BDD(BoxVilleAjouter, "select ville from Ville");
+		monControleur->CnxComboBox_BDD(ComboBoxNomAfficher, "Select (nom_Personnel) from Personnel");
+		monControleur->CnxComboBox_BDD(comboBoxPrenomAfficher, "select (prenom_Personnel) from Personnel");
+		monControleur->CnxComboBox_BDD(comboBoxSupAfficher, "select nom_Personnel, prenom_Personnel from Personnel where id_Personnel = id_Personnel_Superieur");
+		monControleur->CnxComboBox_BDD(comboBoxVilleAfficher, "select ville from Ville");
+		monControleur->CnxComboBox_BDD(BoxVilleModifier, "select ville from Ville");
+		monControleur->CnxComboBox_BDD(comboBoxNomPrenomModifer, "select nom_personnel, prenom_personnel from personnel");
+		monControleur->CnxComboBox_BDD(comboBoxNomPrenomSupprimer, "select nom_Personnel, prenom_Personnel from Personnel");
 		
 		
 

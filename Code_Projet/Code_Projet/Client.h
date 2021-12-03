@@ -244,7 +244,7 @@ namespace CodeProjet {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(144, 9);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(1029, 45);
+			this->menuStrip1->Size = System::Drawing::Size(909, 45);
 			this->menuStrip1->TabIndex = 6;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -996,10 +996,10 @@ namespace CodeProjet {
 			this->Controls->Add(this->BtnLabelRechercherClient);
 			this->Controls->Add(this->BtnLabelAjouterClient);
 			this->Controls->Add(this->menuStrip1);
-			this->Controls->Add(this->PanelSupprimerClient);
-			this->Controls->Add(this->PanelAfficherClient);
 			this->Controls->Add(this->PanelAjouterClient);
 			this->Controls->Add(this->PanelModifierClient);
+			this->Controls->Add(this->PanelSupprimerClient);
+			this->Controls->Add(this->PanelAfficherClient);
 			this->Name = L"Client";
 			this->Text = L"Client";
 			this->Load += gcnew System::EventHandler(this, &Client::Client_Load);
@@ -1121,7 +1121,7 @@ private: System::Void monCompteToolStripMenuItem_Click(System::Object^ sender, S
 }
 private: System::Void BtnSupprimerClient_Click(System::Object^ sender, System::EventArgs^ e) 
 {
-	monControleur->supprimerClient(comboBox1NomPrenomSupprimer);
+	moncontroleur->supprimerClient(comboBox1NomPrenomSupprimer);
 }
 };
 }
