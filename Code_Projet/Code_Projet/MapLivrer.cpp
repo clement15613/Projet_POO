@@ -20,3 +20,8 @@ void MapLivrer::setIdadresse(int idadresse)
     id_adresse = idadresse;
 }
 
+String^ MapLivrer::INSERT()
+{
+    return "insert into Livrer values(" + getIdclient() + "," + getIdadresse() + ")";
+}
+

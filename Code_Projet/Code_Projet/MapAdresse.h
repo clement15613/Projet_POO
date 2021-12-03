@@ -20,8 +20,9 @@ public:
 	String^ getcomplement();
 	String^ setcomplement(String^ Newcomplement);
 
-	String^ INSERT();
-	String^ DELETE();
-	String^ UPDATE();
+	String^ INSERT_client();
+	String^ DELETE_client();
+	String^ UPDATE_client();
+
 };
 

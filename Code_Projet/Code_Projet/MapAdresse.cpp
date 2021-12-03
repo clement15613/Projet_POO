@@ -33,17 +33,17 @@ String^ MapAdresse::setcomplement(String^ Newcomplement)
 	return complement = Newcomplement;
 }
 
-String^ MapAdresse::INSERT()
+String^ MapAdresse::INSERT_client()
 {
 	return "insert into adresse values(" + getnumero() + ",'" + getrue() + "','" + getcomplement() + "');SELECT @@IDENTITY;";
 }
 
-String^ MapAdresse::DELETE()
+String^ MapAdresse::DELETE_client()
 {
 	return "delete from adresse where id_adresse = " + getid_adresse();
 }
 
-String^ MapAdresse::UPDATE()
+String^ MapAdresse::UPDATE_client()
 {
 	return "update adresse set numero =" + getnumero() + ", rue = '" + getrue() + "',complement = '" + getcomplement() + "' where id_adresse = " + getid_adresse();
 }

@@ -66,7 +66,10 @@ public :
 	void modifierArticle(TextBox^,TextBox^, TextBox^, TextBox^, TextBox^,TextBox^,TextBox^, ComboBox^);
 	void afficherModifierArticle(TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^,ComboBox^);
 	void supprimerArticle(ComboBox^);
-
-	
+	void ajouterClient(TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, ComboBox^,DateTimePicker^,DateTimePicker^);
+	void afficherClient(ComboBox^,ComboBox^,ComboBox^,DateTimePicker^,DateTimePicker^,DataGridView^);
+	void afficherModifierClient(TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, ComboBox^, ComboBox^, DateTimePicker^, DateTimePicker^);
+	void getIdClientModifier(ComboBox^ monCB);
+	void UpdateModifierClient(ComboBox^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, ComboBox^, DateTimePicker^, DateTimePicker^);
 };
 

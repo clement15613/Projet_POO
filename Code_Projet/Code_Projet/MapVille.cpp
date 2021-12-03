@@ -30,12 +30,12 @@ void MapVille::setCodePostal(String^ CodePostal)
     Code_Postal = CodePostal;
 }
 
-String^ MapVille::INSERT()
+String^ MapVille::INSERT_client()
 {
     return "insert into ville values ('" + getVille() + "','" + getCodePostal() + "');SELECT @@IDENTITY;";
 }
 
-String^ MapVille::UPDATE()
+String^ MapVille::UPDATE_client()
 {
     return "update ville set ville = '" + getVille() + "', code_postal = '" + getCodePostal() + "' where id_ville = " + getIdVille();
 }

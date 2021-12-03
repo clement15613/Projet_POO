@@ -436,9 +436,9 @@ void Controleur::changeFore(TextBox^ box)
 		mVille->setCodePostal("00000");
 
 		
-		idVille = maCNX->actionRowsID(mVille->INSERT());
+		idVille = maCNX->actionRowsID(mVille->INSERT_client());
 
-		idAdresse = maCNX->actionRowsID(mAdresse->INSERT());
+		idAdresse = maCNX->actionRowsID(mAdresse->INSERT_client());
 
 		mCorrespond->setIdVille(idVille);
 		mCorrespond->SetIdAdresse(idAdresse);
@@ -466,7 +466,7 @@ void Controleur::changeFore(TextBox^ box)
 		maCNX->actionRows(mCorrespond->DELETE());
 
 		mAdresse->setid_adresse(idAdresse);
-		maCNX->actionRows(mAdresse->DELETE());
+		maCNX->actionRows(mAdresse->DELETE_client());
 
 	}
 
@@ -609,9 +609,9 @@ void Controleur::changeFore(TextBox^ box)
 		mVille->setCodePostal("00000");
 
 
-		maCNX->actionRows(mVille->UPDATE());
+		maCNX->actionRows(mVille->UPDATE_client());
 
-		maCNX->actionRows(mAdresse->UPDATE());
+		maCNX->actionRows(mAdresse->UPDATE_client());
 
 		/*mCorrespond->setIdVille(idVille);
 		mCorrespond->SetIdAdresse(idAdresse);
@@ -748,6 +748,136 @@ void Controleur::changeFore(TextBox^ box)
 		maCNX->actionRows(sql);
 		maCNX->connect->Close();
 		maCNX->actionRows(mArticle->DELETE() + "'"+box->Text+"'");
+	}
+
+	void Controleur::ajouterClient(TextBox^ nom, TextBox^ prenom, TextBox^ numerovoie, TextBox^ nomdevoie, TextBox^ complement, ComboBox^ ville, DateTimePicker^ naissance, DateTimePicker^ premierachat)
+	{	
+		int idVille;
+		int idAdresse;
+		int idClient;
+
+		mClient->setNom(nom->Text);
+		mClient->setPrenom(prenom->Text);
+		mClient->setDatenaissance(naissance->Value);
+		mClient->setDatefirstachat(premierachat->Value);
+		idClient = maCNX->actionRowsID(mClient->INSERT());
+
+
+		mAdresse->setcomplement(complement->Text);
+		mAdresse->setnumero(Convert::ToInt32(numerovoie->Text));
+		mAdresse->setrue(nomdevoie->Text);
+
+		mVille->setVille(ville->Text);
+		mVille->setCodePostal("00000");
+
+		idAdresse = maCNX->actionRowsID(mAdresse->INSERT_client());
+		idVille = maCNX->actionRowsID("select id_ville from ville where ville = '" + mVille->getVille()+"'");
+		maCNX->actionRows("insert into Correspond values(" + idVille + "," + idAdresse+")");
+
+		maCNX->actionRows("insert into Facturer values(" + idClient + "," + idAdresse + ")");
+		maCNX->actionRows("insert into Livrer values(" + idClient + "," + idAdresse + ")");
+
+		mLivrer->setIdadresse(idAdresse);
+		mLivrer->setIdclient(idClient);
+		//maCNX->actionRows(mLivrer->INSERT());
+		
+		
+		
+
+
+		
+	}
+
+	void Controleur::afficherClient(ComboBox^ nom, ComboBox^ prenom, ComboBox^ ville, DateTimePicker^ naissance, DateTimePicker^ firstachat, DataGridView^ datagrid)
+	{
+		String^ sql;
+		maCNX->connect->Close();
+		reader = maCNX->dataReader("select Cnom,Cprenom,Acomplement,Arue,Anumero,Vville,naissance,achat from (select Client.nom_client as Cnom,Client.date_naissance as naissance,Client.date_first_achat as achat, Client.prenom as Cprenom,Adresse.complement as Acomplement,Adresse.rue as Arue,Adresse.numero as Anumero,Ville.ville as Vville,Livrer.id_client as Lclient,Livrer.id_adresse as Ladresse,Adresse.id_adresse as Aadresse,Correspond.id_adresse as Cadresse,Correspond.id_ville as Cville from Client inner join Livrer on Livrer.id_client = Client.id_client inner join Adresse on Livrer.id_adresse = Adresse.id_adresse inner join Correspond on Correspond.id_adresse = Adresse.id_adresse inner  join Ville on ville.id_ville = Correspond.id_ville) as coucou where Cnom = '" + nom->Text + "' or Cprenom ='" + prenom->Text + "' or Vville = '" + ville->Text + "' or naissance = '" + naissance->Value + "' or achat = '" + firstachat->Value+"'");
+		if (reader->HasRows)
+		{
+			DataTable^ madata = gcnew DataTable();
+			madata->Load(reader);
+			/*madata->Columns["nom_client"]->ColumnName = "Nom client";
+			madata->Columns["prenom"]->ColumnName = "Prénom";
+			madata->Columns["numero"]->ColumnName = "Numéro de rue";
+			madata->Columns["rue"]->ColumnName = "Rue";
+			madata->Columns["complement"]->ColumnName = "Complement";
+			madata->Columns["date_naissance"]->ColumnName = "Date de naissance";
+			madata->Columns["date_first_achat"]->ColumnName = "Date premier achat";*/
+			datagrid->DataSource = madata;
+			maCNX->connect->Close();
+		}
+		
+	}
+
+	void Controleur::afficherModifierClient(TextBox^ nom , TextBox^ prenom, TextBox^ numerovoie, TextBox^ complement, TextBox^ nomdevoie, ComboBox^ ville , ComboBox^ liste, DateTimePicker^ naissance, DateTimePicker^ achat)
+	{
+		
+		String^ result = liste->Text;
+		array<String^>^ stringarray = result->Split(' ');
+
+		this->getIdClientModifier(liste);
+		reader = maCNX->dataReader("select Cnom,Cprenom,Acomplement,Arue,Anumero,Vville,naissance,achat from (select Client.nom_client as Cnom,Client.date_naissance as naissance,Client.date_first_achat as achat, Client.prenom as Cprenom,Adresse.complement as Acomplement,Adresse.rue as Arue,Adresse.numero as Anumero,Ville.ville as Vville,Livrer.id_client as Lclient,Livrer.id_adresse as Ladresse,Adresse.id_adresse as Aadresse,Correspond.id_adresse as Cadresse,Correspond.id_ville as Cville from Client inner join Livrer on Livrer.id_client = Client.id_client inner join Adresse on Livrer.id_adresse = Adresse.id_adresse inner join Correspond on Correspond.id_adresse = Adresse.id_adresse inner  join Ville on ville.id_ville = Correspond.id_ville) as coucou where  Cnom ='" + stringarray[0] + "' and Cprenom = '" + stringarray[1] + "'");
+		while (reader->Read())
+		{
+			nom->Text = reader[0]->ToString();
+			prenom->Text = reader[1]->ToString();
+			complement->Text = reader[2]->ToString();
+			nomdevoie->Text = reader[3]->ToString();
+			numerovoie->Text = reader[4]->ToString();
+			ville->Text = reader[5]->ToString();
+			naissance->Text = reader[6]->ToString();
+			achat->Text = reader[7]->ToString();
+			
+		}
+	
+
+	}
+
+
+	void Controleur::getIdClientModifier(ComboBox^ monCB)
+	{
+		int id;
+		String^ result = monCB->Text;
+		array<String^>^ stringarray = result->Split(' ');
+		id = maCNX->actionRowsID("select id_client from client where nom_client = '" + stringarray[0] + "' and prenom = '" + stringarray[1] + "'");
+		mClient->setIdclient(id);
+	}
+
+	void Controleur::UpdateModifierClient(ComboBox^ liste ,TextBox^ nom, TextBox^ prenom, TextBox^ numerovoie, TextBox^complement , TextBox^nomdevoie , ComboBox^ ville, DateTimePicker^ naissance, DateTimePicker^ achat)
+	{
+		int idadresse;
+		int idville;
+		String^ result = liste->Text;
+		array<String^>^ stringarray = result->Split(' ');
+		maCNX->connect->Close();
+
+		mClient->setNom(nom->Text);
+		mClient->setPrenom(prenom->Text);
+		mClient->setDatenaissance(naissance->Value);
+		mClient->setDatefirstachat(achat->Value);
+
+		maCNX->actionRows(mClient->UPDATE() + "where nom_client ='" + stringarray[0] + "' and prenom = '" + stringarray[1] + "'");
+
+		maCNX->connect->Close();
+
+		mAdresse->setcomplement(complement->Text);
+		mAdresse->setnumero(Convert::ToInt32(numerovoie->Text));
+		mAdresse->setrue(nomdevoie->Text);
+		
+		idadresse = maCNX->actionRowsID("select id_adresse from Livrer where id_client = " + mClient->getIdclient());
+		mAdresse->setid_adresse(idadresse);
+
+		maCNX->actionRows(mAdresse->UPDATE_client());
+		
+
+		mVille->setVille(ville->Text);
+		idville = maCNX->actionRowsID("select id_ville from Correspond where id_adresse = " + idadresse);
+		mVille->setIdVille(idville);
+
+		maCNX->actionRows(mVille->UPDATE_client());
+		
+
 	}
 
 
