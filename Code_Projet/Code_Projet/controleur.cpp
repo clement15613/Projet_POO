@@ -1214,3 +1214,15 @@ void Controleur::changeFore(TextBox^ box)
 		maCNX->actionRows(mPayment->DELETE());
 		maCNX->actionRows(mCommande->DELETE());
 	}
+
+	void Controleur::chargementdata(DataGridView^ myGrid, String^ query)
+	{
+		maCNX->connect->Close();
+			reader = maCNX->dataReader(query);
+			if (reader->HasRows)
+			{
+				DataTable^ madata = gcnew DataTable();
+				madata->Load(reader);
+				myGrid->DataSource = madata;
+			}		
+	}

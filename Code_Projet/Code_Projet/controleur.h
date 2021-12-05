@@ -80,6 +80,7 @@ public :
 	void supprimerClient(ComboBox^);
 	void supprimerCommandeClient(int);
 	void afficherPersonnel(DataGridView^);
+	void chargementdata(DataGridView^, String^);
 	void ajouterArticle(TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^, TextBox^);
 	void AfficherArticle(ComboBox^, ComboBox^, ComboBox^,DataGridView^, NumericUpDown^);
 	void afficher_datagridView_commande(DataGridView^);

@@ -1232,7 +1232,7 @@ private: System::Windows::Forms::Button^ BtnValider;
 		monControleur->CnxComboBox_BDD(comboBoxNomPrenomModifer, "select nom_personnel, prenom_personnel from personnel");
 		monControleur->CnxComboBox_BDD(comboBoxNomPrenomSupprimer, "select nom_Personnel, prenom_Personnel from Personnel");
 		
-		
+		monControleur->chargementdata(dataGridView1, "select * from personnel");
 
 		this->personnelToolStripMenuItem->BackColor = System::Drawing::SystemColors::ControlLight;
 	}

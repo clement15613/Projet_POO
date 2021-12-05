@@ -1301,6 +1301,8 @@ private: System::Void Commande_Load(System::Object^ sender, System::EventArgs^ e
 	monControleur->CnxComboBox_BDD(comboBoxRefModifier, "select ref from commande");
 	monControleur->CnxComboBox_BDD(comboBoxRefSupprimer, "select ref from Commande");
 
+	monControleur->chargementdata(dataGridViewRechercherCommande, "select * from commande");
+
 }
 private: System::Void BtnLabelRechercherCommande_Click(System::Object ^ sender, System::EventArgs ^ e) {
 	monControleur->gestion_panel(PanelAfficherCommande, PanelAjouterCommande, PanelModifierCommande, PanelSupprimerCommande, true);

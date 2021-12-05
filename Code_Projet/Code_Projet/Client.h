@@ -1071,6 +1071,8 @@ private: System::Windows::Forms::Button^ buttonValider;
 		monControleur->CnxComboBox_BDD(comboBox1NomPrenomSupprimer, "select nom_client,prenom from client");
 		monControleur->CnxComboBox_BDD(comboBoxlisteClient, "select nom_client,prenom from client");
 
+		monControleur->chargementdata(dataGridView1, "select * from client");
+
 	}
 private: System::Void BtnLabelAjouterPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
 	monControleur->gestion_panel(PanelAjouterClient, PanelAfficherClient, PanelModifierClient, PanelSupprimerClient, true);

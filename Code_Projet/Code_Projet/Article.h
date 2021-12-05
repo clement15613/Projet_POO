@@ -1013,6 +1013,8 @@ private: System::Void Article_Load(System::Object^ sender, System::EventArgs^ e)
 	monControleur->CnxComboBox_BDD(comboBoxNatureArticleAfficher, "select nature from article");
 	monControleur->CnxComboBox_BDD(comboBoxNomArticleAfficher, "select nom_article from article");
 	monControleur->CnxComboBox_BDD(comboBoxNomArticleSupprimer, "select nom_article from article");
+
+	monControleur->chargementdata(dataGridViewRechercherCommande, "select * from article");
 	
 }
 private: void Form_FormsClose(Object^ sender, FormClosedEventArgs^ e) {
