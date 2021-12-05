@@ -1224,5 +1224,6 @@ void Controleur::changeFore(TextBox^ box)
 				DataTable^ madata = gcnew DataTable();
 				madata->Load(reader);
 				myGrid->DataSource = madata;
-			}		
+			}
+			maCNX->connect->Close();
 	}
